@@ -15,6 +15,7 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -26,14 +27,16 @@
         android:background="?android:attr/colorPrimary"
         android:elevation="@dimen/headerElevation"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:targetApi="lollipop">
 
         <ImageView
             android:id="@+id/app_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/app_name"
@@ -50,7 +53,7 @@
     <LinearLayout
         android:id="@+id/simple_status_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
@@ -64,7 +67,8 @@
             android:layout_marginBottom="12dp"
             android:contentDescription="@null"
             android:src="@drawable/ic_report_problem_92"
-            android:tint="@color/bigIconColor" />
+            android:tint="@color/bigIconColor"
+            tools:targetApi="donut" />
 
         <TextView
             android:id="@+id/simple_status"
@@ -81,7 +85,8 @@
         android:layout_height="wrap_content"
         android:measureWithLargestChild="true"
         android:orientation="horizontal"
-        android:padding="8dip">
+        android:padding="8dip"
+        tools:targetApi="honeycomb">
 
         <!-- spacer to push button to the right -->
         <View

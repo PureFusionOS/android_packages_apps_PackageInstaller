@@ -47,6 +47,8 @@ public class ManualLayoutFrame extends ViewGroup {
                     newWidth = MeasureSpec.getSize(widthMeasureSpec);
                 }
                 break;
+                case MeasureSpec.UNSPECIFIED:
+                    break;
             }
             if (newWidth != mWidth) {
                 mWidth = newWidth;

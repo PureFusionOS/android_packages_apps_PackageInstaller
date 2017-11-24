@@ -27,7 +27,8 @@
         android:adjustViewBounds="true"
         android:maxHeight="@dimen/wear_permission_review_icon_size"
         android:maxWidth="@dimen/wear_permission_review_icon_size"
-        android:scaleType="centerInside" />
+        android:scaleType="centerInside"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+android:id/title"

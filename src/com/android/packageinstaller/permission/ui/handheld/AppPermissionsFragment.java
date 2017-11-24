@@ -132,12 +132,7 @@ public final class AppPermissionsFragment extends SettingsWithHeader
             return;
         }
 
-        mAppPermissions = new AppPermissions(activity, packageInfo, null, true, new Runnable() {
-            @Override
-            public void run() {
-                getActivity().finish();
-            }
-        });
+        mAppPermissions = new AppPermissions(activity, packageInfo, null, true, () -> getActivity().finish());
         loadPreferences();
     }
 
@@ -275,18 +270,15 @@ public final class AppPermissionsFragment extends SettingsWithHeader
         }
 
         if (mExtraScreen != null) {
-            extraPerms.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    AdditionalPermissionsFragment frag = new AdditionalPermissionsFragment();
-                    setPackageName(frag, getArguments().getString(Intent.EXTRA_PACKAGE_NAME));
-                    frag.setTargetFragment(AppPermissionsFragment.this, 0);
-                    getFragmentManager().beginTransaction()
-                            .replace(android.R.id.content, frag)
-                            .addToBackStack(null)
-                            .commit();
-                    return true;
-                }
+            extraPerms.setOnPreferenceClickListener(preference -> {
+                AdditionalPermissionsFragment frag = new AdditionalPermissionsFragment();
+                setPackageName(frag, getArguments().getString(Intent.EXTRA_PACKAGE_NAME));
+                frag.setTargetFragment(AppPermissionsFragment.this, 0);
+                getFragmentManager().beginTransaction()
+                        .replace(android.R.id.content, frag)
+                        .addToBackStack(null)
+                        .commit();
+                return true;
             });
             int count = mExtraScreen.getPreferenceCount();
             extraPerms.setSummary(getResources().getQuantityString(

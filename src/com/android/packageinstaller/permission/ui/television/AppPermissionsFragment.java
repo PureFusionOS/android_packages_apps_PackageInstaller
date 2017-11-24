@@ -125,12 +125,7 @@ public final class AppPermissionsFragment extends SettingsWithHeader
         }
 
 
-        mAppPermissions = new AppPermissions(activity, packageInfo, null, true, new Runnable() {
-            @Override
-            public void run() {
-                getActivity().finish();
-            }
-        });
+        mAppPermissions = new AppPermissions(activity, packageInfo, null, true, () -> getActivity().finish());
 
         if (mAppPermissions.isReviewRequired()) {
             Intent intent = new Intent(getActivity(), ReviewPermissionsActivity.class);
@@ -312,14 +307,11 @@ public final class AppPermissionsFragment extends SettingsWithHeader
                                 : R.string.old_sdk_deny_warning)
                         .setNegativeButton(R.string.cancel, null)
                         .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
-                                new OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        ((SwitchPreference) preference).setChecked(false);
-                                        group.revokeRuntimePermissions(false);
-                                        if (!grantedByDefault) {
-                                            mHasConfirmedRevoke = true;
-                                        }
+                                (dialog, which) -> {
+                                    ((SwitchPreference) preference).setChecked(false);
+                                    group.revokeRuntimePermissions(false);
+                                    if (!grantedByDefault) {
+                                        mHasConfirmedRevoke = true;
                                     }
                                 })
                         .show();

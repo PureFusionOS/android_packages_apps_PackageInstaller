@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Да се разреши на това приложение следното:"</string>
     <string name="cancel" msgid="8360346460165114585">"Отказ"</string>
     <string name="unknown" msgid="4742479012767208045">"Неизвестно"</string>
-    <string name="installing" msgid="8613631001631998372">"Инсталира се..."</string>
+    <string name="installing" msgid="8613631001631998372">"Инсталира се…"</string>
     <string name="installing_app" msgid="4097935682329028894">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> се инсталира…"</string>
     <string name="install_done" msgid="3682715442154357097">"Приложението бе инсталирано."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Искате ли да инсталирате това приложение? То ще получи достъп до:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Това приложение да се замени ли с фабричната версия? Всички данни ще бъдат премахнати. Промяната ще засегне всеки потребител на устройството, включително тези със служебни потребителски профили."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Активни деинсталирания"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Неуспешни деинсталирания"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Деинсталира се..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Деинсталира се…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> се деинсталира…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Деинсталирането завърши."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"Деинсталирахте <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>"</string>

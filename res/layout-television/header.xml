@@ -15,11 +15,13 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/defaultBrandColor"
     android:elevation="@dimen/lb_preference_decor_title_container_elevation"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:targetApi="lollipop">
 
     <FrameLayout
         android:id="@+id/decor_title_container"
@@ -27,7 +29,8 @@
         android:layout_height="wrap_content"
         android:background="?attr/defaultBrandColor"
         android:elevation="@dimen/lb_preference_decor_title_container_elevation"
-        android:transitionGroup="false">
+        android:transitionGroup="false"
+        tools:targetApi="lollipop">
 
         <TextView
             android:id="@+id/decor_title"
@@ -40,7 +43,8 @@
             android:gravity="center_vertical"
             android:singleLine="true"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="@dimen/lb_preference_decor_title_text_size" />
+            android:textSize="@dimen/lb_preference_decor_title_text_size"
+            tools:targetApi="jelly_bean" />
     </FrameLayout>
 
 </LinearLayout>

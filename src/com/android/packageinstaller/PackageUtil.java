@@ -75,7 +75,6 @@ public class PackageUtil {
      * defined on it.
      *
      * @param pContext      context of package that can load the resources
-     * @param componentInfo ComponentInfo object whose resources are to be loaded
      * @param snippetView   the snippet view
      */
     public static View initSnippetForInstalledApp(Context pContext,
@@ -90,9 +89,7 @@ public class PackageUtil {
      * defined on it.
      *
      * @param pContext      context of package that can load the resources
-     * @param componentInfo ComponentInfo object whose resources are to be loaded
      * @param snippetView   the snippet view
-     * @param UserHandle    user that the app si installed for.
      */
     public static View initSnippetForInstalledApp(Context pContext,
                                                   ApplicationInfo appInfo, View snippetView, UserHandle user) {

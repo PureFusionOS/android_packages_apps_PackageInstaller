@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     coreApp="true"
     package="com.android.packageinstaller">
 
@@ -36,7 +37,9 @@
         android:directBootAware="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/DialogWhenLarge">
+        android:theme="@style/DialogWhenLarge"
+        tools:targetApi="donut"
+        android:icon="@mipmap/">
 
         <receiver
             android:name=".TemporaryFileManager"
@@ -149,7 +152,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:excludeFromRecents="true"
             android:theme="@style/GrantPermissions"
-            android:visibleToInstantApps="true">
+            android:visibleToInstantApps="true"
+            tools:targetApi="o">
             <intent-filter android:priority="1">
                 <action android:name="android.content.pm.action.REQUEST_PERMISSIONS" />
                 <category android:name="android.intent.category.DEFAULT" />

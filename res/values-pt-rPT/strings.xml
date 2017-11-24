@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Permitir que esta aplicação:"</string>
     <string name="cancel" msgid="8360346460165114585">"Cancelar"</string>
     <string name="unknown" msgid="4742479012767208045">"Desconhecido"</string>
-    <string name="installing" msgid="8613631001631998372">"A instalar..."</string>
+    <string name="installing" msgid="8613631001631998372">"A instalar…"</string>
     <string name="installing_app" msgid="4097935682329028894">"A instalar <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"Aplicação instalada."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Pretende instalar esta aplicação? Terá acesso a:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Pretende substituir esta aplicação pela versão de fábrica? Todos os dados são removidos. Esta ação afeta todos os utilizadores deste dispositivo, incluindo os que têm perfis de trabalho."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Desinstalações em execução"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Desinstalações com falha"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"A desinstalar..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"A desinstalar…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"A desinstalar a aplicação <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Desinstalação concluída."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"A aplicação <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> foi desinstalada"</string>

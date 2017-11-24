@@ -178,7 +178,7 @@ public class InstallStart extends Activity {
 
     /**
      * Get the originating uid if possible, or
-     * {@link android.content.pm.PackageInstaller.SessionParams#UID_UNKNOWN} if not available
+     *  if not available
      *
      * @param sourceInfo The source of this installation
      * @return The UID of the installation source or UID_UNKNOWN

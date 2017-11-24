@@ -99,11 +99,7 @@ public final class PermissionGroup implements Comparable<PermissionGroup> {
             return false;
         }
 
-        if (mGranted != other.mGranted) {
-            return false;
-        }
-
-        return true;
+        return mGranted == other.mGranted;
     }
 
     @Override

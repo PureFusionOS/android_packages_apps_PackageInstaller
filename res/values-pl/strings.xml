@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Zezwalaj tej aplikacji na:"</string>
     <string name="cancel" msgid="8360346460165114585">"Anuluj"</string>
     <string name="unknown" msgid="4742479012767208045">"Nieznane"</string>
-    <string name="installing" msgid="8613631001631998372">"Instalowanie..."</string>
+    <string name="installing" msgid="8613631001631998372">"Instalowanie…"</string>
     <string name="installing_app" msgid="4097935682329028894">"Instaluję pakiet <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"Aplikacja została zainstalowana."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Zainstalować tę aplikację? Będzie miała następujące uprawnienia:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Przywrócić fabryczną wersję tej aplikacji? Wszystkie dane zostaną usunięte. Dotyczy to wszystkich użytkowników tego urządzenia, również tych korzystających z profilu do pracy."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Aktywne odinstalowania"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Nieudane odinstalowania"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Odinstalowywanie..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Odinstalowywanie…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"Odinstalowuję pakiet <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Odinstalowywanie zakończone"</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"Odinstalowano pakiet <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>"</string>

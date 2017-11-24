@@ -59,7 +59,7 @@ public class PackageInstallerImpl {
 
         // Capture a map of known sessions
         // This list will be pruned a bit later (stale sessions will be canceled)
-        mSessionInfoMap = new HashMap<String, PackageInstaller.SessionInfo>();
+        mSessionInfoMap = new HashMap<>();
         List<PackageInstaller.SessionInfo> mySessions = mPackageInstaller.getMySessions();
         for (int i = 0; i < mySessions.size(); i++) {
             PackageInstaller.SessionInfo sessionInfo = mySessions.get(i);
@@ -72,7 +72,7 @@ public class PackageInstallerImpl {
                         .getSessionId() + " & keeping " + mySessions.get(i).getSessionId());
             }
         }
-        mOpenSessionMap = new HashMap<String, PackageInstaller.Session>();
+        mOpenSessionMap = new HashMap<>();
     }
 
     /**
@@ -209,7 +209,6 @@ public class PackageInstallerImpl {
             mPackageInstaller.abandonSession(sessionId);
         } catch (SecurityException se) {
             // The session no longer exists, so we can exit quietly.
-            return;
         }
     }
 

@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:alpha="?android:disabledAlpha" android:color="?android:colorButtonNormal" android:state_enabled="false" />
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:alpha="?android:disabledAlpha" android:color="?android:colorButtonNormal" android:state_enabled="false" tools:targetApi="honeycomb" />
     <item android:color="?android:colorAccent" />
 </selector>

@@ -240,12 +240,9 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
             mOk.setText(R.string.install);
             mOkCanInstall = true;
         } else {
-            mScrollView.setFullScrollAction(new Runnable() {
-                @Override
-                public void run() {
-                    mOk.setText(R.string.install);
-                    mOkCanInstall = true;
-                }
+            mScrollView.setFullScrollAction(() -> {
+                mOk.setText(R.string.install);
+                mOkCanInstall = true;
             });
         }
     }
@@ -519,7 +516,6 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
                 // Someone set user restriction via UserManager#setUserRestriction. We don't want to
                 // break apps that might already be doing this
                 showDialogInner(DLG_UNKNOWN_SOURCES_RESTRICTED_FOR_USER);
-                return;
             } else {
                 startActivity(new Intent(Settings.ACTION_SHOW_ADMIN_SUPPORT_DETAILS));
                 finish();

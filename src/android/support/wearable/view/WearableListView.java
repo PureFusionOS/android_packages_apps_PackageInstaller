@@ -68,9 +68,9 @@ public class WearableListView extends RecyclerView {
 
     private final int mMinFlingVelocity;
     private final int mMaxFlingVelocity;
-    private final List<OnScrollListener> mOnScrollListeners = new ArrayList<OnScrollListener>();
+    private final List<OnScrollListener> mOnScrollListeners = new ArrayList<>();
     private final List<OnCentralPositionChangedListener> mOnCentralPositionChangedListeners =
-            new ArrayList<OnCentralPositionChangedListener>();
+            new ArrayList<>();
     private final int mTouchSlop;
     // Top and bottom boundaries for tap checking.  Need to recompute by calling computeTapRegions
     // before referencing.
@@ -127,29 +127,16 @@ public class WearableListView extends RecyclerView {
     // underlying data set, all best are off and you need to preserve the state; we will clear
     // this field. However, I am not willing to introduce this so late in C development.
     private View mPressedView = null;
-    private final Runnable mPressedRunnable = new Runnable() {
-        @Override
-        public void run() {
-            if (getChildCount() > 0) {
-                mPressedView = getChildAt(findCenterViewIndex());
-                mPressedView.setPressed(true);
-            } else {
-                Log.w(TAG, "mPressedRunnable: the children were removed, skipping.");
-            }
+    private final Runnable mPressedRunnable = () -> {
+        if (getChildCount() > 0) {
+            mPressedView = getChildAt(findCenterViewIndex());
+            mPressedView.setPressed(true);
+        } else {
+            Log.w(TAG, "mPressedRunnable: the children were removed, skipping.");
         }
     };
-    private final Runnable mReleasedRunnable = new Runnable() {
-        @Override
-        public void run() {
-            releasePressedItem();
-        }
-    };
-    private Runnable mNotifyChildrenPostLayoutRunnable = new Runnable() {
-        @Override
-        public void run() {
-            notifyChildrenAboutProximity(false);
-        }
-    };
+    private final Runnable mReleasedRunnable = () -> releasePressedItem();
+    private Runnable mNotifyChildrenPostLayoutRunnable = () -> notifyChildrenAboutProximity(false);
 
     public WearableListView(Context context) {
         this(context, null);
@@ -490,7 +477,7 @@ public class WearableListView extends RecyclerView {
             throw new IllegalArgumentException(
                     "newCenterIndex must be different from oldCenterIndex");
         }
-        List<Animator> animators = new ArrayList<Animator>();
+        List<Animator> animators = new ArrayList<>();
         View child = getChildAt(newCenterIndex);
         int scrollToMiddle = getCentralViewTop() - child.getTop();
         startScrollAnimation(animators, scrollToMiddle, FLIP_ANIMATION_DURATION_MS);
@@ -874,8 +861,8 @@ public class WearableListView extends RecyclerView {
         /**
          * Called when WearableListView's scroll state changes.
          *
-         * @param scrollState The updated scroll state. One of {@link #SCROLL_STATE_IDLE},
-         *                    {@link #SCROLL_STATE_DRAGGING} or {@link #SCROLL_STATE_SETTLING}.
+         * @param scrollState The updated scroll state. One of ,
+         *                     or .
          */
         public void onScrollStateChanged(int scrollState);
 

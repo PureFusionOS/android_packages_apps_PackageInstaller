@@ -156,12 +156,7 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
         updateDefaultResults(callingPackageInfo, permissionPolicy);
 
         mAppPermissions = new AppPermissions(this, callingPackageInfo, null, false,
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        setResultAndFinish();
-                    }
-                });
+                () -> setResultAndFinish());
 
         for (String requestedPermission : mRequestedPermissions) {
             AppPermissionGroup group = null;
@@ -240,9 +235,7 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
             setResultAndFinish();
         } else if (icicle == null) {
             int numRequestedPermissions = mRequestedPermissions.length;
-            for (int permissionNum = 0; permissionNum < numRequestedPermissions; permissionNum++) {
-                String permission = mRequestedPermissions[permissionNum];
-
+            for (String permission : mRequestedPermissions) {
                 EventLogger.logPermissionRequested(this, permission,
                         mAppPermissions.getPackageInfo().packageName);
             }
@@ -338,9 +331,7 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
                 groupState.mState = GroupState.STATE_DENIED;
 
                 int numRequestedPermissions = mRequestedPermissions.length;
-                for (int i = 0; i < numRequestedPermissions; i++) {
-                    String permission = mRequestedPermissions[i];
-
+                for (String permission : mRequestedPermissions) {
                     if (groupState.mGroup.hasPermission(permission)) {
                         EventLogger.logPermissionDenied(this, permission,
                                 mAppPermissions.getPackageInfo().packageName);

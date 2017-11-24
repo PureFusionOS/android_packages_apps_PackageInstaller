@@ -75,9 +75,7 @@ public class TemporaryFileManager extends BroadcastReceiver {
             return;
         }
 
-        for (int i = 0; i < filesOnBoot.length; i++) {
-            File fileOnBoot = filesOnBoot[i];
-
+        for (File fileOnBoot : filesOnBoot) {
             if (systemBootTime > fileOnBoot.lastModified()) {
                 boolean wasDeleted = fileOnBoot.delete();
                 if (!wasDeleted) {

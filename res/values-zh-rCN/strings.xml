@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"允许此应用获取："</string>
     <string name="cancel" msgid="8360346460165114585">"取消"</string>
     <string name="unknown" msgid="4742479012767208045">"未知"</string>
-    <string name="installing" msgid="8613631001631998372">"正在安装..."</string>
+    <string name="installing" msgid="8613631001631998372">"正在安装…"</string>
     <string name="installing_app" msgid="4097935682329028894">"正在安装<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"应用安装完成。"</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"要安装此应用吗？它将获得以下权限："</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"要将此应用替换为出厂版本吗？这样会移除所有数据，并会影响此设备的所有用户（包括已设置工作资料的用户）。"</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"进行中的卸载操作"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"失败的卸载操作"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"正在卸载..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"正在卸载…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"正在卸载<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"卸载完成。"</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"已卸载<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>"</string>

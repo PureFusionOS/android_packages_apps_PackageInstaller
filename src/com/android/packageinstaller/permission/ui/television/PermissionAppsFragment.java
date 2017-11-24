@@ -337,14 +337,11 @@ public final class PermissionAppsFragment extends SettingsWithHeader implements 
                                 : R.string.old_sdk_deny_warning)
                         .setNegativeButton(R.string.cancel, null)
                         .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
-                                new OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        ((SwitchPreference) preference).setChecked(false);
-                                        app.revokeRuntimePermissions();
-                                        if (!grantedByDefault) {
-                                            mHasConfirmedRevoke = true;
-                                        }
+                                (dialog, which) -> {
+                                    ((SwitchPreference) preference).setChecked(false);
+                                    app.revokeRuntimePermissions();
+                                    if (!grantedByDefault) {
+                                        mHasConfirmedRevoke = true;
                                     }
                                 })
                         .show();

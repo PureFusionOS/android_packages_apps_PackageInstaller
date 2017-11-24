@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Permiteți acestei aplicații să:"</string>
     <string name="cancel" msgid="8360346460165114585">"Anulați"</string>
     <string name="unknown" msgid="4742479012767208045">"Necunoscut"</string>
-    <string name="installing" msgid="8613631001631998372">"În curs de instalare..."</string>
+    <string name="installing" msgid="8613631001631998372">"În curs de instalare…"</string>
     <string name="installing_app" msgid="4097935682329028894">"Se instalează <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"Aplicație instalată."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Doriți să instalați această aplicație? Aceasta va avea acces la:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Înlocuiți această aplicație cu versiunea din fabrică? Toate datele vor fi eliminate. Această acțiune va afecta toți utilizatorii dispozitivului, inclusiv pe cei cu profiluri de serviciu."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Dezinstalări în curs"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Dezinstalări nereușite"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"În curs de dezinstalare..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"În curs de dezinstalare…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"Se dezinstalează <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Dezinstalare finalizată."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> a fost dezinstalat"</string>
@@ -119,7 +119,7 @@
     <string name="location_warning" msgid="8778701356292735971">"<xliff:g id="APP_NAME">%1$s</xliff:g> este un furnizor de servicii de localizare pentru acest dispozitiv. Accesul la locație poate fi modificat din setările privind locația."</string>
     <string name="system_warning" msgid="7103819124542305179">"Dacă refuzați această permisiune, este posibil ca funcțiile de bază ale dispozitivului să nu mai funcționeze corespunzător."</string>
     <string name="permission_summary_enforced_by_policy" msgid="3418617316188986205">"Aplicată conform politicii"</string>
-    <string name="loading" msgid="7811651799620593731">"Se încarcă..."</string>
+    <string name="loading" msgid="7811651799620593731">"Se încarcă…"</string>
     <string name="all_permissions" msgid="5156669007784613042">"Toate permisiunile"</string>
     <string name="other_permissions" msgid="2016192512386091933">"Alte funcții ale aplicației"</string>
     <string name="permission_request_title" msgid="1204446718549121199">"Solicitare de permisiune"</string>

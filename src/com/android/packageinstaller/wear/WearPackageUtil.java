@@ -42,7 +42,7 @@ public class WearPackageUtil {
         try {
             File newFileDir = new File(context.getFilesDir(), "tmp");
             newFileDir.mkdirs();
-            Os.chmod(newFileDir.getAbsolutePath(), 0771);
+            Os.chmod(newFileDir.getAbsolutePath(), 505);
             File newFile = new File(newFileDir, packageName + ".apk");
             return newFile;
         } catch (ErrnoException e) {
@@ -55,7 +55,7 @@ public class WearPackageUtil {
         try {
             File newFileDir = new File(context.getFilesDir(), "images/icons");
             newFileDir.mkdirs();
-            Os.chmod(newFileDir.getAbsolutePath(), 0771);
+            Os.chmod(newFileDir.getAbsolutePath(), 505);
             return new File(newFileDir, packageName + ".icon");
         } catch (ErrnoException e) {
             Log.e(TAG, "Failed to open.", e);
@@ -102,7 +102,7 @@ public class WearPackageUtil {
             }
             fo.flush();
             fo.close();
-            Os.chmod(newFile.getAbsolutePath(), 0644);
+            Os.chmod(newFile.getAbsolutePath(), 420);
             return newFile;
         } catch (IOException e) {
             Log.e(TAG, "Reading from Asset FD or writing to temp file failed ", e);

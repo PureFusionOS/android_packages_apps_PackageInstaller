@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Atļaut šai lietotnei:"</string>
     <string name="cancel" msgid="8360346460165114585">"Atcelt"</string>
     <string name="unknown" msgid="4742479012767208045">"Nezināms"</string>
-    <string name="installing" msgid="8613631001631998372">"Notiek instalēšana..."</string>
+    <string name="installing" msgid="8613631001631998372">"Notiek instalēšana…"</string>
     <string name="installing_app" msgid="4097935682329028894">"Notiek pakotnes <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> instalēšana…"</string>
     <string name="install_done" msgid="3682715442154357097">"Lietotne ir instalēta."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Vai vēlaties instalēt šo lietojumprogrammu? Tā iegūs piekļuvi:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Vai aizstāt šo lietotni ar rūpnīcas versiju? Visi dati tiks noņemti. Tas ietekmēs visu šīs ierīces lietotāju (arī to lietotāju, kuriem ir darba profili) datus."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Pašlaik veiktie atinstalēšanas gadījumi"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Neizdevušies atinstalēšanas gadījumi"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Notiek atinstalēšana..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Notiek atinstalēšana…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"Notiek lietotnes <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> atinstalēšana…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Atinstalēšana ir pabeigta."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"Lietotne <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> ir atinstalēta"</string>
@@ -119,7 +119,7 @@
     <string name="location_warning" msgid="8778701356292735971">"<xliff:g id="APP_NAME">%1$s</xliff:g> nodrošina šai ierīcei atrašanās vietu pakalpojumus. Piekļuves iestatījumus atrašanās vietas datiem var mainīt atrašanās vietas iestatījumos."</string>
     <string name="system_warning" msgid="7103819124542305179">"Ja nepiešķirsiet šo atļauju, ierīces pamatfunkcijas, iespējams, vairs nedarbosies, kā paredzēts."</string>
     <string name="permission_summary_enforced_by_policy" msgid="3418617316188986205">"Īstenota saskaņā ar politiku"</string>
-    <string name="loading" msgid="7811651799620593731">"Notiek ielāde..."</string>
+    <string name="loading" msgid="7811651799620593731">"Notiek ielāde…"</string>
     <string name="all_permissions" msgid="5156669007784613042">"Visas atļaujas"</string>
     <string name="other_permissions" msgid="2016192512386091933">"Citas lietotnes atļaujas"</string>
     <string name="permission_request_title" msgid="1204446718549121199">"Atļaujas pieprasījums"</string>

@@ -13,6 +13,7 @@
      limitations under the License.
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -41,7 +42,8 @@
                 android:maxWidth="24dp"
                 android:scaleType="centerInside"
                 android:src="@null"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:contentDescription="TODO" />
         </FrameLayout>
 
         <TextView
@@ -68,7 +70,7 @@
         <FrameLayout
             android:id="@+id/buttonPanel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -91,7 +93,8 @@
                     android:background="@drawable/accept_deny_dialog_negative_bg"
                     android:contentDescription="@string/generic_cancel"
                     android:src="@drawable/ic_cc_clear"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    tools:targetApi="donut" />
 
                 <Space
                     android:id="@+id/spacer"
@@ -107,7 +110,8 @@
                     android:background="@drawable/accept_deny_dialog_positive_bg"
                     android:contentDescription="@string/generic_yes"
                     android:src="@drawable/ic_cc_checkmark"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    tools:targetApi="donut" />
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>

@@ -89,22 +89,15 @@ public final class Utils {
 
         final boolean isPlatformPermission = group.getDeclaringPackage().equals(OS_PKG);
         // Show legacy permissions only if the user chose that.
-        if (isPlatformPermission
-                && !Utils.isModernPermissionGroup(group.getName())) {
-            return false;
-        }
-        return true;
+        return !(isPlatformPermission
+                && !Utils.isModernPermissionGroup(group.getName()));
     }
 
     public static boolean shouldShowPermission(PermissionApp app) {
         // We currently will not show permissions fixed by the system
         // which is what the system does for system components.
-        if (app.isSystemFixed() && !LocationUtils.isLocationGroupAndProvider(
-                app.getPermissionGroup().getName(), app.getPackageName())) {
-            return false;
-        }
-
-        return true;
+        return !(app.isSystemFixed() && !LocationUtils.isLocationGroupAndProvider(
+                app.getPermissionGroup().getName(), app.getPackageName()));
     }
 
     public static Drawable applyTint(Context context, Drawable icon, int attr) {
@@ -148,26 +141,10 @@ public final class Utils {
     }
 
     public static boolean areGroupPermissionsIndividuallyControlled(Context context, String group) {
-        if (!context.getPackageManager().isPermissionReviewModeEnabled()) {
-            return false;
-        }
-        return Manifest.permission_group.SMS.equals(group)
-                || Manifest.permission_group.PHONE.equals(group)
-                || Manifest.permission_group.CONTACTS.equals(group);
+        return context.getPackageManager().isPermissionReviewModeEnabled() && (Manifest.permission_group.SMS.equals(group) || Manifest.permission_group.PHONE.equals(group) || Manifest.permission_group.CONTACTS.equals(group));
     }
 
     public static boolean isPermissionIndividuallyControlled(Context context, String permission) {
-        if (!context.getPackageManager().isPermissionReviewModeEnabled()) {
-            return false;
-        }
-        return Manifest.permission.READ_CONTACTS.equals(permission)
-                || Manifest.permission.WRITE_CONTACTS.equals(permission)
-                || Manifest.permission.SEND_SMS.equals(permission)
-                || Manifest.permission.RECEIVE_SMS.equals(permission)
-                || Manifest.permission.READ_SMS.equals(permission)
-                || Manifest.permission.RECEIVE_MMS.equals(permission)
-                || Manifest.permission.CALL_PHONE.equals(permission)
-                || Manifest.permission.READ_CALL_LOG.equals(permission)
-                || Manifest.permission.WRITE_CALL_LOG.equals(permission);
+        return context.getPackageManager().isPermissionReviewModeEnabled() && (Manifest.permission.READ_CONTACTS.equals(permission) || Manifest.permission.WRITE_CONTACTS.equals(permission) || Manifest.permission.SEND_SMS.equals(permission) || Manifest.permission.RECEIVE_SMS.equals(permission) || Manifest.permission.READ_SMS.equals(permission) || Manifest.permission.RECEIVE_MMS.equals(permission) || Manifest.permission.CALL_PHONE.equals(permission) || Manifest.permission.READ_CALL_LOG.equals(permission) || Manifest.permission.WRITE_CALL_LOG.equals(permission));
     }
 }

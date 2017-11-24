@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Alkalmazás engedélyezése a következőkre:"</string>
     <string name="cancel" msgid="8360346460165114585">"Mégse"</string>
     <string name="unknown" msgid="4742479012767208045">"Ismeretlen"</string>
-    <string name="installing" msgid="8613631001631998372">"Telepítés..."</string>
+    <string name="installing" msgid="8613631001631998372">"Telepítés…"</string>
     <string name="installing_app" msgid="4097935682329028894">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> telepítése…"</string>
     <string name="install_done" msgid="3682715442154357097">"Alkalmazás telepítve."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Telepíti ezt az alkalmazást? Az a következőkhöz fog hozzáférést kapni:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Lecseréli az alkalmazást a gyári verzióra? Minden adat törlődik. Ez az eszköz összes felhasználóját érinti, így a munkaprofilokkal rendelkezőket is."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Futó telepítések"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Sikertelen telepítések"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Eltávolítás..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Eltávolítás…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"A(z) <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> eltávolítása folyamatban van…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Az eltávolítás befejeződött."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"A(z) <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> eltávolítása befejeződött"</string>

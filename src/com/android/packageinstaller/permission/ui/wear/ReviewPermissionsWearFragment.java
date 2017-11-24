@@ -85,12 +85,7 @@ public class ReviewPermissionsWearFragment extends PreferenceFragment
         }
 
         mAppPermissions = new AppPermissions(activity, packageInfo, null, false,
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        getActivity().finish();
-                    }
-                });
+                () -> getActivity().finish());
 
         if (mAppPermissions.getPermissionGroups().isEmpty()) {
             activity.finish();

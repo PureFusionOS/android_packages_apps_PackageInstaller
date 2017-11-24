@@ -179,9 +179,7 @@ public final class PermissionGroups implements LoaderCallbacks<List<PermissionGr
                 if (installedPackage.requestedPermissions == null) {
                     continue;
                 }
-                for (String requestedPermission : installedPackage.requestedPermissions) {
-                    requestedPermissions.add(requestedPermission);
-                }
+                Collections.addAll(requestedPermissions, installedPackage.requestedPermissions);
             }
 
             for (PackageInfo installedPackage : installedPackages) {

@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Leisti šiai programai:"</string>
     <string name="cancel" msgid="8360346460165114585">"Atšaukti"</string>
     <string name="unknown" msgid="4742479012767208045">"Nežinomas"</string>
-    <string name="installing" msgid="8613631001631998372">"Diegiama..."</string>
+    <string name="installing" msgid="8613631001631998372">"Diegiama…"</string>
     <string name="installing_app" msgid="4097935682329028894">"Įdiegiama „<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>“…"</string>
     <string name="install_done" msgid="3682715442154357097">"Programa įdiegta."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Ar norite įdiegti šią programą? Jai bus suteikta prieiga prie:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Pakeisti šios programos versiją į gamyklinę? Visi duomenys bus pašalinti. Tai paveiks visus šio įrenginio naudotojus, įskaitant turinčius darbo profilius."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Vykdomi įdiegimai"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Nepavykę įdiegimai"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Pašalinama..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Pašalinama…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"Pašalinama „<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>“…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Pašalinimas baigtas."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"Paketas „<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>“ pašalintas"</string>
@@ -120,7 +120,7 @@
     <string name="location_warning" msgid="8778701356292735971">"„<xliff:g id="APP_NAME">%1$s</xliff:g>“ yra šio įrenginio vietovės paslaugų teikėjas. Vietovės pasiekiamumą galima keisti vietovės nustatymuose."</string>
     <string name="system_warning" msgid="7103819124542305179">"Jei uždrausite šį leidimą, pagrindinės įrenginio funkcijos gali nebeveikti, kaip numatyta."</string>
     <string name="permission_summary_enforced_by_policy" msgid="3418617316188986205">"Reikalaujama pagal politikos nuostatas"</string>
-    <string name="loading" msgid="7811651799620593731">"Įkeliama..."</string>
+    <string name="loading" msgid="7811651799620593731">"Įkeliama…"</string>
     <string name="all_permissions" msgid="5156669007784613042">"Visi leidimai"</string>
     <string name="other_permissions" msgid="2016192512386091933">"Kitos programos galimybės"</string>
     <string name="permission_request_title" msgid="1204446718549121199">"Leidimo užklausa"</string>

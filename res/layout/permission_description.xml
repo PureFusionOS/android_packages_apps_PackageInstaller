@@ -24,7 +24,8 @@
         android:layout_width="36dip"
         android:layout_height="36dip"
         android:scaleType="fitCenter"
-        android:tint="?android:attr/colorAccent"></ImageView>
+        android:tint="?android:attr/colorAccent"
+        android:contentDescription="TODO"></ImageView>
 
     <TextView
         android:id="@+id/permission_message"

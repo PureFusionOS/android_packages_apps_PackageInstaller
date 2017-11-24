@@ -50,26 +50,20 @@ public class UninstallAppProgressFragment extends Fragment implements View.OnCli
         mDeviceManagerButton = (Button) root.findViewById(R.id.device_manager_button);
         mUsersButton = (Button) root.findViewById(R.id.users_button);
         mDeviceManagerButton.setVisibility(View.GONE);
-        mDeviceManagerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClassName("com.android.settings",
-                        "com.android.settings.Settings$DeviceAdminSettingsActivity");
-                intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                getActivity().finish();
-            }
+        mDeviceManagerButton.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClassName("com.android.settings",
+                    "com.android.settings.Settings$DeviceAdminSettingsActivity");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            getActivity().finish();
         });
         mUsersButton.setVisibility(View.GONE);
-        mUsersButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Settings.ACTION_USER_SETTINGS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                getActivity().finish();
-            }
+        mUsersButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Settings.ACTION_USER_SETTINGS);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            getActivity().finish();
         });
         // Hide button till progress is being displayed
         mOkButton = (Button) root.findViewById(R.id.ok_button);

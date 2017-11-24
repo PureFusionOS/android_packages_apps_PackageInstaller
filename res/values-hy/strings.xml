@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Թույլատրել այս հավելվածին`"</string>
     <string name="cancel" msgid="8360346460165114585">"Չեղարկել"</string>
     <string name="unknown" msgid="4742479012767208045">"Անհայտ"</string>
-    <string name="installing" msgid="8613631001631998372">"Տեղադրվում է..."</string>
+    <string name="installing" msgid="8613631001631998372">"Տեղադրվում է…"</string>
     <string name="installing_app" msgid="4097935682329028894">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>-ի տեղադրում…"</string>
     <string name="install_done" msgid="3682715442154357097">"Հավելվածը տեղադրված է:"</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Ցանկանու՞մ եք տեղադրել այս ծրագիրը: Այն մուտքի հնարավորություն կունենա`"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Փոխարինե՞լ այս հավելվածը գործարանային տարբերակով: Բոլոր տվյալները կհեռացվեն: Դա վերաբերում է այս սարքի բոլոր օգտատերերին, այդ թվում նաև աշխատանքային պրոֆիլներ ունեցողներին:"</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Ընթացիկ հեռացումներ"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Ձախողված հեռացումներ"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Ապատեղադրում է..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Ապատեղադրում է…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> հավելվածը հեռացվում է…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Ապատեղադրումը ավարտված է:"</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"Հեռացված <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>"</string>

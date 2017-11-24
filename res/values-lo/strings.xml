@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"ແທນທີ່ແອັບນີ້ດ້ວຍເວີຊັນທີ່ມາຈາກໂຮງງານບໍ? ຂໍ້ມູນທັງໝົດຈະຖືກລຶບອອກ ເຊິ່ງມີຜົນກັບຜູ້ໃຊ້ອຸປະກອນນີ້ທຸກຄົນ ຮວມທັງຄົນທີ່ມີໂປຣໄຟລ໌ບ່ອນເຮັດວຽກນຳ."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"ກຳລັງຖອນການຕິດຕັ້ງ"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"ຖອນການຕິດຕັ້ງບໍ່ສຳເລັດ"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"ກຳລັງຖອນການຕິດຕັ້ງ..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"ກຳລັງຖອນການຕິດຕັ້ງ…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"ກຳລັງຖອນການຕິດຕັ້ງ <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"ຖອນການຕິດຕັ້ງສຳເລັດແລ້ວ."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"ຖອນການຕິດຕັ້ງ <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> ແລ້ວ"</string>
@@ -118,7 +118,7 @@
     <string name="location_warning" msgid="8778701356292735971">"<xliff:g id="APP_NAME">%1$s</xliff:g> ແມ່ນ​ຜູ້​ໃຫ້​ບໍ​ລິ​ການ​ເລື່ອງ​ການ​ບໍ​ລິ​ການ​ທີ່​ຕັ້ງ​ສຳ​ລັບ​ອຸ​ປະ​ກອນ​ນີ້. ການ​ເຂົ້າ​ເຖິງ​ທີ່​ຕັ້ງ​ແມ່ນ​ສາ​ມາດ​ດັດ​ແປງ​ໄດ້​ຈາກ​ການ​ຕັ້ງ​ຄ່າ​ທີ່​ຕັ້ງ."</string>
     <string name="system_warning" msgid="7103819124542305179">"ຖ້າ​ທ່ານ​ປະ​ຕິ​ເສດ​ການ​ອະ​ນຸ​ຍາດ​ນີ້, ຄຸນສົມບັດໃຊ້ງານ​ພື້ນ​ຖານ​ຂອງ​ອຸ​ປະ​ກອນ​ຂອງ​ທ່ານ​ອາດ​ຈະ​ບໍ່​ເຮັດ​ໜ້າ​ທີ່​ຕາມທີ່ກຳນົດໄວ້."</string>
     <string name="permission_summary_enforced_by_policy" msgid="3418617316188986205">"ບັງ​ຄັບ​ໃຊ້​ຕາມ​ນະ​ໂຍ​ບາຍ​ແລ້ວ"</string>
-    <string name="loading" msgid="7811651799620593731">"ກຳລັງ​ໂຫລດ..."</string>
+    <string name="loading" msgid="7811651799620593731">"ກຳລັງ​ໂຫລດ…"</string>
     <string name="all_permissions" msgid="5156669007784613042">"ທຸກ​ການ​ອະ​ນຸ​ຍາດ"</string>
     <string name="other_permissions" msgid="2016192512386091933">"ຄວາມ​​ສາ​ມາດ​​ອື່ນຂອງແອັບ"</string>
     <string name="permission_request_title" msgid="1204446718549121199">"ການຮ້ອງຂໍການອະນຸຍາດ"</string>

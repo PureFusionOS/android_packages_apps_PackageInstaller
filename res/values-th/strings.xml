@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"อนุญาตให้แอปพลิเคชันนี้:"</string>
     <string name="cancel" msgid="8360346460165114585">"ยกเลิก"</string>
     <string name="unknown" msgid="4742479012767208045">"ไม่ทราบ"</string>
-    <string name="installing" msgid="8613631001631998372">"กำลังติดตั้ง..."</string>
+    <string name="installing" msgid="8613631001631998372">"กำลังติดตั้ง…"</string>
     <string name="installing_app" msgid="4097935682329028894">"กำลังติดตั้ง <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"ติดตั้งแอปพลิเคชันแล้ว"</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"คุณต้องการติดตั้งแอปพลิเคชันนี้หรือไม่ แอปพลิเคชันจะเข้าถึง:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"แทนที่แอปนี้ด้วยเวอร์ชันเริ่มต้นไหม ระบบจะนำข้อมูลทั้งหมดออก วิธีนี้ส่งผลต่อผู้ใช้ทุกคนที่ใช้อุปกรณ์เครื่องนี้ รวมทั้งผู้ที่มีโปรไฟล์งาน"</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"กำลังเรียกใช้การถอนการติดตั้ง"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"การถอนการติดตั้งที่ล้มเหลว"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"กำลังถอนการติดตั้ง..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"กำลังถอนการติดตั้ง…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"กำลังถอนการติดตั้ง <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"ถอนการติดตั้งเสร็จแล้ว"</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"ถอนการติดตั้ง <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> แล้ว"</string>

@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Bu tətbiqə imkan verin:"</string>
     <string name="cancel" msgid="8360346460165114585">"Ləğv et"</string>
     <string name="unknown" msgid="4742479012767208045">"Naməlum"</string>
-    <string name="installing" msgid="8613631001631998372">"Quraşdırılır..."</string>
+    <string name="installing" msgid="8613631001631998372">"Quraşdırılır…"</string>
     <string name="installing_app" msgid="4097935682329028894">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> quraşdırılır…"</string>
     <string name="install_done" msgid="3682715442154357097">"Tətbiq quraşdırılıb."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Bu tətbiqi quraşdırmaq istəyirsiniz? Tətbiq buraya giriş əldə edəcək:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Tətbiq zavod versiyası ilə əvəz olunsun? Bütün data silinəcək. Bu, iş profilləri olanlar da daxil olmaqla bu cihazın bütün istifadəçilərinə təsir edir."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"İşləyən sistemlər silinmələr"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Uğursuz olan sistemlər silinmələr"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Silinir..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Silinir…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> sistemdən silinir…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Sistemdən silmə tamamlandı."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> sistemdən silindi"</string>
@@ -134,7 +134,7 @@
     <string name="review_button_continue" msgid="4809162078179371370">"Davam edin"</string>
     <string name="new_permissions_category" msgid="3213523410139204183">"Yeni icazələr"</string>
     <string name="current_permissions_category" msgid="998210994450606094">"Cari icazələr"</string>
-    <string name="message_staging" msgid="6151794817691100003">"Tətbiq hazırlanır..."</string>
+    <string name="message_staging" msgid="6151794817691100003">"Tətbiq hazırlanır…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Naməlum"</string>
     <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Təhlükəsizliyiniz üçün planşetə bu mənbədən olan naməlum tətbiqləri quraşdırmağa icazə verilmir."</string>
     <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Təhlükəsizliyiniz üçün TV-yə bu mənbədən olan naməlum tətbiqləri quraşdırmağa icazə verilmir."</string>

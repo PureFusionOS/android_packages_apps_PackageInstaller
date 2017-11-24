@@ -89,14 +89,11 @@ public class CircledImageView extends View {
     private Integer mImageTint;
     private int mCurrentColor;
 
-    private final AnimatorUpdateListener mAnimationListener = new AnimatorUpdateListener() {
-        @Override
-        public void onAnimationUpdate(ValueAnimator animation) {
-            int color = (int) animation.getAnimatedValue();
-            if (color != CircledImageView.this.mCurrentColor) {
-                CircledImageView.this.mCurrentColor = color;
-                CircledImageView.this.invalidate();
-            }
+    private final AnimatorUpdateListener mAnimationListener = animation -> {
+        int color = (int) animation.getAnimatedValue();
+        if (color != CircledImageView.this.mCurrentColor) {
+            CircledImageView.this.mCurrentColor = color;
+            CircledImageView.this.invalidate();
         }
     };
 

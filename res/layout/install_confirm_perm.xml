@@ -20,6 +20,7 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -38,7 +39,8 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/app_name"
@@ -85,7 +87,7 @@
     <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
         <LinearLayout
@@ -124,7 +126,8 @@
         android:background="?android:attr/windowBackground"
         android:measureWithLargestChild="true"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="8dp"
+        tools:targetApi="honeycomb">
 
         <!-- spacer to push buttons to the right -->
         <View

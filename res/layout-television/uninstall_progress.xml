@@ -14,6 +14,7 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -37,7 +38,8 @@
             android:layout_marginBottom="12dp"
             android:contentDescription="@null"
             android:src="@drawable/ic_android_92"
-            android:tint="@color/bigIconColor" />
+            android:tint="@color/bigIconColor"
+            tools:targetApi="donut" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -80,7 +82,8 @@
         android:measureWithLargestChild="true"
         android:orientation="horizontal"
         android:padding="8dip"
-        android:visibility="gone">
+        android:visibility="gone"
+        tools:targetApi="honeycomb">
 
         <!-- spacer to push buttons to the right -->
         <View

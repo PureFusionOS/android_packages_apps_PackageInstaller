@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Vumela le-app uku:"</string>
     <string name="cancel" msgid="8360346460165114585">"Khansela"</string>
     <string name="unknown" msgid="4742479012767208045">"Akwaziwa"</string>
-    <string name="installing" msgid="8613631001631998372">"Iyafaka..."</string>
+    <string name="installing" msgid="8613631001631998372">"Iyafaka…"</string>
     <string name="installing_app" msgid="4097935682329028894">"Ifaka i-<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"I-App ifakiwe."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Ngabe ufuna ukufaka lolu hlelo lokusebenza? Lizothola ukufinyelela ku:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Shintshanisa lolu hlelo lokusebenza ngenguqulo yasekuqaleni? Yonke idatha izosuswa. Lokhu kuthinta bonke abasebenzisi bale divayisi, abafaka labo abanamaphrofayela wokusebenza."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Ukukhishwa okuqhubekayo"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Ukukhishwa okuhlulekile"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Iyakhipha..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Iyakhipha…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"Ikhipha i-<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Ukukhipha kuqedile"</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"Kukhishwe i-<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>"</string>
@@ -118,7 +118,7 @@
     <string name="location_warning" msgid="8778701356292735971">"<xliff:g id="APP_NAME">%1$s</xliff:g> ingumhlinzeki wamasevisi wendawo kule divayisi. Ukufinyelela kwendawo kungashintshwa kusuka kuzilungiselelo zendawo."</string>
     <string name="system_warning" msgid="7103819124542305179">"Uma unqabela le mvume, izici eziyisisekelo zedivayisi yakho zingahle zingasasebenzi njengoba zihlosiwe."</string>
     <string name="permission_summary_enforced_by_policy" msgid="3418617316188986205">"Isetshenziswe yinqubomgomo"</string>
-    <string name="loading" msgid="7811651799620593731">"Iyalayisha..."</string>
+    <string name="loading" msgid="7811651799620593731">"Iyalayisha…"</string>
     <string name="all_permissions" msgid="5156669007784613042">"Zonke izimvume"</string>
     <string name="other_permissions" msgid="2016192512386091933">"Amanye amakhono wohlelo lokusebenza"</string>
     <string name="permission_request_title" msgid="1204446718549121199">"Isicelo semvume"</string>

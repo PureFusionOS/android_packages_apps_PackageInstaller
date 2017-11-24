@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"앱에 허용할 작업:"</string>
     <string name="cancel" msgid="8360346460165114585">"취소"</string>
     <string name="unknown" msgid="4742479012767208045">"알 수 없음"</string>
-    <string name="installing" msgid="8613631001631998372">"설치 중..."</string>
+    <string name="installing" msgid="8613631001631998372">"설치 중…"</string>
     <string name="installing_app" msgid="4097935682329028894">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> 설치 중…"</string>
     <string name="install_done" msgid="3682715442154357097">"앱이 설치되었습니다."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"이 애플리케이션을 설치하시겠습니까? 애플리케이션이 다음에 액세스할 수 있습니다."</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"이 앱을 초기 버전으로 바꾸시겠습니까? 모든 데이터가 삭제되며 직장 프로필 사용자를 포함해 이 기기의 모든 사용자에게 영향을 미칩니다."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"실행 중인 제거 작업"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"실패한 제거 작업"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"제거 중..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"제거 중…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> 제거 중…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"제거를 완료했습니다."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>을(를) 제거했습니다."</string>
@@ -118,7 +118,7 @@
     <string name="location_warning" msgid="8778701356292735971">"이 기기의 위치 서비스 제공업체는 <xliff:g id="APP_NAME">%1$s</xliff:g>입니다. 위치 정보 액세스는 위치 설정에서 수정할 수 있습니다."</string>
     <string name="system_warning" msgid="7103819124542305179">"이 권한을 거부하는 경우 기기의 기본 기능이 제대로 작동하지 않을 수 있습니다."</string>
     <string name="permission_summary_enforced_by_policy" msgid="3418617316188986205">"정책에 의해 시행됨"</string>
-    <string name="loading" msgid="7811651799620593731">"로드 중..."</string>
+    <string name="loading" msgid="7811651799620593731">"로드 중…"</string>
     <string name="all_permissions" msgid="5156669007784613042">"모든 권한"</string>
     <string name="other_permissions" msgid="2016192512386091933">"다른 앱 기능"</string>
     <string name="permission_request_title" msgid="1204446718549121199">"권한 요청"</string>

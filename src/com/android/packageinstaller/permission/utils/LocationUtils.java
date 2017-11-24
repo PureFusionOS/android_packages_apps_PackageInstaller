@@ -38,12 +38,7 @@ public class LocationUtils {
                 .setTitle(android.R.string.dialog_alert_title)
                 .setMessage(context.getString(R.string.location_warning, label))
                 .setNegativeButton(R.string.ok, null)
-                .setPositiveButton(R.string.location_settings, new OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-                    }
-                })
+                .setPositiveButton(R.string.location_settings, (dialog, which) -> context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)))
                 .show();
     }
 

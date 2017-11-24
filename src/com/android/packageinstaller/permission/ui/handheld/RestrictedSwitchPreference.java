@@ -64,7 +64,7 @@ public class RestrictedSwitchPreference extends MultiTargetSwitchPreference {
     }
 
     public void setDisabledByAdmin(EnforcedAdmin admin) {
-        final boolean disabled = (admin != null ? true : false);
+        final boolean disabled = (admin != null);
         mEnforcedAdmin = admin;
         if (mDisabledByAdmin != disabled) {
             mDisabledByAdmin = disabled;

@@ -118,7 +118,7 @@
     <string name="location_warning" msgid="8778701356292735971">"<xliff:g id="APP_NAME">%1$s</xliff:g> është një ofrues i shërbimeve të vendndodhjes për këtë pajisje. Qasja e vendndodhjes mund të modifikohet nga cilësimet e vendndodhjes."</string>
     <string name="system_warning" msgid="7103819124542305179">"Nëse e refuzon këtë leje, funksionet bazë të pajisjes tënde mund të mos funksionojnë më siç pritet."</string>
     <string name="permission_summary_enforced_by_policy" msgid="3418617316188986205">"Zbatuar nga politika"</string>
-    <string name="loading" msgid="7811651799620593731">"Po ngarkon..."</string>
+    <string name="loading" msgid="7811651799620593731">"Po ngarkon…"</string>
     <string name="all_permissions" msgid="5156669007784613042">"Të gjitha lejet"</string>
     <string name="other_permissions" msgid="2016192512386091933">"Kapacitete të tjera të aplikacionit"</string>
     <string name="permission_request_title" msgid="1204446718549121199">"Kërkesa e lejes"</string>
@@ -134,7 +134,7 @@
     <string name="review_button_continue" msgid="4809162078179371370">"Vazhdo"</string>
     <string name="new_permissions_category" msgid="3213523410139204183">"Lejet e reja"</string>
     <string name="current_permissions_category" msgid="998210994450606094">"Lejet aktuale"</string>
-    <string name="message_staging" msgid="6151794817691100003">"Po vihet në përdorim aplikacioni..."</string>
+    <string name="message_staging" msgid="6151794817691100003">"Po vihet në përdorim aplikacioni…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"E panjohur"</string>
     <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Për sigurinë tënde, tableti yt nuk lejohet të instalojë aplikacione të panjohura nga ky burim."</string>
     <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Për sigurinë tënde, televizori yt nuk lejohet të instalojë aplikacione të panjohura nga ky burim."</string>

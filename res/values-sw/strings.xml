@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Ruhusu programu hii:"</string>
     <string name="cancel" msgid="8360346460165114585">"Ghairi"</string>
     <string name="unknown" msgid="4742479012767208045">"Haijulikani"</string>
-    <string name="installing" msgid="8613631001631998372">"inawekwa..."</string>
+    <string name="installing" msgid="8613631001631998372">"inawekwa…"</string>
     <string name="installing_app" msgid="4097935682329028894">"Inasakinisha <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"Programu imewekwa."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Je, ungependa kuiweka programu hii? Itaweza:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Ungependa kubadilisha programu hii na toleo la kiwanda? Data yote itaondolewa. Hatua hii itaathiri watumiaji wote wa kifaa hiki, ikiwa ni pamoja na wale walio na wasifu za kazini."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Mara ambazo programu inaondolewa sasa"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Mara ambazo programu haikuondolewa"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Inasanidua..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Inasanidua…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"Inaondoa <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Imesaniduliwa."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"Imeondoa <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>"</string>
@@ -134,7 +134,7 @@
     <string name="review_button_continue" msgid="4809162078179371370">"Endelea"</string>
     <string name="new_permissions_category" msgid="3213523410139204183">"Ruhusa mpya"</string>
     <string name="current_permissions_category" msgid="998210994450606094">"Ruhusa zilizopo"</string>
-    <string name="message_staging" msgid="6151794817691100003">"Inatayarisha programu..."</string>
+    <string name="message_staging" msgid="6151794817691100003">"Inatayarisha programu…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Isiyojulikana"</string>
     <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Kwa sababu ya usalama wako, kompyuta yako kibao haina ruhusa ya kusakinisha programu ambazo hazijulikani, kutoka kwenye chanzo hiki."</string>
     <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Kwa sababu ya usalama wako, TV yako haina ruhusa ya kusakinisha programu ambazo hazijulikani, kutoka kwenye chanzo hiki."</string>

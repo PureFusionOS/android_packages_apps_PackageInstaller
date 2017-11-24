@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Povoliť aplikácii nasledovné:"</string>
     <string name="cancel" msgid="8360346460165114585">"Zrušiť"</string>
     <string name="unknown" msgid="4742479012767208045">"Neznáme"</string>
-    <string name="installing" msgid="8613631001631998372">"Inštaluje sa..."</string>
+    <string name="installing" msgid="8613631001631998372">"Inštaluje sa…"</string>
     <string name="installing_app" msgid="4097935682329028894">"Inštaluje sa <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"Aplikácia bola nainštalovaná."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Chcete nainštalovať túto aplikáciu? Získa nasledujúce povolenia:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Nahradiť túto aplikáciu továrenskou verziou? Všetky údaje sa odstránia. Ovplyvní to všetkých používateľov tohto zariadenia vrátane tých s pracovnými profilmi."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Prebiehajúce odinštalácie"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Neúspešné odinštalácie"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Prebieha odinštalovanie..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Prebieha odinštalovanie…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"Prebieha odinštalovanie balíčka <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Odinštalovanie bolo dokončené."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"Balíček <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> bol odinštalovaný"</string>

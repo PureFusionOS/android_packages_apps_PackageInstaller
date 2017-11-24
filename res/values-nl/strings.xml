@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Toestaan dat deze app:"</string>
     <string name="cancel" msgid="8360346460165114585">"Annuleren"</string>
     <string name="unknown" msgid="4742479012767208045">"Onbekend"</string>
-    <string name="installing" msgid="8613631001631998372">"Installeren..."</string>
+    <string name="installing" msgid="8613631001631998372">"Installeren…"</string>
     <string name="installing_app" msgid="4097935682329028894">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> installeren…"</string>
     <string name="install_done" msgid="3682715442154357097">"App geïnstalleerd."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Wil je deze app installeren? Deze krijgt toegang tot:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Deze app vervangen door de fabrieksversie? Alle gegevens worden verwijderd. Dit geldt voor alle gebruikers van het apparaat, dus ook voor gebruikers met een werkprofiel."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Actieve verwijderingen"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Mislukte verwijderingen"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Verwijderen..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Verwijderen…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> verwijderen…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Verwijdering voltooid."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> verwijderd"</string>

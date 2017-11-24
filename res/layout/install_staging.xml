@@ -21,6 +21,7 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -33,7 +34,8 @@
         android:background="?android:attr/colorPrimary"
         android:elevation="@dimen/headerElevation"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:targetApi="lollipop">
 
         <ImageView
             android:layout_width="24dp"
@@ -41,7 +43,8 @@
             android:layout_marginLeft="16dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_file_download"
-            android:tint="?android:attr/colorAccent" />
+            android:tint="?android:attr/colorAccent"
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -58,7 +61,7 @@
     <!-- content -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
@@ -72,7 +75,8 @@
             android:contentDescription="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_file_download"
-            android:tint="@color/bigIconColor" />
+            android:tint="@color/bigIconColor"
+            tools:targetApi="donut" />
 
         <ProgressBar
             style="?android:attr/progressBarStyleHorizontal"

@@ -296,18 +296,15 @@ public final class PermissionAppsFragment extends PermissionsFrameFragment imple
                 pref.setIcon(Utils.applyTint(context, R.drawable.ic_toc,
                         android.R.attr.colorControlNormal));
                 pref.setTitle(R.string.preference_show_system_apps);
-                pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        SystemAppsFragment frag = new SystemAppsFragment();
-                        setPermissionName(frag, getArguments().getString(Intent.EXTRA_PERMISSION_NAME));
-                        frag.setTargetFragment(PermissionAppsFragment.this, 0);
-                        getFragmentManager().beginTransaction()
-                                .replace(android.R.id.content, frag)
-                                .addToBackStack("SystemApps")
-                                .commit();
-                        return true;
-                    }
+                pref.setOnPreferenceClickListener(preference -> {
+                    SystemAppsFragment frag = new SystemAppsFragment();
+                    setPermissionName(frag, getArguments().getString(Intent.EXTRA_PERMISSION_NAME));
+                    frag.setTargetFragment(PermissionAppsFragment.this, 0);
+                    getFragmentManager().beginTransaction()
+                            .replace(android.R.id.content, frag)
+                            .addToBackStack("SystemApps")
+                            .commit();
+                    return true;
                 });
                 screen.addPreference(pref);
             }
@@ -368,14 +365,11 @@ public final class PermissionAppsFragment extends PermissionsFrameFragment imple
                                 : R.string.old_sdk_deny_warning)
                         .setNegativeButton(R.string.cancel, null)
                         .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
-                                new OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        ((SwitchPreference) preference).setChecked(false);
-                                        app.revokeRuntimePermissions();
-                                        if (!grantedByDefault) {
-                                            mHasConfirmedRevoke = true;
-                                        }
+                                (dialog, which) -> {
+                                    ((SwitchPreference) preference).setChecked(false);
+                                    app.revokeRuntimePermissions();
+                                    if (!grantedByDefault) {
+                                        mHasConfirmedRevoke = true;
                                     }
                                 })
                         .show();

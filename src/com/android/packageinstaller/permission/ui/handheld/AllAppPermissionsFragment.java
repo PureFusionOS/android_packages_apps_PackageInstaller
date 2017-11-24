@@ -194,21 +194,18 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
             Log.e(LOG_TAG, "Problem getting package info for " + pkg, e);
         }
         // Sort an ArrayList of the groups and then set the order from the sorting.
-        Collections.sort(prefs, new Comparator<Preference>() {
-            @Override
-            public int compare(Preference lhs, Preference rhs) {
-                String lKey = lhs.getKey();
-                String rKey = rhs.getKey();
-                if (lKey.equals(KEY_OTHER)) {
-                    return 1;
-                } else if (rKey.equals(KEY_OTHER)) {
-                    return -1;
-                } else if (Utils.isModernPermissionGroup(lKey)
-                        != Utils.isModernPermissionGroup(rKey)) {
-                    return Utils.isModernPermissionGroup(lKey) ? -1 : 1;
-                }
-                return lhs.getTitle().toString().compareTo(rhs.getTitle().toString());
+        Collections.sort(prefs, (lhs, rhs) -> {
+            String lKey = lhs.getKey();
+            String rKey = rhs.getKey();
+            if (lKey.equals(KEY_OTHER)) {
+                return 1;
+            } else if (rKey.equals(KEY_OTHER)) {
+                return -1;
+            } else if (Utils.isModernPermissionGroup(lKey)
+                    != Utils.isModernPermissionGroup(rKey)) {
+                return Utils.isModernPermissionGroup(lKey) ? -1 : 1;
             }
+            return lhs.getTitle().toString().compareTo(rhs.getTitle().toString());
         });
         for (int i = 0; i < prefs.size(); i++) {
             prefs.get(i).setOrder(i);

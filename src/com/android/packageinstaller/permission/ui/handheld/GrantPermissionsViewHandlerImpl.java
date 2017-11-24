@@ -255,18 +255,12 @@ public class GrantPermissionsViewHandlerImpl implements GrantPermissionsViewHand
 
     private void animateToPermission() {
         // Remove the old content
-        animateOldContent(new Runnable() {
-            @Override
-            public void run() {
-                // Add the new content
-                attachNewContent(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Animate the new content
-                        animateNewContent();
-                    }
-                });
-            }
+        animateOldContent(() -> {
+            // Add the new content
+            attachNewContent(() -> {
+                // Animate the new content
+                animateNewContent();
+            });
         });
     }
 

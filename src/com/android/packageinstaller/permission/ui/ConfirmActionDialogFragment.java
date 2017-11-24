@@ -44,15 +44,12 @@ public final class ConfirmActionDialogFragment extends DialogFragment {
                 .setMessage(getArguments().getString(ARG_MESSAGE))
                 .setNegativeButton(R.string.cancel, null)
                 .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Activity activity = getActivity();
-                                if (activity instanceof OnActionConfirmedListener) {
-                                    String groupName = getArguments().getString(ARG_ACTION);
-                                    ((OnActionConfirmedListener) activity)
-                                            .onActionConfirmed(groupName);
-                                }
+                        (dialog, which) -> {
+                            Activity activity = getActivity();
+                            if (activity instanceof OnActionConfirmedListener) {
+                                String groupName = getArguments().getString(ARG_ACTION);
+                                ((OnActionConfirmedListener) activity)
+                                        .onActionConfirmed(groupName);
                             }
                         })
                 .create();

@@ -21,7 +21,7 @@
     <string name="security_settings_desc" msgid="2706691034244052604">"Izinkan apl ini untuk:"</string>
     <string name="cancel" msgid="8360346460165114585">"Batal"</string>
     <string name="unknown" msgid="4742479012767208045">"Tidak diketahui"</string>
-    <string name="installing" msgid="8613631001631998372">"Memasang..."</string>
+    <string name="installing" msgid="8613631001631998372">"Memasang…"</string>
     <string name="installing_app" msgid="4097935682329028894">"Menginstal <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="install_done" msgid="3682715442154357097">"Apl terpasang."</string>
     <string name="install_confirm_question" msgid="7295206719219043890">"Apakah Anda ingin memasang aplikasi ini? Aplikasi akan memiliki akses ke:"</string>
@@ -68,7 +68,7 @@
     <string name="uninstall_update_text_multiuser" msgid="2083665452990861991">"Gantikan aplikasi ini dengan versi pabrik? Semua data akan dihapus. Tindakan ini memengaruhi semua pengguna perangkat ini, termasuk yang memiliki profil kerja."</string>
     <string name="uninstalling_notification_channel" msgid="5698369661583525583">"Menjalankan uninstal"</string>
     <string name="uninstall_failure_notification_channel" msgid="8224276726364132314">"Uninstal yang gagal"</string>
-    <string name="uninstalling" msgid="5556217435895938250">"Mencopot pemasangan..."</string>
+    <string name="uninstalling" msgid="5556217435895938250">"Mencopot pemasangan…"</string>
     <string name="uninstalling_app" msgid="2773617614877719294">"Mencopot pemasangan <xliff:g id="PACKAGE_LABEL">%1$s</xliff:g>…"</string>
     <string name="uninstall_done" msgid="3792487853420281888">"Pencopotan pemasangan selesai."</string>
     <string name="uninstall_done_app" msgid="775837862728680479">"<xliff:g id="PACKAGE_LABEL">%1$s</xliff:g> di-uninstal"</string>
@@ -134,7 +134,7 @@
     <string name="review_button_continue" msgid="4809162078179371370">"Lanjutkan"</string>
     <string name="new_permissions_category" msgid="3213523410139204183">"Izin baru"</string>
     <string name="current_permissions_category" msgid="998210994450606094">"Izin saat ini"</string>
-    <string name="message_staging" msgid="6151794817691100003">"Menyiapkan aplikasi..."</string>
+    <string name="message_staging" msgid="6151794817691100003">"Menyiapkan aplikasi…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Tidak dikenal"</string>
     <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Demi keamanan, TV tidak diizinkan menginstal aplikasi yang tidak dikenal dari sumber ini."</string>
     <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Demi keamanan, TV tidak diizinkan menginstal aplikasi yang tidak dikenal dari sumber ini."</string>

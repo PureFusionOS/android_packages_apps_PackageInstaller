@@ -51,8 +51,8 @@ public final class ArrayUtils {
             return new String[]{val};
         }
         final int N = cur.length;
-        for (int i = 0; i < N; i++) {
-            if (TextUtils.equals(cur[i], val)) {
+        for (String aCur : cur) {
+            if (TextUtils.equals(aCur, val)) {
                 return cur;
             }
         }
