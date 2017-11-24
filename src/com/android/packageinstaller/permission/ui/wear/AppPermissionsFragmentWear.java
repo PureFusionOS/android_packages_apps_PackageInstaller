@@ -16,7 +16,6 @@
 
 package com.android.packageinstaller.permission.ui.wear;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.DialogInterface;
@@ -33,9 +32,6 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.support.wearable.view.WearableDialogHelper;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.android.packageinstaller.R;

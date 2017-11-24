@@ -16,9 +16,6 @@
 
 package com.android.packageinstaller.permission.ui;
 
-import static android.content.pm.PackageManager.PERMISSION_DENIED;
-import static android.content.pm.PackageManager.PERMISSION_GRANTED;
-
 import android.app.admin.DevicePolicyManager;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -55,6 +52,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
+
+import static android.content.pm.PackageManager.PERMISSION_DENIED;
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class GrantPermissionsActivity extends OverlayTouchActivity
         implements GrantPermissionsViewHandler.ResultListener {

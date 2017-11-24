@@ -21,16 +21,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.location.ILocationManager;
-import android.location.LocationManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.provider.Settings;
 
 import com.android.packageinstaller.R;
-
-import java.util.ArrayList;
 
 public class LocationUtils {
 

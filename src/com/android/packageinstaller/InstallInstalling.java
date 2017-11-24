@@ -16,8 +16,6 @@
 
 package com.android.packageinstaller;
 
-import static android.content.pm.PackageInstaller.SessionParams.UID_UNKNOWN;
-
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -40,6 +38,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import static android.content.pm.PackageInstaller.SessionParams.UID_UNKNOWN;
 
 /**
  * Send package to the package manager and handle results from package manager. Once the

@@ -17,7 +17,6 @@
 package com.android.packageinstaller.permission.ui;
 
 import android.app.Activity;
-
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Intent;
@@ -35,22 +34,20 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.preference.TwoStatePreference;
 import android.text.Html;
-import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.android.packageinstaller.DeviceUtils;
 import com.android.packageinstaller.R;
 import com.android.packageinstaller.permission.model.AppPermissionGroup;
 import com.android.packageinstaller.permission.model.AppPermissions;
-import com.android.packageinstaller.permission.utils.Utils;
 import com.android.packageinstaller.permission.ui.ConfirmActionDialogFragment.OnActionConfirmedListener;
 import com.android.packageinstaller.permission.ui.wear.ReviewPermissionsWearFragment;
+import com.android.packageinstaller.permission.utils.Utils;
 
 import java.util.List;
 

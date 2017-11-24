@@ -16,13 +16,12 @@
 
 package com.android.packageinstaller.permission.service;
 
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.permission.RuntimePermissionPresentationInfo;
 import android.permissionpresenterservice.RuntimePermissionPresenterService;
-import android.util.ArraySet;
 import android.util.Log;
+
 import com.android.packageinstaller.permission.model.AppPermissionGroup;
 import com.android.packageinstaller.permission.model.AppPermissions;
 import com.android.packageinstaller.permission.utils.Utils;

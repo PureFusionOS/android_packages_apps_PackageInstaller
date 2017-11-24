@@ -16,8 +16,6 @@
 
 package com.android.packageinstaller.permission.ui.handheld;
 
-import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -58,6 +56,8 @@ import com.android.settingslib.RestrictedLockUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
 public final class AppPermissionsFragment extends SettingsWithHeader
         implements OnPreferenceChangeListener {

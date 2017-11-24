@@ -20,12 +20,12 @@ import android.content.Context;
 
 import com.android.internal.logging.MetricsLogger;
 
-import libcore.util.Objects;
-
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 
 import java.util.ArrayList;
+
+import libcore.util.Objects;
 
 /**
  * MetricsLogger that just adds logs to a list

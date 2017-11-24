@@ -36,10 +36,9 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.Objects;
 import com.android.packageinstaller.R;
 
-import com.android.packageinstaller.R;
+import java.util.Objects;
 
 /**
  * An image view surrounded by a circle.

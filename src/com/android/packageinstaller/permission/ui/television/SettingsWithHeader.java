@@ -23,9 +23,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import com.android.packageinstaller.DeviceUtils;
+
 import com.android.packageinstaller.R;
 
 public abstract class SettingsWithHeader extends PermissionsFrameFragment
