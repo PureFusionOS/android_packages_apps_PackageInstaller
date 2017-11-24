@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Uygulama yüklenmedi."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Paketin yüklemesi engellendi."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Paket, mevcut bir paketle çakıştığından uygulama yüklenemedi."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Tabletinizle uyumlu olmadığından uygulama yüklenemedi."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Bu uygulama TV\'niz ile uyumlu değil."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Telefonunuzla uyumlu olmadığından uygulama yüklenemedi."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Tabletinizle uyumlu olmadığından uygulama yüklenemedi."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Bu uygulama TV\'niz ile uyumlu değil."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Telefonunuzla uyumlu olmadığından uygulama yüklenemedi."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Paket geçersiz göründüğünden uygulama yüklenemedi."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> bu tabletinize yüklenemedi."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> TV\'nize yüklenemedi."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> bu telefonunuza yüklenemedi."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> bu tabletinize yüklenemedi."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> TV\'nize yüklenemedi."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> bu telefonunuza yüklenemedi."</string>
     <string name="launch" msgid="4826921505917605463">"Aç"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Yöneticiniz, bilinmeyen kaynaklardan edinilen uygulamaların yüklenmesine izin vermiyor"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Bilinmeyen uygulamalar bu kullanıcı tarafından yüklenemez"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"İzin yok"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Ek izinler"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> tane daha</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> tane daha</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> tane daha</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> tane daha</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Bu uygulama, Android\'in daha eski bir sürümü için tasarlandı. İznin reddedilmesi, uygulamanın bundan sonra amaçlandığı gibi çalışmamasına neden olabilir."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"bilinmeyen bir işlem gerçekleştirme"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Geçerli izinler"</string>
     <string name="message_staging" msgid="6151794817691100003">"Uygulama hazırlanıyor…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Bilinmiyor"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Güvenlik nedeniyle tabletinizin bu kaynaktan bilinmeyen uygulamalar yüklemesine izin verilmez."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Güvenlik nedeniyle TV\'nizin bu kaynaktan bilinmeyen uygulamalar yüklemesine izin verilmez."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Güvenlik nedeniyle telefonunuzun bu kaynaktan bilinmeyen uygulamalar yüklemesine izin verilmez."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Telefonunuz ve kişisel verileriniz, bilinmeyen uygulamaların saldırılarına karşı daha savunmasızdır. Bu uygulamayı yükleyerek, uygulama kullanımından dolayı telefonunuzda oluşabilecek hasarın veya uğrayabileceğiniz veri kaybının sorumluluğunu kabul etmiş olursunuz."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Tabletiniz ve kişisel verileriniz, bilinmeyen uygulamaların saldırılarına karşı daha savunmasızdır. Bu uygulamayı yükleyerek, uygulama kullanımından dolayı tabletinizde oluşabilecek hasarın veya uğrayabileceğiniz veri kaybının sorumluluğunu kabul etmiş olursunuz."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"TV\'niz ve kişisel verileriniz, bilinmeyen uygulamaların saldırılarına karşı daha savunmasızdır. Bu uygulamayı yükleyerek, uygulama kullanımından dolayı TV\'nizde oluşabilecek hasarın veya uğrayabileceğiniz veri kaybının sorumluluğunu kabul etmiş olursunuz."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Güvenlik nedeniyle tabletinizin bu kaynaktan bilinmeyen uygulamalar yüklemesine izin verilmez."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Güvenlik nedeniyle TV\'nizin bu kaynaktan bilinmeyen uygulamalar yüklemesine izin verilmez."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Güvenlik nedeniyle telefonunuzun bu kaynaktan bilinmeyen uygulamalar yüklemesine izin verilmez."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Telefonunuz ve kişisel verileriniz, bilinmeyen uygulamaların saldırılarına karşı daha savunmasızdır. Bu uygulamayı yükleyerek, uygulama kullanımından dolayı telefonunuzda oluşabilecek hasarın veya uğrayabileceğiniz veri kaybının sorumluluğunu kabul etmiş olursunuz."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Tabletiniz ve kişisel verileriniz, bilinmeyen uygulamaların saldırılarına karşı daha savunmasızdır. Bu uygulamayı yükleyerek, uygulama kullanımından dolayı tabletinizde oluşabilecek hasarın veya uğrayabileceğiniz veri kaybının sorumluluğunu kabul etmiş olursunuz."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"TV\'niz ve kişisel verileriniz, bilinmeyen uygulamaların saldırılarına karşı daha savunmasızdır. Bu uygulamayı yükleyerek, uygulama kullanımından dolayı TV\'nizde oluşabilecek hasarın veya uğrayabileceğiniz veri kaybının sorumluluğunu kabul etmiş olursunuz."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Devam"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Ayarlar"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Wear uyg. yükleme/yüklemesini kaldırma"</string>

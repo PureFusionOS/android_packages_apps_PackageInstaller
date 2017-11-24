@@ -35,14 +35,16 @@ import java.util.Map;
 
 /**
  * Implementation of package manager installation using modern PackageInstaller api.
- *
+ * <p>
  * Heavily copied from Wearsky/Finsky implementation
  */
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class PackageInstallerImpl {
     private static final String TAG = "PackageInstallerImpl";
 
-    /** Intent actions used for broadcasts from PackageInstaller back to the local receiver */
+    /**
+     * Intent actions used for broadcasts from PackageInstaller back to the local receiver
+     */
     private static final String ACTION_INSTALL_COMMIT =
             "com.android.vending.INTENT_PACKAGE_INSTALL_COMMIT";
 
@@ -74,35 +76,14 @@ public class PackageInstallerImpl {
     }
 
     /**
-     * This callback will be made after an installation attempt succeeds or fails.
-     */
-    public interface InstallListener {
-        /**
-         * This callback signals that preflight checks have succeeded and installation
-         * is beginning.
-         */
-        void installBeginning();
-
-        /**
-         * This callback signals that installation has completed.
-         */
-        void installSucceeded();
-
-        /**
-         * This callback signals that installation has failed.
-         */
-        void installFailed(int errorCode, String errorDesc);
-    }
-
-    /**
      * This is a placeholder implementation that bundles an entire "session" into a single
      * call. This will be replaced by more granular versions that allow longer session lifetimes,
      * download progress tracking, etc.
-     *
+     * <p>
      * This must not be called on main thread.
      */
     public void install(final String packageName, ParcelFileDescriptor parcelFileDescriptor,
-            final InstallListener callback) {
+                        final InstallListener callback) {
         // 0. Generic try/catch block because I am not really sure what exceptions (other than
         // IOException) might be thrown by PackageInstaller and I want to handle them
         // at least slightly gracefully.
@@ -141,7 +122,7 @@ public class PackageInstallerImpl {
             }
 
             // 2. Launch task to handle file operations.
-            InstallTask task = new InstallTask( mContext, packageName, parcelFileDescriptor,
+            InstallTask task = new InstallTask(mContext, packageName, parcelFileDescriptor,
                     callback, session,
                     getCommitCallback(packageName, sessionInfo.getSessionId(), callback));
             task.execute();
@@ -198,7 +179,9 @@ public class PackageInstallerImpl {
         return session;
     }
 
-    /** This version throws an IOException when the session cannot be created */
+    /**
+     * This version throws an IOException when the session cannot be created
+     */
     private void innerCreateSession(String packageName) throws IOException {
         if (mSessionInfoMap.containsKey(packageName)) {
             Log.w(TAG, "Creating session for " + packageName + " when one already exists");
@@ -251,7 +234,7 @@ public class PackageInstallerImpl {
      * some time after calling session.commit() (above).
      */
     private IntentSender getCommitCallback(final String packageName, final int sessionId,
-            final InstallListener callback) {
+                                           final InstallListener callback) {
         // Create a single-use broadcast receiver
         BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
             @Override
@@ -277,13 +260,13 @@ public class PackageInstallerImpl {
      * Examine the extras to determine information about the package update/install, decode
      * the result, and call the appropriate callback.
      *
-     * @param intent The intent, which the PackageInstaller will have added Extras to
+     * @param intent      The intent, which the PackageInstaller will have added Extras to
      * @param packageName The package name we created the receiver for
-     * @param sessionId The session Id we created the receiver for
-     * @param callback The callback to report success/failure to
+     * @param sessionId   The session Id we created the receiver for
+     * @param callback    The callback to report success/failure to
      */
     private void handleCommitCallback(Intent intent, String packageName, int sessionId,
-            InstallListener callback) {
+                                      InstallListener callback) {
         if (Log.isLoggable(TAG, Log.DEBUG)) {
             Log.d(TAG, "Installation of " + packageName + " finished with extras "
                     + intent.getExtras());
@@ -321,5 +304,26 @@ public class PackageInstallerImpl {
             errorCode = InstallerConstants.ERROR_PACKAGEINSTALLER_BASE - status;
         }
         return errorCode;
+    }
+
+    /**
+     * This callback will be made after an installation attempt succeeds or fails.
+     */
+    public interface InstallListener {
+        /**
+         * This callback signals that preflight checks have succeeded and installation
+         * is beginning.
+         */
+        void installBeginning();
+
+        /**
+         * This callback signals that installation has completed.
+         */
+        void installSucceeded();
+
+        /**
+         * This callback signals that installation has failed.
+         */
+        void installFailed(int errorCode, String errorDesc);
     }
 }

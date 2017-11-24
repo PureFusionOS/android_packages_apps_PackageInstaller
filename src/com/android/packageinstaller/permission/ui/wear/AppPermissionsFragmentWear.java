@@ -52,6 +52,10 @@ public final class AppPermissionsFragmentWear extends PreferenceFragment {
     private static final String LOG_TAG = "AppPermFragWear";
 
     private static final String KEY_NO_PERMISSIONS = "no_permissions";
+    private PackageManager mPackageManager;
+    private List<AppPermissionGroup> mToggledGroups;
+    private AppPermissions mAppPermissions;
+    private boolean mHasConfirmedRevoke;
 
     public static AppPermissionsFragmentWear newInstance(String packageName) {
         return setPackageName(new AppPermissionsFragmentWear(), packageName);
@@ -64,38 +68,25 @@ public final class AppPermissionsFragmentWear extends PreferenceFragment {
         return fragment;
     }
 
-    private PackageManager mPackageManager;
-    private List<AppPermissionGroup> mToggledGroups;
-    private AppPermissions mAppPermissions;
+    private static Permission getPermissionFromGroup(AppPermissionGroup group, String permName) {
+        final int permissionCount = group.getPermissions().size();
 
-    private boolean mHasConfirmedRevoke;
-
-    /**
-     * Provides click behavior for disabled preferences.
-     * We can't use {@link PreferenceFragment#onPreferenceTreeClick}, as the base
-     * {@link SwitchPreference} doesn't delegate to that method if the preference is disabled.
-     */
-    private static class PermissionSwitchPreference extends SwitchPreference {
-
-        private final Activity mActivity;
-
-        public PermissionSwitchPreference(Activity activity) {
-            super(activity);
-            this.mActivity = activity;
+        for (int i = 0; i < permissionCount; i++) {
+            Permission currentPerm = group.getPermissions().get(i);
+            if (currentPerm.getName().equals(permName)) {
+                return currentPerm;
+            }
+            ;
         }
 
-        @Override
-        public void performClick(PreferenceScreen preferenceScreen) {
-            super.performClick(preferenceScreen);
-            if (!isEnabled()) {
-                // If setting the permission is disabled, it must have been locked
-                // by the device or profile owner. So get that info and pass it to
-                // the support details dialog.
-                EnforcedAdmin deviceOrProfileOwner = RestrictedLockUtils.getProfileOrDeviceOwner(
-                    mActivity, UserHandle.myUserId());
-                RestrictedLockUtils.sendShowAdminSupportDetailsIntent(
-                    mActivity, deviceOrProfileOwner);
-            }
+        if ("user".equals(Build.TYPE)) {
+            Log.e(LOG_TAG, String.format("The impossible happens, permission %s is not in group %s.",
+                    permName, group.getName()));
+            return null;
+        } else {
+            // This is impossible, throw a fatal error in non-user build.
+            throw new IllegalArgumentException(
+                    String.format("Permission %s is not in group %s", permName, group.getName()));
         }
     }
 
@@ -139,7 +130,7 @@ public final class AppPermissionsFragmentWear extends PreferenceFragment {
             if (Utils.areGroupPermissionsIndividuallyControlled(getContext(), group.getName())) {
                 for (PermissionInfo perm : getPermissionInfosFromGroup(group)) {
                     setPreferenceCheckedIfPresent(perm.name,
-                            group.areRuntimePermissionsGranted(new String[]{ perm.name }));
+                            group.areRuntimePermissionsGranted(new String[]{perm.name}));
                 }
             } else {
                 setPreferenceCheckedIfPresent(group.getName(), group.areRuntimePermissionsGranted());
@@ -189,8 +180,8 @@ public final class AppPermissionsFragmentWear extends PreferenceFragment {
     }
 
     private void showOrAddToNonSystemPreferences(SwitchPreference pref,
-            List<SwitchPreference> nonSystemPreferences, // Mutate
-            boolean isPlatform) {
+                                                 List<SwitchPreference> nonSystemPreferences, // Mutate
+                                                 boolean isPlatform) {
         // The UI shows System settings first, then non-system settings
         if (isPlatform) {
             getPreferenceScreen().addPreference(pref);
@@ -200,14 +191,14 @@ public final class AppPermissionsFragmentWear extends PreferenceFragment {
     }
 
     private SwitchPreference createSwitchPreferenceForPermission(AppPermissionGroup group,
-            PermissionInfo perm) {
+                                                                 PermissionInfo perm) {
         final SwitchPreference pref = new PermissionSwitchPreference(getActivity());
         pref.setKey(perm.name);
         pref.setTitle(perm.loadLabel(mPackageManager));
-        pref.setChecked(group.areRuntimePermissionsGranted(new String[]{ perm.name }));
+        pref.setChecked(group.areRuntimePermissionsGranted(new String[]{perm.name}));
         pref.setOnPreferenceChangeListener((p, newVal) -> {
-            if((Boolean) newVal) {
-                group.grantRuntimePermissions(false, new String[]{ perm.name });
+            if ((Boolean) newVal) {
+                group.grantRuntimePermissions(false, new String[]{perm.name});
 
                 if (Utils.areGroupPermissionsIndividuallyControlled(getContext(), group.getName())
                         && group.doesSupportRuntimePermissions()) {
@@ -276,29 +267,8 @@ public final class AppPermissionsFragmentWear extends PreferenceFragment {
                 .show();
     }
 
-    private static Permission getPermissionFromGroup(AppPermissionGroup group, String permName) {
-        final int permissionCount = group.getPermissions().size();
-
-        for (int i = 0; i < permissionCount; i++) {
-            Permission currentPerm = group.getPermissions().get(i);
-            if(currentPerm.getName().equals(permName)) {
-                return currentPerm;
-            };
-        }
-
-        if ("user".equals(Build.TYPE)) {
-            Log.e(LOG_TAG, String.format("The impossible happens, permission %s is not in group %s.",
-                    permName, group.getName()));
-            return null;
-        } else {
-            // This is impossible, throw a fatal error in non-user build.
-            throw new IllegalArgumentException(
-                    String.format("Permission %s is not in group %s", permName, group.getName()));
-        }
-    }
-
     private void revokePermissionInGroup(AppPermissionGroup group, String permName) {
-        group.revokeRuntimePermissions(true, new String[]{ permName });
+        group.revokeRuntimePermissions(true, new String[]{permName});
 
         if (Utils.areGroupPermissionsIndividuallyControlled(getContext(), group.getName())
                 && group.doesSupportRuntimePermissions()
@@ -388,7 +358,7 @@ public final class AppPermissionsFragmentWear extends PreferenceFragment {
 
     private List<PermissionInfo> getPermissionInfosFromGroup(AppPermissionGroup group) {
         ArrayList<PermissionInfo> permInfos = new ArrayList<>(group.getPermissions().size());
-        for(Permission perm : group.getPermissions()) {
+        for (Permission perm : group.getPermissions()) {
             try {
                 permInfos.add(mPackageManager.getPermissionInfo(perm.getName(), 0));
             } catch (PackageManager.NameNotFoundException e) {
@@ -402,6 +372,35 @@ public final class AppPermissionsFragmentWear extends PreferenceFragment {
         Preference pref = findPreference(preferenceKey);
         if (pref instanceof SwitchPreference) {
             ((SwitchPreference) pref).setChecked(checked);
+        }
+    }
+
+    /**
+     * Provides click behavior for disabled preferences.
+     * We can't use {@link PreferenceFragment#onPreferenceTreeClick}, as the base
+     * {@link SwitchPreference} doesn't delegate to that method if the preference is disabled.
+     */
+    private static class PermissionSwitchPreference extends SwitchPreference {
+
+        private final Activity mActivity;
+
+        public PermissionSwitchPreference(Activity activity) {
+            super(activity);
+            this.mActivity = activity;
+        }
+
+        @Override
+        public void performClick(PreferenceScreen preferenceScreen) {
+            super.performClick(preferenceScreen);
+            if (!isEnabled()) {
+                // If setting the permission is disabled, it must have been locked
+                // by the device or profile owner. So get that info and pass it to
+                // the support details dialog.
+                EnforcedAdmin deviceOrProfileOwner = RestrictedLockUtils.getProfileOrDeviceOwner(
+                        mActivity, UserHandle.myUserId());
+                RestrictedLockUtils.sendShowAdminSupportDetailsIntent(
+                        mActivity, deviceOrProfileOwner);
+            }
         }
     }
 }

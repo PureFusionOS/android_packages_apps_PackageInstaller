@@ -64,15 +64,6 @@ public class UninstallerActivity extends Activity {
     private static final String TAG = "UninstallerActivity";
 
     private static final String UNINSTALLING_CHANNEL = "uninstalling";
-
-    public static class DialogInfo {
-        public ApplicationInfo appInfo;
-        public ActivityInfo activityInfo;
-        public boolean allUsers;
-        public UserHandle user;
-        public IBinder callback;
-    }
-
     private String mPackageName;
     private DialogInfo mDialogInfo;
 
@@ -198,7 +189,7 @@ public class UninstallerActivity extends Activity {
     }
 
     private void showContentFragment(@NonNull Fragment fragment, @StringRes int title,
-            @StringRes int text) {
+                                     @StringRes int text) {
         Bundle args = new Bundle();
         args.putInt(ErrorFragment.TITLE, title);
         args.putInt(ErrorFragment.TEXT, text);
@@ -210,7 +201,7 @@ public class UninstallerActivity extends Activity {
     }
 
     private void showDialogFragment(@NonNull DialogFragment fragment,
-            @StringRes int title, @StringRes int text) {
+                                    @StringRes int title, @StringRes int text) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         Fragment prev = getFragmentManager().findFragmentByTag("dialog");
         if (prev != null) {
@@ -290,9 +281,9 @@ public class UninstallerActivity extends Activity {
 
             Notification uninstallingNotification =
                     (new Notification.Builder(this, UNINSTALLING_CHANNEL))
-                    .setSmallIcon(R.drawable.ic_remove).setProgress(0, 1, true)
-                    .setContentTitle(getString(R.string.uninstalling_app, label)).setOngoing(true)
-                    .build();
+                            .setSmallIcon(R.drawable.ic_remove).setProgress(0, 1, true)
+                            .setContentTitle(getString(R.string.uninstalling_app, label)).setOngoing(true)
+                            .build();
 
             notificationManager.notify(uninstallId, uninstallingNotification);
 
@@ -320,5 +311,13 @@ public class UninstallerActivity extends Activity {
             } catch (RemoteException ignored) {
             }
         }
+    }
+
+    public static class DialogInfo {
+        public ApplicationInfo appInfo;
+        public ActivityInfo activityInfo;
+        public boolean allUsers;
+        public UserHandle user;
+        public IBinder callback;
     }
 }

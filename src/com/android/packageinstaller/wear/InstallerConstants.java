@@ -21,7 +21,9 @@ package com.android.packageinstaller.wear;
  * Using the same values as Finsky/Wearsky code for consistency in user analytics of failures
  */
 public class InstallerConstants {
-    /** Request succeeded */
+    /**
+     * Request succeeded
+     */
     public static final int STATUS_SUCCESS = 0;
 
     /**
@@ -34,26 +36,46 @@ public class InstallerConstants {
     public static final int ERROR_COULD_NOT_GET_FD = -603;
     /** This node is not targeted by this request. */
 
-    /** The install did not complete because could not create PackageInstaller session */
+    /**
+     * The install did not complete because could not create PackageInstaller session
+     */
     public final static int ERROR_INSTALL_CREATE_SESSION = -612;
-    /** The install did not complete because could not open PackageInstaller session  */
+    /**
+     * The install did not complete because could not open PackageInstaller session
+     */
     public final static int ERROR_INSTALL_OPEN_SESSION = -613;
-    /** The install did not complete because could not open PackageInstaller output stream */
+    /**
+     * The install did not complete because could not open PackageInstaller output stream
+     */
     public final static int ERROR_INSTALL_OPEN_STREAM = -614;
-    /** The install did not complete because of an exception while streaming bytes */
+    /**
+     * The install did not complete because of an exception while streaming bytes
+     */
     public final static int ERROR_INSTALL_COPY_STREAM_EXCEPTION = -615;
-    /** The install did not complete because of an unexpected exception from PackageInstaller */
+    /**
+     * The install did not complete because of an unexpected exception from PackageInstaller
+     */
     public final static int ERROR_INSTALL_SESSION_EXCEPTION = -616;
-    /** The install did not complete because of an unexpected userActionRequired callback */
+    /**
+     * The install did not complete because of an unexpected userActionRequired callback
+     */
     public final static int ERROR_INSTALL_USER_ACTION_REQUIRED = -617;
-    /** The install did not complete because of an unexpected broadcast (missing fields) */
+    /**
+     * The install did not complete because of an unexpected broadcast (missing fields)
+     */
     public final static int ERROR_INSTALL_MALFORMED_BROADCAST = -618;
-    /** The install did not complete because of an error while copying from downloaded file */
+    /**
+     * The install did not complete because of an error while copying from downloaded file
+     */
     public final static int ERROR_INSTALL_APK_COPY_FAILURE = -619;
-    /** The install did not complete because of an error while copying to the PackageInstaller
-     * output stream */
+    /**
+     * The install did not complete because of an error while copying to the PackageInstaller
+     * output stream
+     */
     public final static int ERROR_INSTALL_COPY_STREAM = -620;
-    /** The install did not complete because of an error while closing the PackageInstaller
-     * output stream */
+    /**
+     * The install did not complete because of an error while closing the PackageInstaller
+     * output stream
+     */
     public final static int ERROR_INSTALL_CLOSE_STREAM = -621;
 }

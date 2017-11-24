@@ -61,8 +61,33 @@ public final class AppPermissionGroup implements Comparable<AppPermissionGroup> 
     private boolean mContainsEphemeralPermission;
     private boolean mContainsPreRuntimePermission;
 
+    private AppPermissionGroup(Context context, PackageInfo packageInfo, String name,
+                               String declaringPackage, CharSequence label, CharSequence description,
+                               String iconPkg, int iconResId, UserHandle userHandle) {
+        mContext = context;
+        mUserHandle = userHandle;
+        mPackageManager = mContext.getPackageManager();
+        mPackageInfo = packageInfo;
+        mAppSupportsRuntimePermissions = packageInfo.applicationInfo
+                .targetSdkVersion > Build.VERSION_CODES.LOLLIPOP_MR1;
+        mIsEphemeralApp = packageInfo.applicationInfo.isInstantApp();
+        mAppOps = context.getSystemService(AppOpsManager.class);
+        mActivityManager = context.getSystemService(ActivityManager.class);
+        mDeclaringPackage = declaringPackage;
+        mName = name;
+        mLabel = label;
+        mDescription = description;
+        if (iconResId != 0) {
+            mIconPkg = iconPkg;
+            mIconResId = iconResId;
+        } else {
+            mIconPkg = context.getPackageName();
+            mIconResId = R.drawable.ic_perm_device_info;
+        }
+    }
+
     public static AppPermissionGroup create(Context context, PackageInfo packageInfo,
-            String permissionName) {
+                                            String permissionName) {
         PermissionInfo permissionInfo;
         try {
             permissionInfo = context.getPackageManager().getPermissionInfo(permissionName, 0);
@@ -102,8 +127,8 @@ public final class AppPermissionGroup implements Comparable<AppPermissionGroup> 
     }
 
     public static AppPermissionGroup create(Context context, PackageInfo packageInfo,
-            PackageItemInfo groupInfo, List<PermissionInfo> permissionInfos,
-            UserHandle userHandle) {
+                                            PackageItemInfo groupInfo, List<PermissionInfo> permissionInfos,
+                                            UserHandle userHandle) {
 
         AppPermissionGroup group = new AppPermissionGroup(context, packageInfo, groupInfo.name,
                 groupInfo.packageName, groupInfo.loadLabel(context.getPackageManager()),
@@ -185,31 +210,6 @@ public final class AppPermissionGroup implements Comparable<AppPermissionGroup> 
         }
 
         return description;
-    }
-
-    private AppPermissionGroup(Context context, PackageInfo packageInfo, String name,
-            String declaringPackage, CharSequence label, CharSequence description,
-            String iconPkg, int iconResId, UserHandle userHandle) {
-        mContext = context;
-        mUserHandle = userHandle;
-        mPackageManager = mContext.getPackageManager();
-        mPackageInfo = packageInfo;
-        mAppSupportsRuntimePermissions = packageInfo.applicationInfo
-                .targetSdkVersion > Build.VERSION_CODES.LOLLIPOP_MR1;
-        mIsEphemeralApp = packageInfo.applicationInfo.isInstantApp();
-        mAppOps = context.getSystemService(AppOpsManager.class);
-        mActivityManager = context.getSystemService(ActivityManager.class);
-        mDeclaringPackage = declaringPackage;
-        mName = name;
-        mLabel = label;
-        mDescription = description;
-        if (iconResId != 0) {
-            mIconPkg = iconPkg;
-            mIconResId = iconResId;
-        } else {
-            mIconPkg = context.getPackageName();
-            mIconResId = R.drawable.ic_perm_device_info;
-        }
     }
 
     public boolean doesSupportRuntimePermissions() {

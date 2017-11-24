@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Sovellusta ei asennettu."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Paketin asennus estettiin."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Sovellusta ei asennettu, koska paketti on ristiriidassa nykyisen paketin kanssa."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Sovellusta ei asennettu, koska se ei ole yhteensopiva tabletin kanssa."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Tämä sovellus ei ole yhteensopiva televisiosi kanssa."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Sovellusta ei asennettu, koska se ei ole yhteensopiva puhelimen kanssa."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Sovellusta ei asennettu, koska se ei ole yhteensopiva tabletin kanssa."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Tämä sovellus ei ole yhteensopiva televisiosi kanssa."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Sovellusta ei asennettu, koska se ei ole yhteensopiva puhelimen kanssa."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Sovellusta ei asennettu, koska paketti vaikuttaa virheelliseltä."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"Sovelluksen <xliff:g id="APP_NAME">%1$s</xliff:g> asentaminen tähän tablet-laitteeseen epäonnistui."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> ei asennu televisioosi."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"Sovelluksen <xliff:g id="APP_NAME">%1$s</xliff:g> asentaminen puhelimeesi ei onnistunut."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"Sovelluksen <xliff:g id="APP_NAME">%1$s</xliff:g> asentaminen tähän tablet-laitteeseen epäonnistui."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> ei asennu televisioosi."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"Sovelluksen <xliff:g id="APP_NAME">%1$s</xliff:g> asentaminen puhelimeesi ei onnistunut."</string>
     <string name="launch" msgid="4826921505917605463">"Avaa"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Järjestelmänvalvoja ei salli sovellusten asentamista tuntemattomista lähteistä."</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Tämä käyttäjä ei voi asentaa tuntemattomia sovelluksia."</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Ei käyttöoikeuksia"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Lisäkäyttöoikeudet"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> lisää</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> lisää</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> lisää</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> lisää</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Tämä sovellus on suunniteltu vanhemmalle Android-versiolle. Se ei välttämättä toimi oikein, jos käyttöoikeuksia ei sallita."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"suorita tuntematon toiminto"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Nykyiset käyttöoikeudet"</string>
     <string name="message_staging" msgid="6151794817691100003">"Valmistellaan sovellusta…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Tuntematon"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Turvallisuussyistä tabletti ei voi asentaa tuntemattomia sovelluksia tästä lähteestä."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Turvallisuussyistä televisiosi ei voi asentaa tuntemattomia sovelluksia tästä lähteestä."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Turvallisuussyistä puhelin ei voi asentaa tuntemattomia sovelluksia tästä lähteestä."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Tuntemattomat sovellukset voivat helpommin kaapata puhelimesi ja henkilötietosi. Lataamalla sovelluksia tästä lähteestä hyväksyt, että olet itse vastuussa puhelimellesi aiheutuvista vahingoista tai tietojen menetyksestä, jotka voivat johtua sovellusten käytöstä."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Tuntemattomat sovellukset voivat helpommin kaapata tablettisi ja henkilötietosi. Lataamalla sovelluksia tästä lähteestä hyväksyt, että olet itse vastuussa tabletillesi aiheutuvista vahingoista tai tietojen menetyksestä, jotka voivat johtua sovellusten käytöstä."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Tuntemattomat sovellukset voivat helpommin kaapata televisiosi ja henkilötietosi. Lataamalla sovelluksen hyväksyt, että olet itse vastuussa mahdollisista televisiolle aiheutuvista vahingoista tai tietojen menetyksestä, jotka voivat johtua sovellusten käytöstä."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Turvallisuussyistä tabletti ei voi asentaa tuntemattomia sovelluksia tästä lähteestä."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Turvallisuussyistä televisiosi ei voi asentaa tuntemattomia sovelluksia tästä lähteestä."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Turvallisuussyistä puhelin ei voi asentaa tuntemattomia sovelluksia tästä lähteestä."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Tuntemattomat sovellukset voivat helpommin kaapata puhelimesi ja henkilötietosi. Lataamalla sovelluksia tästä lähteestä hyväksyt, että olet itse vastuussa puhelimellesi aiheutuvista vahingoista tai tietojen menetyksestä, jotka voivat johtua sovellusten käytöstä."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Tuntemattomat sovellukset voivat helpommin kaapata tablettisi ja henkilötietosi. Lataamalla sovelluksia tästä lähteestä hyväksyt, että olet itse vastuussa tabletillesi aiheutuvista vahingoista tai tietojen menetyksestä, jotka voivat johtua sovellusten käytöstä."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Tuntemattomat sovellukset voivat helpommin kaapata televisiosi ja henkilötietosi. Lataamalla sovelluksen hyväksyt, että olet itse vastuussa mahdollisista televisiolle aiheutuvista vahingoista tai tietojen menetyksestä, jotka voivat johtua sovellusten käytöstä."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Jatka"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Asetukset"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Wear-sovellusten asennus/poistaminen"</string>

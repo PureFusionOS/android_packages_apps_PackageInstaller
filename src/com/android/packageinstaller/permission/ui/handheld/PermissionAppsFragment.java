@@ -61,6 +61,16 @@ public final class PermissionAppsFragment extends PermissionsFrameFragment imple
 
     private static final String SHOW_SYSTEM_KEY = PermissionAppsFragment.class.getName()
             + KEY_SHOW_SYSTEM_PREFS;
+    private PermissionApps mPermissionApps;
+    private PreferenceScreen mExtraScreen;
+    private ArrayMap<String, AppPermissionGroup> mToggledGroups;
+    private ArraySet<String> mLauncherPkgs;
+    private boolean mHasConfirmedRevoke;
+    private boolean mShowSystem;
+    private boolean mHasSystemApps;
+    private MenuItem mShowSystemMenu;
+    private MenuItem mHideSystemMenu;
+    private Callback mOnPermissionsLoadedListener;
 
     public static PermissionAppsFragment newInstance(String permissionName) {
         return setPermissionName(new PermissionAppsFragment(), permissionName);
@@ -73,20 +83,14 @@ public final class PermissionAppsFragment extends PermissionsFrameFragment imple
         return fragment;
     }
 
-    private PermissionApps mPermissionApps;
-
-    private PreferenceScreen mExtraScreen;
-
-    private ArrayMap<String, AppPermissionGroup> mToggledGroups;
-    private ArraySet<String> mLauncherPkgs;
-    private boolean mHasConfirmedRevoke;
-
-    private boolean mShowSystem;
-    private boolean mHasSystemApps;
-    private MenuItem mShowSystemMenu;
-    private MenuItem mHideSystemMenu;
-
-    private Callback mOnPermissionsLoadedListener;
+    private static void bindUi(Fragment fragment, PermissionApps permissionApps) {
+        final Drawable icon = permissionApps.getIcon();
+        final CharSequence label = permissionApps.getLabel();
+        final ActionBar ab = fragment.getActivity().getActionBar();
+        if (ab != null) {
+            ab.setTitle(fragment.getString(R.string.permission_title, label));
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -163,15 +167,6 @@ public final class PermissionAppsFragment extends PermissionsFrameFragment imple
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bindUi(this, mPermissionApps);
-    }
-
-    private static void bindUi(Fragment fragment, PermissionApps permissionApps) {
-        final Drawable icon = permissionApps.getIcon();
-        final CharSequence label = permissionApps.getLabel();
-        final ActionBar ab = fragment.getActivity().getActionBar();
-        if (ab != null) {
-            ab.setTitle(fragment.getString(R.string.permission_title, label));
-        }
     }
 
     private void setOnPermissionsLoadedListener(Callback callback) {
@@ -308,9 +303,9 @@ public final class PermissionAppsFragment extends PermissionsFrameFragment imple
                         setPermissionName(frag, getArguments().getString(Intent.EXTRA_PERMISSION_NAME));
                         frag.setTargetFragment(PermissionAppsFragment.this, 0);
                         getFragmentManager().beginTransaction()
-                            .replace(android.R.id.content, frag)
-                            .addToBackStack("SystemApps")
-                            .commit();
+                                .replace(android.R.id.content, frag)
+                                .addToBackStack("SystemApps")
+                                .commit();
                         return true;
                     }
                 });
@@ -374,15 +369,15 @@ public final class PermissionAppsFragment extends PermissionsFrameFragment imple
                         .setNegativeButton(R.string.cancel, null)
                         .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
                                 new OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                ((SwitchPreference) preference).setChecked(false);
-                                app.revokeRuntimePermissions();
-                                if (!grantedByDefault) {
-                                    mHasConfirmedRevoke = true;
-                                }
-                            }
-                        })
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ((SwitchPreference) preference).setChecked(false);
+                                        app.revokeRuntimePermissions();
+                                        if (!grantedByDefault) {
+                                            mHasConfirmedRevoke = true;
+                                        }
+                                    }
+                                })
                         .show();
                 return false;
             } else {

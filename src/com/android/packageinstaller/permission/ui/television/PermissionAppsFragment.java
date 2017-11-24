@@ -57,6 +57,16 @@ public final class PermissionAppsFragment extends SettingsWithHeader implements 
     private static final int MENU_SHOW_SYSTEM = Menu.FIRST;
     private static final int MENU_HIDE_SYSTEM = Menu.FIRST + 1;
     private static final String KEY_SHOW_SYSTEM_PREFS = "_showSystem";
+    private PermissionApps mPermissionApps;
+    private PreferenceScreen mExtraScreen;
+    private ArrayMap<String, AppPermissionGroup> mToggledGroups;
+    private ArraySet<String> mLauncherPkgs;
+    private boolean mHasConfirmedRevoke;
+    private boolean mShowSystem;
+    private boolean mHasSystemApps;
+    private MenuItem mShowSystemMenu;
+    private MenuItem mHideSystemMenu;
+    private Callback mOnPermissionsLoadedListener;
 
     public static PermissionAppsFragment newInstance(String permissionName) {
         return setPermissionName(new PermissionAppsFragment(), permissionName);
@@ -69,20 +79,13 @@ public final class PermissionAppsFragment extends SettingsWithHeader implements 
         return fragment;
     }
 
-    private PermissionApps mPermissionApps;
+    private static void bindUi(SettingsWithHeader fragment, PermissionApps permissionApps) {
+        final Drawable icon = permissionApps.getIcon();
+        final CharSequence label = permissionApps.getLabel();
 
-    private PreferenceScreen mExtraScreen;
-
-    private ArrayMap<String, AppPermissionGroup> mToggledGroups;
-    private ArraySet<String> mLauncherPkgs;
-    private boolean mHasConfirmedRevoke;
-
-    private boolean mShowSystem;
-    private boolean mHasSystemApps;
-    private MenuItem mShowSystemMenu;
-    private MenuItem mHideSystemMenu;
-
-    private Callback mOnPermissionsLoadedListener;
+        fragment.setHeader(null, null, null,
+                fragment.getString(R.string.permission_apps_decor_title, label));
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -149,14 +152,6 @@ public final class PermissionAppsFragment extends SettingsWithHeader implements 
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bindUi(this, mPermissionApps);
-    }
-
-    private static void bindUi(SettingsWithHeader fragment, PermissionApps permissionApps) {
-        final Drawable icon = permissionApps.getIcon();
-        final CharSequence label = permissionApps.getLabel();
-
-        fragment.setHeader(null, null, null,
-                fragment.getString(R.string.permission_apps_decor_title, label));
     }
 
     private void setOnPermissionsLoadedListener(Callback callback) {
@@ -269,9 +264,9 @@ public final class PermissionAppsFragment extends SettingsWithHeader implements 
                                 Intent.EXTRA_PERMISSION_NAME));
                         frag.setTargetFragment(PermissionAppsFragment.this, 0);
                         getFragmentManager().beginTransaction()
-                            .replace(android.R.id.content, frag)
-                            .addToBackStack("SystemApps")
-                            .commit();
+                                .replace(android.R.id.content, frag)
+                                .addToBackStack("SystemApps")
+                                .commit();
                         return true;
                     }
                 });
@@ -343,15 +338,15 @@ public final class PermissionAppsFragment extends SettingsWithHeader implements 
                         .setNegativeButton(R.string.cancel, null)
                         .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
                                 new OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                ((SwitchPreference) preference).setChecked(false);
-                                app.revokeRuntimePermissions();
-                                if (!grantedByDefault) {
-                                    mHasConfirmedRevoke = true;
-                                }
-                            }
-                        })
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ((SwitchPreference) preference).setChecked(false);
+                                        app.revokeRuntimePermissions();
+                                        if (!grantedByDefault) {
+                                            mHasConfirmedRevoke = true;
+                                        }
+                                    }
+                                })
                         .show();
                 return false;
             } else {
@@ -395,6 +390,12 @@ public final class PermissionAppsFragment extends SettingsWithHeader implements 
     public static class SystemAppsFragment extends SettingsWithHeader implements Callback {
         PermissionAppsFragment mOuterFragment;
 
+        private static void bindUi(SettingsWithHeader fragment, PermissionApps permissionApps) {
+            final CharSequence label = permissionApps.getLabel();
+            fragment.setHeader(null, null, null,
+                    fragment.getString(R.string.system_apps_decor_title, label));
+        }
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             mOuterFragment = (PermissionAppsFragment) getTargetFragment();
@@ -429,13 +430,6 @@ public final class PermissionAppsFragment extends SettingsWithHeader implements 
         public void onDestroy() {
             super.onDestroy();
             mOuterFragment.setOnPermissionsLoadedListener(null);
-        }
-
-
-        private static void bindUi(SettingsWithHeader fragment, PermissionApps permissionApps) {
-            final CharSequence label = permissionApps.getLabel();
-            fragment.setHeader(null, null, null,
-                    fragment.getString(R.string.system_apps_decor_title, label));
         }
 
         @Override

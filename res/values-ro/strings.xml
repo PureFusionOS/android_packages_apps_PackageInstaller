@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Aplicația nu este instalată."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Instalarea pachetului a fost blocată."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Aplicația nu a fost instalată deoarece pachetul intră în conflict cu un pachet existent."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Aplicația nu a fost instalată deoarece nu este compatibilă cu tableta dvs."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Această aplicație nu este compatibilă cu televizorul dvs."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Aplicația nu a fost instalată deoarece nu este compatibilă cu telefonul dvs."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Aplicația nu a fost instalată deoarece nu este compatibilă cu tableta dvs."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Această aplicație nu este compatibilă cu televizorul dvs."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Aplicația nu a fost instalată deoarece nu este compatibilă cu telefonul dvs."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Aplicația nu a fost instalată deoarece se pare că pachetul este nevalid."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> nu a putut fi instalată pe tableta dvs."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"Aplicația <xliff:g id="APP_NAME">%1$s</xliff:g> nu a putut fi instalată pe televizor."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> nu a putut fi instalată pe telefonul dvs."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> nu a putut fi instalată pe tableta dvs."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"Aplicația <xliff:g id="APP_NAME">%1$s</xliff:g> nu a putut fi instalată pe televizor."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> nu a putut fi instalată pe telefonul dvs."</string>
     <string name="launch" msgid="4826921505917605463">"Deschideți"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Administratorul nu permite instalarea aplicațiilor obținute din surse necunoscute"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Aplicațiile necunoscute nu pot fi instalate de acest utilizator"</string>
@@ -105,9 +104,9 @@
     <string name="no_permissions" msgid="3210542466245591574">"Fără permisiuni"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Permisiuni suplimentare"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="few">Încă <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="other">Încă <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="one">Încă <xliff:g id="COUNT_0">%1$d</xliff:g></item>
+        <item quantity="few">Încă <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="other">Încă <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="one">Încă <xliff:g id="COUNT_0">%1$d</xliff:g></item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Această aplicație a fost creată pentru o versiune Android mai veche. Dacă nu acordați permisiunea, este posibil ca aceasta să nu mai funcționeze corespunzător."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"efectuează o acțiune necunoscută"</string>
@@ -138,12 +137,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Permisiuni actuale"</string>
     <string name="message_staging" msgid="6151794817691100003">"Se pregătește aplicația…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Necunoscut"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Din motive de securitate, tableta dvs. nu are permisiunea să instaleze aplicații necunoscute din această sursă."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Din motive de securitate, televizorul dvs. nu are permisiunea să instaleze aplicații necunoscute din această sursă."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Din motive de securitate, telefonul dvs. nu are permisiunea să instaleze aplicații necunoscute din această sursă."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Telefonul și datele dvs. personale sunt mai vulnerabile la un atac din partea aplicațiilor necunoscute. Dacă instalați aplicația, acceptați că sunteți singura persoană responsabilă pentru deteriorarea telefonului sau pentru pierderea datelor, care pot avea loc în urma utilizării acesteia."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Tableta și datele dvs. personale sunt mai vulnerabile la un atac din partea aplicațiilor necunoscute. Dacă instalați aplicația, acceptați că sunteți singura persoană responsabilă pentru deteriorarea tabletei sau pentru pierderea datelor, care pot avea loc în urma utilizării acesteia."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Televizorul și datele dvs. personale sunt mai vulnerabile la un atac din partea aplicațiilor necunoscute. Dacă instalați această aplicație, acceptați că sunteți singura persoană responsabilă pentru deteriorarea televizorului sau pentru pierderea datelor, care pot avea loc în urma utilizării acesteia."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Din motive de securitate, tableta dvs. nu are permisiunea să instaleze aplicații necunoscute din această sursă."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Din motive de securitate, televizorul dvs. nu are permisiunea să instaleze aplicații necunoscute din această sursă."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Din motive de securitate, telefonul dvs. nu are permisiunea să instaleze aplicații necunoscute din această sursă."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Telefonul și datele dvs. personale sunt mai vulnerabile la un atac din partea aplicațiilor necunoscute. Dacă instalați aplicația, acceptați că sunteți singura persoană responsabilă pentru deteriorarea telefonului sau pentru pierderea datelor, care pot avea loc în urma utilizării acesteia."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Tableta și datele dvs. personale sunt mai vulnerabile la un atac din partea aplicațiilor necunoscute. Dacă instalați aplicația, acceptați că sunteți singura persoană responsabilă pentru deteriorarea tabletei sau pentru pierderea datelor, care pot avea loc în urma utilizării acesteia."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Televizorul și datele dvs. personale sunt mai vulnerabile la un atac din partea aplicațiilor necunoscute. Dacă instalați această aplicație, acceptați că sunteți singura persoană responsabilă pentru deteriorarea televizorului sau pentru pierderea datelor, care pot avea loc în urma utilizării acesteia."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Continuați"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Setări"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Se (dez)instalează aplicațiile Wear"</string>

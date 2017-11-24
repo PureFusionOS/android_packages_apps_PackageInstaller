@@ -45,7 +45,7 @@ public class WearPackageUtil {
             Os.chmod(newFileDir.getAbsolutePath(), 0771);
             File newFile = new File(newFileDir, packageName + ".apk");
             return newFile;
-        }   catch (ErrnoException e) {
+        } catch (ErrnoException e) {
             Log.e(TAG, "Failed to open.", e);
             return null;
         }
@@ -57,7 +57,7 @@ public class WearPackageUtil {
             newFileDir.mkdirs();
             Os.chmod(newFileDir.getAbsolutePath(), 0771);
             return new File(newFileDir, packageName + ".icon");
-        }   catch (ErrnoException e) {
+        } catch (ErrnoException e) {
             Log.e(TAG, "Failed to open.", e);
             return null;
         }
@@ -70,15 +70,15 @@ public class WearPackageUtil {
      * to a File.
      *
      * @param context
-     * @param fd FileDescriptor to convert to File
-     * @param packageName Name of package, will define the name of the file
+     * @param fd             FileDescriptor to convert to File
+     * @param packageName    Name of package, will define the name of the file
      * @param compressionAlg Can be null. For ALT mode the APK will be compressed. We will
      *                       decompress it here
      */
     public static File getFileFromFd(Context context, ParcelFileDescriptor fd,
-            String packageName, String compressionAlg) {
+                                     String packageName, String compressionAlg) {
         File newFile = getTemporaryFile(context, packageName);
-        if (fd == null || fd.getFileDescriptor() == null)  {
+        if (fd == null || fd.getFileDescriptor() == null) {
             return null;
         }
         InputStream fr = new ParcelFileDescriptor.AutoCloseInputStream(fd);
@@ -107,7 +107,7 @@ public class WearPackageUtil {
         } catch (IOException e) {
             Log.e(TAG, "Reading from Asset FD or writing to temp file failed ", e);
             return null;
-        }   catch (ErrnoException e) {
+        } catch (ErrnoException e) {
             Log.e(TAG, "Could not set permissions on file ", e);
             return null;
         } finally {

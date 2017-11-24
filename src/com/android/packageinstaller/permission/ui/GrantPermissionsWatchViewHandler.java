@@ -76,14 +76,14 @@ final class GrantPermissionsWatchViewHandler implements GrantPermissionsViewHand
 
     @Override
     public void updateUi(String groupName, int groupCount, int groupIndex, Icon icon,
-            CharSequence message, boolean showDoNotAsk) {
+                         CharSequence message, boolean showDoNotAsk) {
         if (Log.isLoggable(TAG, Log.DEBUG)) {
             Log.d(TAG, "updateUi() - groupName: " + groupName
-                            + ", groupCount: " + groupCount
-                            + ", groupIndex: " + groupIndex
-                            + ", icon: " + icon
-                            + ", message: " + message
-                            + ", showDoNotAsk: " + showDoNotAsk);
+                    + ", groupCount: " + groupCount
+                    + ", groupIndex: " + groupIndex
+                    + ", icon: " + icon
+                    + ", message: " + message
+                    + ", showDoNotAsk: " + showDoNotAsk);
         }
 
         mGroupName = groupName;
@@ -92,14 +92,14 @@ final class GrantPermissionsWatchViewHandler implements GrantPermissionsViewHand
         mIcon = icon;
         mCurrentPageText = groupCount > 1
                 ? mContext.getString(R.string.current_permission_template,
-                        groupIndex + 1, groupCount)
+                groupIndex + 1, groupCount)
                 : null;
         showDialog(null);
     }
 
     private void showDialog(Bundle savedInstanceState) {
         TypedArray a = mContext.obtainStyledAttributes(
-                new int[] { android.R.attr.textColorPrimary });
+                new int[]{android.R.attr.textColorPrimary});
         int color = a.getColor(0, mContext.getColor(android.R.color.white));
         a.recycle();
         Drawable drawable = mIcon == null ? null : mIcon.setTint(color).loadDrawable(mContext);

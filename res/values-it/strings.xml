@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"App non installata."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"È stata bloccata l\'installazione del pacchetto."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"App non installata poiché il pacchetto è in conflitto con un pacchetto esistente."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"App non installata poiché non compatibile con il tuo tablet."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Questa app non è compatibile con la tua TV."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"App non installata poiché non compatibile con il tuo telefono."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"App non installata poiché non compatibile con il tuo tablet."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Questa app non è compatibile con la tua TV."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"App non installata poiché non compatibile con il tuo telefono."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"App non installata poiché il pacchetto risulta non valido."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"Impossibile installare <xliff:g id="APP_NAME">%1$s</xliff:g> sul tablet."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"Impossibile installare <xliff:g id="APP_NAME">%1$s</xliff:g> sulla tua TV."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"Impossibile installare <xliff:g id="APP_NAME">%1$s</xliff:g> sul telefono."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"Impossibile installare <xliff:g id="APP_NAME">%1$s</xliff:g> sul tablet."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"Impossibile installare <xliff:g id="APP_NAME">%1$s</xliff:g> sulla tua TV."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"Impossibile installare <xliff:g id="APP_NAME">%1$s</xliff:g> sul telefono."</string>
     <string name="launch" msgid="4826921505917605463">"Apri"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"L\'amministratore non consente l\'installazione di app ottenute da fonti sconosciute"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Questo utente non può installare app sconosciute"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Nessuna autorizzazione"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Altre autorizzazioni"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other">Altre <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> altra</item>
+        <item quantity="other">Altre <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> altra</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Questa app è stata sviluppata per una versione precedente di Android. Se l\'autorizzazione viene negata, l\'app potrebbe non funzionare più come previsto."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"esegue un\'azione sconosciuta"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Autorizzazioni correnti"</string>
     <string name="message_staging" msgid="6151794817691100003">"App in preparazione…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Sconosciuto"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Per sicurezza, il tuo tablet non è autorizzato a installare app sconosciute da questa origine."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Per sicurezza, la tua TV non è autorizzata a installare app sconosciute da questa origine."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Per sicurezza, il tuo telefono non è autorizzato a installare app sconosciute da questa origine."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"I dati del telefono e i dati personali sono più vulnerabili agli attacchi di app sconosciute. Se installi questa app, accetti di essere responsabile degli eventuali danni al telefono o dell\'eventuale perdita di dati derivanti dall\'uso dell\'app."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"I dati del tablet e i dati personali sono più vulnerabili agli attacchi di app sconosciute. Se installi questa app, accetti di essere responsabile degli eventuali danni al tablet o dell\'eventuale perdita di dati derivanti dall\'uso dell\'app."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"I dati della TV e i dati personali sono più vulnerabili agli attacchi di app sconosciute. Se installi questa app, accetti di essere responsabile degli eventuali danni alla TV o dell\'eventuale perdita di dati derivanti dall\'uso dell\'app."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Per sicurezza, il tuo tablet non è autorizzato a installare app sconosciute da questa origine."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Per sicurezza, la tua TV non è autorizzata a installare app sconosciute da questa origine."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Per sicurezza, il tuo telefono non è autorizzato a installare app sconosciute da questa origine."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"I dati del telefono e i dati personali sono più vulnerabili agli attacchi di app sconosciute. Se installi questa app, accetti di essere responsabile degli eventuali danni al telefono o dell\'eventuale perdita di dati derivanti dall\'uso dell\'app."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"I dati del tablet e i dati personali sono più vulnerabili agli attacchi di app sconosciute. Se installi questa app, accetti di essere responsabile degli eventuali danni al tablet o dell\'eventuale perdita di dati derivanti dall\'uso dell\'app."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"I dati della TV e i dati personali sono più vulnerabili agli attacchi di app sconosciute. Se installi questa app, accetti di essere responsabile degli eventuali danni alla TV o dell\'eventuale perdita di dati derivanti dall\'uso dell\'app."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Continua"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Impostazioni"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Installazione/disinstallazione di app Wear"</string>

@@ -47,32 +47,6 @@ public class TabsAdapter extends PagerAdapter
     private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
     private final Rect mTempRect = new Rect();
 
-    static final class TabInfo {
-        private final String tag;
-        private final View view;
-
-        TabInfo(String _tag, View _view) {
-            tag = _tag;
-            view = _view;
-        }
-    }
-
-    static class DummyTabFactory implements TabHost.TabContentFactory {
-        private final Context mContext;
-
-        public DummyTabFactory(Context context) {
-            mContext = context;
-        }
-
-        @Override
-        public View createTabContent(String tag) {
-            View v = new View(mContext);
-            v.setMinimumWidth(0);
-            v.setMinimumHeight(0);
-            return v;
-        }
-    }
-
     public TabsAdapter(Activity activity, TabHost tabHost, ViewPager pager) {
         mContext = activity;
         mTabHost = tabHost;
@@ -106,7 +80,7 @@ public class TabsAdapter extends PagerAdapter
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((View)object);
+        container.removeView((View) object);
     }
 
     @Override
@@ -151,5 +125,31 @@ public class TabsAdapter extends PagerAdapter
 
     @Override
     public void onPageScrollStateChanged(int state) {
+    }
+
+    static final class TabInfo {
+        private final String tag;
+        private final View view;
+
+        TabInfo(String _tag, View _view) {
+            tag = _tag;
+            view = _view;
+        }
+    }
+
+    static class DummyTabFactory implements TabHost.TabContentFactory {
+        private final Context mContext;
+
+        public DummyTabFactory(Context context) {
+            mContext = context;
+        }
+
+        @Override
+        public View createTabContent(String tag) {
+            View v = new View(mContext);
+            v.setMinimumWidth(0);
+            v.setMinimumHeight(0);
+            return v;
+        }
     }
 }

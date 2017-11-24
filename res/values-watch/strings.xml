@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2015 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2015 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,8 +19,8 @@
 
     <!-- Template for the current permission from the total number of permissions. -->
     <string name="current_permission_template">
-        <xliff:g id="current_permission_index" example="1">%1$s</xliff:g> /
-        <xliff:g id="permission_count" example="2">%2$s</xliff:g>
+        <xliff:g example="1" id="current_permission_index">%1$s</xliff:g> /
+        <xliff:g example="2" id="permission_count">%2$s</xliff:g>
     </string>
 
     <!-- Preference row title for showing system apps. -->

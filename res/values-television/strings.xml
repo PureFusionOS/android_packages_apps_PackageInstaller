@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2015 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2015 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,8 +22,8 @@
 
     <!-- Template for the current permission from the total number of permissions. -->
     <string name="current_permission_template">
-        <xliff:g id="current_permission_index" example="1">%1$s</xliff:g> /
-        <xliff:g id="permission_count" example="2">%2$s</xliff:g></string>
+        <xliff:g example="1" id="current_permission_index">%1$s</xliff:g> /
+        <xliff:g example="2" id="permission_count">%2$s</xliff:g></string>
 
     <!-- Preference row title for showing system apps. -->
     <string name="preference_show_system_apps">Show system apps</string>
@@ -32,7 +31,7 @@
     <!--decor title displayed as the page title for different TV permission screens-->
     <string name="app_permissions_decor_title">App permissions</string>
     <string name="manage_permissions_decor_title">App permissions</string>
-    <string name="permission_apps_decor_title"><xliff:g id="permission" example="Camera">%1$s</xliff:g> permissions</string>
+    <string name="permission_apps_decor_title"><xliff:g example="Camera" id="permission">%1$s</xliff:g> permissions</string>
     <string name="additional_permissions_decor_title">Additional permissions</string>
-    <string name="system_apps_decor_title"><xliff:g id="permission" example="Camera">%1$s</xliff:g> permissions</string>
+    <string name="system_apps_decor_title"><xliff:g example="Camera" id="permission">%1$s</xliff:g> permissions</string>
 </resources>

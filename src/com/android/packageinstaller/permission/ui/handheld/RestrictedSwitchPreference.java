@@ -28,9 +28,9 @@ import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
 public class RestrictedSwitchPreference extends MultiTargetSwitchPreference {
     private final Context mContext;
+    private final int mSwitchWidgetResId;
     private boolean mDisabledByAdmin;
     private EnforcedAdmin mEnforcedAdmin;
-    private final int mSwitchWidgetResId;
 
     public RestrictedSwitchPreference(Context context) {
         super(context);

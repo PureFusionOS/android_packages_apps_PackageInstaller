@@ -32,7 +32,7 @@ import android.view.animation.LinearInterpolator;
 
 /**
  * Drawable for showing an indeterminate progress indicator.
- *
+ * <p>
  * TODO: When Material progress drawable is available in the support library stop using this.
  *
  * @hide
@@ -40,36 +40,39 @@ import android.view.animation.LinearInterpolator;
 @TargetApi(Build.VERSION_CODES.KITKAT_WATCH)
 class ProgressDrawable extends Drawable {
 
-    private static Property<ProgressDrawable, Integer> LEVEL =
-            new Property<ProgressDrawable, Integer>(Integer.class, "level") {
-        @Override
-        public Integer get(ProgressDrawable drawable) {
-            return drawable.getLevel();
-        }
-
-        @Override
-        public void set(ProgressDrawable drawable, Integer value) {
-            drawable.setLevel(value);
-            drawable.invalidateSelf();
-        }
-    };
-    /** Max level for a level drawable, as specified in developer docs for {@link Drawable}. */
+    /**
+     * Max level for a level drawable, as specified in developer docs for {@link Drawable}.
+     */
     private static final int MAX_LEVEL = 10000;
-
-    /** How many different sections are there, five gives us the material style star. **/
+    /**
+     * How many different sections are there, five gives us the material style star.
+     **/
     private static final int NUMBER_OF_SEGMENTS = 5;
-
     private static final int LEVELS_PER_SEGMENT = MAX_LEVEL / NUMBER_OF_SEGMENTS;
     private static final float STARTING_ANGLE = -90f;
     private static final long ANIMATION_DURATION = 6000;
     private static final int FULL_CIRCLE = 360;
     private static final int MAX_SWEEP = 306;
     private static final int CORRECTION_ANGLE = FULL_CIRCLE - MAX_SWEEP;
-    /** How far through each cycle does the bar stop growing and start shrinking, half way. **/
+    /**
+     * How far through each cycle does the bar stop growing and start shrinking, half way.
+     **/
     private static final float GROW_SHRINK_RATIO = 0.5f;
     // TODO: replace this with BakedBezierInterpolator when its available in support library.
     private static final TimeInterpolator mInterpolator = Gusterpolator.INSTANCE;
+    private static Property<ProgressDrawable, Integer> LEVEL =
+            new Property<ProgressDrawable, Integer>(Integer.class, "level") {
+                @Override
+                public Integer get(ProgressDrawable drawable) {
+                    return drawable.getLevel();
+                }
 
+                @Override
+                public void set(ProgressDrawable drawable, Integer value) {
+                    drawable.setLevel(value);
+                    drawable.invalidateSelf();
+                }
+            };
     private final RectF mInnerCircleBounds = new RectF();
     private final Paint mPaint = new Paint();
     private final ObjectAnimator mAnimator;
@@ -84,6 +87,16 @@ class ProgressDrawable extends Drawable {
         mAnimator.setRepeatMode(ValueAnimator.RESTART);
         mAnimator.setDuration(ANIMATION_DURATION);
         mAnimator.setInterpolator(new LinearInterpolator());
+    }
+
+    /**
+     * Returns the interpolation scalar (s) that satisfies the equation:
+     * {@code value = }lerp(a, b, s)
+     * <p>
+     * <p>If {@code a == b}, then this function will return 0.
+     */
+    private static float lerpInv(float a, float b, float value) {
+        return a != b ? ((value - a) / (b - a)) : 0.0f;
     }
 
     public void setRingColor(int color) {
@@ -162,15 +175,5 @@ class ProgressDrawable extends Drawable {
     @Override
     protected boolean onLevelChange(int level) {
         return true; // Changing the level of this drawable does change its appearance.
-    }
-
-    /**
-     * Returns the interpolation scalar (s) that satisfies the equation:
-     * {@code value = }lerp(a, b, s)
-     *
-     * <p>If {@code a == b}, then this function will return 0.
-     */
-    private static float lerpInv(float a, float b, float value) {
-        return a != b ? ((value - a) / (b - a)) : 0.0f;
     }
 }

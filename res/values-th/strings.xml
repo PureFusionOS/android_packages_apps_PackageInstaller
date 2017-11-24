@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"ไม่ได้ติดตั้งแอปพลิเคชัน"</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"มีการบล็อกแพ็กเกจไม่ให้ติดตั้ง"</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"ไม่ได้ติดตั้งแอปเพราะแพ็กเกจขัดแย้งกับแพ็กเกจที่มีอยู่"</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"ไม่ได้ติดตั้งแอปเพราะแอปใช้งานไม่ได้กับแท็บเล็ตของคุณ"</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"แอปนี้ไม่สามารถใช้งานกับทีวีของคุณ"</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"ไม่ได้ติดตั้งแอปเพราะแอปใช้งานไม่ได้กับโทรศัพท์ของคุณ"</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"ไม่ได้ติดตั้งแอปเพราะแอปใช้งานไม่ได้กับแท็บเล็ตของคุณ"</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"แอปนี้ไม่สามารถใช้งานกับทีวีของคุณ"</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"ไม่ได้ติดตั้งแอปเพราะแอปใช้งานไม่ได้กับโทรศัพท์ของคุณ"</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"ไม่ได้ติดตั้งแอปเพราะดูเหมือนว่าแพ็กเกจจะไม่ถูกต้อง"</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"ไม่สามารถติดตั้ง <xliff:g id="APP_NAME">%1$s</xliff:g> บนแท็บเล็ตของคุณ"</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> ไม่สามารถติดตั้งบนทีวีได้"</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"ไม่สามารถติดตั้ง <xliff:g id="APP_NAME">%1$s</xliff:g> บนโทรศัพท์ของคุณ"</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"ไม่สามารถติดตั้ง <xliff:g id="APP_NAME">%1$s</xliff:g> บนแท็บเล็ตของคุณ"</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> ไม่สามารถติดตั้งบนทีวีได้"</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"ไม่สามารถติดตั้ง <xliff:g id="APP_NAME">%1$s</xliff:g> บนโทรศัพท์ของคุณ"</string>
     <string name="launch" msgid="4826921505917605463">"เปิด"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"ผู้ดูแลระบบของคุณไม่อนุญาตให้ติดตั้งแอปที่ได้มาจากแหล่งที่มาที่ไม่รู้จัก"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"ผู้ใช้รายนี้ไม่สามารถติดตั้งแอปที่ไม่รู้จัก"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"ไม่มีสิทธิ์"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"สิทธิ์เพิ่มเติม"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other">อีก <xliff:g id="COUNT_1">%1$d</xliff:g> รายการ</item>
-      <item quantity="one">อีก <xliff:g id="COUNT_0">%1$d</xliff:g> รายการ</item>
+        <item quantity="other">อีก <xliff:g id="COUNT_1">%1$d</xliff:g> รายการ</item>
+        <item quantity="one">อีก <xliff:g id="COUNT_0">%1$d</xliff:g> รายการ</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"แอปนี้ออกแบบมาเพื่อ Android เวอร์ชันเก่า การปฏิเสธสิทธิ์อาจทำให้แอปไม่ทำงานตามที่ต้องการอีกต่อไป"</string>
     <string name="default_permission_description" msgid="4992892207044156668">"ดำเนินการทำงานที่ไม่รู้จัก"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"สิทธิ์ปัจจุบัน"</string>
     <string name="message_staging" msgid="6151794817691100003">"กำลังปรับสภาพแวดล้อมของแอป…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"ไม่ทราบ"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"เพื่อความปลอดภัย ไม่อนุญาตให้ติดตั้งแอปที่ไม่รู้จักจากแหล่งที่มานี้ในแท็บเล็ต"</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"เพื่อความปลอดภัย ไม่อนุญาตให้ติดตั้งแอปที่ไม่รู้จักจากแหล่งที่มานี้ในทีวี"</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"เพื่อความปลอดภัย ไม่อนุญาตให้ติดตั้งแอปที่ไม่รู้จักจากแหล่งที่มานี้ในโทรศัพท์"</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"โทรศัพท์และข้อมูลส่วนบุคคลของคุณมีความเสี่ยงมากขึ้นที่จะถูกโจมตีจากแอปที่ไม่รู้จัก การติดตั้งแอปนี้เป็นการยอมรับว่าคุณจะรับผิดชอบความเสียหายต่อเครื่องโทรศัพท์หรือการสูญเสียข้อมูลที่อาจเกิดจากการใช้งานแอปดังกล่าว"</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"แท็บเล็ตและข้อมูลส่วนบุคคลของคุณมีความเสี่ยงมากขึ้นที่จะถูกโจมตีจากแอปที่ไม่รู้จัก การติดตั้งแอปนี้เป็นการยอมรับว่าคุณจะรับผิดชอบความเสียหายต่อเครื่องแท็บเล็ตหรือการสูญเสียข้อมูลที่อาจเกิดจากการใช้งานแอปดังกล่าว"</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"ทีวีและข้อมูลส่วนบุคคลของคุณมีความเสี่ยงมากขึ้นที่จะถูกโจมตีจากแอปที่ไม่รู้จัก การติดตั้งแอปนี้เป็นการยอมรับว่าคุณจะรับผิดชอบความเสียหายต่อเครื่องทีวีหรือการสูญเสียข้อมูลที่อาจเกิดจากการใช้งานแอปดังกล่าว"</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"เพื่อความปลอดภัย ไม่อนุญาตให้ติดตั้งแอปที่ไม่รู้จักจากแหล่งที่มานี้ในแท็บเล็ต"</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"เพื่อความปลอดภัย ไม่อนุญาตให้ติดตั้งแอปที่ไม่รู้จักจากแหล่งที่มานี้ในทีวี"</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"เพื่อความปลอดภัย ไม่อนุญาตให้ติดตั้งแอปที่ไม่รู้จักจากแหล่งที่มานี้ในโทรศัพท์"</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"โทรศัพท์และข้อมูลส่วนบุคคลของคุณมีความเสี่ยงมากขึ้นที่จะถูกโจมตีจากแอปที่ไม่รู้จัก การติดตั้งแอปนี้เป็นการยอมรับว่าคุณจะรับผิดชอบความเสียหายต่อเครื่องโทรศัพท์หรือการสูญเสียข้อมูลที่อาจเกิดจากการใช้งานแอปดังกล่าว"</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"แท็บเล็ตและข้อมูลส่วนบุคคลของคุณมีความเสี่ยงมากขึ้นที่จะถูกโจมตีจากแอปที่ไม่รู้จัก การติดตั้งแอปนี้เป็นการยอมรับว่าคุณจะรับผิดชอบความเสียหายต่อเครื่องแท็บเล็ตหรือการสูญเสียข้อมูลที่อาจเกิดจากการใช้งานแอปดังกล่าว"</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"ทีวีและข้อมูลส่วนบุคคลของคุณมีความเสี่ยงมากขึ้นที่จะถูกโจมตีจากแอปที่ไม่รู้จัก การติดตั้งแอปนี้เป็นการยอมรับว่าคุณจะรับผิดชอบความเสียหายต่อเครื่องทีวีหรือการสูญเสียข้อมูลที่อาจเกิดจากการใช้งานแอปดังกล่าว"</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"ต่อไป"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"การตั้งค่า"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"กำลังติดตั้ง/ถอนการติดตั้งแอป Wear"</string>

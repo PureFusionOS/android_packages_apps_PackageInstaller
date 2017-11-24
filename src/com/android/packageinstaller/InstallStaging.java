@@ -45,11 +45,17 @@ public class InstallStaging extends Activity {
 
     private static final String STAGED_FILE = "STAGED_FILE";
 
-    /** Currently running task that loads the file from the content URI into a file */
-    private @Nullable StagingAsyncTask mStagingTask;
+    /**
+     * Currently running task that loads the file from the content URI into a file
+     */
+    private @Nullable
+    StagingAsyncTask mStagingTask;
 
-    /** The file the package is in */
-    private @Nullable File mStagedFile;
+    /**
+     * The file the package is in
+     */
+    private @Nullable
+    File mStagedFile;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

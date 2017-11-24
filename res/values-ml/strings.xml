@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"അപ്ലിക്കേഷൻ ഇൻസ്റ്റാളുചെയ്‌തില്ല."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"ഇൻസ്റ്റാൾ ചെയ്യുന്നതിൽ നിന്നും പാക്കേജിനെ തടഞ്ഞു."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"നിലവിലുള്ള ഒരു പാക്കേജുമായി പാക്കേജിന് പൊരുത്തക്കേടുള്ളതിനാൽ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്തില്ല."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"നിങ്ങളുടെ ടാബ്‌ലെറ്റുമായി അനുയോജ്യത ഇല്ലാത്തതിനാൽ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്തില്ല."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"നിങ്ങളുടെ ടിവിയ്‌ക്ക് ഈ ആപ്പ് അനുയോജ്യമല്ല."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"നിങ്ങളുടെ ഫോണുമായി അനുയോജ്യത ഇല്ലാത്തതിനാൽ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്തില്ല."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"നിങ്ങളുടെ ടാബ്‌ലെറ്റുമായി അനുയോജ്യത ഇല്ലാത്തതിനാൽ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്തില്ല."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"നിങ്ങളുടെ ടിവിയ്‌ക്ക് ഈ ആപ്പ് അനുയോജ്യമല്ല."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"നിങ്ങളുടെ ഫോണുമായി അനുയോജ്യത ഇല്ലാത്തതിനാൽ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്തില്ല."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"പാക്കേജ് അസാധുവായി കാണപ്പെടുന്നതിനാൽ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്തില്ല."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"നിങ്ങളുടെ ടാബ്‌ലെറ്റിൽ <xliff:g id="APP_NAME">%1$s</xliff:g> ഇൻസ്റ്റാളുചെയ്യാനായില്ല."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g>, നിങ്ങളുടെ ടിവിയിൽ ഇൻസ്റ്റാളുചെയ്യാനായില്ല."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"നിങ്ങളുടെ ഫോണിൽ <xliff:g id="APP_NAME">%1$s</xliff:g> ഇൻസ്റ്റാളുചെയ്യാനായില്ല."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"നിങ്ങളുടെ ടാബ്‌ലെറ്റിൽ <xliff:g id="APP_NAME">%1$s</xliff:g> ഇൻസ്റ്റാളുചെയ്യാനായില്ല."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g>, നിങ്ങളുടെ ടിവിയിൽ ഇൻസ്റ്റാളുചെയ്യാനായില്ല."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"നിങ്ങളുടെ ഫോണിൽ <xliff:g id="APP_NAME">%1$s</xliff:g> ഇൻസ്റ്റാളുചെയ്യാനായില്ല."</string>
     <string name="launch" msgid="4826921505917605463">"തുറക്കുക"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"അജ്ഞാത ഉറവിടങ്ങളിൽ നിന്ന് സ്വന്തമാക്കിയ ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ നിങ്ങളുടെ അഡ്‌മിനിസ്‌ട്രേറ്റർ അനുവദിക്കുന്നില്ല"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"ഈ ഉപയോക്താവിന്, തിരിച്ചറിയാനാകാത്ത ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ കഴിയില്ല"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"അനുമതികൾ ഇല്ല"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"അധിക അനുമതികൾ"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> എണ്ണം കൂടി</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> എണ്ണം കൂടി</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> എണ്ണം കൂടി</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> എണ്ണം കൂടി</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"ഈ ആപ്പ് Android-ന്റെ പഴയ പതിപ്പിനായാണ് രൂപകൽപ്പന ചെയ്‌തിരിക്കുന്നത്. അനുമതി നിരസിക്കുന്നത് തുടർന്ന് ഉദ്ദേശിച്ചവിധം പ്രവർത്തിക്കാതിരിക്കാനിടയാക്കുന്നു."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"ഒരു അജ്ഞാതപ്രവർത്തനം നടത്തുക"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"നിലവിലെ അനുമതികൾ"</string>
     <string name="message_staging" msgid="6151794817691100003">"ആപ്പ് തയ്യാറാക്കുന്നു…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"അജ്ഞാതം"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"നിങ്ങളുടെ സുരക്ഷയ്ക്ക്, ഈ ഉറവിടത്തിൽ നിന്നുള്ള, തിരിച്ചറിയാനാകാത്ത ആപ്‌സ് ഇൻസ്റ്റാൾ ചെയ്യാൻ നിങ്ങളുടെ ടാബ്‌ലെറ്റ് അനുവദിക്കപ്പെടില്ല."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"നിങ്ങളുടെ സുരക്ഷയ്ക്ക്, ഈ ഉറവിടത്തിൽ നിന്നുള്ള, തിരിച്ചറിയാനാകാത്ത ആപ്‌സ് ഇൻസ്റ്റാൾ ചെയ്യാൻ നിങ്ങളുടെ ടിവി അനുവദിക്കപ്പെടില്ല."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"നിങ്ങളുടെ സുരക്ഷയ്ക്ക്, ഈ ഉറവിടത്തിൽ നിന്നുള്ള, തിരിച്ചറിയാനാകാത്ത ആപ്‌സ് ഇൻസ്റ്റാൾ ചെയ്യാൻ നിങ്ങളുടെ ഫോൺ അനുവദിക്കപ്പെടില്ല."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"തിരിച്ചറിയാനാകാത്ത ആപ്പുകളാൽ നിങ്ങളുടെ ഫോണും വ്യക്തിഗത ഡാറ്റയും ആക്രമിക്കപ്പെടാനുള്ള സാധ്യത വളരെ കൂടുതലാണ്. ഈ ആപ്പ് ഇൻസ്‌റ്റാൾ ചെയ്യുന്നതിലൂടെ, ഇത് ഉപയോഗിക്കുന്നതിനാൽ നിങ്ങളുടെ ഫോണിന് സംഭവിച്ചേക്കാവുന്ന എല്ലാ നാശനഷ്‌ടങ്ങൾക്കും അല്ലെങ്കിൽ ഡാറ്റാ നഷ്‌ടങ്ങൾക്കും നിങ്ങൾക്കാണ് ഉത്തരവാദിത്തമെന്ന് നിങ്ങൾ അംഗീകരിക്കുന്നു."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"തിരിച്ചറിയാനാകാത്ത ആപ്പുകളാൽ നിങ്ങളുടെ ടാബ്‌ലെറ്റും വ്യക്തിഗത ഡാറ്റയും ആക്രമിക്കപ്പെടാനുള്ള സാധ്യത വളരെ കൂടുതലാണ്. ഈ ആപ്പ് ഇൻസ്‌റ്റാൾ ചെയ്യുന്നതിലൂടെ, ഇത് ഉപയോഗിക്കുന്നതിനാൽ നിങ്ങളുടെ ടാബ്‌ലെറ്റിന് സംഭവിച്ചേക്കാവുന്ന എല്ലാ നാശനഷ്‌ടങ്ങൾക്കും അല്ലെങ്കിൽ ഡാറ്റാ നഷ്‌ടങ്ങൾക്കും നിങ്ങൾക്കാണ് ഉത്തരവാദിത്തമെന്ന് നിങ്ങൾ അംഗീകരിക്കുന്നു."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"തിരിച്ചറിയാനാകാത്ത ആപ്പുകളാൽ നിങ്ങളുടെ ടിവിയും വ്യക്തിഗത ഡാറ്റയും ആക്രമിക്കപ്പെടാനുള്ള സാധ്യത വളരെ കൂടുതലാണ്. ഈ ആപ്പ് ഇൻസ്‌റ്റാൾ ചെയ്യുന്നതിലൂടെ, ഇത് ഉപയോഗിക്കുന്നതിനാൽ നിങ്ങളുടെ ടിവിക്ക് സംഭവിച്ചേക്കാവുന്ന എല്ലാ നാശനഷ്‌ടങ്ങൾക്കും അല്ലെങ്കിൽ ഡാറ്റാ നഷ്‌ടങ്ങൾക്കും നിങ്ങൾക്കാണ് ഉത്തരവാദിത്തമെന്ന് നിങ്ങൾ അംഗീകരിക്കുന്നു."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"നിങ്ങളുടെ സുരക്ഷയ്ക്ക്, ഈ ഉറവിടത്തിൽ നിന്നുള്ള, തിരിച്ചറിയാനാകാത്ത ആപ്‌സ് ഇൻസ്റ്റാൾ ചെയ്യാൻ നിങ്ങളുടെ ടാബ്‌ലെറ്റ് അനുവദിക്കപ്പെടില്ല."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"നിങ്ങളുടെ സുരക്ഷയ്ക്ക്, ഈ ഉറവിടത്തിൽ നിന്നുള്ള, തിരിച്ചറിയാനാകാത്ത ആപ്‌സ് ഇൻസ്റ്റാൾ ചെയ്യാൻ നിങ്ങളുടെ ടിവി അനുവദിക്കപ്പെടില്ല."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"നിങ്ങളുടെ സുരക്ഷയ്ക്ക്, ഈ ഉറവിടത്തിൽ നിന്നുള്ള, തിരിച്ചറിയാനാകാത്ത ആപ്‌സ് ഇൻസ്റ്റാൾ ചെയ്യാൻ നിങ്ങളുടെ ഫോൺ അനുവദിക്കപ്പെടില്ല."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"തിരിച്ചറിയാനാകാത്ത ആപ്പുകളാൽ നിങ്ങളുടെ ഫോണും വ്യക്തിഗത ഡാറ്റയും ആക്രമിക്കപ്പെടാനുള്ള സാധ്യത വളരെ കൂടുതലാണ്. ഈ ആപ്പ് ഇൻസ്‌റ്റാൾ ചെയ്യുന്നതിലൂടെ, ഇത് ഉപയോഗിക്കുന്നതിനാൽ നിങ്ങളുടെ ഫോണിന് സംഭവിച്ചേക്കാവുന്ന എല്ലാ നാശനഷ്‌ടങ്ങൾക്കും അല്ലെങ്കിൽ ഡാറ്റാ നഷ്‌ടങ്ങൾക്കും നിങ്ങൾക്കാണ് ഉത്തരവാദിത്തമെന്ന് നിങ്ങൾ അംഗീകരിക്കുന്നു."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"തിരിച്ചറിയാനാകാത്ത ആപ്പുകളാൽ നിങ്ങളുടെ ടാബ്‌ലെറ്റും വ്യക്തിഗത ഡാറ്റയും ആക്രമിക്കപ്പെടാനുള്ള സാധ്യത വളരെ കൂടുതലാണ്. ഈ ആപ്പ് ഇൻസ്‌റ്റാൾ ചെയ്യുന്നതിലൂടെ, ഇത് ഉപയോഗിക്കുന്നതിനാൽ നിങ്ങളുടെ ടാബ്‌ലെറ്റിന് സംഭവിച്ചേക്കാവുന്ന എല്ലാ നാശനഷ്‌ടങ്ങൾക്കും അല്ലെങ്കിൽ ഡാറ്റാ നഷ്‌ടങ്ങൾക്കും നിങ്ങൾക്കാണ് ഉത്തരവാദിത്തമെന്ന് നിങ്ങൾ അംഗീകരിക്കുന്നു."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"തിരിച്ചറിയാനാകാത്ത ആപ്പുകളാൽ നിങ്ങളുടെ ടിവിയും വ്യക്തിഗത ഡാറ്റയും ആക്രമിക്കപ്പെടാനുള്ള സാധ്യത വളരെ കൂടുതലാണ്. ഈ ആപ്പ് ഇൻസ്‌റ്റാൾ ചെയ്യുന്നതിലൂടെ, ഇത് ഉപയോഗിക്കുന്നതിനാൽ നിങ്ങളുടെ ടിവിക്ക് സംഭവിച്ചേക്കാവുന്ന എല്ലാ നാശനഷ്‌ടങ്ങൾക്കും അല്ലെങ്കിൽ ഡാറ്റാ നഷ്‌ടങ്ങൾക്കും നിങ്ങൾക്കാണ് ഉത്തരവാദിത്തമെന്ന് നിങ്ങൾ അംഗീകരിക്കുന്നു."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"തുടരുക"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"ക്രമീകരണം"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Wear ആപ്പുകൾ ഇൻസ്‌റ്റാൾ/അൺ ഇൻസ്‌റ്റാൾ ചെയ്യൽ"</string>

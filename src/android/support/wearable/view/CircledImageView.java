@@ -47,44 +47,9 @@ import java.util.Objects;
 public class CircledImageView extends View {
 
     private static final ArgbEvaluator ARGB_EVALUATOR = new ArgbEvaluator();
-
-    private Drawable mDrawable;
-
     private final RectF mOval;
     private final Paint mPaint;
-
-    private ColorStateList mCircleColor;
-
-    private float mCircleRadius;
-    private float mCircleRadiusPercent;
-
-    private float mCircleRadiusPressed;
-    private float mCircleRadiusPressedPercent;
-
-    private float mRadiusInset;
-
-    private int mCircleBorderColor;
-
-    private float mCircleBorderWidth;
-    private float mProgress = 1f;
     private final float mShadowWidth;
-
-    private float mShadowVisibility;
-    private boolean mCircleHidden = false;
-
-    private float mInitialCircleRadius;
-
-    private boolean mPressed = false;
-
-    private boolean mProgressIndeterminate;
-    private ProgressDrawable mIndeterminateDrawable;
-    private Rect mIndeterminateBounds = new Rect();
-    private long mColorChangeAnimationDurationMs = 0;
-
-    private float mImageCirclePercentage = 1f;
-    private float mImageHorizontalOffcenterPercentage = 0f;
-    private Integer mImageTint;
-
     private final Drawable.Callback mDrawableCallback = new Drawable.Callback() {
         @Override
         public void invalidateDrawable(Drawable drawable) {
@@ -101,7 +66,27 @@ public class CircledImageView extends View {
             // Not needed.
         }
     };
-
+    private Drawable mDrawable;
+    private ColorStateList mCircleColor;
+    private float mCircleRadius;
+    private float mCircleRadiusPercent;
+    private float mCircleRadiusPressed;
+    private float mCircleRadiusPressedPercent;
+    private float mRadiusInset;
+    private int mCircleBorderColor;
+    private float mCircleBorderWidth;
+    private float mProgress = 1f;
+    private float mShadowVisibility;
+    private boolean mCircleHidden = false;
+    private float mInitialCircleRadius;
+    private boolean mPressed = false;
+    private boolean mProgressIndeterminate;
+    private ProgressDrawable mIndeterminateDrawable;
+    private Rect mIndeterminateBounds = new Rect();
+    private long mColorChangeAnimationDurationMs = 0;
+    private float mImageCirclePercentage = 1f;
+    private float mImageHorizontalOffcenterPercentage = 0f;
+    private Integer mImageTint;
     private int mCurrentColor;
 
     private final AnimatorUpdateListener mAnimationListener = new AnimatorUpdateListener() {
@@ -286,8 +271,8 @@ public class CircledImageView extends View {
             } else {
                 mColorAnimator = new ValueAnimator();
             }
-            mColorAnimator.setIntValues(new int[] {
-                    mCurrentColor, newColor });
+            mColorAnimator.setIntValues(new int[]{
+                    mCurrentColor, newColor});
             mColorAnimator.setEvaluator(ARGB_EVALUATOR);
             mColorAnimator.setDuration(mColorChangeAnimationDurationMs);
             mColorAnimator.addUpdateListener(this.mAnimationListener);
@@ -353,7 +338,7 @@ public class CircledImageView extends View {
                                     ? imageCirclePercentage * viewWidth / nativeDrawableWidth : 1,
                             (float) nativeDrawableHeight != 0
                                     ? imageCirclePercentage
-                                        * viewHeight / nativeDrawableHeight : 1));
+                                    * viewHeight / nativeDrawableHeight : 1));
 
             // Scale the drawable down to fit the view, if needed.
             final int drawableWidth = Math.round(scaleFactor * nativeDrawableWidth);
@@ -369,26 +354,6 @@ public class CircledImageView extends View {
         }
 
         super.onLayout(changed, left, top, right, bottom);
-    }
-
-    public void setImageDrawable(Drawable drawable) {
-        if (drawable != mDrawable) {
-            final Drawable existingDrawable = mDrawable;
-            mDrawable = drawable;
-
-            final boolean skipLayout = drawable != null
-                    && existingDrawable != null
-                    && existingDrawable.getIntrinsicHeight() == drawable.getIntrinsicHeight()
-                    && existingDrawable.getIntrinsicWidth() == drawable.getIntrinsicWidth();
-
-            if (skipLayout) {
-                mDrawable.setBounds(existingDrawable.getBounds());
-            } else {
-                requestLayout();
-            }
-
-            invalidate();
-        }
     }
 
     public void setImageResource(int resId) {
@@ -426,8 +391,27 @@ public class CircledImageView extends View {
         return radius - mRadiusInset;
     }
 
+    public void setCircleRadius(float circleRadius) {
+        if (circleRadius != mCircleRadius) {
+            mCircleRadius = circleRadius;
+            invalidate();
+        }
+    }
+
     public float getCircleRadiusPercent() {
         return mCircleRadiusPercent;
+    }
+
+    /**
+     * Sets the radius of the circle to be a percentage of the largest dimension of the view.
+     *
+     * @param circleRadiusPercent A {@code float} from 0 to 1 representing the radius percentage.
+     */
+    public void setCircleRadiusPercent(float circleRadiusPercent) {
+        if (circleRadiusPercent != mCircleRadiusPercent) {
+            mCircleRadiusPercent = circleRadiusPercent;
+            invalidate();
+        }
     }
 
     public float getCircleRadiusPressed() {
@@ -441,28 +425,6 @@ public class CircledImageView extends View {
         return radius - mRadiusInset;
     }
 
-    public float getCircleRadiusPressedPercent() {
-        return mCircleRadiusPressedPercent;
-    }
-
-    public void setCircleRadius(float circleRadius) {
-        if (circleRadius != mCircleRadius) {
-            mCircleRadius = circleRadius;
-            invalidate();
-        }
-    }
-
-    /**
-     * Sets the radius of the circle to be a percentage of the largest dimension of the view.
-     * @param circleRadiusPercent A {@code float} from 0 to 1 representing the radius percentage.
-     */
-    public void setCircleRadiusPercent(float circleRadiusPercent) {
-        if (circleRadiusPercent != mCircleRadiusPercent) {
-            mCircleRadiusPercent = circleRadiusPercent;
-            invalidate();
-        }
-    }
-
     public void setCircleRadiusPressed(float circleRadiusPressed) {
         if (circleRadiusPressed != mCircleRadiusPressed) {
             mCircleRadiusPressed = circleRadiusPressed;
@@ -470,14 +432,19 @@ public class CircledImageView extends View {
         }
     }
 
+    public float getCircleRadiusPressedPercent() {
+        return mCircleRadiusPressedPercent;
+    }
+
     /**
      * Sets the radius of the circle to be a percentage of the largest dimension of the view when
      * pressed.
+     *
      * @param circleRadiusPressedPercent A {@code float} from 0 to 1 representing the radius
      *                                   percentage.
      */
     public void setCircleRadiusPressedPercent(float circleRadiusPressedPercent) {
-        if (circleRadiusPressedPercent  != mCircleRadiusPressedPercent) {
+        if (circleRadiusPressedPercent != mCircleRadiusPressedPercent) {
             mCircleRadiusPressedPercent = circleRadiusPressedPercent;
             invalidate();
         }
@@ -493,16 +460,16 @@ public class CircledImageView extends View {
         setCircleColorStateList(ColorStateList.valueOf(circleColor));
     }
 
+    public ColorStateList getCircleColorStateList() {
+        return mCircleColor;
+    }
+
     public void setCircleColorStateList(ColorStateList circleColor) {
         if (!Objects.equals(circleColor, mCircleColor)) {
             mCircleColor = circleColor;
             setColorForCurrentState();
             invalidate();
         }
-    }
-
-    public ColorStateList getCircleColorStateList() {
-        return mCircleColor;
     }
 
     public int getDefaultCircleColor() {
@@ -543,6 +510,7 @@ public class CircledImageView extends View {
 
     /**
      * Set how much of the shadow should be shown.
+     *
      * @param shadowVisibility Value between 0 and 1.
      */
     public void setShadowVisibility(float shadowVisibility) {
@@ -562,6 +530,7 @@ public class CircledImageView extends View {
 
     /**
      * Set the border around the circle.
+     *
      * @param circleBorderWidth Width of the border around the circle.
      */
     public void setCircleBorderWidth(float circleBorderWidth) {
@@ -584,6 +553,26 @@ public class CircledImageView extends View {
         return mDrawable;
     }
 
+    public void setImageDrawable(Drawable drawable) {
+        if (drawable != mDrawable) {
+            final Drawable existingDrawable = mDrawable;
+            mDrawable = drawable;
+
+            final boolean skipLayout = drawable != null
+                    && existingDrawable != null
+                    && existingDrawable.getIntrinsicHeight() == drawable.getIntrinsicHeight()
+                    && existingDrawable.getIntrinsicWidth() == drawable.getIntrinsicWidth();
+
+            if (skipLayout) {
+                mDrawable.setBounds(existingDrawable.getBounds());
+            } else {
+                requestLayout();
+            }
+
+            invalidate();
+        }
+    }
+
     /**
      * @return the milliseconds duration of the transition animation when the color changes.
      */
@@ -593,8 +582,8 @@ public class CircledImageView extends View {
 
     /**
      * @param mColorChangeAnimationDurationMs the milliseconds duration of the color change
-     *            animation. The color change animation will run if the color changes with {@link #setCircleColor}
-     *            or as a result of the active state changing.
+     *                                        animation. The color change animation will run if the color changes with {@link #setCircleColor}
+     *                                        or as a result of the active state changing.
      */
     public void setColorChangeAnimationDuration(long mColorChangeAnimationDurationMs) {
         this.mColorChangeAnimationDurationMs = mColorChangeAnimationDurationMs;

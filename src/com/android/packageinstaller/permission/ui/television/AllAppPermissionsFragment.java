@@ -69,6 +69,19 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
         return instance;
     }
 
+    private static Drawable getTintedPermissionIcon(Context context, PermissionInfo perm,
+                                                    PermissionGroupInfo group) {
+        final Drawable icon;
+        if (perm.icon != 0) {
+            icon = perm.loadIcon(context.getPackageManager());
+        } else if (group != null && group.icon != 0) {
+            icon = group.loadIcon(context.getPackageManager());
+        } else {
+            icon = context.getDrawable(R.drawable.ic_perm_device_info);
+        }
+        return Utils.applyTint(context, icon, android.R.attr.colorControlNormal);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,11 +102,11 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
 
         mAppPermissions = new AppPermissions(getActivity(), mPackageInfo, null, false,
                 new Runnable() {
-            @Override
-            public void run() {
-                getActivity().finish();
-            }
-        });
+                    @Override
+                    public void run() {
+                        getActivity().finish();
+                    }
+                });
     }
 
     @Override
@@ -214,7 +227,7 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
     }
 
     private PreferenceGroup findOrCreate(PackageItemInfo group, PackageManager pm,
-            ArrayList<Preference> prefs) {
+                                         ArrayList<Preference> prefs) {
         PreferenceGroup pref = (PreferenceGroup) findPreference(group.name);
         if (pref == null) {
             pref = new PreferenceCategory(getActivity());
@@ -263,7 +276,7 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
     }
 
     private Preference getImmutablePreference(final PermissionInfo perm,
-            PermissionGroupInfo group) {
+                                              PermissionGroupInfo group) {
         final PackageManager pm = getActivity().getPackageManager();
 
         // TODO: No hardcoded layouts
@@ -285,19 +298,6 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
         });
 
         return pref;
-    }
-
-    private static Drawable getTintedPermissionIcon(Context context, PermissionInfo perm,
-            PermissionGroupInfo group) {
-        final Drawable icon;
-        if (perm.icon != 0) {
-            icon = perm.loadIcon(context.getPackageManager());
-        } else if (group != null && group.icon != 0) {
-            icon = group.loadIcon(context.getPackageManager());
-        } else {
-            icon =  context.getDrawable(R.drawable.ic_perm_device_info);
-        }
-        return Utils.applyTint(context, icon, android.R.attr.colorControlNormal);
     }
 
     private boolean isMutableGranularPermission(String name) {

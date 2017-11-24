@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Ứng dụng chưa được cài đặt."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Đã chặn cài đặt gói."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Ứng dụng chưa được cài đặt dưới dạng gói xung đột với gói hiện có."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Ứng dụng chưa được cài đặt dưới dạng ứng dụng không tương thích với máy tính bảng của bạn."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Ứng dụng này không tương thích với TV của bạn."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Ứng dụng chưa được cài đặt dưới dạng ứng dụng không tương thích với điện thoại của bạn."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Ứng dụng chưa được cài đặt dưới dạng ứng dụng không tương thích với máy tính bảng của bạn."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Ứng dụng này không tương thích với TV của bạn."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Ứng dụng chưa được cài đặt dưới dạng ứng dụng không tương thích với điện thoại của bạn."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Ứng dụng chưa được cài đặt dưới dạng gói dường như không hợp lệ."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"Không thể cài đặt <xliff:g id="APP_NAME">%1$s</xliff:g> trên máy tính bảng của bạn."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"Không cài đặt được <xliff:g id="APP_NAME">%1$s</xliff:g> trên TV của bạn."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"Không thể cài đặt <xliff:g id="APP_NAME">%1$s</xliff:g> trên điện thoại này."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"Không thể cài đặt <xliff:g id="APP_NAME">%1$s</xliff:g> trên máy tính bảng của bạn."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"Không cài đặt được <xliff:g id="APP_NAME">%1$s</xliff:g> trên TV của bạn."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"Không thể cài đặt <xliff:g id="APP_NAME">%1$s</xliff:g> trên điện thoại này."</string>
     <string name="launch" msgid="4826921505917605463">"Mở"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Quản trị viên của bạn không cho phép cài đặt ứng dụng từ nguồn không xác định"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Người dùng này không thể cài đặt ứng dụng không xác định"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Không có quyền"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Quyền khác"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> quyền khác</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> quyền khác</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> quyền khác</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> quyền khác</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Ứng dụng này được thiết kế cho các phiên bản Android cũ hơn. Từ chối quyền có thể làm cho ứng dụng không còn hoạt động như mong muốn."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"thực hiện hành động không xác định"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Các quyền hiện tại"</string>
     <string name="message_staging" msgid="6151794817691100003">"Đang sắp xếp ứng dụng…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Không xác định"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Để bảo mật, máy tính bảng của bạn không được phép cài đặt các ứng dụng không xác định từ nguồn này."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Để bảo mật, TV của bạn không được phép cài đặt các ứng dụng không xác định từ nguồn này."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Để bảo mật, điện thoại của bạn không được phép cài đặt các ứng dụng không xác định từ nguồn này."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Điện thoại và dữ liệu cá nhân của bạn dễ bị các ứng dụng không xác định tấn công hơn. Bằng cách cài đặt ứng dụng này, bạn đồng ý tự chịu trách nhiệm cho mọi hỏng hóc đối với điện thoại của mình hoặc mất mát dữ liệu có thể phát sinh do sử dụng ứng dụng này."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Máy tính bảng và dữ liệu cá nhân của bạn dễ bị các ứng dụng không xác định tấn công hơn. Bằng cách cài đặt ứng dụng này, bạn đồng ý tự chịu trách nhiệm cho mọi hỏng hóc đối với máy tính bảng của mình hoặc mất mát dữ liệu có thể phát sinh do sử dụng ứng dụng này."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"TV và dữ liệu cá nhân của bạn dễ bị các ứng dụng không xác định tấn công hơn. Bằng cách cài đặt ứng dụng này, bạn đồng ý tự chịu trách nhiệm cho mọi hỏng hóc đối với TV của mình hoặc mất mát dữ liệu có thể phát sinh do sử dụng ứng dụng này."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Để bảo mật, máy tính bảng của bạn không được phép cài đặt các ứng dụng không xác định từ nguồn này."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Để bảo mật, TV của bạn không được phép cài đặt các ứng dụng không xác định từ nguồn này."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Để bảo mật, điện thoại của bạn không được phép cài đặt các ứng dụng không xác định từ nguồn này."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Điện thoại và dữ liệu cá nhân của bạn dễ bị các ứng dụng không xác định tấn công hơn. Bằng cách cài đặt ứng dụng này, bạn đồng ý tự chịu trách nhiệm cho mọi hỏng hóc đối với điện thoại của mình hoặc mất mát dữ liệu có thể phát sinh do sử dụng ứng dụng này."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Máy tính bảng và dữ liệu cá nhân của bạn dễ bị các ứng dụng không xác định tấn công hơn. Bằng cách cài đặt ứng dụng này, bạn đồng ý tự chịu trách nhiệm cho mọi hỏng hóc đối với máy tính bảng của mình hoặc mất mát dữ liệu có thể phát sinh do sử dụng ứng dụng này."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"TV và dữ liệu cá nhân của bạn dễ bị các ứng dụng không xác định tấn công hơn. Bằng cách cài đặt ứng dụng này, bạn đồng ý tự chịu trách nhiệm cho mọi hỏng hóc đối với TV của mình hoặc mất mát dữ liệu có thể phát sinh do sử dụng ứng dụng này."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Tiếp tục"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Cài đặt"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Cài đặt/gỡ cài đặt ứng dụng Wear"</string>

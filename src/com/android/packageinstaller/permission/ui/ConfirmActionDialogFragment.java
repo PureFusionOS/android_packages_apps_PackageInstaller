@@ -29,10 +29,6 @@ public final class ConfirmActionDialogFragment extends DialogFragment {
     public static final String ARG_MESSAGE = "MESSAGE";
     public static final String ARG_ACTION = "ACTION";
 
-    public static interface OnActionConfirmedListener {
-        public void onActionConfirmed(String action);
-    }
-
     public static ConfirmActionDialogFragment newInstance(CharSequence message, String action) {
         Bundle arguments = new Bundle();
         arguments.putCharSequence(ARG_MESSAGE, message);
@@ -49,16 +45,20 @@ public final class ConfirmActionDialogFragment extends DialogFragment {
                 .setNegativeButton(R.string.cancel, null)
                 .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
                         new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Activity activity = getActivity();
-                        if (activity instanceof OnActionConfirmedListener) {
-                            String groupName = getArguments().getString(ARG_ACTION);
-                            ((OnActionConfirmedListener) activity)
-                                    .onActionConfirmed(groupName);
-                        }
-                    }
-                })
-        .create();
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Activity activity = getActivity();
+                                if (activity instanceof OnActionConfirmedListener) {
+                                    String groupName = getArguments().getString(ARG_ACTION);
+                                    ((OnActionConfirmedListener) activity)
+                                            .onActionConfirmed(groupName);
+                                }
+                            }
+                        })
+                .create();
+    }
+
+    public static interface OnActionConfirmedListener {
+        public void onActionConfirmed(String action);
     }
 }

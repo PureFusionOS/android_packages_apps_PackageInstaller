@@ -118,7 +118,7 @@ public class GrantPermissionsViewHandlerImpl implements GrantPermissionsViewHand
 
     @Override
     public void updateUi(String groupName, int groupCount, int groupIndex, Icon icon,
-            CharSequence message, boolean showDonNotAsk) {
+                         CharSequence message, boolean showDonNotAsk) {
         mGroupName = groupName;
         mGroupCount = groupCount;
         mGroupIndex = groupIndex;
@@ -183,37 +183,37 @@ public class GrantPermissionsViewHandlerImpl implements GrantPermissionsViewHand
         mDescContainer.addView(mCurrentDesc);
 
         mDialogContainer.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-                @Override
-                public void onLayoutChange(View v, int left, int top, int right, int bottom,
-                        int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                    mDialogContainer.removeOnLayoutChangeListener(this);
+                                                       @Override
+                                                       public void onLayoutChange(View v, int left, int top, int right, int bottom,
+                                                                                  int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                                                           mDialogContainer.removeOnLayoutChangeListener(this);
 
-                    // Prepare new content to the right to be moved in
-                    final int containerWidth = mDescContainer.getWidth();
-                    mCurrentDesc.setTranslationX(containerWidth);
+                                                           // Prepare new content to the right to be moved in
+                                                           final int containerWidth = mDescContainer.getWidth();
+                                                           mCurrentDesc.setTranslationX(containerWidth);
 
-                    // How much scale for the dialog to appear the same?
-                    final int oldDynamicHeight = oldBottom - oldTop - mButtonBar.getHeight();
-                    final float scaleY = (float) oldDynamicHeight / mDescContainer.getHeight();
+                                                           // How much scale for the dialog to appear the same?
+                                                           final int oldDynamicHeight = oldBottom - oldTop - mButtonBar.getHeight();
+                                                           final float scaleY = (float) oldDynamicHeight / mDescContainer.getHeight();
 
-                    // How much to translate for the dialog to appear the same?
-                    final int translationCompensatingScale = (int) (scaleY
-                            * mDescContainer.getHeight() - mDescContainer.getHeight()) / 2;
-                    final int translationY = (oldTop - top) + translationCompensatingScale;
+                                                           // How much to translate for the dialog to appear the same?
+                                                           final int translationCompensatingScale = (int) (scaleY
+                                                                   * mDescContainer.getHeight() - mDescContainer.getHeight()) / 2;
+                                                           final int translationY = (oldTop - top) + translationCompensatingScale;
 
-                    // Animate to the current layout
-                    mDescContainer.setScaleY(scaleY);
-                    mDescContainer.setTranslationY(translationY);
-                    mDescContainer.animate()
-                            .translationY(0)
-                            .scaleY(1.0f)
-                            .setInterpolator(AnimationUtils.loadInterpolator(mActivity,
-                                    android.R.interpolator.linear_out_slow_in))
-                            .setDuration(IN_DURATION)
-                            .withEndAction(callback)
-                            .start();
-                }
-            }
+                                                           // Animate to the current layout
+                                                           mDescContainer.setScaleY(scaleY);
+                                                           mDescContainer.setTranslationY(translationY);
+                                                           mDescContainer.animate()
+                                                                   .translationY(0)
+                                                                   .scaleY(1.0f)
+                                                                   .setInterpolator(AnimationUtils.loadInterpolator(mActivity,
+                                                                           android.R.interpolator.linear_out_slow_in))
+                                                                   .setDuration(IN_DURATION)
+                                                                   .withEndAction(callback)
+                                                                   .start();
+                                                       }
+                                                   }
         );
 
         mMessageView = (TextView) mCurrentDesc.findViewById(R.id.permission_message);

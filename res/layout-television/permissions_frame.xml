@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2015 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,24 +20,23 @@
     android:filterTouchesWhenObscured="true">
 
     <FrameLayout
-            android:layout_width="@dimen/lb_settings_pane_width"
-            android:layout_height="match_parent"
-            android:background="@color/lb_preference_decor_list_background"
-            android:layout_gravity="end">
+        android:layout_width="@dimen/lb_settings_pane_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/lb_preference_decor_list_background">
 
         <FrameLayout
-                android:id="@+id/prefs_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            android:id="@+id/prefs_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <TextView
-                    android:id="@+id/no_permissions"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/no_permissions"
-                    android:gravity="center"
-                    android:textAppearance="@android:style/TextAppearance.Large"
-            />
+                android:id="@+id/no_permissions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/no_permissions"
+                android:textAppearance="@android:style/TextAppearance.Large" />
 
         </FrameLayout>
 

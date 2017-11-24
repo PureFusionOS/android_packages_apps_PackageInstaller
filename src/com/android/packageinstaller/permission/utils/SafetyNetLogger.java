@@ -40,7 +40,7 @@ public final class SafetyNetLogger {
     }
 
     public static void logPermissionsRequested(PackageInfo packageInfo,
-            List<AppPermissionGroup> groups) {
+                                               List<AppPermissionGroup> groups) {
         EventLog.writeEvent(SNET_NET_EVENT_LOG_TAG, PERMISSIONS_REQUESTED,
                 packageInfo.applicationInfo.uid, buildChangedPermissionForPackageMessage(
                         packageInfo.packageName, groups));
@@ -53,7 +53,7 @@ public final class SafetyNetLogger {
     }
 
     private static String buildChangedPermissionForPackageMessage(String packageName,
-            List<AppPermissionGroup> groups) {
+                                                                  List<AppPermissionGroup> groups) {
         StringBuilder builder = new StringBuilder();
 
         builder.append(packageName).append(':');

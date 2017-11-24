@@ -37,7 +37,9 @@ import java.util.List;
 public class EventLogger {
     private static final String LOG_TAG = EventLogger.class.getSimpleName();
 
-    /** All dangerous permission names in the same order as the events in MetricsEvent */
+    /**
+     * All dangerous permission names in the same order as the events in MetricsEvent
+     */
     private static final List<String> ALL_DANGEROUS_PERMISSIONS = Arrays.asList(
             Manifest.permission.READ_CALENDAR,
             Manifest.permission.WRITE_CALENDAR,
@@ -75,16 +77,15 @@ public class EventLogger {
 
     /**
      * Get the first event id for the permission.
-     *
+     * <p>
      * <p>There are four events for each permission: <ul>
-     *     <li>Request permission: first id + 0</li>
-     *     <li>Grant permission: first id + 1</li>
-     *     <li>Request for permission denied: first id + 2</li>
-     *     <li>Revoke permission: first id + 3</li>
+     * <li>Request permission: first id + 0</li>
+     * <li>Grant permission: first id + 1</li>
+     * <li>Request for permission denied: first id + 2</li>
+     * <li>Revoke permission: first id + 3</li>
      * </ul></p>
      *
      * @param name name of the permission
-     *
      * @return The first event id for the permission
      */
     private static int getBaseEventId(@NonNull String name) {
@@ -120,24 +121,24 @@ public class EventLogger {
     /**
      * Log that a permission was requested.
      *
-     * @param context Context of the caller
-     * @param name name of the permission
+     * @param context     Context of the caller
+     * @param name        name of the permission
      * @param packageName package permission if for
      */
     public static void logPermissionRequested(@NonNull Context context, @NonNull String name,
-            @NonNull String packageName) {
+                                              @NonNull String packageName) {
         MetricsLogger.action(context, getBaseEventId(name), packageName);
     }
 
     /**
      * Log that a permission request was denied.
      *
-     * @param context Context of the caller
-     * @param name name of the permission
+     * @param context     Context of the caller
+     * @param name        name of the permission
      * @param packageName package permission if for
      */
     public static void logPermissionDenied(@NonNull Context context, @NonNull String name,
-            @NonNull String packageName) {
+                                           @NonNull String packageName) {
         MetricsLogger.action(context, getBaseEventId(name) + 2, packageName);
     }
 

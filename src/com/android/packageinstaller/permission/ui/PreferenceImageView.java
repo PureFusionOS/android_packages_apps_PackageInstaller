@@ -38,7 +38,7 @@ public class PreferenceImageView extends ImageView {
     }
 
     public PreferenceImageView(Context context, AttributeSet attrs, int defStyleAttr,
-            int defStyleRes) {
+                               int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 

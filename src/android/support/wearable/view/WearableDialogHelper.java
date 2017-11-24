@@ -32,18 +32,14 @@ import android.widget.Button;
  */
 public class WearableDialogHelper {
     private static final String TAG = "WearableDialogHelper";
-
-    private int mPositiveIconId;
-    private Drawable mPositiveIcon;
-
-    private int mNeutralIconId;
-    private Drawable mNeutralIcon;
-
-    private int mNegativeIconId;
-    private Drawable mNegativeIcon;
-
     @VisibleForTesting /* package */ Resources mResources;
     @VisibleForTesting /* package */ Resources.Theme mTheme;
+    private int mPositiveIconId;
+    private Drawable mPositiveIcon;
+    private int mNeutralIconId;
+    private Drawable mNeutralIcon;
+    private int mNegativeIconId;
+    private Drawable mNegativeIcon;
 
     /**
      * Convenience constructor, equivalent to {@code new WearableDialogHelper(context.getResources(),
@@ -55,7 +51,7 @@ public class WearableDialogHelper {
 
     /**
      * @param resources the Resources used to obtain Drawables from resource IDs.
-     * @param theme the Theme used to properly obtain Drawables from resource IDs.
+     * @param theme     the Theme used to properly obtain Drawables from resource IDs.
      */
     public WearableDialogHelper(@NonNull Resources resources, @NonNull Resources.Theme theme) {
         mResources = resources;
@@ -67,9 +63,23 @@ public class WearableDialogHelper {
         return resolveDrawable(mPositiveIcon, mPositiveIconId);
     }
 
+    @NonNull
+    public WearableDialogHelper setPositiveIcon(@Nullable Drawable icon) {
+        mPositiveIcon = icon;
+        mPositiveIconId = 0;
+        return this;
+    }
+
     @Nullable
     public Drawable getNegativeIcon() {
         return resolveDrawable(mNegativeIcon, mNegativeIconId);
+    }
+
+    @NonNull
+    public WearableDialogHelper setNegativeIcon(@Nullable Drawable icon) {
+        mNegativeIcon = icon;
+        mNegativeIconId = 0;
+        return this;
     }
 
     @Nullable
@@ -78,16 +88,16 @@ public class WearableDialogHelper {
     }
 
     @NonNull
-    public WearableDialogHelper setPositiveIcon(@DrawableRes int resId) {
-        mPositiveIconId = resId;
-        mPositiveIcon = null;
+    public WearableDialogHelper setNeutralIcon(@Nullable Drawable icon) {
+        mNeutralIcon = icon;
+        mNeutralIconId = 0;
         return this;
     }
 
     @NonNull
-    public WearableDialogHelper setPositiveIcon(@Nullable Drawable icon) {
-        mPositiveIcon = icon;
-        mPositiveIconId = 0;
+    public WearableDialogHelper setPositiveIcon(@DrawableRes int resId) {
+        mPositiveIconId = resId;
+        mPositiveIcon = null;
         return this;
     }
 
@@ -99,29 +109,15 @@ public class WearableDialogHelper {
     }
 
     @NonNull
-    public WearableDialogHelper setNegativeIcon(@Nullable Drawable icon) {
-        mNegativeIcon = icon;
-        mNegativeIconId = 0;
-        return this;
-    }
-
-    @NonNull
     public WearableDialogHelper setNeutralIcon(@DrawableRes int resId) {
         mNeutralIconId = resId;
         mNeutralIcon = null;
         return this;
     }
 
-    @NonNull
-    public WearableDialogHelper setNeutralIcon(@Nullable Drawable icon) {
-        mNeutralIcon = icon;
-        mNeutralIconId = 0;
-        return this;
-    }
-
     /**
      * Applies the button icons setup in the helper to the buttons in the dialog.
-     *
+     * <p>
      * <p>Note that this should be called after {@code AlertDialog.create()}, NOT {@code
      * AlertDialog.Builder.create()}. Calling {@code AlertDialog.Builder.show()} would also accomplish
      * the same thing.
@@ -134,7 +130,9 @@ public class WearableDialogHelper {
         applyButton(dialog.getButton(DialogInterface.BUTTON_NEUTRAL), getNeutralIcon());
     }
 
-    /** Applies the specified drawable to the button. */
+    /**
+     * Applies the specified drawable to the button.
+     */
     @VisibleForTesting
     /* package */ void applyButton(@Nullable Button button, @Nullable Drawable drawable) {
         if (button != null) {
@@ -145,13 +143,17 @@ public class WearableDialogHelper {
         }
     }
 
-    /** Obtain a drawable between a drawable and a resource ID. */
+    /**
+     * Obtain a drawable between a drawable and a resource ID.
+     */
     @VisibleForTesting
     /* package */ Drawable resolveDrawable(@Nullable Drawable drawable, @DrawableRes int resId) {
         return drawable == null && resId != 0 ? mResources.getDrawable(resId, mTheme) : drawable;
     }
 
-    /** Convenience builder to generate an AlertDialog with icons in buttons. */
+    /**
+     * Convenience builder to generate an AlertDialog with icons in buttons.
+     */
     public static class DialogBuilder extends AlertDialog.Builder {
         private final WearableDialogHelper mHelper;
 

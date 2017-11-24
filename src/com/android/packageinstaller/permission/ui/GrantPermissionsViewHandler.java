@@ -28,14 +28,6 @@ import android.view.WindowManager;
 public interface GrantPermissionsViewHandler {
 
     /**
-     * Listener interface for getting notified when the user responds to a
-     * permissions grant request.
-     */
-    interface ResultListener {
-        void onPermissionGrantResult(String groupName, boolean granted, boolean doNotAskAgain);
-    }
-
-    /**
      * Creates and returns the view hierarchy that is managed by this view
      * handler. This must be called before {@link #updateUi}.
      */
@@ -54,15 +46,15 @@ public interface GrantPermissionsViewHandler {
      * Note that this must be called at least once before showing the UI to
      * the user to properly initialize the UI.
      *
-     * @param groupName the name of the permission group
-     * @param groupCount the total number of groups that are being requested
-     * @param groupIndex the index of the current group being requested
-     * @param icon the icon representation of the current group
-     * @param message the message to display the user
+     * @param groupName    the name of the permission group
+     * @param groupCount   the total number of groups that are being requested
+     * @param groupIndex   the index of the current group being requested
+     * @param icon         the icon representation of the current group
+     * @param message      the message to display the user
      * @param showDoNotAsk whether to show the "do not ask again" option
      */
     void updateUi(String groupName, int groupCount, int groupIndex, Icon icon,
-            CharSequence message, boolean showDoNotAsk);
+                  CharSequence message, boolean showDoNotAsk);
 
     /**
      * Sets the result listener that will be notified when the user responds
@@ -86,4 +78,12 @@ public interface GrantPermissionsViewHandler {
      * Gives a chance for handling the back key.
      */
     void onBackPressed();
+
+    /**
+     * Listener interface for getting notified when the user responds to a
+     * permissions grant request.
+     */
+    interface ResultListener {
+        void onPermissionGrantResult(String groupName, boolean granted, boolean doNotAskAgain);
+    }
 }

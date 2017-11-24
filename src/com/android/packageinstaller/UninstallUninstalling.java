@@ -42,12 +42,10 @@ import android.widget.Toast;
  */
 public class UninstallUninstalling extends Activity implements
         EventResultPersister.EventResultObserver {
+    static final String EXTRA_APP_LABEL = "com.android.packageinstaller.extra.APP_LABEL";
     private static final String UNINSTALL_ID = "com.android.packageinstaller.UNINSTALL_ID";
     private static final String BROADCAST_ACTION =
             "com.android.packageinstaller.ACTION_UNINSTALL_COMMIT";
-
-    static final String EXTRA_APP_LABEL = "com.android.packageinstaller.extra.APP_LABEL";
-
     private int mUninstallId;
     private ApplicationInfo mAppInfo;
     private IBinder mCallback;

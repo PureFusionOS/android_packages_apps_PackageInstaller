@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Appen blev ikke installeret."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Pakken blev blokeret i at blive installeret."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Appen blev ikke installeret, da pakken er i strid med en eksisterende pakke."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Appen blev ikke installeret, da den er ikke kompatibel med din tablet."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Denne app er ikke kompatibel med dit fjernsyn."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Appen blev ikke installeret, da den ikke er kompatibel med din telefon."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Appen blev ikke installeret, da den er ikke kompatibel med din tablet."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Denne app er ikke kompatibel med dit fjernsyn."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Appen blev ikke installeret, da den ikke er kompatibel med din telefon."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Appen blev ikke installeret, da pakken ser ud til at være ugyldig."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> kunne ikke installeres på din tablet."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> kunne ikke installeres på dit tv."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> kunne ikke installeres på din telefon."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> kunne ikke installeres på din tablet."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> kunne ikke installeres på dit tv."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> kunne ikke installeres på din telefon."</string>
     <string name="launch" msgid="4826921505917605463">"Åbn"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Din administrator tillader ikke installation af apps, der hentes fra ukendte kilder"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Denne bruger kan ikke installere ukendte apps"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Ingen tilladelser"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Flere tilladelser"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="one"><xliff:g id="COUNT_1">%1$d</xliff:g> mere</item>
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> mere</item>
+        <item quantity="one"><xliff:g id="COUNT_1">%1$d</xliff:g> mere</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> mere</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Denne app er udviklet til en ældre version af Android. Hvis du ikke giver den tilladelse, vil den muligvis ikke længere virke efter hensigten."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"udføre en ukendt handling"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Aktuelle tilladelser"</string>
     <string name="message_staging" msgid="6151794817691100003">"Forbereder appen…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Ukendt"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Din tablet har af sikkerhedshensyn ikke tilladelse til at installere ukendte apps fra denne kilde."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Dit fjernsyn har af sikkerhedshensyn ikke tilladelse til at installere ukendte apps fra denne kilde."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Din telefon har af sikkerhedshensyn ikke tilladelse til at installere ukendte apps fra denne kilde."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Din telefon og dine personlige data er mere sårbare over for angreb fra ukendte apps. Når du installerer denne app, accepterer du, at du er ansvarlig for skader på din telefon eller tab af data, der kan skyldes brug af appen."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Din tablet og dine personlige data er mere sårbare over for angreb fra ukendte apps. Når du installerer denne app, accepterer du, at du er ansvarlig for skader på din tablet eller tab af data, der kan skyldes brug af appen."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Dit fjernsyn og dine personlige data er mere sårbare over for angreb fra ukendte apps. Når du installerer denne app, accepterer du, at du er ansvarlig for skader på dit fjernsyn eller tab af data, der kan skyldes brug af appen."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Din tablet har af sikkerhedshensyn ikke tilladelse til at installere ukendte apps fra denne kilde."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Dit fjernsyn har af sikkerhedshensyn ikke tilladelse til at installere ukendte apps fra denne kilde."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Din telefon har af sikkerhedshensyn ikke tilladelse til at installere ukendte apps fra denne kilde."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Din telefon og dine personlige data er mere sårbare over for angreb fra ukendte apps. Når du installerer denne app, accepterer du, at du er ansvarlig for skader på din telefon eller tab af data, der kan skyldes brug af appen."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Din tablet og dine personlige data er mere sårbare over for angreb fra ukendte apps. Når du installerer denne app, accepterer du, at du er ansvarlig for skader på din tablet eller tab af data, der kan skyldes brug af appen."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Dit fjernsyn og dine personlige data er mere sårbare over for angreb fra ukendte apps. Når du installerer denne app, accepterer du, at du er ansvarlig for skader på dit fjernsyn eller tab af data, der kan skyldes brug af appen."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Fortsæt"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Indstillinger"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Installerer/afinstallerer Wear-apps"</string>

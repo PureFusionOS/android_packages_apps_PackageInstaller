@@ -60,16 +60,37 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
         implements GrantPermissionsViewHandler.ResultListener {
 
     private static final String LOG_TAG = "GrantPermissionsActivity";
-
+    boolean mResultSet;
     private String[] mRequestedPermissions;
     private int[] mGrantResults;
-
     private LinkedHashMap<String, GroupState> mRequestGrantPermissionGroups = new LinkedHashMap<>();
-
     private GrantPermissionsViewHandler mViewHandler;
     private AppPermissions mAppPermissions;
 
-    boolean mResultSet;
+    private static String[] computeAffectedPermissions(PackageInfo callingPkg,
+                                                       String permission) {
+        // For <= N_MR1 apps all permissions are affected.
+        if (callingPkg.applicationInfo.targetSdkVersion <= Build.VERSION_CODES.N_MR1) {
+            return null;
+        }
+
+        // For N_MR1+ apps only the requested permission is affected with addition
+        // to splits of this permission applicable to apps targeting N_MR1.
+        String[] permissions = new String[]{permission};
+        for (PackageParser.SplitPermissionInfo splitPerm : PackageParser.SPLIT_PERMISSIONS) {
+            if (splitPerm.targetSdk <= Build.VERSION_CODES.N_MR1
+                    || callingPkg.applicationInfo.targetSdkVersion >= splitPerm.targetSdk
+                    || !permission.equals(splitPerm.rootPerm)) {
+                continue;
+            }
+            for (int i = 0; i < splitPerm.newPerms.length; i++) {
+                final String newPerm = splitPerm.newPerms[i];
+                permissions = ArrayUtils.appendString(permissions, newPerm);
+            }
+        }
+
+        return permissions;
+    }
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -167,7 +188,8 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
                                     callingPackageInfo, requestedPermission));
                         }
                         group.setPolicyFixed();
-                    } break;
+                    }
+                    break;
 
                     case DevicePolicyManager.PERMISSION_POLICY_AUTO_DENY: {
                         if (group.areRuntimePermissionsGranted()) {
@@ -175,7 +197,8 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
                                     callingPackageInfo, requestedPermission));
                         }
                         group.setPolicyFixed();
-                    } break;
+                    }
+                    break;
 
                     default: {
                         if (!group.areRuntimePermissionsGranted()) {
@@ -197,7 +220,8 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
                                     callingPackageInfo, requestedPermission));
                             updateGrantResults(group);
                         }
-                    } break;
+                    }
+                    break;
                 }
             } else {
                 // if the permission is fixed, ensure that we return the right request result
@@ -342,13 +366,13 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
         // We do not allow backing out.
         return keyCode == KeyEvent.KEYCODE_BACK;
     }
 
     @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event)  {
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
         // We do not allow backing out.
         return keyCode == KeyEvent.KEYCODE_BACK;
     }
@@ -360,7 +384,7 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
     }
 
     private int computePermissionGrantState(PackageInfo callingPackageInfo,
-            String permission, int permissionPolicy) {
+                                            String permission, int permissionPolicy) {
         boolean permissionRequested = false;
 
         for (int i = 0; i < callingPackageInfo.requestedPermissions.length; i++) {
@@ -455,31 +479,6 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
         }
 
         SafetyNetLogger.logPermissionsRequested(mAppPermissions.getPackageInfo(), groups);
-    }
-
-    private static String[] computeAffectedPermissions(PackageInfo callingPkg,
-            String permission) {
-        // For <= N_MR1 apps all permissions are affected.
-        if (callingPkg.applicationInfo.targetSdkVersion <= Build.VERSION_CODES.N_MR1) {
-            return null;
-        }
-
-        // For N_MR1+ apps only the requested permission is affected with addition
-        // to splits of this permission applicable to apps targeting N_MR1.
-        String[] permissions = new String[] {permission};
-        for (PackageParser.SplitPermissionInfo splitPerm : PackageParser.SPLIT_PERMISSIONS) {
-            if (splitPerm.targetSdk <= Build.VERSION_CODES.N_MR1
-                    || callingPkg.applicationInfo.targetSdkVersion >= splitPerm.targetSdk
-                    || !permission.equals(splitPerm.rootPerm)) {
-                continue;
-            }
-            for (int i = 0; i < splitPerm.newPerms.length; i++) {
-                final String newPerm = splitPerm.newPerms[i];
-                permissions = ArrayUtils.appendString(permissions, newPerm);
-            }
-        }
-
-        return permissions;
     }
 
     private static final class GroupState {

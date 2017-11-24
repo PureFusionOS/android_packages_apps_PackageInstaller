@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"未安裝應用程式。"</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"套件已遭封鎖，無法安裝。"</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"套件與現有的套件發生衝突，無法安裝應用程式。"</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"應用程式與平板電腦不兼容，無法安裝應用程式。"</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"此應用程式與您的電視不相容。"</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"應用程式與手機不兼容，無法安裝應用程式。"</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"應用程式與平板電腦不兼容，無法安裝應用程式。"</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"此應用程式與您的電視不相容。"</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"應用程式與手機不兼容，無法安裝應用程式。"</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"套件好像無效，無法安裝應用程式。"</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"無法在您的平板電腦上安裝「<xliff:g id="APP_NAME">%1$s</xliff:g>」。"</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"無法在您的電視上安裝 <xliff:g id="APP_NAME">%1$s</xliff:g>。"</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"無法在您的手機上安裝「<xliff:g id="APP_NAME">%1$s</xliff:g>」。"</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"無法在您的平板電腦上安裝「<xliff:g id="APP_NAME">%1$s</xliff:g>」。"</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"無法在您的電視上安裝 <xliff:g id="APP_NAME">%1$s</xliff:g>。"</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"無法在您的手機上安裝「<xliff:g id="APP_NAME">%1$s</xliff:g>」。"</string>
     <string name="launch" msgid="4826921505917605463">"開啟"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"您的管理員不允許安裝來自不明來源的應用程式"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"此使用者無法安裝不明的應用程式"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"沒有權限"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"其他權限"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other">還有 <xliff:g id="COUNT_1">%1$d</xliff:g> 個</item>
-      <item quantity="one">還有 <xliff:g id="COUNT_0">%1$d</xliff:g> 個</item>
+        <item quantity="other">還有 <xliff:g id="COUNT_1">%1$d</xliff:g> 個</item>
+        <item quantity="one">還有 <xliff:g id="COUNT_0">%1$d</xliff:g> 個</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"這個應用程式專為舊版本的 Android 設計。拒絕權限可能會導致它無法如預期 運作。"</string>
     <string name="default_permission_description" msgid="4992892207044156668">"執行不明的操作"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"目前權限"</string>
     <string name="message_staging" msgid="6151794817691100003">"正在準備安裝應用程式…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"不明"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"為安全起見，您的平板電腦不得安裝此來源的不明應用程式。"</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"為安全起見，您的電視不得安裝此來源的不明應用程式。"</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"為安全起見，您的手機不得安裝此來源的不明應用程式。"</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"來源不明的應用程式可能會侵害您的手機和個人資料。安裝此應用程式，即表示您同意承擔因使用這個應用程式而導致手機損壞或資料遺失的責任。"</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"來源不明的應用程式可能會侵害您的平板電腦和個人資料。安裝此應用程式，即表示您同意承擔因使用這個應用程式而導致平板電腦損壞或資料遺失的責任。"</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"來源不明的應用程式可能會侵害您的電視和個人資料。安裝此應用程式，即表示您同意承擔因使用這個應用程式而導致電視損壞或資料遺失的責任。"</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"為安全起見，您的平板電腦不得安裝此來源的不明應用程式。"</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"為安全起見，您的電視不得安裝此來源的不明應用程式。"</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"為安全起見，您的手機不得安裝此來源的不明應用程式。"</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"來源不明的應用程式可能會侵害您的手機和個人資料。安裝此應用程式，即表示您同意承擔因使用這個應用程式而導致手機損壞或資料遺失的責任。"</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"來源不明的應用程式可能會侵害您的平板電腦和個人資料。安裝此應用程式，即表示您同意承擔因使用這個應用程式而導致平板電腦損壞或資料遺失的責任。"</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"來源不明的應用程式可能會侵害您的電視和個人資料。安裝此應用程式，即表示您同意承擔因使用這個應用程式而導致電視損壞或資料遺失的責任。"</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"繼續"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"設定"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"正在安裝/解除安裝 Wear 應用程式"</string>

@@ -44,7 +44,7 @@ import java.util.List;
  * An alternative version of ListView that is optimized for ease of use on small screen wearable
  * devices. It displays a vertically scrollable list of items, and automatically snaps to the
  * nearest item when the user stops scrolling.
- *
+ * <p>
  * <p>
  * For a quick start, you will need to implement a subclass of {@link .Adapter},
  * which will create and bind your views to the {@link .ViewHolder} objects. If you want to add
@@ -68,7 +68,15 @@ public class WearableListView extends RecyclerView {
 
     private final int mMinFlingVelocity;
     private final int mMaxFlingVelocity;
-
+    private final List<OnScrollListener> mOnScrollListeners = new ArrayList<OnScrollListener>();
+    private final List<OnCentralPositionChangedListener> mOnCentralPositionChangedListeners =
+            new ArrayList<OnCentralPositionChangedListener>();
+    private final int mTouchSlop;
+    // Top and bottom boundaries for tap checking.  Need to recompute by calling computeTapRegions
+    // before referencing.
+    private final float[] mTapRegions = new float[2];
+    // Temp variable for storing locations on screen.
+    private final int[] mLocation = new int[2];
     private boolean mMaximizeSingleItem;
     private boolean mCanClick = true;
     // WristGesture navigation signals are delivered as KeyEvents. Allow developer to disable them
@@ -78,50 +86,39 @@ public class WearableListView extends RecyclerView {
     private int mTapPositionX;
     private int mTapPositionY;
     private ClickListener mClickListener;
-
     private Animator mScrollAnimator;
     // This is a little hacky due to the fact that animator provides incremental values instead of
     // deltas and scrolling code requires deltas. We animate WearableListView directly and use this
     // field to calculate deltas. Obviously this means that only one scrolling algorithm can run at
     // a time, but I don't think it would be wise to have more than one running.
     private int mLastScrollChange;
-
     private SetScrollVerticallyProperty mSetScrollVerticallyProperty =
             new SetScrollVerticallyProperty();
-
-    private final List<OnScrollListener> mOnScrollListeners = new ArrayList<OnScrollListener>();
-
-    private final List<OnCentralPositionChangedListener> mOnCentralPositionChangedListeners =
-            new ArrayList<OnCentralPositionChangedListener>();
-
+    private final AdapterDataObserver mObserver = new AdapterDataObserver() {
+        @Override
+        public void onChanged() {
+            WearableListView.this.addOnLayoutChangeListener(new OnLayoutChangeListener() {
+                @Override
+                public void onLayoutChange(View v, int left, int top, int right, int bottom,
+                                           int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                    WearableListView.this.removeOnLayoutChangeListener(this);
+                    if (WearableListView.this.getChildCount() > 0) {
+                        WearableListView.this.animateToCenter();
+                    }
+                }
+            });
+        }
+    };
     private OnOverScrollListener mOverScrollListener;
-
     private boolean mGreedyTouchMode;
-
     private float mStartX;
-
     private float mStartY;
-
     private float mStartFirstTop;
-
-    private final int mTouchSlop;
-
     private boolean mPossibleVerticalSwipe;
-
     private int mInitialOffset = 0;
-
     private Scroller mScroller;
-
-    // Top and bottom boundaries for tap checking.  Need to recompute by calling computeTapRegions
-    // before referencing.
-    private final float[] mTapRegions = new float[2];
-
     private boolean mGestureDirectionLocked;
     private int mPreviousCentral = 0;
-
-    // Temp variable for storing locations on screen.
-    private final int[] mLocation = new int[2];
-
     // TODO: Consider clearing this when underlying data set changes. If the data set changes, you
     // can't safely assume that this pressed view is in the same place as it was before and it will
     // receive setPressed(false) unnecessarily. In theory it should be fine, but in practice we
@@ -130,7 +127,6 @@ public class WearableListView extends RecyclerView {
     // underlying data set, all best are off and you need to preserve the state; we will clear
     // this field. However, I am not willing to introduce this so late in C development.
     private View mPressedView = null;
-
     private final Runnable mPressedRunnable = new Runnable() {
         @Override
         public void run() {
@@ -142,34 +138,16 @@ public class WearableListView extends RecyclerView {
             }
         }
     };
-
     private final Runnable mReleasedRunnable = new Runnable() {
         @Override
         public void run() {
             releasePressedItem();
         }
     };
-
     private Runnable mNotifyChildrenPostLayoutRunnable = new Runnable() {
         @Override
         public void run() {
             notifyChildrenAboutProximity(false);
-        }
-    };
-
-    private final AdapterDataObserver mObserver = new AdapterDataObserver() {
-        @Override
-        public void onChanged() {
-            WearableListView.this.addOnLayoutChangeListener(new OnLayoutChangeListener() {
-                @Override
-                public void onLayoutChange(View v, int left, int top, int right, int bottom,
-                        int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                    WearableListView.this.removeOnLayoutChangeListener(this);
-                    if (WearableListView.this.getChildCount() > 0) {
-                        WearableListView.this.animateToCenter();
-                    }
-                }
-            });
         }
     };
 
@@ -212,6 +190,14 @@ public class WearableListView extends RecyclerView {
         mMaxFlingVelocity = vc.getScaledMaximumFlingVelocity();
     }
 
+    private static int getCenterYPos(View v) {
+        return v.getTop() + v.getPaddingTop() + getAdjustedHeight(v) / 2;
+    }
+
+    private static int getAdjustedHeight(View v) {
+        return v.getHeight() - v.getPaddingBottom() - v.getPaddingTop();
+    }
+
     @Override
     public void setAdapter(RecyclerView.Adapter adapter) {
         RecyclerView.Adapter currentAdapter = getAdapter();
@@ -228,7 +214,7 @@ public class WearableListView extends RecyclerView {
 
     /**
      * @return the position of the center child's baseline; -1 if no center child exists or if
-     *      the center child does not return a valid baseline.
+     * the center child does not return a valid baseline.
      */
     @Override
     public int getBaseline() {
@@ -273,6 +259,7 @@ public class WearableListView extends RecyclerView {
     /**
      * Controls whether WearableListView should intercept all touch events and also prevent the
      * parent from receiving them.
+     *
      * @param greedy If true it will intercept all touch events.
      */
     public void setGreedyTouchMode(boolean greedy) {
@@ -514,17 +501,17 @@ public class WearableListView extends RecyclerView {
     }
 
     private void startScrollAnimation(List<Animator> animators, int scroll, long duration,
-            long  delay) {
+                                      long delay) {
         startScrollAnimation(animators, scroll, duration, delay, null);
     }
 
     private void startScrollAnimation(
-            int scroll, long duration, long  delay, Animator.AnimatorListener listener) {
+            int scroll, long duration, long delay, Animator.AnimatorListener listener) {
         startScrollAnimation(null, scroll, duration, delay, listener);
     }
 
     private void startScrollAnimation(List<Animator> animators, int scroll, long duration,
-            long  delay, Animator.AnimatorListener listener) {
+                                      long delay, Animator.AnimatorListener listener) {
         if (mScrollAnimator != null) {
             mScrollAnimator.cancel();
         }
@@ -641,10 +628,6 @@ public class WearableListView extends RecyclerView {
         return index;
     }
 
-    private static int getCenterYPos(View v) {
-        return v.getTop() + v.getPaddingTop() + getAdjustedHeight(v) / 2;
-    }
-
     private void handleTouchUp(MotionEvent event, int scrollState) {
         if (mCanClick && event != null && checkForTap(event)) {
             Handler handler = getHandler();
@@ -688,7 +671,7 @@ public class WearableListView extends RecyclerView {
 
     /**
      * Returns top of the central {@code View} in the list when such view is fully centered.
-     *
+     * <p>
      * This is a more or a less a static value that you can use to align other views with the
      * central one.
      */
@@ -717,6 +700,7 @@ public class WearableListView extends RecyclerView {
 
     /**
      * Animate the list so that the first view is back to its initial position.
+     *
      * @param endAction Action to execute when the animation is done.
      * @hide
      */
@@ -760,10 +744,6 @@ public class WearableListView extends RecyclerView {
 
     private int getAdjustedHeight() {
         return getAdjustedHeight(this);
-    }
-
-    private static int getAdjustedHeight(View v) {
-        return v.getHeight() - v.getPaddingBottom() - v.getPaddingTop();
     }
 
     private void computeTapRegions(float[] tapRegions) {
@@ -816,6 +796,185 @@ public class WearableListView extends RecyclerView {
                 listener.onCentralPositionChanged(position);
             }
             mPreviousCentral = position;
+        }
+    }
+
+    /**
+     * Interface for receiving callbacks when WearableListView children become or cease to be the
+     * central item.
+     */
+    public interface OnCenterProximityListener {
+        /**
+         * Called when this view becomes central item of the WearableListView.
+         *
+         * @param animate Whether you should animate your transition of the View to become the
+         *                central item. If false, this is the initial setting and you should
+         *                transition immediately.
+         */
+        void onCenterPosition(boolean animate);
+
+        /**
+         * Called when this view stops being the central item of the WearableListView.
+         *
+         * @param animate Whether you should animate your transition of the View to being
+         *                non central item. If false, this is the initial setting and you should
+         *                transition immediately.
+         */
+        void onNonCenterPosition(boolean animate);
+    }
+
+    /**
+     * Interface for listening for click events on WearableListView.
+     */
+    public interface ClickListener {
+        /**
+         * Called when the central child of the WearableListView is tapped.
+         *
+         * @param view View that was clicked.
+         */
+        public void onClick(ViewHolder view);
+
+        /**
+         * Called when the user taps the top third of the WearableListView and no item is present
+         * there. This can happen when you are in initial state and the first, top-most item of the
+         * WearableListView is centered.
+         */
+        public void onTopEmptyRegionClick();
+    }
+
+    /**
+     * @hide
+     */
+    public interface OnOverScrollListener {
+        public void onOverScroll();
+    }
+
+    /**
+     * Interface for listening to WearableListView content scrolling.
+     */
+    public interface OnScrollListener {
+        /**
+         * Called when the content is scrolled, reporting the relative scroll value.
+         *
+         * @param scroll Amount the content was scrolled. This is a delta from the previous
+         *               position to the new position.
+         */
+        public void onScroll(int scroll);
+
+        /**
+         * Called when the content is scrolled, reporting the absolute scroll value.
+         *
+         * @param scroll Absolute scroll position of the content inside the WearableListView.
+         * @deprecated BE ADVISED DO NOT USE THIS This might provide wrong values when contents
+         * of a RecyclerView change.
+         */
+        @Deprecated
+        public void onAbsoluteScrollChange(int scroll);
+
+        /**
+         * Called when WearableListView's scroll state changes.
+         *
+         * @param scrollState The updated scroll state. One of {@link #SCROLL_STATE_IDLE},
+         *                    {@link #SCROLL_STATE_DRAGGING} or {@link #SCROLL_STATE_SETTLING}.
+         */
+        public void onScrollStateChanged(int scrollState);
+
+        /**
+         * Called when the central item of the WearableListView changes.
+         *
+         * @param centralPosition Position of the item in the Adapter.
+         */
+        public void onCentralPositionChanged(int centralPosition);
+    }
+
+    /**
+     * A listener interface that can be added to the WearableListView to get notified when the
+     * central item is changed.
+     */
+    public interface OnCentralPositionChangedListener {
+        /**
+         * Called when the central item of the WearableListView changes.
+         *
+         * @param centralPosition Position of the item in the Adapter.
+         */
+        void onCentralPositionChanged(int centralPosition);
+    }
+
+    /**
+     * Base class for adapters providing data for the WearableListView. For details refer to
+     * RecyclerView.Adapter.
+     */
+    public static abstract class Adapter extends RecyclerView.Adapter<ViewHolder> {
+    }
+
+    private static class SmoothScroller extends LinearSmoothScroller {
+
+        private static final float MILLISECONDS_PER_INCH = 100f;
+
+        private final LayoutManager mLayoutManager;
+
+        public SmoothScroller(Context context, WearableListView.LayoutManager manager) {
+            super(context);
+            mLayoutManager = manager;
+        }
+
+        @Override
+        protected void onStart() {
+            super.onStart();
+        }
+
+        // TODO: (mindyp): when flinging, return the dydt that triggered the fling.
+        @Override
+        protected float calculateSpeedPerPixel(DisplayMetrics displayMetrics) {
+            return MILLISECONDS_PER_INCH / displayMetrics.densityDpi;
+        }
+
+        @Override
+        public int calculateDtToFit(int viewStart, int viewEnd, int boxStart, int boxEnd, int
+                snapPreference) {
+            // Snap to center.
+            return (boxStart + boxEnd) / 2 - (viewStart + viewEnd) / 2;
+        }
+
+        @Override
+        public PointF computeScrollVectorForPosition(int targetPosition) {
+            if (targetPosition < mLayoutManager.getFirstPosition()) {
+                return new PointF(0, -1);
+            } else {
+                return new PointF(0, 1);
+            }
+        }
+    }
+
+    /**
+     * Wrapper around items displayed in the list view. {@link .Adapter} must return objects that
+     * are instances of this class. Consider making the wrapped View implement
+     * {@link .OnCenterProximityListener} if you want to receive a callback when it becomes or
+     * ceases to be the central item in the WearableListView.
+     */
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public ViewHolder(View itemView) {
+            super(itemView);
+        }
+
+        /**
+         * Called when the wrapped view is becoming or ceasing to be the central item of the
+         * WearableListView.
+         * <p>
+         * Retained as protected for backwards compatibility.
+         *
+         * @hide
+         */
+        protected void onCenterProximity(boolean isCentralItem, boolean animate) {
+            if (!(itemView instanceof OnCenterProximityListener)) {
+                return;
+            }
+            OnCenterProximityListener item = (OnCenterProximityListener) itemView;
+            if (isCentralItem) {
+                item.onCenterPosition(animate);
+            } else {
+                item.onNonCenterPosition(animate);
+            }
         }
     }
 
@@ -1008,11 +1167,11 @@ public class WearableListView extends RecyclerView {
         private void measureView(View v, int height) {
             final LayoutParams lp = (LayoutParams) v.getLayoutParams();
             final int widthSpec = getChildMeasureSpec(getWidth(),
-                getPaddingLeft() + getPaddingRight() + lp.leftMargin + lp.rightMargin, lp.width,
-                canScrollHorizontally());
+                    getPaddingLeft() + getPaddingRight() + lp.leftMargin + lp.rightMargin, lp.width,
+                    canScrollHorizontally());
             final int heightSpec = getChildMeasureSpec(getHeight(),
-                getPaddingTop() + getPaddingBottom() + lp.topMargin + lp.bottomMargin,
-                height, canScrollVertically());
+                    getPaddingTop() + getPaddingBottom() + lp.topMargin + lp.bottomMargin,
+                    height, canScrollVertically());
             v.measure(widthSpec, heightSpec);
         }
 
@@ -1066,7 +1225,7 @@ public class WearableListView extends RecyclerView {
                         }
                     } else {
                         mPushFirstHigher = false;
-                        int maxScroll = mOverScrollListener!= null ?
+                        int maxScroll = mOverScrollListener != null ?
                                 getHeight() : getTopViewMaxTop();
                         final int scrollBy = Math.min(-dy + scrolled, maxScroll - topView.getTop());
                         scrolled -= scrollBy;
@@ -1136,9 +1295,10 @@ public class WearableListView extends RecyclerView {
             }
             return mDefaultSmoothScroller;
         }
+
         @Override
         public void smoothScrollToPosition(RecyclerView recyclerView, State state,
-                int position) {
+                                           int position) {
             RecyclerView.SmoothScroller scroller = mSmoothScroller;
             if (scroller == null) {
                 scroller = getDefaultSmoothScroller(recyclerView);
@@ -1187,185 +1347,8 @@ public class WearableListView extends RecyclerView {
 
         @Override
         public void onAdapterChanged(RecyclerView.Adapter oldAdapter,
-                RecyclerView.Adapter newAdapter) {
+                                     RecyclerView.Adapter newAdapter) {
             removeAllViews();
-        }
-    }
-
-    /**
-     * Interface for receiving callbacks when WearableListView children become or cease to be the
-     * central item.
-     */
-    public interface OnCenterProximityListener {
-        /**
-         * Called when this view becomes central item of the WearableListView.
-         *
-         * @param animate Whether you should animate your transition of the View to become the
-         *                central item. If false, this is the initial setting and you should
-         *                transition immediately.
-         */
-        void onCenterPosition(boolean animate);
-
-        /**
-         * Called when this view stops being the central item of the WearableListView.
-         * @param animate Whether you should animate your transition of the View to being
-         *                non central item. If false, this is the initial setting and you should
-         *                transition immediately.
-         */
-        void onNonCenterPosition(boolean animate);
-    }
-
-    /**
-     * Interface for listening for click events on WearableListView.
-     */
-    public interface ClickListener {
-        /**
-         * Called when the central child of the WearableListView is tapped.
-         * @param view View that was clicked.
-         */
-        public void onClick(ViewHolder view);
-
-        /**
-         * Called when the user taps the top third of the WearableListView and no item is present
-         * there. This can happen when you are in initial state and the first, top-most item of the
-         * WearableListView is centered.
-         */
-        public void onTopEmptyRegionClick();
-    }
-
-    /**
-     * @hide
-     */
-    public interface OnOverScrollListener {
-        public void onOverScroll();
-    }
-
-    /**
-     * Interface for listening to WearableListView content scrolling.
-     */
-    public interface OnScrollListener {
-        /**
-         * Called when the content is scrolled, reporting the relative scroll value.
-         * @param scroll Amount the content was scrolled. This is a delta from the previous
-         *               position to the new position.
-         */
-        public void onScroll(int scroll);
-
-        /**
-         * Called when the content is scrolled, reporting the absolute scroll value.
-         *
-         * @deprecated BE ADVISED DO NOT USE THIS This might provide wrong values when contents
-         * of a RecyclerView change.
-         *
-         * @param scroll Absolute scroll position of the content inside the WearableListView.
-         */
-        @Deprecated
-        public void onAbsoluteScrollChange(int scroll);
-
-        /**
-         * Called when WearableListView's scroll state changes.
-         *
-         * @param scrollState The updated scroll state. One of {@link #SCROLL_STATE_IDLE},
-         *                    {@link #SCROLL_STATE_DRAGGING} or {@link #SCROLL_STATE_SETTLING}.
-         */
-        public void onScrollStateChanged(int scrollState);
-
-        /**
-         * Called when the central item of the WearableListView changes.
-         *
-         * @param centralPosition Position of the item in the Adapter.
-         */
-        public void onCentralPositionChanged(int centralPosition);
-    }
-
-    /**
-     * A listener interface that can be added to the WearableListView to get notified when the
-     * central item is changed.
-     */
-    public interface OnCentralPositionChangedListener {
-        /**
-         * Called when the central item of the WearableListView changes.
-         *
-         * @param centralPosition Position of the item in the Adapter.
-         */
-        void onCentralPositionChanged(int centralPosition);
-    }
-
-    /**
-     * Base class for adapters providing data for the WearableListView. For details refer to
-     * RecyclerView.Adapter.
-     */
-    public static abstract class Adapter extends RecyclerView.Adapter<ViewHolder> {
-    }
-
-    private static class SmoothScroller extends LinearSmoothScroller {
-
-        private static final float MILLISECONDS_PER_INCH = 100f;
-
-        private final LayoutManager mLayoutManager;
-
-        public SmoothScroller(Context context, WearableListView.LayoutManager manager) {
-            super(context);
-            mLayoutManager = manager;
-        }
-
-        @Override
-        protected void onStart() {
-            super.onStart();
-        }
-
-        // TODO: (mindyp): when flinging, return the dydt that triggered the fling.
-        @Override
-        protected float calculateSpeedPerPixel(DisplayMetrics displayMetrics) {
-            return MILLISECONDS_PER_INCH / displayMetrics.densityDpi;
-        }
-
-        @Override
-        public int calculateDtToFit(int viewStart, int viewEnd, int boxStart, int boxEnd, int
-                snapPreference) {
-            // Snap to center.
-            return (boxStart + boxEnd) / 2 - (viewStart + viewEnd) / 2;
-        }
-
-        @Override
-        public PointF computeScrollVectorForPosition(int targetPosition) {
-            if (targetPosition < mLayoutManager.getFirstPosition()) {
-                return new PointF(0, -1);
-            } else {
-                return new PointF(0, 1);
-            }
-        }
-    }
-
-    /**
-     * Wrapper around items displayed in the list view. {@link .Adapter} must return objects that
-     * are instances of this class. Consider making the wrapped View implement
-     * {@link .OnCenterProximityListener} if you want to receive a callback when it becomes or
-     * ceases to be the central item in the WearableListView.
-     */
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ViewHolder(View itemView) {
-            super(itemView);
-        }
-
-        /**
-         * Called when the wrapped view is becoming or ceasing to be the central item of the
-         * WearableListView.
-         *
-         * Retained as protected for backwards compatibility.
-         *
-         * @hide
-         */
-        protected void onCenterProximity(boolean isCentralItem, boolean animate) {
-            if (!(itemView instanceof OnCenterProximityListener)) {
-                return;
-            }
-            OnCenterProximityListener item = (OnCenterProximityListener) itemView;
-            if (isCentralItem) {
-                item.onCenterPosition(animate);
-            } else {
-                item.onNonCenterPosition(animate);
-            }
         }
     }
 

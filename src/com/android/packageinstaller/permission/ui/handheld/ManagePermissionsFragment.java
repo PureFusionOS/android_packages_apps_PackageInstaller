@@ -39,10 +39,8 @@ import java.util.List;
 abstract class ManagePermissionsFragment extends PermissionsFrameFragment
         implements PermissionGroups.PermissionsGroupsChangeCallback,
         Preference.OnPreferenceClickListener {
-    private static final String LOG_TAG = "ManagePermissionsFragment";
-
     static final String OS_PKG = "android";
-
+    private static final String LOG_TAG = "ManagePermissionsFragment";
     private ArraySet<String> mLauncherPkgs;
 
     private PermissionGroups mPermissions;
@@ -101,7 +99,6 @@ abstract class ManagePermissionsFragment extends PermissionsFrameFragment
      * Add preferences for all permissions of a type to the preference screen.
      *
      * @param addSystemPermissions If the permissions added should be system permissions or not
-     *
      * @return The preference screen the permissions were added to
      */
     protected PreferenceScreen updatePermissionsUi(boolean addSystemPermissions) {

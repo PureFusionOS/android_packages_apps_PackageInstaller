@@ -170,7 +170,7 @@ public class PermissionApps {
         for (UserHandle user : userManager.getUserProfiles()) {
             List<PackageInfo> apps = mCache != null ? mCache.getPackages(user.getIdentifier())
                     : mPm.getInstalledPackagesAsUser(PackageManager.GET_PERMISSIONS,
-                            user.getIdentifier());
+                    user.getIdentifier());
 
             final int N = apps.size();
             for (int i = 0; i < N; i++) {
@@ -196,12 +196,12 @@ public class PermissionApps {
                     }
 
                     if ((requestedPermissionInfo.protectionLevel
-                                & PermissionInfo.PROTECTION_MASK_BASE)
-                                    != PermissionInfo.PROTECTION_DANGEROUS
+                            & PermissionInfo.PROTECTION_MASK_BASE)
+                            != PermissionInfo.PROTECTION_DANGEROUS
                             || (requestedPermissionInfo.flags
-                                & PermissionInfo.FLAG_INSTALLED) == 0
+                            & PermissionInfo.FLAG_INSTALLED) == 0
                             || (requestedPermissionInfo.flags
-                                & PermissionInfo.FLAG_REMOVED) != 0) {
+                            & PermissionInfo.FLAG_REMOVED) != 0) {
                         continue;
                     }
 
@@ -306,6 +306,10 @@ public class PermissionApps {
         mIcon = Utils.applyTint(mContext, mIcon, android.R.attr.colorControlNormal);
     }
 
+    public interface Callback {
+        void onPermissionsLoaded(PermissionApps permissionApps);
+    }
+
     public static class PermissionApp implements Comparable<PermissionApp> {
         private final String mPackageName;
         private final AppPermissionGroup mAppPermissionGroup;
@@ -314,7 +318,7 @@ public class PermissionApps {
         private final ApplicationInfo mInfo;
 
         public PermissionApp(String packageName, AppPermissionGroup appPermissionGroup,
-                String label, Drawable icon, ApplicationInfo info) {
+                             String label, Drawable icon, ApplicationInfo info) {
             mPackageName = packageName;
             mAppPermissionGroup = appPermissionGroup;
             mLabel = label;
@@ -397,23 +401,6 @@ public class PermissionApps {
         }
     }
 
-    private class PermissionAppsLoader extends AsyncTask<Void, Void, List<PermissionApp>> {
-
-        @Override
-        protected List<PermissionApp> doInBackground(Void... args) {
-            return loadPermissionApps();
-        }
-
-        @Override
-        protected void onPostExecute(List<PermissionApp> result) {
-            mRefreshing = false;
-            createMap(result);
-            if (mCallback != null) {
-                mCallback.onPermissionsLoaded(PermissionApps.this);
-            }
-        }
-    }
-
     /**
      * Class used to reduce the number of calls to the package manager.
      * This caches app information so it should only be used across parallel PermissionApps
@@ -437,7 +424,20 @@ public class PermissionApps {
         }
     }
 
-    public interface Callback {
-        void onPermissionsLoaded(PermissionApps permissionApps);
+    private class PermissionAppsLoader extends AsyncTask<Void, Void, List<PermissionApp>> {
+
+        @Override
+        protected List<PermissionApp> doInBackground(Void... args) {
+            return loadPermissionApps();
+        }
+
+        @Override
+        protected void onPostExecute(List<PermissionApp> result) {
+            mRefreshing = false;
+            createMap(result);
+            if (mCallback != null) {
+                mCallback.onPermissionsLoaded(PermissionApps.this);
+            }
+        }
     }
 }

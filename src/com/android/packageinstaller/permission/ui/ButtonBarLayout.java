@@ -29,7 +29,9 @@ import com.android.packageinstaller.R;
  * orientation when it can't fit its child views horizontally.
  */
 public class ButtonBarLayout extends LinearLayout {
-    /** Whether the current configuration allows stacking. */
+    /**
+     * Whether the current configuration allows stacking.
+     */
     private boolean mAllowStacking;
 
     private int mLastWidthSize = -1;
@@ -95,6 +97,10 @@ public class ButtonBarLayout extends LinearLayout {
         }
     }
 
+    private boolean isStacked() {
+        return getOrientation() == LinearLayout.VERTICAL;
+    }
+
     private void setStacked(boolean stacked) {
         setOrientation(stacked ? LinearLayout.VERTICAL : LinearLayout.HORIZONTAL);
         setGravity(stacked ? Gravity.END : Gravity.BOTTOM);
@@ -110,9 +116,5 @@ public class ButtonBarLayout extends LinearLayout {
         for (int i = childCount - 2; i >= 0; i--) {
             bringChildToFront(getChildAt(i));
         }
-    }
-
-    private boolean isStacked() {
-        return getOrientation() == LinearLayout.VERTICAL;
     }
 }

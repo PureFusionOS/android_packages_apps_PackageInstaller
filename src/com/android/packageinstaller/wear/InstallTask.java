@@ -50,15 +50,29 @@ public class InstallTask {
     private String mErrorDesc = null;
 
     public InstallTask(Context context, String packageName,
-            ParcelFileDescriptor parcelFileDescriptor,
-            PackageInstallerImpl.InstallListener callback, PackageInstaller.Session session,
-            IntentSender commitCallback) {
+                       ParcelFileDescriptor parcelFileDescriptor,
+                       PackageInstallerImpl.InstallListener callback, PackageInstaller.Session session,
+                       IntentSender commitCallback) {
         mContext = context;
         mPackageName = packageName;
         mParcelFileDescriptor = parcelFileDescriptor;
         mCallback = callback;
         mSession = session;
         mCommitCallback = commitCallback;
+    }
+
+    /**
+     * Quietly close a closeable resource (e.g. a stream or file). The input may already
+     * be closed and it may even be null.
+     */
+    public static void safeClose(Closeable resource) {
+        if (resource != null) {
+            try {
+                resource.close();
+            } catch (IOException ioe) {
+                // Catch and discard the error
+            }
+        }
     }
 
     public boolean isError() {
@@ -127,7 +141,7 @@ public class InstallTask {
             return false;
         }
 
-        if (mParcelFileDescriptor == null || mParcelFileDescriptor.getFileDescriptor() == null)  {
+        if (mParcelFileDescriptor == null || mParcelFileDescriptor.getFileDescriptor() == null) {
             mErrorCode = InstallerConstants.ERROR_COULD_NOT_GET_FD;
             mErrorDesc = "Could not get FD";
             return false;
@@ -155,19 +169,5 @@ public class InstallTask {
         }
 
         return true;
-    }
-
-    /**
-     * Quietly close a closeable resource (e.g. a stream or file). The input may already
-     * be closed and it may even be null.
-     */
-    public static void safeClose(Closeable resource) {
-        if (resource != null) {
-            try {
-                resource.close();
-            } catch (IOException ioe) {
-                // Catch and discard the error
-            }
-        }
     }
 }

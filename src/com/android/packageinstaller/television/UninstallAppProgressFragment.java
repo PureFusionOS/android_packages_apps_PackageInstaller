@@ -41,12 +41,12 @@ public class UninstallAppProgressFragment extends Fragment implements View.OnCli
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         final View root = inflater.inflate(R.layout.uninstall_progress, container, false);
         // Initialize views
         View snippetView = root.findViewById(R.id.app_snippet);
         PackageUtil.initSnippetForInstalledApp(getContext(),
-                ((UninstallAppProgress)getActivity()).getAppInfo(), snippetView);
+                ((UninstallAppProgress) getActivity()).getAppInfo(), snippetView);
         mDeviceManagerButton = (Button) root.findViewById(R.id.device_manager_button);
         mUsersButton = (Button) root.findViewById(R.id.users_button);
         mDeviceManagerButton.setVisibility(View.GONE);
@@ -80,7 +80,7 @@ public class UninstallAppProgressFragment extends Fragment implements View.OnCli
 
     public void onClick(View v) {
         final UninstallAppProgress activity = (UninstallAppProgress) getActivity();
-        if(v == mOkButton && activity != null) {
+        if (v == mOkButton && activity != null) {
             Log.i(TAG, "Finished uninstalling pkg: " +
                     activity.getAppInfo().packageName);
             activity.setResultAndFinish();

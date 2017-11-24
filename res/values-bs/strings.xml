@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Aplikacija nije instalirana."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Instaliranje ovog paketa je blokirano."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Aplikacija nije instalirana jer paket nije usaglašen s postojećim paketom."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Aplikacija nije instalirana jer nije kompatibilna s vašim tabletom."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Ova aplikacija nije kompatibilna s vašim TV-om."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Aplikacija nije instalirana jer nije kompatibilna s vašim telefonom."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Aplikacija nije instalirana jer nije kompatibilna s vašim tabletom."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Ova aplikacija nije kompatibilna s vašim TV-om."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Aplikacija nije instalirana jer nije kompatibilna s vašim telefonom."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Aplikacija nije instalirana jer izgleda da paket nije važeći."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"Aplikaciju <xliff:g id="APP_NAME">%1$s</xliff:g> ne možete instalirati na svoj tablet."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"Nije moguće instalirati aplikaciju <xliff:g id="APP_NAME">%1$s</xliff:g> na vaš TV."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"Aplikaciju <xliff:g id="APP_NAME">%1$s</xliff:g> ne možete instalirati na svoj telefon."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"Aplikaciju <xliff:g id="APP_NAME">%1$s</xliff:g> ne možete instalirati na svoj tablet."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"Nije moguće instalirati aplikaciju <xliff:g id="APP_NAME">%1$s</xliff:g> na vaš TV."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"Aplikaciju <xliff:g id="APP_NAME">%1$s</xliff:g> ne možete instalirati na svoj telefon."</string>
     <string name="launch" msgid="4826921505917605463">"Otvori"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Vaš administrator ne dozvoljava instaliranje aplikacija iz nepoznatih izvora."</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Ovaj korisnik ne može instalirati nepoznate aplikacije."</string>
@@ -105,9 +104,9 @@
     <string name="no_permissions" msgid="3210542466245591574">"Nijedno odobrenje"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Dodatna odobrenja"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="one">još <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="few">još <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="other">još <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="one">još <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="few">još <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="other">još <xliff:g id="COUNT_1">%1$d</xliff:g></item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Ova aplikacija je kreirana za stariju verziju Androida. Odbijanje odobrenja može uzrokovati da ona više ne funkcionira onako kako je primarno zamišljeno."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"izvrši nepoznatu radnju"</string>
@@ -138,12 +137,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Postojeća odobrenja"</string>
     <string name="message_staging" msgid="6151794817691100003">"Aplikacija se postavlja…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Nepoznato"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Vašem tabletu iz sigurnosnih razloga nije dopušteno instaliranje nepoznatih aplikacija iz ovog izvora."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Vašem TV-u iz sigurnosnih razloga nije dopušteno instaliranje nepoznatih aplikacija iz ovog izvora."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Vašem telefonu iz sigurnosnih razloga nije dopušteno instaliranje nepoznatih aplikacija iz ovog izvora."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Vaši podaci na telefonu i vaši lični podaci izloženiji su napadima nepoznatih aplikacija. Instaliranjem ove aplikacije, saglasni ste da ste vi odgovorni za bilo kakvu štetu na telefonu ili gubitak podataka do kojih može doći korištenjem aplikacije."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Vaši podaci na tabletu i vaši lični podaci izloženiji su napadima nepoznatih aplikacija. Instaliranjem ove aplikacije, saglasni ste da ste vi odgovorni za bilo kakvu štetu na tabletu ili gubitak podataka do kojih može doći korištenjem aplikacije."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Vaši podaci na TV-u i vaši lični podaci izloženiji su napadima nepoznatih aplikacija. Instaliranjem ove aplikacije, saglasni ste da ste vi odgovorni za bilo kakvu štetu na TV-u ili gubitak podataka do kojih može doći korištenjem aplikacije."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Vašem tabletu iz sigurnosnih razloga nije dopušteno instaliranje nepoznatih aplikacija iz ovog izvora."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Vašem TV-u iz sigurnosnih razloga nije dopušteno instaliranje nepoznatih aplikacija iz ovog izvora."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Vašem telefonu iz sigurnosnih razloga nije dopušteno instaliranje nepoznatih aplikacija iz ovog izvora."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Vaši podaci na telefonu i vaši lični podaci izloženiji su napadima nepoznatih aplikacija. Instaliranjem ove aplikacije, saglasni ste da ste vi odgovorni za bilo kakvu štetu na telefonu ili gubitak podataka do kojih može doći korištenjem aplikacije."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Vaši podaci na tabletu i vaši lični podaci izloženiji su napadima nepoznatih aplikacija. Instaliranjem ove aplikacije, saglasni ste da ste vi odgovorni za bilo kakvu štetu na tabletu ili gubitak podataka do kojih može doći korištenjem aplikacije."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Vaši podaci na TV-u i vaši lični podaci izloženiji su napadima nepoznatih aplikacija. Instaliranjem ove aplikacije, saglasni ste da ste vi odgovorni za bilo kakvu štetu na TV-u ili gubitak podataka do kojih može doći korištenjem aplikacije."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Nastavi"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Postavke"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"(De)instaliranje wear aplikacija"</string>

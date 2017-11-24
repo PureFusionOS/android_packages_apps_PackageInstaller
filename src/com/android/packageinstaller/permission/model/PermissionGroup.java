@@ -27,7 +27,7 @@ public final class PermissionGroup implements Comparable<PermissionGroup> {
     private final int mGranted;
 
     PermissionGroup(String name, String declaringPackage, CharSequence label, Drawable icon,
-            int total, int granted) {
+                    int total, int granted) {
         mDeclaringPackage = declaringPackage;
         mName = name;
         mLabel = label;

@@ -41,10 +41,12 @@ public class ManualLayoutFrame extends ViewGroup {
             switch (widthMode) {
                 case MeasureSpec.AT_MOST: {
                     newWidth = Math.min(mWidth, MeasureSpec.getSize(widthMeasureSpec));
-                } break;
+                }
+                break;
                 case MeasureSpec.EXACTLY: {
                     newWidth = MeasureSpec.getSize(widthMeasureSpec);
-                } break;
+                }
+                break;
             }
             if (newWidth != mWidth) {
                 mWidth = newWidth;

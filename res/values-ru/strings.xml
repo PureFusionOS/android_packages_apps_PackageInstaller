@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Приложение не установлено."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Установка пакета заблокирована."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Приложение не установлено, так как оно конфликтует с другим пакетом."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Приложение не установлено, так как оно несовместимо с вашим планшетом."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Приложение несовместимо с вашим телевизором."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Приложение не установлено, так как оно несовместимо с вашим телефоном."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Приложение не установлено, так как оно несовместимо с вашим планшетом."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Приложение несовместимо с вашим телевизором."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Приложение не установлено, так как оно несовместимо с вашим телефоном."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Приложение не установлено, так как его пакет недействителен (например, поврежден)."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"Не удалось установить приложение \"<xliff:g id="APP_NAME">%1$s</xliff:g>\"."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"Приложение \"<xliff:g id="APP_NAME">%1$s</xliff:g>\" нельзя установить на ваш телевизор."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"Не удалось установить приложение \"<xliff:g id="APP_NAME">%1$s</xliff:g>\"."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"Не удалось установить приложение \"<xliff:g id="APP_NAME">%1$s</xliff:g>\"."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"Приложение \"<xliff:g id="APP_NAME">%1$s</xliff:g>\" нельзя установить на ваш телевизор."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"Не удалось установить приложение \"<xliff:g id="APP_NAME">%1$s</xliff:g>\"."</string>
     <string name="launch" msgid="4826921505917605463">"Открыть"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Ваш администратор запретил устанавливать приложения из неизвестных источников"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Этот пользователь не может устанавливать неизвестные приложения"</string>
@@ -105,10 +104,10 @@
     <string name="no_permissions" msgid="3210542466245591574">"Разрешения не требуются"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Ещё разрешения"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="one">Ещё <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="few">Ещё <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="many">Ещё <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="other">Ещё <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="one">Ещё <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="few">Ещё <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="many">Ещё <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="other">Ещё <xliff:g id="COUNT_1">%1$d</xliff:g></item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Это приложение было разработано для более ранней версии Android. Отзыв разрешения может вызвать неполадки в работе."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"выполняет неизвестные действия"</string>
@@ -139,12 +138,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Имеющиеся разрешения"</string>
     <string name="message_staging" msgid="6151794817691100003">"Подождите…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Неизвестное приложение"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"В целях безопасности ваш планшет блокирует установку приложений из неизвестных источников."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"В целях безопасности ваш телевизор блокирует установку приложений из неизвестных источников."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"В целях безопасности ваш телефон блокирует установку приложений из неизвестных источников."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Ваши личные данные и данные телефона более уязвимы для атак приложений из неизвестных источников. Устанавливая это приложение, вы соглашаетесь с тем, что несете полную ответственность за любой ущерб, нанесенный телефону, и потерю данных, связанные с использованием этого приложения."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Ваши личные данные и данные планшета более уязвимы для атак приложений из неизвестных источников. Устанавливая это приложение, вы соглашаетесь с тем, что несете полную ответственность за любой ущерб, нанесенный планшету, и потерю данных, связанные с использованием этого приложения."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Ваши личные данные и данные телевизора более уязвимы для атак приложений из неизвестных источников. Устанавливая это приложение, вы соглашаетесь с тем, что несете полную ответственность за любой ущерб, нанесенный телевизору, и потерю данных, связанные с использованием этого приложения."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"В целях безопасности ваш планшет блокирует установку приложений из неизвестных источников."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"В целях безопасности ваш телевизор блокирует установку приложений из неизвестных источников."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"В целях безопасности ваш телефон блокирует установку приложений из неизвестных источников."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Ваши личные данные и данные телефона более уязвимы для атак приложений из неизвестных источников. Устанавливая это приложение, вы соглашаетесь с тем, что несете полную ответственность за любой ущерб, нанесенный телефону, и потерю данных, связанные с использованием этого приложения."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Ваши личные данные и данные планшета более уязвимы для атак приложений из неизвестных источников. Устанавливая это приложение, вы соглашаетесь с тем, что несете полную ответственность за любой ущерб, нанесенный планшету, и потерю данных, связанные с использованием этого приложения."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Ваши личные данные и данные телевизора более уязвимы для атак приложений из неизвестных источников. Устанавливая это приложение, вы соглашаетесь с тем, что несете полную ответственность за любой ущерб, нанесенный телевизору, и потерю данных, связанные с использованием этого приложения."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Продолжить"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Настройки"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Установка/удаление приложений для Android Wear"</string>

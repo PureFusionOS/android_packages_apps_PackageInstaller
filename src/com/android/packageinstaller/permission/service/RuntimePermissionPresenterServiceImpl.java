@@ -48,7 +48,7 @@ public final class RuntimePermissionPresenterServiceImpl extends RuntimePermissi
 
         List<RuntimePermissionPresentationInfo> permissions = new ArrayList<>();
 
-        AppPermissions appPermissions =  new AppPermissions(this, packageInfo, null, false, null);
+        AppPermissions appPermissions = new AppPermissions(this, packageInfo, null, false, null);
         for (AppPermissionGroup group : appPermissions.getPermissionGroups()) {
             if (Utils.shouldShowPermission(group, packageName)) {
                 final boolean granted = group.areRuntimePermissionsGranted();

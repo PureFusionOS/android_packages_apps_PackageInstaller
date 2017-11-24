@@ -80,7 +80,7 @@ public final class GrantPermissionsViewHandlerImpl implements GrantPermissionsVi
 
     @Override
     public void updateUi(String groupName, int groupCount, int groupIndex, Icon icon,
-            CharSequence message, boolean showDoNotAsk) {
+                         CharSequence message, boolean showDoNotAsk) {
         mGroupName = groupName;
 
         mMessageView.setText(message);

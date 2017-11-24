@@ -37,10 +37,7 @@ import java.util.List;
 
 public final class Utils {
 
-    private static final String LOG_TAG = "Utils";
-
     public static final String OS_PKG = "android";
-
     public static final String[] MODERN_PERMISSION_GROUPS = {
             Manifest.permission_group.CALENDAR,
             Manifest.permission_group.CAMERA,
@@ -52,9 +49,9 @@ public final class Utils {
             Manifest.permission_group.MICROPHONE,
             Manifest.permission_group.STORAGE
     };
-
+    private static final String LOG_TAG = "Utils";
     private static final Intent LAUNCHER_INTENT = new Intent(Intent.ACTION_MAIN, null)
-                            .addCategory(Intent.CATEGORY_LAUNCHER);
+            .addCategory(Intent.CATEGORY_LAUNCHER);
 
     private Utils() {
         /* do nothing - hide constructor */
@@ -126,7 +123,7 @@ public final class Utils {
     public static ArraySet<String> getLauncherPackages(Context context) {
         ArraySet<String> launcherPkgs = new ArraySet<>();
         for (ResolveInfo info :
-            context.getPackageManager().queryIntentActivities(LAUNCHER_INTENT, 0)) {
+                context.getPackageManager().queryIntentActivities(LAUNCHER_INTENT, 0)) {
             launcherPkgs.add(info.activityInfo.packageName);
         }
 

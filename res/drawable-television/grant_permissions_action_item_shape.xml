@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2015 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!-- Copyright (C) 2015 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,14 +14,15 @@
 -->
 
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
-        android:insetRight="1dp"
-        android:insetBottom="1dp">
+    android:insetBottom="1dp"
+    android:insetRight="1dp">
     <shape android:shape="rectangle">
         <corners android:radius="2dp" />
         <solid android:color="@color/grant_permissions_focus_highlight" />
-        <padding android:left="8dp"
-                android:top="4dp"
-                android:right="8dp"
-                android:bottom="4dp" />
+        <padding
+            android:bottom="4dp"
+            android:left="8dp"
+            android:right="8dp"
+            android:top="4dp" />
     </shape>
 </inset>

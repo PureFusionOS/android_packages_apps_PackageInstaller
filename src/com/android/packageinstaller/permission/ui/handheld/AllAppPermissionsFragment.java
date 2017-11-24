@@ -154,12 +154,12 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
 
                     if (appInfo.isInstantApp()
                             && (perm.protectionLevel & PermissionInfo.PROTECTION_FLAG_EPHEMERAL)
-                                == 0) {
+                            == 0) {
                         continue;
                     }
                     if (appInfo.targetSdkVersion < Build.VERSION_CODES.M
                             && (perm.protectionLevel & PermissionInfo.PROTECTION_FLAG_RUNTIME_ONLY)
-                                != 0) {
+                            != 0) {
                         continue;
                     }
 
@@ -224,7 +224,7 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
     }
 
     private PreferenceGroup findOrCreate(PackageItemInfo group, PackageManager pm,
-            ArrayList<Preference> prefs) {
+                                         ArrayList<Preference> prefs) {
         PreferenceGroup pref = (PreferenceGroup) findPreference(group.name);
         if (pref == null) {
             pref = new PreferenceCategory(getContext());
@@ -237,7 +237,7 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
     }
 
     private Preference getPreference(PackageInfo packageInfo, PermissionInfo perm,
-            PackageItemInfo group, PackageManager pm) {
+                                     PackageItemInfo group, PackageManager pm) {
         final Preference pref;
 
         // We allow individual permission control for some permissions if review enabled
@@ -273,7 +273,7 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
     }
 
     private AppPermissionGroup getPermissionGroup(PackageInfo packageInfo,
-            String permission) {
+                                                  String permission) {
         AppPermissionGroup appPermissionGroup = null;
         if (mGroups != null) {
             final int groupCount = mGroups.size();
@@ -298,11 +298,11 @@ public final class AllAppPermissionsFragment extends SettingsWithHeader {
 
     private static final class MyMultiTargetSwitchPreference extends MultiTargetSwitchPreference {
         MyMultiTargetSwitchPreference(Context context, String permission,
-                AppPermissionGroup appPermissionGroup) {
+                                      AppPermissionGroup appPermissionGroup) {
             super(context);
 
             setChecked(appPermissionGroup.areRuntimePermissionsGranted(
-                    new String[] {permission}));
+                    new String[]{permission}));
 
             setSwitchOnClickListener(v -> {
                 Switch switchView = (Switch) v;

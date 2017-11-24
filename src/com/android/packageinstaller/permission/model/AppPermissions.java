@@ -44,13 +44,13 @@ public final class AppPermissions {
     private PackageInfo mPackageInfo;
 
     public AppPermissions(Context context, PackageInfo packageInfo, String[] filterPermissions,
-            boolean sortGroups, Runnable onErrorCallback) {
+                          boolean sortGroups, Runnable onErrorCallback) {
         mContext = context;
         mPackageInfo = packageInfo;
         mFilterPermissions = filterPermissions;
         mAppLabel = BidiFormatter.getInstance().unicodeWrap(
                 packageInfo.applicationInfo.loadSafeLabel(
-                context.getPackageManager()).toString());
+                        context.getPackageManager()).toString());
         mSortGroups = sortGroups;
         mOnErrorCallback = onErrorCallback;
         loadPermissionGroups();

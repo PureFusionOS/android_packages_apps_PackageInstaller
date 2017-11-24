@@ -71,51 +71,17 @@ import java.io.File;
  * sub activity. All state transitions are handled in this activity
  */
 public class PackageInstallerActivity extends OverlayTouchActivity implements OnClickListener {
-    private static final String TAG = "PackageInstaller";
-
-    private static final int REQUEST_TRUST_EXTERNAL_SOURCE = 1;
-
-    private static final String SCHEME_FILE = "file";
-    private static final String SCHEME_PACKAGE = "package";
-
     static final String EXTRA_CALLING_PACKAGE = "EXTRA_CALLING_PACKAGE";
     static final String EXTRA_ORIGINAL_SOURCE_INFO = "EXTRA_ORIGINAL_SOURCE_INFO";
+    static final String PREFS_ALLOWED_SOURCES = "allowed_sources";
+    private static final String TAG = "PackageInstaller";
+    private static final int REQUEST_TRUST_EXTERNAL_SOURCE = 1;
+    private static final String SCHEME_FILE = "file";
+    private static final String SCHEME_PACKAGE = "package";
     private static final String ALLOW_UNKNOWN_SOURCES_KEY =
             PackageInstallerActivity.class.getName() + "ALLOW_UNKNOWN_SOURCES_KEY";
-
-    private int mSessionId = -1;
-    private Uri mPackageURI;
-    private Uri mOriginatingURI;
-    private Uri mReferrerURI;
-    private int mOriginatingUid = PackageInstaller.SessionParams.UID_UNKNOWN;
-    private String mOriginatingPackage; // The package name corresponding to #mOriginatingUid
-
-    private boolean localLOGV = false;
-    PackageManager mPm;
-    IPackageManager mIpm;
-    AppOpsManager mAppOpsManager;
-    UserManager mUserManager;
-    PackageInstaller mInstaller;
-    PackageInfo mPkgInfo; //new package being installed
-    String mCallingPackage;
-    ApplicationInfo mSourceInfo;
-
-    // ApplicationInfo object primarily used for already existing applications
-    private ApplicationInfo mAppInfo = null;
-
-    // Buttons to indicate user acceptance
-    private Button mOk;
-    private Button mCancel;
-    CaffeinatedScrollView mScrollView = null;
-    private boolean mOkCanInstall = false;
-
-    private PackageUtil.AppSnippet mAppSnippet;
-
-    static final String PREFS_ALLOWED_SOURCES = "allowed_sources";
-
     private static final String TAB_ID_ALL = "all";
     private static final String TAB_ID_NEW = "new";
-
     // Dialog identifiers used in showDialog
     private static final int DLG_BASE = 0;
     private static final int DLG_PACKAGE_ERROR = DLG_BASE + 2;
@@ -125,7 +91,29 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
     private static final int DLG_ANONYMOUS_SOURCE = DLG_BASE + 6;
     private static final int DLG_NOT_SUPPORTED_ON_WEAR = DLG_BASE + 7;
     private static final int DLG_EXTERNAL_SOURCE_BLOCKED = DLG_BASE + 8;
-
+    PackageManager mPm;
+    IPackageManager mIpm;
+    AppOpsManager mAppOpsManager;
+    UserManager mUserManager;
+    PackageInstaller mInstaller;
+    PackageInfo mPkgInfo; //new package being installed
+    String mCallingPackage;
+    ApplicationInfo mSourceInfo;
+    CaffeinatedScrollView mScrollView = null;
+    private int mSessionId = -1;
+    private Uri mPackageURI;
+    private Uri mOriginatingURI;
+    private Uri mReferrerURI;
+    private int mOriginatingUid = PackageInstaller.SessionParams.UID_UNKNOWN;
+    private String mOriginatingPackage; // The package name corresponding to #mOriginatingUid
+    private boolean localLOGV = false;
+    // ApplicationInfo object primarily used for already existing applications
+    private ApplicationInfo mAppInfo = null;
+    // Buttons to indicate user acceptance
+    private Button mOk;
+    private Button mCancel;
+    private boolean mOkCanInstall = false;
+    private PackageUtil.AppSnippet mAppSnippet;
     // If unknown sources are temporary allowed
     private boolean mAllowUnknownSources;
 
@@ -143,9 +131,9 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
         ((TextView) findViewById(R.id.install_confirm_question))
                 .setText(R.string.install_confirm_question);
 
-        TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
+        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
         tabHost.setup();
-        ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         TabsAdapter adapter = new TabsAdapter(this, tabHost, viewPager);
         // If the app supports runtime permissions the new permissions will
         // be requested at runtime, hence we do not show them at install.
@@ -175,9 +163,9 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
                 }
             }
             if (!supportsRuntimePermissions && !newPermissionsFound) {
-                LayoutInflater inflater = (LayoutInflater)getSystemService(
+                LayoutInflater inflater = (LayoutInflater) getSystemService(
                         Context.LAYOUT_INFLATER_SERVICE);
-                TextView label = (TextView)inflater.inflate(R.layout.label, null);
+                TextView label = (TextView) inflater.inflate(R.layout.label, null);
                 label.setText(R.string.no_new_perms);
                 mScrollView.addView(label);
             }
@@ -186,14 +174,14 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
         }
         if (!supportsRuntimePermissions && N > 0) {
             permVisible = true;
-            LayoutInflater inflater = (LayoutInflater)getSystemService(
+            LayoutInflater inflater = (LayoutInflater) getSystemService(
                     Context.LAYOUT_INFLATER_SERVICE);
             View root = inflater.inflate(R.layout.permissions_list, null);
             if (mScrollView == null) {
-                mScrollView = (CaffeinatedScrollView)root.findViewById(R.id.scrollview);
+                mScrollView = (CaffeinatedScrollView) root.findViewById(R.id.scrollview);
             }
-            ((ViewGroup)root.findViewById(R.id.permission_list)).addView(
-                        perms.getPermissionsView(AppSecurityPermissions.WHICH_ALL));
+            ((ViewGroup) root.findViewById(R.id.permission_list)).addView(
+                    perms.getPermissionsView(AppSecurityPermissions.WHICH_ALL));
             adapter.addTab(tabHost.newTabSpec(TAB_ID_ALL).setIndicator(
                     getText(R.string.allPerms)), root);
         }
@@ -214,7 +202,7 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
             mScrollView = null;
         }
         if (msg != 0) {
-            ((TextView)findViewById(R.id.install_confirm_question)).setText(msg);
+            ((TextView) findViewById(R.id.install_confirm_question)).setText(msg);
         }
 
         if (mAppInfo != null) {
@@ -240,10 +228,10 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
                         .setText(text);
             }
         } else {
-                final String text = getResources().getString(R.string.new_package_version) +
-                        " " + mPkgInfo.versionName;
-                ((TextView) findViewById(R.id.version_check))
-                        .setText(text);
+            final String text = getResources().getString(R.string.new_package_version) +
+                    " " + mPkgInfo.versionName;
+            ((TextView) findViewById(R.id.version_check))
+                    .setText(text);
         }
 
         if (mScrollView == null) {
@@ -288,7 +276,6 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
      * Create a new dialog.
      *
      * @param id The id of the dialog (determines dialog type)
-     *
      * @return The dialog
      */
     private DialogFragment createDialog(int id) {
@@ -376,7 +363,7 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
         String pkgName = mPkgInfo.packageName;
         // Check if there is already a package on the device with this name
         // but it has been renamed to something else.
-        String[] oldName = mPm.canonicalToCurrentPackageNames(new String[] { pkgName });
+        String[] oldName = mPm.canonicalToCurrentPackageNames(new String[]{pkgName});
         if (oldName != null && oldName.length > 0 && oldName[0] != null) {
             pkgName = oldName[0];
             mPkgInfo.packageName = pkgName;
@@ -506,7 +493,7 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
         setContentView(layout);
 
         mOk = (Button) findViewById(R.id.ok_button);
-        mCancel = (Button)findViewById(R.id.cancel_button);
+        mCancel = (Button) findViewById(R.id.cancel_button);
         mOk.setOnClickListener(this);
         mCancel.setOnClickListener(this);
 
@@ -583,7 +570,6 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
      * Parse the Uri and set up the installer for this package.
      *
      * @param packageUri The URI to parse
-     *
      * @return {@code true} iff the installer could be set up
      */
     private boolean processPackageUri(final Uri packageUri) {
@@ -608,7 +594,8 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
                 }
                 mAppSnippet = new PackageUtil.AppSnippet(mPm.getApplicationLabel(mPkgInfo.applicationInfo),
                         mPm.getApplicationIcon(mPkgInfo.applicationInfo));
-            } break;
+            }
+            break;
 
             case SCHEME_FILE: {
                 File sourceFile = new File(packageUri.getPath());
@@ -625,7 +612,8 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
                         PackageManager.GET_PERMISSIONS, 0, 0, null,
                         new PackageUserState());
                 mAppSnippet = PackageUtil.getAppSnippet(this, mPkgInfo.applicationInfo, sourceFile);
-            } break;
+            }
+            break;
 
             default: {
                 Log.w(TAG, "Unsupported scheme " + scheme);
@@ -696,7 +684,7 @@ public class PackageInstallerActivity extends OverlayTouchActivity implements On
             newIntent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
             newIntent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
         }
-        if(localLOGV) Log.i(TAG, "downloaded app uri="+mPackageURI);
+        if (localLOGV) Log.i(TAG, "downloaded app uri=" + mPackageURI);
         startActivity(newIntent);
         finish();
     }

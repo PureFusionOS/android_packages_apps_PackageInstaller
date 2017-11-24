@@ -56,59 +56,40 @@ import java.util.Set;
 
 /**
  * Service that will install/uninstall packages. It will check for permissions and features as well.
- *
+ * <p>
  * -----------
- *
+ * <p>
  * Debugging information:
- *
- *  Install Action example:
- *  adb shell am startservice -a com.android.packageinstaller.wear.INSTALL_PACKAGE \
- *     -d package://com.google.android.gms \
- *     --eu com.google.android.clockwork.EXTRA_ASSET_URI content://com.google.android.clockwork.home.provider/host/com.google.android.wearable.app/wearable/com.google.android.gms/apk \
- *     --es android.intent.extra.INSTALLER_PACKAGE_NAME com.google.android.gms \
- *     --ez com.google.android.clockwork.EXTRA_CHECK_PERMS false \
- *     --eu com.google.android.clockwork.EXTRA_PERM_URI content://com.google.android.clockwork.home.provider/host/com.google.android.wearable.app/permissions \
- *     com.android.packageinstaller/com.android.packageinstaller.wear.WearPackageInstallerService
- *
- *  Uninstall Action example:
- *  adb shell am startservice -a com.android.packageinstaller.wear.UNINSTALL_PACKAGE \
- *     -d package://com.google.android.gms \
- *     com.android.packageinstaller/com.android.packageinstaller.wear.WearPackageInstallerService
- *
- *  Retry GMS:
- *  adb shell am startservice -a com.android.packageinstaller.wear.RETRY_GMS \
- *     com.android.packageinstaller/com.android.packageinstaller.wear.WearPackageInstallerService
+ * <p>
+ * Install Action example:
+ * adb shell am startservice -a com.android.packageinstaller.wear.INSTALL_PACKAGE \
+ * -d package://com.google.android.gms \
+ * --eu com.google.android.clockwork.EXTRA_ASSET_URI content://com.google.android.clockwork.home.provider/host/com.google.android.wearable.app/wearable/com.google.android.gms/apk \
+ * --es android.intent.extra.INSTALLER_PACKAGE_NAME com.google.android.gms \
+ * --ez com.google.android.clockwork.EXTRA_CHECK_PERMS false \
+ * --eu com.google.android.clockwork.EXTRA_PERM_URI content://com.google.android.clockwork.home.provider/host/com.google.android.wearable.app/permissions \
+ * com.android.packageinstaller/com.android.packageinstaller.wear.WearPackageInstallerService
+ * <p>
+ * Uninstall Action example:
+ * adb shell am startservice -a com.android.packageinstaller.wear.UNINSTALL_PACKAGE \
+ * -d package://com.google.android.gms \
+ * com.android.packageinstaller/com.android.packageinstaller.wear.WearPackageInstallerService
+ * <p>
+ * Retry GMS:
+ * adb shell am startservice -a com.android.packageinstaller.wear.RETRY_GMS \
+ * com.android.packageinstaller/com.android.packageinstaller.wear.WearPackageInstallerService
  */
 public class WearPackageInstallerService extends Service {
     private static final String TAG = "WearPkgInstallerService";
 
     private static final String WEAR_APPS_CHANNEL = "wear_app_install_uninstall";
-
+    private static volatile PowerManager.WakeLock lockStatic = null;
     private final int START_INSTALL = 1;
     private final int START_UNINSTALL = 2;
-
-    private int mInstallNotificationId = 1;
     private final Map<String, Integer> mNotifIdMap = new ArrayMap<>();
-
-    private final class ServiceHandler extends Handler {
-        public ServiceHandler(Looper looper) {
-            super(looper);
-        }
-
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case START_INSTALL:
-                    installPackage(msg.getData());
-                    break;
-                case START_UNINSTALL:
-                    uninstallPackage(msg.getData());
-                    break;
-            }
-        }
-    }
+    private int mInstallNotificationId = 1;
     private ServiceHandler mServiceHandler;
     private NotificationChannel mNotificationChannel;
-    private static volatile PowerManager.WakeLock lockStatic = null;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -380,8 +361,8 @@ public class WearPackageInstallerService extends Service {
     }
 
     private boolean checkPermissions(PackageParser.Package pkg, int companionSdkVersion,
-            int companionDeviceVersion, Uri permUri, List<String> wearablePermissions,
-            File apkFile) {
+                                     int companionDeviceVersion, Uri permUri, List<String> wearablePermissions,
+                                     File apkFile) {
         // Assumption: We are running on Android O.
         // If the Phone App is targeting M, all permissions may not have been granted to the phone
         // app. If the Wear App is then not targeting M, there may be permissions that are not
@@ -411,11 +392,10 @@ public class WearPackageInstallerService extends Service {
      * Given a {@string packageName} corresponding to a phone app, query the provider for all the
      * perms that are granted.
      *
-     * @return true if the Wear App has any perms that have not been granted yet on the phone side.
      * @return true if there is any error cases.
      */
     private boolean doesWearHaveUngrantedPerms(String packageName, Uri permUri,
-            List<String> wearablePermissions) {
+                                               List<String> wearablePermissions) {
         if (permUri == null) {
             Log.e(TAG, "Permission URI is null");
             // Pretend there is an ungranted permission to avoid installing for error cases.
@@ -430,7 +410,7 @@ public class WearPackageInstallerService extends Service {
 
         Set<String> grantedPerms = new HashSet<>();
         Set<String> ungrantedPerms = new HashSet<>();
-        while(permCursor.moveToNext()) {
+        while (permCursor.moveToNext()) {
             // Make sure that the MatrixCursor returned by the ContentProvider has 2 columns and
             // verify their types.
             if (permCursor.getColumnCount() == 2
@@ -483,13 +463,60 @@ public class WearPackageInstallerService extends Service {
         return lockStatic;
     }
 
+    private synchronized Pair<Integer, Notification> buildNotification(final String packageName,
+                                                                       final String title) {
+        int notifId;
+        if (mNotifIdMap.containsKey(packageName)) {
+            notifId = mNotifIdMap.get(packageName);
+        } else {
+            notifId = mInstallNotificationId++;
+            mNotifIdMap.put(packageName, notifId);
+        }
+
+        if (mNotificationChannel == null) {
+            mNotificationChannel = new NotificationChannel(WEAR_APPS_CHANNEL,
+                    getString(R.string.wear_app_channel), NotificationManager.IMPORTANCE_MIN);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(mNotificationChannel);
+        }
+        return new Pair<>(notifId, new Notification.Builder(this, WEAR_APPS_CHANNEL)
+                .setSmallIcon(R.drawable.ic_file_download)
+                .setContentTitle(title)
+                .build());
+    }
+
+    private void getLabelAndUpdateNotification(String packageName, String title) {
+        // Update notification since we have a label now.
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        Pair<Integer, Notification> notifPair = buildNotification(packageName, title);
+        notificationManager.notify(notifPair.first, notifPair.second);
+    }
+
+    private final class ServiceHandler extends Handler {
+        public ServiceHandler(Looper looper) {
+            super(looper);
+        }
+
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case START_INSTALL:
+                    installPackage(msg.getData());
+                    break;
+                case START_UNINSTALL:
+                    uninstallPackage(msg.getData());
+                    break;
+            }
+        }
+    }
+
     private class PackageInstallListener implements PackageInstallerImpl.InstallListener {
         private Context mContext;
         private PowerManager.WakeLock mWakeLock;
         private int mStartId;
         private String mApplicationPackageName;
+
         private PackageInstallListener(Context context, PowerManager.WakeLock wakeLock,
-                int startId, String applicationPackageName) {
+                                       int startId, String applicationPackageName) {
             mContext = context;
             mWakeLock = wakeLock;
             mStartId = startId;
@@ -545,34 +572,5 @@ public class WearPackageInstallerService extends Service {
                 finishService(mWakeLock, mStartId);
             }
         }
-    }
-
-    private synchronized Pair<Integer, Notification> buildNotification(final String packageName,
-            final String title) {
-        int notifId;
-        if (mNotifIdMap.containsKey(packageName)) {
-            notifId = mNotifIdMap.get(packageName);
-        } else {
-            notifId = mInstallNotificationId++;
-            mNotifIdMap.put(packageName, notifId);
-        }
-
-        if (mNotificationChannel == null) {
-            mNotificationChannel = new NotificationChannel(WEAR_APPS_CHANNEL,
-                    getString(R.string.wear_app_channel), NotificationManager.IMPORTANCE_MIN);
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(mNotificationChannel);
-        }
-        return new Pair<>(notifId, new Notification.Builder(this, WEAR_APPS_CHANNEL)
-            .setSmallIcon(R.drawable.ic_file_download)
-            .setContentTitle(title)
-            .build());
-    }
-
-    private void getLabelAndUpdateNotification(String packageName, String title) {
-        // Update notification since we have a label now.
-        NotificationManager notificationManager = getSystemService(NotificationManager.class);
-        Pair<Integer, Notification> notifPair = buildNotification(packageName, title);
-        notificationManager.notify(notifPair.first, notifPair.second);
     }
 }

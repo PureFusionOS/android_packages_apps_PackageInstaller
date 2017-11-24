@@ -26,10 +26,9 @@ import com.android.packageinstaller.permission.ui.handheld.ManageStandardPermiss
 import com.android.packageinstaller.permission.ui.wear.AppPermissionsFragmentWear;
 
 public final class ManagePermissionsActivity extends OverlayTouchActivity {
-    private static final String LOG_TAG = "ManagePermissionsActivity";
-
     public static final String EXTRA_ALL_PERMISSIONS =
             "com.android.packageinstaller.extra.ALL_PERMISSIONS";
+    private static final String LOG_TAG = "ManagePermissionsActivity";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,8 @@ public final class ManagePermissionsActivity extends OverlayTouchActivity {
                 } else {
                     fragment = ManageStandardPermissionsFragment.newInstance();
                 }
-            } break;
+            }
+            break;
 
             case Intent.ACTION_MANAGE_APP_PERMISSIONS: {
                 String packageName = getIntent().getStringExtra(Intent.EXTRA_PACKAGE_NAME);
@@ -75,7 +75,8 @@ public final class ManagePermissionsActivity extends OverlayTouchActivity {
                                 .AppPermissionsFragment.newInstance(packageName);
                     }
                 }
-            } break;
+            }
+            break;
 
             case Intent.ACTION_MANAGE_PERMISSION_APPS: {
                 String permissionName = getIntent().getStringExtra(Intent.EXTRA_PERMISSION_NAME);
@@ -91,7 +92,8 @@ public final class ManagePermissionsActivity extends OverlayTouchActivity {
                     fragment = com.android.packageinstaller.permission.ui.handheld
                             .PermissionAppsFragment.newInstance(permissionName);
                 }
-            } break;
+            }
+            break;
 
             default: {
                 Log.w(LOG_TAG, "Unrecognized action " + action);

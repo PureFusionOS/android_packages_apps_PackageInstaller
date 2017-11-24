@@ -15,33 +15,32 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/defaultBrandColor"
-                android:elevation="@dimen/lb_preference_decor_title_container_elevation"
-                android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/defaultBrandColor"
+    android:elevation="@dimen/lb_preference_decor_title_container_elevation"
+    android:orientation="vertical">
 
     <FrameLayout
-            android:id="@+id/decor_title_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/defaultBrandColor"
-            android:elevation="@dimen/lb_preference_decor_title_container_elevation"
-            android:transitionGroup="false"
-    >
+        android:id="@+id/decor_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/defaultBrandColor"
+        android:elevation="@dimen/lb_preference_decor_title_container_elevation"
+        android:transitionGroup="false">
+
         <TextView
-                android:id="@+id/decor_title"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/lb_preference_decor_title_text_height"
-                android:layout_marginTop="@dimen/lb_preference_decor_title_margin_top"
-                android:layout_marginStart="@dimen/lb_preference_decor_title_margin_start"
-                android:layout_marginEnd="@dimen/lb_preference_decor_title_margin_end"
-                android:fontFamily="sans-serif-condensed"
-                android:gravity="center_vertical"
-                android:singleLine="true"
-                android:textSize="@dimen/lb_preference_decor_title_text_size"
-                android:textColor="?android:attr/textColorPrimary"
-        />
+            android:id="@+id/decor_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lb_preference_decor_title_text_height"
+            android:layout_marginEnd="@dimen/lb_preference_decor_title_margin_end"
+            android:layout_marginStart="@dimen/lb_preference_decor_title_margin_start"
+            android:layout_marginTop="@dimen/lb_preference_decor_title_margin_top"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/lb_preference_decor_title_text_size" />
     </FrameLayout>
 
 </LinearLayout>

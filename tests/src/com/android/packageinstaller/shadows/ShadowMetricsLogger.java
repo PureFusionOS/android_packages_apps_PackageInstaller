@@ -32,7 +32,9 @@ import libcore.util.Objects;
  */
 @Implements(MetricsLogger.class)
 public class ShadowMetricsLogger {
-    /** Collected logs */
+    /**
+     * Collected logs
+     */
     private static ArrayList<Log> sLogs = new ArrayList<>();
 
     /**

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"অ্যাপ্লিকেশান ইনস্টল করা হয়নি৷"</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"ইনস্টল হওয়া থেকে প্যাকেজটিকে অবরুদ্ধ করা হয়েছে।"</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"কোনো বিদ্যমান প্যাকেজের সাথে এই প্যাকেজটির বিবাদ থাকার ফলে অ্যাপ ইনস্টল করা হয়নি৷"</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"অ্যাপটি আপনার ট্যাবলেটের জন্য উপযুক্ত না হওয়ার কারণে এটি ইনস্টল করা হয়নি৷"</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"এই অ্যাপ্লিকেশানটি আপনার টিভির জন্য উপযুক্ত নয়৷"</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"অ্যাপটি আপনার ফোনের জন্য উপযুক্ত না হওয়ার কারণে এটি ইনস্টল করা হয়নি৷"</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"অ্যাপটি আপনার ট্যাবলেটের জন্য উপযুক্ত না হওয়ার কারণে এটি ইনস্টল করা হয়নি৷"</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"এই অ্যাপ্লিকেশানটি আপনার টিভির জন্য উপযুক্ত নয়৷"</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"অ্যাপটি আপনার ফোনের জন্য উপযুক্ত না হওয়ার কারণে এটি ইনস্টল করা হয়নি৷"</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"প্যাকেজটি অবৈধ বলে মনে হওয়ার কারণে অ্যাপ ইনস্টল করা হয়নি৷"</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> আপনার ট্যাবলেটে ইনস্টল করা যায়নি৷"</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g>-কে আপনার টিভিতে ইনস্টল করা যাবে না৷"</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> আপনার ফোনে ইনস্টল করা যায়নি৷"</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> আপনার ট্যাবলেটে ইনস্টল করা যায়নি৷"</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g>-কে আপনার টিভিতে ইনস্টল করা যাবে না৷"</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> আপনার ফোনে ইনস্টল করা যায়নি৷"</string>
     <string name="launch" msgid="4826921505917605463">"খুলুন"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"আপনার প্রশাসক অজানা উৎস থেকে প্রাপ্ত অ্যাপ ইনস্টল করার অনুমতি দেয় না"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"এই ব্যবহারকারী অজানা অ্যাপ ইনস্টল করতে পারবেন না"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"কোনো অনুমতি নেই"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"অতিরিক্ত অনুমতিগুলি"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="one">আরো <xliff:g id="COUNT_1">%1$d</xliff:g>টি</item>
-      <item quantity="other">আরো <xliff:g id="COUNT_1">%1$d</xliff:g>টি</item>
+        <item quantity="one">আরো <xliff:g id="COUNT_1">%1$d</xliff:g>টি</item>
+        <item quantity="other">আরো <xliff:g id="COUNT_1">%1$d</xliff:g>টি</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"একটি পুরোনো সংস্করণের Android এর জন্য এই অ্যাপ্লিকেশানটি ডিজাইন করা হয়েছিল৷ অনুমতি অস্বীকার করলে এটিকে যে কাজের উদ্দেশ্যে তৈরি করা হয়েছিল সেটি নাও করতে পারে৷"</string>
     <string name="default_permission_description" msgid="4992892207044156668">"কোনো অজানা কার্য সঞ্চালন করুন"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"বর্তমান অনুমতিগুলি"</string>
     <string name="message_staging" msgid="6151794817691100003">"অ্যাপ্লিকেশান স্টেজ করা হচ্ছে..."</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"অজানা"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"আপনার নিরাপত্তার জন্য আপনার ট্যাবলেট কে এই উৎস থেকে আসা অজানা অ্যাপ ইনস্টল করার অনুমতি দেওয়া হয় না।"</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"আপনার নিরাপত্তার জন্য আপনার TV কে এই উৎস থেকে আসা অজানা অ্যাপ ইনস্টল করার অনুমতি দেওয়া হয় না।"</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"আপনার নিরাপত্তার জন্য আপনার ফোন কে এই উৎস থেকে আসা অজানা অ্যাপ ইনস্টল করার অনুমতি দেওয়া হয় না।"</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"অজানা অ্যাপের দ্বারা আপনার ফোন এবং ব্যক্তিগত ডেটা আক্রান্ত হওয়ার সম্ভাবনা বেশি থাকে। এই অ্যাপটি ইনস্টল করার মাধ্যমে আপনি সম্মত হলেন যে এটি ব্যবহারের ফলে আপনার ফোনের বা ডেটার কোনও ক্ষতি হলে তার জন্য আপনিই দায়ী থাকবেন।"</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"অজানা অ্যাপের দ্বারা আপনার ট্যাবলেট এবং ব্যক্তিগত ডেটা আক্রান্ত হওয়ার সম্ভাবনা বেশি থাকে। এই অ্যাপটি ইনস্টল করার মাধ্যমে আপনি সম্মত হলেন যে এটি ব্যবহারের ফলে আপনার ট্যাবলেটের বা ডেটার কোনও ক্ষতি হলে তার জন্য আপনিই দায়ী থাকবেন।"</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"অজানা অ্যাপের দ্বারা আপনার টিভি এবং ব্যক্তিগত ডেটা আক্রান্ত হওয়ার সম্ভাবনা বেশি থাকে। এই অ্যাপটি ইনস্টল করার মাধ্যমে আপনি সম্মত হলেন যে এটি ব্যবহারের ফলে আপনার টিভি বা ডেটার কোনও ক্ষতি হলে তার জন্য আপনিই দায়ী থাকবেন।"</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"আপনার নিরাপত্তার জন্য আপনার ট্যাবলেট কে এই উৎস থেকে আসা অজানা অ্যাপ ইনস্টল করার অনুমতি দেওয়া হয় না।"</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"আপনার নিরাপত্তার জন্য আপনার TV কে এই উৎস থেকে আসা অজানা অ্যাপ ইনস্টল করার অনুমতি দেওয়া হয় না।"</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"আপনার নিরাপত্তার জন্য আপনার ফোন কে এই উৎস থেকে আসা অজানা অ্যাপ ইনস্টল করার অনুমতি দেওয়া হয় না।"</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"অজানা অ্যাপের দ্বারা আপনার ফোন এবং ব্যক্তিগত ডেটা আক্রান্ত হওয়ার সম্ভাবনা বেশি থাকে। এই অ্যাপটি ইনস্টল করার মাধ্যমে আপনি সম্মত হলেন যে এটি ব্যবহারের ফলে আপনার ফোনের বা ডেটার কোনও ক্ষতি হলে তার জন্য আপনিই দায়ী থাকবেন।"</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"অজানা অ্যাপের দ্বারা আপনার ট্যাবলেট এবং ব্যক্তিগত ডেটা আক্রান্ত হওয়ার সম্ভাবনা বেশি থাকে। এই অ্যাপটি ইনস্টল করার মাধ্যমে আপনি সম্মত হলেন যে এটি ব্যবহারের ফলে আপনার ট্যাবলেটের বা ডেটার কোনও ক্ষতি হলে তার জন্য আপনিই দায়ী থাকবেন।"</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"অজানা অ্যাপের দ্বারা আপনার টিভি এবং ব্যক্তিগত ডেটা আক্রান্ত হওয়ার সম্ভাবনা বেশি থাকে। এই অ্যাপটি ইনস্টল করার মাধ্যমে আপনি সম্মত হলেন যে এটি ব্যবহারের ফলে আপনার টিভি বা ডেটার কোনও ক্ষতি হলে তার জন্য আপনিই দায়ী থাকবেন।"</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"চালিয়ে যান"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"সেটিংস"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"ওয়্যার অ্যাপ ইনস্টল/আনইনস্টল করা হচ্ছে"</string>

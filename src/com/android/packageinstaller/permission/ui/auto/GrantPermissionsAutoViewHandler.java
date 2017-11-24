@@ -25,7 +25,7 @@ import com.android.packageinstaller.permission.ui.handheld.GrantPermissionsViewH
  * A {@link com.android.packageinstaller.permission.ui.GrantPermissionsViewHandler} that is
  * specific for the auto use-case. In this case, the permissions dialog needs to be larger to make
  * clicking and reading safer in the car. Otherwise, the UI remains the same.
- *
+ * <p>
  * <p>The reason this class extends {@link GrantPermissionsViewHandlerImpl} is so that it can
  * change the window params to allow the dialog's width to be larger.
  */

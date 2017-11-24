@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"အက်ပ်မထည့်သွင်းရသေးပါ"</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"ပက်ကေ့ထည့်သွင်းခြင်းကို ပိတ်ဆို့ထားသည်။"</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"ပက်ကေ့ဂျ်အဖြစ် ထည့်သွင်းမထားသော အက်ပ်သည် လက်ရှိပက်ကေ့ဂျ်နှင့် တိုက်နေသည်။"</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"အက်ပ်အဖြစ် ထည့်သွင်းမထားသော အက်ပ်သည် သင့်တက်ဘလက်နှင့် ကိုက်ညီမှုမရှိပါ။"</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"ဤ အက်ပ်သည် သင့်တီဗွီနှင့် တွဲဖက်သုံးမရပါ။"</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"အက်ပ်အဖြစ် ထည့်သွင်းမထားသော အက်ပ်သည် သင့်ဖုန်းနှင့် ကိုက်ညီမှုမရှိပါ။"</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"အက်ပ်အဖြစ် ထည့်သွင်းမထားသော အက်ပ်သည် သင့်တက်ဘလက်နှင့် ကိုက်ညီမှုမရှိပါ။"</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"ဤ အက်ပ်သည် သင့်တီဗွီနှင့် တွဲဖက်သုံးမရပါ။"</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"အက်ပ်အဖြစ် ထည့်သွင်းမထားသော အက်ပ်သည် သင့်ဖုန်းနှင့် ကိုက်ညီမှုမရှိပါ။"</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"ပက်ကေ့ဂျ်အဖြစ် ထည့်သွင်းမထားသော အက်ပ်သည် မှန်ကန်မှုမရှိပုံပေါ်သည်။"</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> ကို သင့်တက်ဘလက်တွင် ထည့်သွင်းလို့ မရနိုင်ပါ"</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"သင့်တီဗွီတွင် <xliff:g id="APP_NAME">%1$s</xliff:g> အား မတပ်ဆင်နိုင်ပါ။"</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> ကို သင့်ဖုန်းတွင် ထည့်သွင်းလို့ မရနိုင်ပါ"</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> ကို သင့်တက်ဘလက်တွင် ထည့်သွင်းလို့ မရနိုင်ပါ"</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"သင့်တီဗွီတွင် <xliff:g id="APP_NAME">%1$s</xliff:g> အား မတပ်ဆင်နိုင်ပါ။"</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> ကို သင့်ဖုန်းတွင် ထည့်သွင်းလို့ မရနိုင်ပါ"</string>
     <string name="launch" msgid="4826921505917605463">"ဖွင့်သည်"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"သင်၏ စီမံခန့်ခွဲသူက ရင်းမြစ်မသိသော အက်ပ်များကို ထည့်သွင်းခွင့်မပြုပါ"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"အရင်းအမြစ်မသိသော အက်ပ်များကို ဤအသုံးပြုသူက ထည့်သွင်းခွင့်မရှိပါ"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"ခွင့်ပြုချက်မရှိ"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"ထပ်တိုး ခွင့်ပြုချက်များ"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"> နောက်ထပ် <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="one"> နောက်ထပ် <xliff:g id="COUNT_0">%1$d</xliff:g> </item>
+        <item quantity="other"> နောက်ထပ် <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="one"> နောက်ထပ် <xliff:g id="COUNT_0">%1$d</xliff:g> </item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"ဤအက်ပ် အား Android ၏ ဗားရှင်းဟောင်းအတွက် ပုံဆွဲရေးဆွဲထား၏။ ခွင့်ပြုချက်ပေးရန် ငြင်းဆိုပါက ရည်ရွယ်ထားသကဲ့သို့ ဆောင်ရွက်လိမ့်မည် မဟုတ်ပါ။"</string>
     <string name="default_permission_description" msgid="4992892207044156668">"အမျိုးအမည်မသိ ဆောင်ရွက်ချက်တစ်ခု လုပ်ရန်"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"လက်ရှိ ခွင့်ပြုချက်များ"</string>
     <string name="message_staging" msgid="6151794817691100003">"အက်ပ်ကို ပြင်ဆင်နေသည်…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"အမျိုးအမည်မသိ"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"လုံခြုံရေးအရ ဤနေရာမှရယူထားသည့် အမျိုးအမည်မသိသောအက်ပ်များကို သင်၏တက်ဘလက်တွင် ထည့်သွင်းခွင့်မရှိပါ။"</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"လုံခြုံရေးအရ ဤနေရာမှရယူထားသည့် အမျိုးအမည်မသိသောအက်ပ်များကို သင်၏တီဗီတွင် ထည့်သွင်းခွင့်မရှိပါ။"</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"လုံခြုံရေးအရ ဤနေရာမှရယူထားသည့် အမျိုးအမည်မသိသောအက်ပ်များကို သင်၏ဖုန်းတွင် ထည့်သွင်းခွင့်မရှိပါ။"</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"သင်၏ဖုန်းနှင့် ကိုယ်ရေးကိုယ်တာ အချက်အလက်များသည် အမျိုးအမည် မသိသောအက်ပ်များ၏ တိုက်ခိုက်ခြင်းကို ပိုမိုခံရနိုင်ပါသည်။ ဤအက်ပ်ကို ထည့်သွင်းအသုံးပြုခြင်းအားဖြင့် ဖြစ်ပေါ်လာနိုင်သော ဖုန်းပျက်စီးမှု သို့မဟုတ် ဒေတာဆုံးရှုံးမှုများအတွက် သင့်ထံ၌သာ တာဝန်ရှိကြောင်း သဘောတူရာရောက်ပါသည်။"</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"သင်၏ တက်ဘလက်နှင့် ကိုယ်ရေးကိုယ်တာ အချက်အလက်များသည် အမျိုးအမည် မသိသောအက်ပ်များ၏ တိုက်ခိုက်ခြင်းကို ပိုမိုခံရနိုင်ပါသည်။ ဤအက်ပ်ကို ထည့်သွင်းအသုံးပြုခြင်းအားဖြင့် ဖြစ်ပေါ်လာနိုင်သော တက်ဘလက်ပျက်စီးမှု သို့မဟုတ် ဒေတာဆုံးရှုံးမှုများအတွက် သင့်ထံ၌သာ တာဝန်ရှိကြောင်း သဘောတူရာရောက်ပါသည်။"</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"သင်၏ TV နှင့် ကိုယ်ရေးကိုယ်တာ အချက်အလက်များသည် အမျိုးအမည် မသိသောအက်ပ်များ၏ တိုက်ခိုက်ခြင်းကို ပိုမိုခံရနိုင်ပါသည်။ ဤအက်ပ်ကို ထည့်သွင်းအသုံးပြုခြင်းအားဖြင့် ဖြစ်ပေါ်လာနိုင်သော TV ပျက်စီးမှု သို့မဟုတ် ဒေတာဆုံးရှုံးမှုများအတွက် သင့်ထံ၌သာ တာဝန်ရှိကြောင်း သဘောတူရာရောက်ပါသည်။"</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"လုံခြုံရေးအရ ဤနေရာမှရယူထားသည့် အမျိုးအမည်မသိသောအက်ပ်များကို သင်၏တက်ဘလက်တွင် ထည့်သွင်းခွင့်မရှိပါ။"</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"လုံခြုံရေးအရ ဤနေရာမှရယူထားသည့် အမျိုးအမည်မသိသောအက်ပ်များကို သင်၏တီဗီတွင် ထည့်သွင်းခွင့်မရှိပါ။"</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"လုံခြုံရေးအရ ဤနေရာမှရယူထားသည့် အမျိုးအမည်မသိသောအက်ပ်များကို သင်၏ဖုန်းတွင် ထည့်သွင်းခွင့်မရှိပါ။"</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"သင်၏ဖုန်းနှင့် ကိုယ်ရေးကိုယ်တာ အချက်အလက်များသည် အမျိုးအမည် မသိသောအက်ပ်များ၏ တိုက်ခိုက်ခြင်းကို ပိုမိုခံရနိုင်ပါသည်။ ဤအက်ပ်ကို ထည့်သွင်းအသုံးပြုခြင်းအားဖြင့် ဖြစ်ပေါ်လာနိုင်သော ဖုန်းပျက်စီးမှု သို့မဟုတ် ဒေတာဆုံးရှုံးမှုများအတွက် သင့်ထံ၌သာ တာဝန်ရှိကြောင်း သဘောတူရာရောက်ပါသည်။"</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"သင်၏ တက်ဘလက်နှင့် ကိုယ်ရေးကိုယ်တာ အချက်အလက်များသည် အမျိုးအမည် မသိသောအက်ပ်များ၏ တိုက်ခိုက်ခြင်းကို ပိုမိုခံရနိုင်ပါသည်။ ဤအက်ပ်ကို ထည့်သွင်းအသုံးပြုခြင်းအားဖြင့် ဖြစ်ပေါ်လာနိုင်သော တက်ဘလက်ပျက်စီးမှု သို့မဟုတ် ဒေတာဆုံးရှုံးမှုများအတွက် သင့်ထံ၌သာ တာဝန်ရှိကြောင်း သဘောတူရာရောက်ပါသည်။"</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"သင်၏ TV နှင့် ကိုယ်ရေးကိုယ်တာ အချက်အလက်များသည် အမျိုးအမည် မသိသောအက်ပ်များ၏ တိုက်ခိုက်ခြင်းကို ပိုမိုခံရနိုင်ပါသည်။ ဤအက်ပ်ကို ထည့်သွင်းအသုံးပြုခြင်းအားဖြင့် ဖြစ်ပေါ်လာနိုင်သော TV ပျက်စီးမှု သို့မဟုတ် ဒေတာဆုံးရှုံးမှုများအတွက် သင့်ထံ၌သာ တာဝန်ရှိကြောင်း သဘောတူရာရောက်ပါသည်။"</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"ဆက်လုပ်ရန်"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"ဆက်တင်များ"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"wear အက်ပ်ကိုထည့်သွင်းခြင်း/ဖယ်ရှားခြင်း"</string>

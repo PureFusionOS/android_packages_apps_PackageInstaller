@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Aplikaci nelze nainstalovat."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Instalace balíčku byla zablokována."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Aplikaci nelze nainstalovat, protože balíček je v konfliktu se stávajícím balíčkem."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Aplikaci nelze nainstalovat, protože s tabletem není kompatibilní."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Tato aplikace s vaší televizí není kompatibilní."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Aplikaci nelze nainstalovat, protože s telefonem není kompatibilní."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Aplikaci nelze nainstalovat, protože s tabletem není kompatibilní."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Tato aplikace s vaší televizí není kompatibilní."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Aplikaci nelze nainstalovat, protože s telefonem není kompatibilní."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Aplikaci nelze nainstalovat, protože balíček zřejmě není platný."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"Aplikaci <xliff:g id="APP_NAME">%1$s</xliff:g> do tohoto tabletu nelze nainstalovat."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"Aplikaci <xliff:g id="APP_NAME">%1$s</xliff:g> se do televize nepodařilo nainstalovat."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"Aplikaci <xliff:g id="APP_NAME">%1$s</xliff:g> do tohoto telefonu nelze nainstalovat."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"Aplikaci <xliff:g id="APP_NAME">%1$s</xliff:g> do tohoto tabletu nelze nainstalovat."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"Aplikaci <xliff:g id="APP_NAME">%1$s</xliff:g> se do televize nepodařilo nainstalovat."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"Aplikaci <xliff:g id="APP_NAME">%1$s</xliff:g> do tohoto telefonu nelze nainstalovat."</string>
     <string name="launch" msgid="4826921505917605463">"Otevřít"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Váš administrátor nedovoluje instalaci aplikací z neznámých zdrojů"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Tento uživatel nemůže instalovat neznámé aplikace"</string>
@@ -105,10 +104,10 @@
     <string name="no_permissions" msgid="3210542466245591574">"Žádná oprávnění"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Další oprávnění"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="few">Ještě <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="many">Ještě <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="other">Ještě <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="one">Ještě <xliff:g id="COUNT_0">%1$d</xliff:g></item>
+        <item quantity="few">Ještě <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="many">Ještě <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="other">Ještě <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="one">Ještě <xliff:g id="COUNT_0">%1$d</xliff:g></item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Tato aplikace byla vytvořena pro starší verzi platformy Android. Pokud oprávnění neudělíte, může přestat fungovat podle původního záměru."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"provést neznámou akci"</string>
@@ -139,12 +138,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Aktuální oprávnění"</string>
     <string name="message_staging" msgid="6151794817691100003">"Příprava instalace…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Neznámá aplikace"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Z bezpečnostních důvodů do tabletu není dovoleno instalovat neznámé aplikace z tohoto zdroje."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Z bezpečnostních důvodů do televize není dovoleno instalovat neznámé aplikace z tohoto zdroje."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Z bezpečnostních důvodů do telefonu není dovoleno instalovat neznámé aplikace z tohoto zdroje."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Telefon a osobní údaje jsou zranitelnější vůči útoku ze strany neznámých aplikací. Instalací této aplikace přijímáte odpovědnost za případné škody na telefonu nebo ztrátu dat, která může být používáním aplikace způsobena."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Tablet a osobní údaje jsou zranitelnější vůči útoku ze strany neznámých aplikací. Instalací této aplikace přijímáte odpovědnost za případné škody na tabletu nebo ztrátu dat, která může být používáním aplikace způsobena."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Televize a osobní údaje jsou zranitelnější vůči útoku ze strany neznámých aplikací. Instalací této aplikace přijímáte odpovědnost za případné škody na televizi nebo ztrátu dat, která může být používáním aplikace způsobena."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Z bezpečnostních důvodů do tabletu není dovoleno instalovat neznámé aplikace z tohoto zdroje."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Z bezpečnostních důvodů do televize není dovoleno instalovat neznámé aplikace z tohoto zdroje."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Z bezpečnostních důvodů do telefonu není dovoleno instalovat neznámé aplikace z tohoto zdroje."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Telefon a osobní údaje jsou zranitelnější vůči útoku ze strany neznámých aplikací. Instalací této aplikace přijímáte odpovědnost za případné škody na telefonu nebo ztrátu dat, která může být používáním aplikace způsobena."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Tablet a osobní údaje jsou zranitelnější vůči útoku ze strany neznámých aplikací. Instalací této aplikace přijímáte odpovědnost za případné škody na tabletu nebo ztrátu dat, která může být používáním aplikace způsobena."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Televize a osobní údaje jsou zranitelnější vůči útoku ze strany neznámých aplikací. Instalací této aplikace přijímáte odpovědnost za případné škody na televizi nebo ztrátu dat, která může být používáním aplikace způsobena."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Pokračovat"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Nastavení"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Instalace/odinstalace aplikací pro Wear"</string>

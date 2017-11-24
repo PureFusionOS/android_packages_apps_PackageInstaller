@@ -26,7 +26,9 @@ import org.robolectric.annotation.Implements;
  */
 @Implements(SystemProperties.class)
 public class ShadowSystemProperties extends org.robolectric.shadows.ShadowSystemProperties {
-    /** If the build type is 'user' */
+    /**
+     * If the build type is 'user'
+     */
     private static boolean sIsUserBuild = false;
 
     /**

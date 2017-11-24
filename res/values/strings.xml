@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -184,16 +183,16 @@
 
     <!-- Template for the current permission from the total number of permissions. -->
     <string name="current_permission_template">
-        <xliff:g id="current_permission_index" example="1">%1$s</xliff:g> of
-        <xliff:g id="permission_count" example="2">%2$s</xliff:g></string>
+        <xliff:g example="1" id="current_permission_index">%1$s</xliff:g> of
+        <xliff:g example="2" id="permission_count">%2$s</xliff:g></string>
 
     <!-- Template for the warning message when an app requests a permission. -->
     <string name="permission_warning_template">Allow
-        &lt;b><xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b> to
-        <xliff:g id="action" example="do something">%2$s</xliff:g>?</string>
+        &lt;b><xliff:g example="Gmail" id="app_name">%1$s</xliff:g>&lt;/b> to
+        <xliff:g example="do something" id="action">%2$s</xliff:g>?</string>
 
     <!-- Template for the message how many permissions are disabled. -->
-    <string name="permission_revoked_count"><xliff:g id="count" example="2">%1$d</xliff:g> disabled</string>
+    <string name="permission_revoked_count"><xliff:g example="2" id="count">%1$d</xliff:g> disabled</string>
 
     <!-- Message that all permissions are disabled. -->
     <string name="permission_revoked_all">all disabled</string>
@@ -231,8 +230,8 @@
 
     <!-- Description of how many more permissions to view on next page [CHAR LIMIT=30] -->
     <plurals name="additional_permissions_more">
-        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> more</item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> more</item>
+        <item quantity="one"><xliff:g example="1" id="count">%1$d</xliff:g> more</item>
+        <item quantity="other"><xliff:g example="2" id="count">%1$d</xliff:g> more</item>
     </plurals>
 
     <!-- Warning for turning off permissions on older apps -->
@@ -242,50 +241,50 @@
     <string name="default_permission_description">perform an unknown action</string>
 
     <!-- Summary of number of apps currently granted a single permission [CHAR LIMIT=45] -->
-   <string name="app_permissions_group_summary"><xliff:g id="count" example="10">%1$d</xliff:g> of <xliff:g id="count" example="10">%2$d</xliff:g> apps allowed</string>
+    <string name="app_permissions_group_summary"><xliff:g example="10" id="count">%1$d</xliff:g> of <xliff:g example="10" id="count">%2$d</xliff:g> apps allowed</string>
 
-   <!-- [CHAR LIMIT=NONE] Menu for manage permissions to control whether system apps are shown -->
-   <string name="menu_show_system">Show system</string>
-   <!-- [CHAR LIMIT=NONE] Menu for manage permissions to control whether system apps are hidden -->
-   <string name="menu_hide_system">Hide system</string>
+    <!-- [CHAR LIMIT=NONE] Menu for manage permissions to control whether system apps are shown -->
+    <string name="menu_show_system">Show system</string>
+    <!-- [CHAR LIMIT=NONE] Menu for manage permissions to control whether system apps are hidden -->
+    <string name="menu_hide_system">Hide system</string>
 
-   <!-- [CHAR LIMIT=30] Title for page managing what apps have a permission granted -->
-   <string name="permission_title"><xliff:g id="permission" example="Camera">%1$s</xliff:g> permissions</string>
+    <!-- [CHAR LIMIT=30] Title for page managing what apps have a permission granted -->
+    <string name="permission_title"><xliff:g example="Camera" id="permission">%1$s</xliff:g> permissions</string>
 
-   <!-- [CHAR LIMIT=NONE] Label when no apps requesting this permission -->
-   <string name="no_apps">No apps</string>
+    <!-- [CHAR LIMIT=NONE] Label when no apps requesting this permission -->
+    <string name="no_apps">No apps</string>
 
-   <!-- [CHAR LIMIT=30] Title of button that leads to location settings -->
-   <string name="location_settings">Location Settings</string>
+    <!-- [CHAR LIMIT=30] Title of button that leads to location settings -->
+    <string name="location_settings">Location Settings</string>
 
-   <!-- [CHAR LIMIT=NONE] Warning about how this app cannot have location permission disabled -->
-   <string name="location_warning"><xliff:g id="app_name" example="Package Installer">%1$s</xliff:g> is a provider of location services for this device. Location access can be modified from location settings.</string>
+    <!-- [CHAR LIMIT=NONE] Warning about how this app cannot have location permission disabled -->
+    <string name="location_warning"><xliff:g example="Package Installer" id="app_name">%1$s</xliff:g> is a provider of location services for this device. Location access can be modified from location settings.</string>
 
-   <!-- [CHAR LIMIT=NONE] Warning message when turning off permission for system apps -->
-   <string name="system_warning">If you deny this permission, basic features of your device may no longer function as intended.</string>
+    <!-- [CHAR LIMIT=NONE] Warning message when turning off permission for system apps -->
+    <string name="system_warning">If you deny this permission, basic features of your device may no longer function as intended.</string>
 
-   <!-- [CHAR LIMIT=NONE] Summary of a permission switch when it's enforced by policy -->
-   <string name="permission_summary_enforced_by_policy">Enforced by policy</string>
+    <!-- [CHAR LIMIT=NONE] Summary of a permission switch when it's enforced by policy -->
+    <string name="permission_summary_enforced_by_policy">Enforced by policy</string>
 
-   <!-- Text displayed until loading is done -->
-   <string name="loading">Loading\u2026</string>
+    <!-- Text displayed until loading is done -->
+    <string name="loading">Loading\u2026</string>
 
-   <!-- [CHAR LIMIT=45] Title of all permissions settings -->
-   <string name="all_permissions">All permissions</string>
-   <!-- [CHAR LIMIT=45] Group of permissions granted to app automatically when installed. -->
-   <string name="other_permissions">Other app capabilities</string>
+    <!-- [CHAR LIMIT=45] Title of all permissions settings -->
+    <string name="all_permissions">All permissions</string>
+    <!-- [CHAR LIMIT=45] Group of permissions granted to app automatically when installed. -->
+    <string name="other_permissions">Other app capabilities</string>
 
-   <!-- Title of the permission dialog for accessibility purposes- spoken to the user. [CHAR LIMIT=none] -->
-   <string name="permission_request_title">Permission request</string>
+    <!-- Title of the permission dialog for accessibility purposes- spoken to the user. [CHAR LIMIT=none] -->
+    <string name="permission_request_title">Permission request</string>
 
     <!-- Title for the dialog that warns the user they need to turn off screen overlays
          before permissions can be changed. [CHAR LIMIT=NONE] -->
-   <string name="screen_overlay_title">Screen overlay detected</string>
+    <string name="screen_overlay_title">Screen overlay detected</string>
 
-   <!-- Message for the dialog that warns the user they need to turn off screen overlays
-        before permissions can be changed. The "Settings > Apps" conveys to the user to
-        go to Settings and click on apps, this may need updates in RTL languages. [CHAR LIMIT=NONE] -->
-   <string name="screen_overlay_message">To change this permission setting, you first have to turn off the screen overlay from Settings \u003e Apps</string>
+    <!-- Message for the dialog that warns the user they need to turn off screen overlays
+         before permissions can be changed. The "Settings > Apps" conveys to the user to
+         go to Settings and click on apps, this may need updates in RTL languages. [CHAR LIMIT=NONE] -->
+    <string name="screen_overlay_message">To change this permission setting, you first have to turn off the screen overlay from Settings \u003e Apps</string>
 
     <!-- Button for the dialog that warns the user they need to turn off screen overlays
          before permissions can be changed. [CHAR LIMIT=NONE] -->
@@ -300,17 +299,17 @@
 
     <!-- Template for the warning title when an updated app's requested permissions are reviewed. -->
     <string name="permission_review_warning_title_template_update">
-        <xliff:g id="app_name" example="Gmail">%1$s</xliff:g> has been updated.
-        Allow <xliff:g id="app_name" example="Gmail">%1$s</xliff:g> to
+        <xliff:g example="Gmail" id="app_name">%1$s</xliff:g> has been updated.
+        Allow <xliff:g example="Gmail" id="app_name">%1$s</xliff:g> to
         access the following?</string>
 
     <!-- Template for the screen title when app permissions are reviewed on install. -->
     <string name="permission_review_title_template_install">Choose what to allow
-        &lt;b><xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b> to access</string>
+        &lt;b><xliff:g example="Gmail" id="app_name">%1$s</xliff:g>&lt;/b> to access</string>
 
     <!-- Template for the screen title when app permissions are reviewed on update. -->
     <string name="permission_review_title_template_update">
-        &lt;b><xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b> has been updated.
+        &lt;b><xliff:g example="Gmail" id="app_name">%1$s</xliff:g>&lt;/b> has been updated.
         Choose what to allow this app to access.</string>
 
     <!-- Title for the dialog button to cancel the detailed permission review. -->

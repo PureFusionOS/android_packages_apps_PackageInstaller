@@ -47,7 +47,7 @@ class CaffeinatedScrollView extends ScrollView {
 
     public void setFullScrollAction(Runnable action) {
         mFullScrollAction = action;
-        mBottomSlop = (int)(4 * getResources().getDisplayMetrics().density);
+        mBottomSlop = (int) (4 * getResources().getDisplayMetrics().density);
     }
 
     @Override

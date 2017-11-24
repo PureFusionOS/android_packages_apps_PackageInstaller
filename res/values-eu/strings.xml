@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Ez da aplikazioa instalatu."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Blokeatu egin da paketea instalatzeko aukera."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Ez da instalatu aplikazioa, gatazka bat sortu delako lehendik dagoen pakete batekin."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Ez da instalatu aplikazioa, ez delako tabletarekin bateragarria."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Aplikazioa ez da telebistarekin bateragarria."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Ez da instalatu aplikazioa, ez delako telefonoarekin bateragarria."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Ez da instalatu aplikazioa, ez delako tabletarekin bateragarria."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Aplikazioa ez da telebistarekin bateragarria."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Ez da instalatu aplikazioa, ez delako telefonoarekin bateragarria."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Ez da instalatu aplikazioa, paketeak ez duelako balio."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"Ezin izan da <xliff:g id="APP_NAME">%1$s</xliff:g> tabletan instalatu."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"Ezin izan da instalatu <xliff:g id="APP_NAME">%1$s</xliff:g> telebistan."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"Ezin izan da <xliff:g id="APP_NAME">%1$s</xliff:g> telefonoan instalatu."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"Ezin izan da <xliff:g id="APP_NAME">%1$s</xliff:g> tabletan instalatu."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"Ezin izan da instalatu <xliff:g id="APP_NAME">%1$s</xliff:g> telebistan."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"Ezin izan da <xliff:g id="APP_NAME">%1$s</xliff:g> telefonoan instalatu."</string>
     <string name="launch" msgid="4826921505917605463">"Ireki"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Administratzaileak ez du onartzen iturburu ezezagunetako aplikazioak instalatzea"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Erabiltzaile honek ezin ditu instalatu aplikazio ezezagunak"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Ez dago baimenik"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Baimen gehigarriak"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> gehiago</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> gehiago</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> gehiago</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> gehiago</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Aplikazio hau Android-en bertsio zaharrago baterako diseinatuta dago. Baimena ukatzen baduzu, agian aurrerantzean ez du behar bezain ondo funtzionatuko."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"Gauzatu ekintza ezezagunak"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Uneko baimenak"</string>
     <string name="message_staging" msgid="6151794817691100003">"Aplikazioa prestatzen…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Ezezaguna"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Segurtasuna bermatzeko, tableta honetan ezin dira instalatu iturburu honetako aplikazio ezezagunak."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Segurtasuna bermatzeko, telebista honetan ezin dira instalatu iturburu honetako aplikazio ezezagunak."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Segurtasuna bermatzeko, telefono honetan ezin dira instalatu iturburu honetako aplikazio ezezagunak."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Telefonoak eta datu pertsonalek aplikazio ezezagunen erasoak jaso ditzakete. Aplikazio hau instalatzen baduzu, onartzen duzu hura erabiltzeagatik telefonoak jasan ditzakeen kalteen edo datu-galeren erantzulea zeu zarela."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Tabletak eta datu pertsonalek aplikazio ezezagunen erasoak jaso ditzakete. Aplikazio hau instalatzen baduzu, onartzen duzu hura erabiltzeagatik tabletak jasan ditzakeen kalteen edo datu-galeren erantzulea zeu zarela."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Telebistak eta datu pertsonalek aplikazio ezezagunen erasoak jaso ditzakete. Iturburu honetako aplikazioak instalatzen badituzu, onartzen duzu haiek erabiltzeagatik telebistak jasan ditzakeen kalteen edo datu-galeren erantzulea zeu zarela."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Segurtasuna bermatzeko, tableta honetan ezin dira instalatu iturburu honetako aplikazio ezezagunak."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Segurtasuna bermatzeko, telebista honetan ezin dira instalatu iturburu honetako aplikazio ezezagunak."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Segurtasuna bermatzeko, telefono honetan ezin dira instalatu iturburu honetako aplikazio ezezagunak."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Telefonoak eta datu pertsonalek aplikazio ezezagunen erasoak jaso ditzakete. Aplikazio hau instalatzen baduzu, onartzen duzu hura erabiltzeagatik telefonoak jasan ditzakeen kalteen edo datu-galeren erantzulea zeu zarela."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Tabletak eta datu pertsonalek aplikazio ezezagunen erasoak jaso ditzakete. Aplikazio hau instalatzen baduzu, onartzen duzu hura erabiltzeagatik tabletak jasan ditzakeen kalteen edo datu-galeren erantzulea zeu zarela."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Telebistak eta datu pertsonalek aplikazio ezezagunen erasoak jaso ditzakete. Iturburu honetako aplikazioak instalatzen badituzu, onartzen duzu haiek erabiltzeagatik telebistak jasan ditzakeen kalteen edo datu-galeren erantzulea zeu zarela."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Egin aurrera"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Ezarpenak"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Wear aplikazioak instalatzea/desinstalatzea"</string>

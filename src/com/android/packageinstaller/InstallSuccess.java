@@ -89,7 +89,7 @@ public class InstallSuccess extends Activity {
                 }
             }
 
-            Button launchButton = (Button)findViewById(R.id.launch_button);
+            Button launchButton = (Button) findViewById(R.id.launch_button);
             if (enabled) {
                 launchButton.setOnClickListener(view -> {
                     try {

@@ -32,23 +32,35 @@ import com.android.packageinstaller.R;
 
 /**
  * A dialog to display a title, a message, and/or an icon with a positive and a negative button.
- *
+ * <p>
  * <p>The buttons are hidden away unless there is a listener attached to the button. Since there's
  * no click listener attached by default, the buttons are hidden be default.
  */
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class AcceptDenyDialog extends Dialog {
-    /** Icon at the top of the dialog. */
+    /**
+     * Icon at the top of the dialog.
+     */
     protected ImageView mIcon;
-    /** Title at the top of the dialog. */
+    /**
+     * Title at the top of the dialog.
+     */
     protected TextView mTitle;
-    /** Message content of the dialog. */
+    /**
+     * Message content of the dialog.
+     */
     protected TextView mMessage;
-    /** Panel containing the buttons. */
+    /**
+     * Panel containing the buttons.
+     */
     protected View mButtonPanel;
-    /** Positive button in the button panel. */
+    /**
+     * Positive button in the button panel.
+     */
     protected ImageButton mPositiveButton;
-    /** Negative button in the button panel. */
+    /**
+     * Negative button in the button panel.
+     */
     protected ImageButton mNegativeButton;
     /**
      * Click listener for the positive button. Positive button should hide if this is <code>null
@@ -60,9 +72,6 @@ public class AcceptDenyDialog extends Dialog {
      * </code>.
      */
     protected DialogInterface.OnClickListener mNegativeButtonListener;
-    /** Spacer between the positive and negative button. Hidden if one button is hidden. */
-    protected View mSpacer;
-
     private final View.OnClickListener mButtonHandler = (v) -> {
         if (v == mPositiveButton && mPositiveButtonListener != null) {
             mPositiveButtonListener.onClick(this, DialogInterface.BUTTON_POSITIVE);
@@ -72,6 +81,10 @@ public class AcceptDenyDialog extends Dialog {
             dismiss();
         }
     };
+    /**
+     * Spacer between the positive and negative button. Hidden if one button is hidden.
+     */
+    protected View mSpacer;
 
     public AcceptDenyDialog(Context context) {
         this(context, 0 /* use default context theme */);
@@ -117,13 +130,17 @@ public class AcceptDenyDialog extends Dialog {
         mIcon.setImageResource(resId);
     }
 
-    /** @param message the content message text of the dialog. */
+    /**
+     * @param message the content message text of the dialog.
+     */
     public void setMessage(CharSequence message) {
         mMessage.setText(message);
         mMessage.setVisibility(message == null ? View.GONE : View.VISIBLE);
     }
 
-    /** @param title the title text of the dialog. */
+    /**
+     * @param title the title text of the dialog.
+     */
     @Override
     public void setTitle(CharSequence title) {
         mTitle.setText(title);
@@ -131,13 +148,13 @@ public class AcceptDenyDialog extends Dialog {
 
     /**
      * Sets a click listener for a button.
-     *
+     * <p>
      * <p>Will hide button bar if all buttons are hidden (i.e. their click listeners are <code>null
      * </code>).
      *
      * @param whichButton {@link DialogInterface.BUTTON_POSITIVE} or {@link
-     *     DialogInterface.BUTTON_NEGATIVE}
-     * @param listener the listener to set for the button. Hide button if <code>null</code>.
+     *                    DialogInterface.BUTTON_NEGATIVE}
+     * @param listener    the listener to set for the button. Hide button if <code>null</code>.
      */
     public void setButton(int whichButton, DialogInterface.OnClickListener listener) {
         switch (whichButton) {
@@ -159,7 +176,7 @@ public class AcceptDenyDialog extends Dialog {
                 mNegativeButtonListener == null ? View.GONE : View.VISIBLE);
         mButtonPanel.setVisibility(
                 mPositiveButtonListener == null && mNegativeButtonListener == null
-                ? View.GONE : View.VISIBLE);
+                        ? View.GONE : View.VISIBLE);
     }
 
     /**

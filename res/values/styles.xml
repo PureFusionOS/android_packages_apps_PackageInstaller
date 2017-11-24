@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2010 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,13 +15,11 @@
 
 <resources>
 
-    <style name="MediumText"
-            parent="@android:style/TextAppearance.Medium">
+    <style name="MediumText" parent="@android:style/TextAppearance.Medium">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
-    <style name="SmallText"
-            parent="@android:style/TextAppearance.Small">
+    <style name="SmallText" parent="@android:style/TextAppearance.Small">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 

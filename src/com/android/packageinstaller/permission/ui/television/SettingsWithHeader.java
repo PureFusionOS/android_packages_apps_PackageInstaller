@@ -30,15 +30,15 @@ import com.android.packageinstaller.R;
 public abstract class SettingsWithHeader extends PermissionsFrameFragment
         implements OnClickListener {
 
-    private View mHeader;
     protected Intent mInfoIntent;
     protected Drawable mIcon;
     protected CharSequence mLabel;
     protected CharSequence mDecorTitle;
+    private View mHeader;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) super.onCreateView(inflater, container, savedInstanceState);
 
         mHeader = inflater.inflate(R.layout.header, root, false);
@@ -62,8 +62,8 @@ public abstract class SettingsWithHeader extends PermissionsFrameFragment
     }
 
     protected void updateHeader() {
-            final TextView decorTitle = (TextView) mHeader.findViewById(R.id.decor_title);
-            decorTitle.setText(mDecorTitle);
+        final TextView decorTitle = (TextView) mHeader.findViewById(R.id.decor_title);
+        decorTitle.setText(mDecorTitle);
     }
 
     @Override

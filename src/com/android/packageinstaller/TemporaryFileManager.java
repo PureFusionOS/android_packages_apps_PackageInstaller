@@ -36,7 +36,6 @@ public class TemporaryFileManager extends BroadcastReceiver {
      * Create a new file to hold a staged file.
      *
      * @param context The context of the caller
-     *
      * @return A new file
      */
     @NonNull
@@ -48,7 +47,6 @@ public class TemporaryFileManager extends BroadcastReceiver {
      * Get the file used to store the results of installs.
      *
      * @param context The context of the caller
-     *
      * @return the file used to store the results of installs
      */
     @NonNull
@@ -60,7 +58,6 @@ public class TemporaryFileManager extends BroadcastReceiver {
      * Get the file used to store the results of uninstalls.
      *
      * @param context The context of the caller
-     *
      * @return the file used to store the results of uninstalls
      */
     @NonNull

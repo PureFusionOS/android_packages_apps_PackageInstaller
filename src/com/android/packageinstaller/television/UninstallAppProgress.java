@@ -59,42 +59,22 @@ public class UninstallAppProgress extends Activity {
     private static final String TAG = "UninstallAppProgress";
 
     private static final String FRAGMENT_TAG = "progress_fragment";
-
+    /**
+     * Amount of time to wait until we show the UI
+     */
+    private static final int QUICK_INSTALL_DELAY_MILLIS = 500;
+    private static final int UNINSTALL_COMPLETE = 1;
+    private static final int UNINSTALL_IS_SLOW = 2;
     private ApplicationInfo mAppInfo;
     private boolean mAllUsers;
     private IBinder mCallback;
-
     private volatile int mResultCode = -1;
-
     /**
      * If initView was called. We delay this call to not have to call it at all if the uninstall is
      * quick
      */
     private boolean mIsViewInitialized;
-
-    /** Amount of time to wait until we show the UI */
-    private static final int QUICK_INSTALL_DELAY_MILLIS = 500;
-
-    private static final int UNINSTALL_COMPLETE = 1;
-    private static final int UNINSTALL_IS_SLOW = 2;
-
     private Handler mHandler = new MessageHandler(this);
-
-    private static class MessageHandler extends Handler {
-        private final WeakReference<UninstallAppProgress> mActivity;
-
-        public MessageHandler(UninstallAppProgress activity) {
-            mActivity = new WeakReference<>(activity);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            UninstallAppProgress activity = mActivity.get();
-            if (activity != null) {
-                activity.handleMessage(msg);
-            }
-        }
-    }
 
     private void handleMessage(Message msg) {
         if (isFinishing() || isDestroyed()) {
@@ -131,7 +111,7 @@ public class UninstallAppProgress extends Activity {
                     Intent result = new Intent();
                     result.putExtra(Intent.EXTRA_INSTALL_RESULT, mResultCode);
                     setResult(mResultCode == PackageManager.DELETE_SUCCEEDED
-                            ? Activity.RESULT_OK : Activity.RESULT_FIRST_USER,
+                                    ? Activity.RESULT_OK : Activity.RESULT_FIRST_USER,
                             result);
                     finish();
                     return;
@@ -306,15 +286,6 @@ public class UninstallAppProgress extends Activity {
         return mAppInfo;
     }
 
-    private class PackageDeleteObserver extends IPackageDeleteObserver.Stub {
-        public void packageDeleted(String packageName, int returnCode) {
-            Message msg = mHandler.obtainMessage(UNINSTALL_COMPLETE);
-            msg.arg1 = returnCode;
-            msg.obj = packageName;
-            mHandler.sendMessage(msg);
-        }
-    }
-
     public void setResultAndFinish() {
         setResult(mResultCode);
         finish();
@@ -371,7 +342,34 @@ public class UninstallAppProgress extends Activity {
 
     public interface ProgressFragment {
         void setUsersButtonVisible(boolean visible);
+
         void setDeviceManagerButtonVisible(boolean visible);
+
         void showCompletion(CharSequence statusText);
+    }
+
+    private static class MessageHandler extends Handler {
+        private final WeakReference<UninstallAppProgress> mActivity;
+
+        public MessageHandler(UninstallAppProgress activity) {
+            mActivity = new WeakReference<>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            UninstallAppProgress activity = mActivity.get();
+            if (activity != null) {
+                activity.handleMessage(msg);
+            }
+        }
+    }
+
+    private class PackageDeleteObserver extends IPackageDeleteObserver.Stub {
+        public void packageDeleted(String packageName, int returnCode) {
+            Message msg = mHandler.obtainMessage(UNINSTALL_COMPLETE);
+            msg.arg1 = returnCode;
+            msg.obj = packageName;
+            mHandler.sendMessage(msg);
+        }
     }
 }

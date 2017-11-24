@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Programu haikusakinishwa."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Kifurushi kimezuiwa kisisakinishwe."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Programu haikusakinishwa kwa sababu haiafikiani na kifurushi kingine kilichopo."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Programu haikusakinishwa kwa sababu haioani na kompyuta kibao yako."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Programu hii haioani na runinga yako."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Programu haikusakinishwa kwa sababu haioani na simu yako."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Programu haikusakinishwa kwa sababu haioani na kompyuta kibao yako."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Programu hii haioani na runinga yako."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Programu haikusakinishwa kwa sababu haioani na simu yako."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Programu haikusakinishwa kwa sababu inaonekana kuwa kifurushi si sahihi."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> haikuweza kusakinishwa kwenye kompyuta yako kibao."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> haikuweza kusakinishwa kwenye runinga yako."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> haikuweza kusakinishwa kwenye simu yako."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> haikuweza kusakinishwa kwenye kompyuta yako kibao."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> haikuweza kusakinishwa kwenye runinga yako."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> haikuweza kusakinishwa kwenye simu yako."</string>
     <string name="launch" msgid="4826921505917605463">"Fungua"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Msimamizi wako haruhusu usakinishaji wa programu zinazopatikana kutoka vyanzo visivyojulikana"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Mtumiaji huyu hana idhini ya kusakinisha programu ambazo hazijulikani"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Hakuna ruhusa"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Ruhusa za ziada"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> zaidi</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> zaidi</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> zaidi</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> zaidi</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Programu hii iliundwa kwa ajili ya toleo la zamani la Android. Kuinyima ruhusa kunaweza kusababisha iache kutenda kazi kama ilivyokusudiwa."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"kutekeleza kitendo kisichojulikana"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Ruhusa zilizopo"</string>
     <string name="message_staging" msgid="6151794817691100003">"Inatayarisha programu..."</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Isiyojulikana"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Kwa sababu ya usalama wako, kompyuta yako kibao haina ruhusa ya kusakinisha programu ambazo hazijulikani, kutoka kwenye chanzo hiki."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Kwa sababu ya usalama wako, TV yako haina ruhusa ya kusakinisha programu ambazo hazijulikani, kutoka kwenye chanzo hiki."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Kwa sababu ya usalama wako, simu yako haina ruhusa ya kusakinisha programu ambazo hazijulikani, kutoka kwenye chanzo hiki."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Data yako ya binafsi na ya simu yako inaweza kuathiriwa na programu ambazo hazijulikani. Kwa kusakinisha programu hii, unakubali kuwajibika kutokana na uharibifu wowote kwenye simu yako au kupotea kwa data kutokana na matumizi yake."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Data yako ya binafsi na ya kompyuta yako kibao inaweza kuathiriwa na programu ambazo hazijulikani. Kwa kusakinisha programu hii, unakubali kuwajibika kutokana na uharibifu wowote kwenye kompyuta yako kibao au kupotea kwa data kutokana na matumizi yake."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Data yako ya binafsi na ya televisheni yako inaweza kuathiriwa na programu ambazo hazijulikani. Kwa kusakinisha programu hii, unakubali kuwajibika kutokana na uharibifu wowote kwenye televisheni yako au kupotea kwa data kutokana na matumizi yake."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Kwa sababu ya usalama wako, kompyuta yako kibao haina ruhusa ya kusakinisha programu ambazo hazijulikani, kutoka kwenye chanzo hiki."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Kwa sababu ya usalama wako, TV yako haina ruhusa ya kusakinisha programu ambazo hazijulikani, kutoka kwenye chanzo hiki."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Kwa sababu ya usalama wako, simu yako haina ruhusa ya kusakinisha programu ambazo hazijulikani, kutoka kwenye chanzo hiki."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Data yako ya binafsi na ya simu yako inaweza kuathiriwa na programu ambazo hazijulikani. Kwa kusakinisha programu hii, unakubali kuwajibika kutokana na uharibifu wowote kwenye simu yako au kupotea kwa data kutokana na matumizi yake."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Data yako ya binafsi na ya kompyuta yako kibao inaweza kuathiriwa na programu ambazo hazijulikani. Kwa kusakinisha programu hii, unakubali kuwajibika kutokana na uharibifu wowote kwenye kompyuta yako kibao au kupotea kwa data kutokana na matumizi yake."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Data yako ya binafsi na ya televisheni yako inaweza kuathiriwa na programu ambazo hazijulikani. Kwa kusakinisha programu hii, unakubali kuwajibika kutokana na uharibifu wowote kwenye televisheni yako au kupotea kwa data kutokana na matumizi yake."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Endelea"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Mipangilio"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Inasakinisha/inaondoa programu za Android Wear"</string>

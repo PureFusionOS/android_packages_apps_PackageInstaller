@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Приложението не бе инсталирано."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Инсталирането на пакета бе блокирано."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Приложението не бе инсталирано, тъй като пакетът е в конфликт със съществуващ пакет."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Приложението не бе инсталирано, тъй като не е съвместимо с таблета ви."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Това приложение не е съвместимо с телевизора ви."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Приложението не бе инсталирано, тъй като не е съвместимо с телефона ви."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Приложението не бе инсталирано, тъй като не е съвместимо с таблета ви."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Това приложение не е съвместимо с телевизора ви."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Приложението не бе инсталирано, тъй като не е съвместимо с телефона ви."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Приложението не бе инсталирано, тъй като изглежда, че пакетът е невалиден."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> не можа да се инсталира на таблета ви."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> не можа да се инсталира на телевизора ви."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> не можа да се инсталира на телефона ви."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> не можа да се инсталира на таблета ви."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> не можа да се инсталира на телевизора ви."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> не можа да се инсталира на телефона ви."</string>
     <string name="launch" msgid="4826921505917605463">"Отваряне"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Администраторът ви не разрешава инсталирането на приложения, получени от неизвестни източници"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Този потребител не може да инсталира неизвестни приложения"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Няма разрешения"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Допълнителни разрешения"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other">Още <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="one">Още <xliff:g id="COUNT_0">%1$d</xliff:g></item>
+        <item quantity="other">Още <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="one">Още <xliff:g id="COUNT_0">%1$d</xliff:g></item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Това приложение е създадено за по-стара версия на Android. То може да спре да функционира нормално при отказване на разрешението."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"извършване на неизвестно действие"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Текущи разрешения"</string>
     <string name="message_staging" msgid="6151794817691100003">"Приложението се подготвя…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Неизвестно"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"От съображения за сигурност на таблета ви не могат да се инсталират неизвестни приложения от този източник."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"От съображения за сигурност на телевизора ви не могат да се инсталират неизвестни приложения от този източник."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"От съображения за сигурност на телефона ви не могат да се инсталират неизвестни приложения от този източник."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Телефонът и личните ви данни са по-уязвими към атаки от неизвестни приложения. С инсталирането на това приложение приемате, че носите отговорност при евентуална повреда на телефона или загуба на информация вследствие на използването на приложението."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Таблетът и личните ви данни са по-уязвими към атаки от неизвестни приложения. С инсталирането на това приложение приемате, че носите отговорност при евентуална повреда на таблета или загуба на информация вследствие на използването на приложението."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Телевизорът и личните ви данни са по-уязвими към атаки от неизвестни приложения. С инсталирането на това приложение приемате, че носите отговорност при евентуална повреда на телевизора или загуба на информация вследствие на използването на приложението."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"От съображения за сигурност на таблета ви не могат да се инсталират неизвестни приложения от този източник."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"От съображения за сигурност на телевизора ви не могат да се инсталират неизвестни приложения от този източник."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"От съображения за сигурност на телефона ви не могат да се инсталират неизвестни приложения от този източник."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Телефонът и личните ви данни са по-уязвими към атаки от неизвестни приложения. С инсталирането на това приложение приемате, че носите отговорност при евентуална повреда на телефона или загуба на информация вследствие на използването на приложението."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Таблетът и личните ви данни са по-уязвими към атаки от неизвестни приложения. С инсталирането на това приложение приемате, че носите отговорност при евентуална повреда на таблета или загуба на информация вследствие на използването на приложението."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Телевизорът и личните ви данни са по-уязвими към атаки от неизвестни приложения. С инсталирането на това приложение приемате, че носите отговорност при евентуална повреда на телевизора или загуба на информация вследствие на използването на приложението."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Напред"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Настройки"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Инсталир./деинсталир. на прилож. за Wear"</string>

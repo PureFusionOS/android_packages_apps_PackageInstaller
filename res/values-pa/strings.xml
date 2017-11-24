@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"ਐਪ ਇੰਸਟੌਲ ਨਹੀਂ ਕੀਤਾ।"</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"ਪੈਕੇਜ ਨੂੰ ਸਥਾਪਿਤ ਹੋਣ ਤੋਂ ਬਲੌਕ ਕੀਤਾ ਗਿਆ ਸੀ।"</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"ਪੈਕੇਜ ਦੇ ਇੱਕ ਮੌਜੂਦਾ ਪੈਕੇਜ ਨਾਲ ਵਿਵਾਦ ਹੋਣ ਕਰਕੇ ਐਪ ਦੀ ਸਥਾਪਨਾ ਨਹੀਂ ਕੀਤੀ ਗਈ।"</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"ਐਪ ਦੇ ਤੁਹਾਡੇ ਟੈਬਲੈੱਟ ਦੇ ਅਨੁਰੂਪ ਨਾ ਹੋਣ ਕਰਕੇ ਐਪ ਦੀ ਸਥਾਪਨਾ ਨਹੀਂ ਕੀਤੀ ਗਈ।"</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"ਇਹ ਐਪ ਤੁਹਾਡੇ ਟੀਵੀ ਦੇ ਅਨੁਕੂਲ ਨਹੀਂ ਹੈ।"</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"ਐਪ ਦੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਦੇ ਅਨੁਰੂਪ ਨਾ ਹੋਣ ਕਰਕੇ ਐਪ ਦੀ ਸਥਾਪਨਾ ਨਹੀਂ ਕੀਤੀ ਗਈ।"</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"ਐਪ ਦੇ ਤੁਹਾਡੇ ਟੈਬਲੈੱਟ ਦੇ ਅਨੁਰੂਪ ਨਾ ਹੋਣ ਕਰਕੇ ਐਪ ਦੀ ਸਥਾਪਨਾ ਨਹੀਂ ਕੀਤੀ ਗਈ।"</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"ਇਹ ਐਪ ਤੁਹਾਡੇ ਟੀਵੀ ਦੇ ਅਨੁਕੂਲ ਨਹੀਂ ਹੈ।"</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"ਐਪ ਦੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਦੇ ਅਨੁਰੂਪ ਨਾ ਹੋਣ ਕਰਕੇ ਐਪ ਦੀ ਸਥਾਪਨਾ ਨਹੀਂ ਕੀਤੀ ਗਈ।"</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"ਪੈਕੇਜ ਦੇ ਅਵੈਧ ਪ੍ਰਤੀਤ ਹੋਣ ਕਰਕੇ ਐਪ ਦੀ ਸਥਾਪਨਾ ਨਹੀਂ ਕੀਤੀ ਗਈ।"</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੀ ਟੈਬਲੇਟ ਤੇ ਇੰਸਟੌਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।"</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੇ TV ਤੇ ਇੰਸਟੌਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।"</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੇ ਫੋਨ ਤੇ ਇੰਸਟੌਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।"</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੀ ਟੈਬਲੇਟ ਤੇ ਇੰਸਟੌਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।"</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੇ TV ਤੇ ਇੰਸਟੌਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।"</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੇ ਫੋਨ ਤੇ ਇੰਸਟੌਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।"</string>
     <string name="launch" msgid="4826921505917605463">"ਖੋਲ੍ਹੋ"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"ਤੁਹਾਡਾ ਪ੍ਰਸ਼ਾਸਕ ਅਗਿਆਤ ਸਰੋਤਾਂ ਤੋਂ ਪ੍ਰਾਪਤ ਐਪਾਂ ਸਥਾਪਤ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੰਦਾ"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"ਇਸ ਵਰਤੋਂਕਾਰ ਵੱਲੋਂ ਅਗਿਆਤ ਐਪਾਂ ਨੂੰ ਸਥਾਪਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"ਕੋਈ ਅਨੁਮਤੀਆਂ ਨਹੀਂ ਹਨ"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"ਅਤਿਰਿਕਤ ਅਨੁਮਤੀਆਂ"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="one"><xliff:g id="COUNT_1">%1$d</xliff:g> ਹੋਰ</item>
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> ਹੋਰ</item>
+        <item quantity="one"><xliff:g id="COUNT_1">%1$d</xliff:g> ਹੋਰ</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> ਹੋਰ</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"ਇਹ ਐਪ Android ਦੇ ਕਿਸੇ ਪੁਰਾਣੇ ਸੰਸਕਰਣ ਲਈ ਬਣਾਈ ਗਈ ਸੀ। ਅਨੁਮਤੀ ਨੂੰ ਇਨਕਾਰ ਕਰਨਾ ਇਸਦੇ ਉਦੇਸ਼ਿਤ ਫੰਕਸ਼ਨ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰ ਸਕਦਾ ਹੈ।"</string>
     <string name="default_permission_description" msgid="4992892207044156668">"ਕੋਈ ਅਗਿਆਤ ਕਾਰਵਾਈ ਕਰੋ"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"ਵਰਤਮਾਨ ਇਜਾਜ਼ਤਾਂ"</string>
     <string name="message_staging" msgid="6151794817691100003">"ਐਪ ਨੂੰ ਪੜਾਅਬੱਧ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"ਅਗਿਆਤ"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"ਤੁਹਾਡੀ ਸੁਰੱਖਿਆ ਲਈ, ਤੁਹਾਡੇ ਟੈਬਲੈੱਟ ਨੂੰ ਇਸ ਸਰੋਤ ਤੋਂ ਅਗਿਆਤ ਐਪਾਂ ਸਥਾਪਿਤ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।"</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"ਤੁਹਾਡੀ ਸੁਰੱਖਿਆ ਲਈ, ਤੁਹਾਡੇ ਟੀਵੀ ਨੂੰ ਇਸ ਸਰੋਤ ਤੋਂ ਅਗਿਆਤ ਐਪਾਂ ਸਥਾਪਿਤ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।"</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"ਤੁਹਾਡੀ ਸੁਰੱਖਿਆ ਲਈ, ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੂੰ ਇਸ ਸਰੋਤ ਤੋਂ ਅਗਿਆਤ ਐਪਾਂ ਸਥਾਪਿਤ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।"</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"ਤੁਹਾਡਾ ਫ਼ੋਨ ਅਤੇ ਨਿੱਜੀ ਡੈਟਾ ਅਗਿਆਤ ਐਪਾਂ ਤੋਂ ਹਮਲੇ ਪ੍ਰਤੀ ਵਧੇਰੇ ਵਿੰਨਣਸ਼ੀਲ ਹਨ। ਇਹ ਐਪ ਸਥਾਪਤ ਕਰਕੇ, ਤੁਸੀਂ ਸਹਿਮਤੀ ਦਿੰਦੇ ਹੋ ਕਿ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਨੁਕਸਾਨ ਜਾਂ ਡੈਟੇ ਦੀ ਹਾਨੀ ਲਈ ਤੁਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਹੋ ਜੋ ਸ਼ਾਇਦ ਇਸ ਐਪ ਨੂੰ ਵਰਤਣ ਦੇ ਨਤੀਜੇ ਵਜੋਂ ਹੋ ਸਕਦਾ ਹੈ।"</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"ਤੁਹਾਡਾ ਟੈਬਲੈੱਟ ਅਤੇ ਨਿੱਜੀ ਡੈਟਾ ਅਗਿਆਤ ਐਪਾਂ ਤੋਂ ਹਮਲੇ ਪ੍ਰਤੀ ਵਧੇਰੇ ਵਿੰਨਣਸ਼ੀਲ ਹਨ। ਇਹ ਐਪ ਸਥਾਪਤ ਕਰਕੇ, ਤੁਸੀਂ ਸਹਿਮਤੀ ਦਿੰਦੇ ਹੋ ਕਿ ਆਪਣੇ ਟੈਬਲੈੱਟ ਨੂੰ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਨੁਕਸਾਨ ਜਾਂ ਡੈਟੇ ਦੀ ਹਾਨੀ ਲਈ ਤੁਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਹੋ ਜੋ ਸ਼ਾਇਦ ਇਸ ਐਪ ਨੂੰ ਵਰਤਣ ਦੇ ਨਤੀਜੇ ਵਜੋਂ ਹੋ ਸਕਦਾ ਹੈ।"</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"ਤੁਹਾਡਾ ਟੀਵੀ ਅਤੇ ਨਿੱਜੀ ਡੈਟਾ ਅਗਿਆਤ ਐਪਾਂ ਤੋਂ ਹਮਲੇ ਪ੍ਰਤੀ ਵਧੇਰੇ ਵਿੰਨਣਸ਼ੀਲ ਹਨ। ਇਹ ਐਪ ਸਥਾਪਤ ਕਰਕੇ, ਤੁਸੀਂ ਸਹਿਮਤੀ ਦਿੰਦੇ ਹੋ ਕਿ ਆਪਣੇ ਟੀਵੀ ਨੂੰ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਨੁਕਸਾਨ ਜਾਂ ਡੈਟੇ ਦੀ ਹਾਨੀ ਲਈ ਤੁਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਹੋ ਜੋ ਸ਼ਾਇਦ ਇਸ ਐਪ ਨੂੰ ਵਰਤਣ ਦੇ ਨਤੀਜੇ ਵਜੋਂ ਹੋ ਸਕਦਾ ਹੈ।"</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"ਤੁਹਾਡੀ ਸੁਰੱਖਿਆ ਲਈ, ਤੁਹਾਡੇ ਟੈਬਲੈੱਟ ਨੂੰ ਇਸ ਸਰੋਤ ਤੋਂ ਅਗਿਆਤ ਐਪਾਂ ਸਥਾਪਿਤ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।"</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"ਤੁਹਾਡੀ ਸੁਰੱਖਿਆ ਲਈ, ਤੁਹਾਡੇ ਟੀਵੀ ਨੂੰ ਇਸ ਸਰੋਤ ਤੋਂ ਅਗਿਆਤ ਐਪਾਂ ਸਥਾਪਿਤ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।"</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"ਤੁਹਾਡੀ ਸੁਰੱਖਿਆ ਲਈ, ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੂੰ ਇਸ ਸਰੋਤ ਤੋਂ ਅਗਿਆਤ ਐਪਾਂ ਸਥਾਪਿਤ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।"</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"ਤੁਹਾਡਾ ਫ਼ੋਨ ਅਤੇ ਨਿੱਜੀ ਡੈਟਾ ਅਗਿਆਤ ਐਪਾਂ ਤੋਂ ਹਮਲੇ ਪ੍ਰਤੀ ਵਧੇਰੇ ਵਿੰਨਣਸ਼ੀਲ ਹਨ। ਇਹ ਐਪ ਸਥਾਪਤ ਕਰਕੇ, ਤੁਸੀਂ ਸਹਿਮਤੀ ਦਿੰਦੇ ਹੋ ਕਿ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਨੁਕਸਾਨ ਜਾਂ ਡੈਟੇ ਦੀ ਹਾਨੀ ਲਈ ਤੁਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਹੋ ਜੋ ਸ਼ਾਇਦ ਇਸ ਐਪ ਨੂੰ ਵਰਤਣ ਦੇ ਨਤੀਜੇ ਵਜੋਂ ਹੋ ਸਕਦਾ ਹੈ।"</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"ਤੁਹਾਡਾ ਟੈਬਲੈੱਟ ਅਤੇ ਨਿੱਜੀ ਡੈਟਾ ਅਗਿਆਤ ਐਪਾਂ ਤੋਂ ਹਮਲੇ ਪ੍ਰਤੀ ਵਧੇਰੇ ਵਿੰਨਣਸ਼ੀਲ ਹਨ। ਇਹ ਐਪ ਸਥਾਪਤ ਕਰਕੇ, ਤੁਸੀਂ ਸਹਿਮਤੀ ਦਿੰਦੇ ਹੋ ਕਿ ਆਪਣੇ ਟੈਬਲੈੱਟ ਨੂੰ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਨੁਕਸਾਨ ਜਾਂ ਡੈਟੇ ਦੀ ਹਾਨੀ ਲਈ ਤੁਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਹੋ ਜੋ ਸ਼ਾਇਦ ਇਸ ਐਪ ਨੂੰ ਵਰਤਣ ਦੇ ਨਤੀਜੇ ਵਜੋਂ ਹੋ ਸਕਦਾ ਹੈ।"</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"ਤੁਹਾਡਾ ਟੀਵੀ ਅਤੇ ਨਿੱਜੀ ਡੈਟਾ ਅਗਿਆਤ ਐਪਾਂ ਤੋਂ ਹਮਲੇ ਪ੍ਰਤੀ ਵਧੇਰੇ ਵਿੰਨਣਸ਼ੀਲ ਹਨ। ਇਹ ਐਪ ਸਥਾਪਤ ਕਰਕੇ, ਤੁਸੀਂ ਸਹਿਮਤੀ ਦਿੰਦੇ ਹੋ ਕਿ ਆਪਣੇ ਟੀਵੀ ਨੂੰ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਨੁਕਸਾਨ ਜਾਂ ਡੈਟੇ ਦੀ ਹਾਨੀ ਲਈ ਤੁਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਹੋ ਜੋ ਸ਼ਾਇਦ ਇਸ ਐਪ ਨੂੰ ਵਰਤਣ ਦੇ ਨਤੀਜੇ ਵਜੋਂ ਹੋ ਸਕਦਾ ਹੈ।"</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"ਜਾਰੀ ਰੱਖੋ"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"ਸੈਟਿੰਗਾਂ"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"ਵੀਅਰ ਐਪਾਂ ਨੂੰ ਸਥਾਪਤ/ਅਣਸਥਾਪਤ ਕਰਨਾ"</string>

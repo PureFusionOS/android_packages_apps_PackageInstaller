@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"App niet geïnstalleerd."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"De installatie van het pakket is geblokkeerd."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"App die niet is geïnstalleerd als pakket conflicteert met een bestaand pakket."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"App die niet is geïnstalleerd als app is niet geschikt voor je tablet."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Deze app is niet compatibel met je tv."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"App die niet is geïnstalleerd als app is niet geschikt voor je telefoon."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"App die niet is geïnstalleerd als app is niet geschikt voor je tablet."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Deze app is niet compatibel met je tv."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"App die niet is geïnstalleerd als app is niet geschikt voor je telefoon."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"App die niet is geïnstalleerd als pakket lijkt ongeldig te zijn."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g> kan niet worden geïnstalleerd op je tablet."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> kan niet worden geïnstalleerd op je tv."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g> kan niet worden geïnstalleerd op je telefoon."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> kan niet worden geïnstalleerd op je tablet."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> kan niet worden geïnstalleerd op je tv."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> kan niet worden geïnstalleerd op je telefoon."</string>
     <string name="launch" msgid="4826921505917605463">"Openen"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Je beheerder staat de installatie van apps afkomstig van onbekende bronnen niet toe"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Onbekende apps kunnen niet worden geïnstalleerd door deze gebruiker"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Geen rechten"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Aanvullende rechten"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other">Nog <xliff:g id="COUNT_1">%1$d</xliff:g></item>
-      <item quantity="one">Nog <xliff:g id="COUNT_0">%1$d</xliff:g></item>
+        <item quantity="other">Nog <xliff:g id="COUNT_1">%1$d</xliff:g></item>
+        <item quantity="one">Nog <xliff:g id="COUNT_0">%1$d</xliff:g></item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Deze app is ontworpen voor een oudere versie van Android. Als u geen toestemming geeft, kan de app mogelijk niet functioneren zoals is bedoeld."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"een onbekende actie uitvoeren"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Huidige rechten"</string>
     <string name="message_staging" msgid="6151794817691100003">"App uitvoeren…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Onbekend"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Uit veiligheidsoverwegingen heeft je tablet geen toestemming om onbekende apps van deze bron te installeren."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Uit veiligheidsoverwegingen heeft je tv geen toestemming om onbekende apps van deze bron te installeren."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Uit veiligheidsoverwegingen heeft je telefoon geen toestemming om onbekende apps van deze bron te installeren."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Je telefoon en persoonlijke gegevens zijn kwetsbaarder voor aanvallen door onbekende apps. Als je deze app installeert, ga je ermee akkoord dat je verantwoordelijk bent voor eventuele schade aan je telefoon of gegevensverlies als gevolg van het gebruik van de app."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Je tablet en persoonlijke gegevens zijn kwetsbaarder voor aanvallen door onbekende apps. Als je deze app installeert, ga je ermee akkoord dat je verantwoordelijk bent voor eventuele schade aan je tablet of gegevensverlies als gevolg van het gebruik van de app."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Je tv en persoonlijke gegevens zijn kwetsbaarder voor aanvallen door onbekende apps. Als je deze app installeert, ga je ermee akkoord dat je verantwoordelijk bent voor eventuele schade aan je tv of gegevensverlies als gevolg van het gebruik van de app."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Uit veiligheidsoverwegingen heeft je tablet geen toestemming om onbekende apps van deze bron te installeren."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Uit veiligheidsoverwegingen heeft je tv geen toestemming om onbekende apps van deze bron te installeren."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Uit veiligheidsoverwegingen heeft je telefoon geen toestemming om onbekende apps van deze bron te installeren."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Je telefoon en persoonlijke gegevens zijn kwetsbaarder voor aanvallen door onbekende apps. Als je deze app installeert, ga je ermee akkoord dat je verantwoordelijk bent voor eventuele schade aan je telefoon of gegevensverlies als gevolg van het gebruik van de app."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Je tablet en persoonlijke gegevens zijn kwetsbaarder voor aanvallen door onbekende apps. Als je deze app installeert, ga je ermee akkoord dat je verantwoordelijk bent voor eventuele schade aan je tablet of gegevensverlies als gevolg van het gebruik van de app."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Je tv en persoonlijke gegevens zijn kwetsbaarder voor aanvallen door onbekende apps. Als je deze app installeert, ga je ermee akkoord dat je verantwoordelijk bent voor eventuele schade aan je tv of gegevensverlies als gevolg van het gebruik van de app."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Doorgaan"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Instellingen"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Wear-apps installeren/verwijderen"</string>

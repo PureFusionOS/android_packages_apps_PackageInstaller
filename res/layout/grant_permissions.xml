@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2015 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2015 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,142 +13,135 @@
      limitations under the License.
 -->
 
-<com.android.packageinstaller.permission.ui.ManualLayoutFrame
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.android.packageinstaller.permission.ui.ManualLayoutFrame xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingBottom="32dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="32dp"
-    android:clipToPadding="false">
+    android:paddingTop="8dp">
 
-    <ScrollView android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-    <LinearLayout
-        android:id="@+id/dialog_container"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:elevation="16dp"
-        android:background="@drawable/dialog_background">
-
-        <FrameLayout
-            android:id="@+id/desc_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="18dip"
-            android:paddingStart="20dip"
-            android:paddingEnd="16dip">
-            <include
-                layout="@layout/permission_description" />
-        </FrameLayout>
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/dialog_container"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="20dip"
-            android:paddingEnd="16dip">
+            android:background="@drawable/dialog_background"
+            android:elevation="16dp"
+            android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/do_not_ask_checkbox"
-                android:layout_width="fill_parent"
+            <FrameLayout
+                android:id="@+id/desc_container"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="-12dp"
-                android:minHeight="48dp"
-                android:text="@string/never_ask_again"
-                android:textColor="?android:attr/textColorPrimary"
-                style="?android:attr/textAppearanceSmall"
-                android:visibility="gone">
-            </CheckBox>
+                android:paddingEnd="16dip"
+                android:paddingStart="20dip"
+                android:paddingTop="18dip">
+
+                <include layout="@layout/permission_description" />
+            </FrameLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="6dip"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp">
+                android:orientation="vertical"
+                android:paddingEnd="16dip"
+                android:paddingStart="20dip">
+
+                <CheckBox
+                    android:id="@+id/do_not_ask_checkbox"
+                    style="?android:attr/textAppearanceSmall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-12dp"
+                    android:layout_marginTop="8dp"
+                    android:minHeight="48dp"
+                    android:text="@string/never_ask_again"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:visibility="gone"></CheckBox>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-                    <!-- dummy to enforce correct height -->
-                    <Button
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:visibility="invisible">
-                    </Button>
-
-                    <TextView
-                        android:id="@+id/current_page_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingEnd="12dp"
-                        android:singleLine="true"
-                        style="?android:attr/textAppearanceSmall"
-                        android:textColor="?android:attr/textColorSecondary"
-                        android:visibility="gone">
-                    </TextView>
-
-                    <Button
-                        android:id="@+id/permission_more_info_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:text="@string/grant_dialog_button_more_info"
-                        android:visibility="gone">
-                    </Button>
-                </LinearLayout>
-
-                <com.android.packageinstaller.permission.ui.ButtonBarLayout
-                    android:id="@+id/button_group"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:gravity="bottom">
+                    android:paddingBottom="4dp"
+                    android:paddingStart="6dip"
+                    android:paddingTop="4dp">
 
-                    <Space
-                        android:id="@+id/spacer"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <!-- dummy to enforce correct height -->
+                        <Button
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:visibility="invisible"></Button>
+
+                        <TextView
+                            android:id="@+id/current_page_text"
+                            style="?android:attr/textAppearanceSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="12dp"
+                            android:singleLine="true"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:visibility="gone"></TextView>
+
+                        <Button
+                            android:id="@+id/permission_more_info_button"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/grant_dialog_button_more_info"
+                            android:visibility="gone"></Button>
+                    </LinearLayout>
+
+                    <com.android.packageinstaller.permission.ui.ButtonBarLayout
+                        android:id="@+id/button_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
                         android:layout_weight="1"
-                        android:visibility="invisible" >
-                    </Space>
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/permission_deny_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:text="@string/grant_dialog_button_deny" >
-                    </Button>
+                        <Space
+                            android:id="@+id/spacer"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:visibility="invisible"></Space>
 
-                    <Button
-                        android:id="@+id/permission_allow_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:text="@string/grant_dialog_button_allow" >
-                    </Button>
+                        <Button
+                            android:id="@+id/permission_deny_button"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/grant_dialog_button_deny"></Button>
 
-                </com.android.packageinstaller.permission.ui.ButtonBarLayout>
+                        <Button
+                            android:id="@+id/permission_allow_button"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/grant_dialog_button_allow"></Button>
+
+                    </com.android.packageinstaller.permission.ui.ButtonBarLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
 
     </ScrollView>
 

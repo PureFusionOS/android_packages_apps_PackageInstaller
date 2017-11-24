@@ -40,14 +40,15 @@ import java.io.File;
 public class InstallFailed extends Activity {
     private static final String LOG_TAG = InstallFailed.class.getSimpleName();
 
-    /** Label of the app that failed to install */
+    /**
+     * Label of the app that failed to install
+     */
     private CharSequence mLabel;
 
     /**
      * Convert an package installer status code into the user friendly label.
      *
      * @param statusCode The status code from the package installer.
-     *
      * @return The user friendly label for the status code
      */
     private int getExplanationFromErrorCode(int statusCode) {

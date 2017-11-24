@@ -62,10 +62,8 @@ import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 public final class AppPermissionsFragment extends SettingsWithHeader
         implements OnPreferenceChangeListener {
 
-    private static final String LOG_TAG = "ManagePermsFragment";
-
     static final String EXTRA_HIDE_INFO_BUTTON = "hideInfoButton";
-
+    private static final String LOG_TAG = "ManagePermsFragment";
     private static final int MENU_ALL_PERMS = 0;
 
     private List<AppPermissionGroup> mToggledGroups;
@@ -83,6 +81,36 @@ public final class AppPermissionsFragment extends SettingsWithHeader
         arguments.putString(Intent.EXTRA_PACKAGE_NAME, packageName);
         fragment.setArguments(arguments);
         return fragment;
+    }
+
+    private static void bindUi(SettingsWithHeader fragment, PackageInfo packageInfo) {
+        Activity activity = fragment.getActivity();
+        PackageManager pm = activity.getPackageManager();
+        ApplicationInfo appInfo = packageInfo.applicationInfo;
+        Intent infoIntent = null;
+        if (!activity.getIntent().getBooleanExtra(EXTRA_HIDE_INFO_BUTTON, false)) {
+            infoIntent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                    .setData(Uri.fromParts("package", packageInfo.packageName, null));
+        }
+
+        Drawable icon = IconDrawableFactory.newInstance(activity).getBadgedIcon(appInfo);
+        CharSequence label = appInfo.loadLabel(pm);
+        fragment.setHeader(icon, label, infoIntent);
+
+        ActionBar ab = activity.getActionBar();
+        if (ab != null) {
+            ab.setTitle(R.string.app_permissions);
+        }
+    }
+
+    private static PackageInfo getPackageInfo(Activity activity, String packageName) {
+        try {
+            return activity.getPackageManager().getPackageInfo(
+                    packageName, PackageManager.GET_PERMISSIONS);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.i(LOG_TAG, "No package:" + activity.getCallingPackage(), e);
+            return null;
+        }
     }
 
     @Override
@@ -161,26 +189,6 @@ public final class AppPermissionsFragment extends SettingsWithHeader
                 .replace(android.R.id.content, frag)
                 .addToBackStack("AllPerms")
                 .commit();
-    }
-
-    private static void bindUi(SettingsWithHeader fragment, PackageInfo packageInfo) {
-        Activity activity = fragment.getActivity();
-        PackageManager pm = activity.getPackageManager();
-        ApplicationInfo appInfo = packageInfo.applicationInfo;
-        Intent infoIntent = null;
-        if (!activity.getIntent().getBooleanExtra(EXTRA_HIDE_INFO_BUTTON, false)) {
-            infoIntent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                    .setData(Uri.fromParts("package", packageInfo.packageName, null));
-        }
-
-        Drawable icon = IconDrawableFactory.newInstance(activity).getBadgedIcon(appInfo);
-        CharSequence label = appInfo.loadLabel(pm);
-        fragment.setHeader(icon, label, infoIntent);
-
-        ActionBar ab = activity.getActionBar();
-        if (ab != null) {
-            ab.setTitle(R.string.app_permissions);
-        }
     }
 
     private void loadPreferences() {
@@ -320,17 +328,17 @@ public final class AppPermissionsFragment extends SettingsWithHeader
                         })
                         .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
                                 (DialogInterface dialog, int which) -> {
-                            ((SwitchPreference) preference).setChecked(false);
-                            group.revokeRuntimePermissions(false);
-                            if (Utils.areGroupPermissionsIndividuallyControlled(getContext(),
-                                    group.getName())) {
-                                updateSummaryForIndividuallyControlledPermissionGroup(
-                                        group, preference);
-                            }
-                            if (!grantedByDefault) {
-                                mHasConfirmedRevoke = true;
-                            }
-                        })
+                                    ((SwitchPreference) preference).setChecked(false);
+                                    group.revokeRuntimePermissions(false);
+                                    if (Utils.areGroupPermissionsIndividuallyControlled(getContext(),
+                                            group.getName())) {
+                                        updateSummaryForIndividuallyControlledPermissionGroup(
+                                                group, preference);
+                                    }
+                                    if (!grantedByDefault) {
+                                        mHasConfirmedRevoke = true;
+                                    }
+                                })
                         .show();
                 return false;
             } else {
@@ -414,16 +422,6 @@ public final class AppPermissionsFragment extends SettingsWithHeader
         }
     }
 
-    private static PackageInfo getPackageInfo(Activity activity, String packageName) {
-        try {
-            return activity.getPackageManager().getPackageInfo(
-                    packageName, PackageManager.GET_PERMISSIONS);
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.i(LOG_TAG, "No package:" + activity.getCallingPackage(), e);
-            return null;
-        }
-    }
-
     public static class AdditionalPermissionsFragment extends SettingsWithHeader {
         AppPermissionsFragment mOuterFragment;
 
@@ -446,9 +444,9 @@ public final class AppPermissionsFragment extends SettingsWithHeader
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             switch (item.getItemId()) {
-            case android.R.id.home:
-                getFragmentManager().popBackStack();
-                return true;
+                case android.R.id.home:
+                    getFragmentManager().popBackStack();
+                    return true;
             }
             return super.onOptionsItemSelected(item);
         }

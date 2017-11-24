@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"აპი არ არის დაყენებული."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"ამ პაკეტის ინსტალაცია დაბლოკილია."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"აპი ვერ დაინსტალირდა, რადგან პაკეტი კონფლიქტშია არსებულ პაკეტთან."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"აპი ვერ დაინსტალირდა, რადგან ის არ არის თავსებადი თქვენს ტაბლეტთან."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"ეს აპი არ არის თავსებადი თქვენს ტელევიზორთან."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"აპი ვერ დაინსტალირდა, რადგან ის არ არის თავსებადი თქვენს ტელეფონთან."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"აპი ვერ დაინსტალირდა, რადგან ის არ არის თავსებადი თქვენს ტაბლეტთან."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"ეს აპი არ არის თავსებადი თქვენს ტელევიზორთან."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"აპი ვერ დაინსტალირდა, რადგან ის არ არის თავსებადი თქვენს ტელეფონთან."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"აპი ვერ დაინსტალირდა, რადგან პაკეტი, სავარაუდოდ, არასწორია."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"<xliff:g id="APP_NAME">%1$s</xliff:g>-ის დაყენება თქვენს ტაბლეტზე ვერ მოხერხდა."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> ვერ დაინსტალირდება თქვენს ტელევიზორში."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"<xliff:g id="APP_NAME">%1$s</xliff:g>-ის დაყენება თქვენს ტელეფონზე ვერ მოხერხდა."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g>-ის დაყენება თქვენს ტაბლეტზე ვერ მოხერხდა."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> ვერ დაინსტალირდება თქვენს ტელევიზორში."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g>-ის დაყენება თქვენს ტელეფონზე ვერ მოხერხდა."</string>
     <string name="launch" msgid="4826921505917605463">"გახსნა"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"უცნობი წყაროებიდან ჩამოტვირთული აპების ინსტალაცია თქვენი ადმინისტრატორის მიერ ნებადართული არ არის"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"ამ მომხმარებელს უცნობი აპების ინსტალაცია არ შეუძლია"</string>
@@ -106,8 +105,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"ნებართვები არ არის"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"დამატებითი ნებართვები"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> კიდევ</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> კიდევ</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> კიდევ</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> კიდევ</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"ეს აპი Android-ის ძველი ვერსიისთვის შეიქმნა. ნებართვის უარყოფამ შესაძლოა მისი არასათანადო ფუნქციონირება გამოიწვიოს."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"უცნობი ქმედების შესრულება"</string>
@@ -138,12 +137,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"ამჟამინდელი ნებართვები"</string>
     <string name="message_staging" msgid="6151794817691100003">"მიმდინარეობს აპის შუალედური შენახვა…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"უცნობი"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"თქვენივე უსაფრთხოებისთვის, ტაბლეტს ამ წყაროდან უცნობი აპების ინსტალაციის უფლება არ აქვს."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"თქვენივე უსაფრთხოებისთვის, ტელევიზორს ამ წყაროდან უცნობი აპების ინსტალაციის უფლება არ აქვს."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"თქვენივე უსაფრთხოებისთვის, ტელეფონს ამ წყაროდან უცნობი აპების ინსტალაციის უფლება არ აქვს."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"თქვენი ტელეფონი და პირადი მონაცემები უცნობი აპების შემოტევების წინაშე მეტად დაუცველია. ამ აპის ინსტალაციის შემთხვევაში, თქვენ თანახმა ხართ, პასუხისმგებელი იყოთ მისი გამოყენების შედეგად ტელეფონისთვის მიყენებულ ზიანსა და მონაცემების დაკარგვაზე."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"თქვენი ტელეფონი და პირადი მონაცემები უცნობი აპების შემოტევების წინაშე მეტად დაუცველია. ამ აპის ინსტალაციის შემთხვევაში, თქვენ თანახმა ხართ, პასუხისმგებელი იყოთ მისი გამოყენების შედეგად ტაბლეტისთვის მიყენებულ ზიანსა და მონაცემების დაკარგვაზე."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"თქვენი ტელევიზორი და პირადი მონაცემები უცნობი აპების შემოტევების წინაშე მეტად დაუცველია. ამ აპის ინსტალაციის შემთხვევაში, თქვენ თანახმა ხართ, პასუხისმგებელი იყოთ მისი გამოყენების შედეგად ტელევიზორისთვის მიყენებულ ზიანსა და მონაცემების დაკარგვაზე."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"თქვენივე უსაფრთხოებისთვის, ტაბლეტს ამ წყაროდან უცნობი აპების ინსტალაციის უფლება არ აქვს."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"თქვენივე უსაფრთხოებისთვის, ტელევიზორს ამ წყაროდან უცნობი აპების ინსტალაციის უფლება არ აქვს."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"თქვენივე უსაფრთხოებისთვის, ტელეფონს ამ წყაროდან უცნობი აპების ინსტალაციის უფლება არ აქვს."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"თქვენი ტელეფონი და პირადი მონაცემები უცნობი აპების შემოტევების წინაშე მეტად დაუცველია. ამ აპის ინსტალაციის შემთხვევაში, თქვენ თანახმა ხართ, პასუხისმგებელი იყოთ მისი გამოყენების შედეგად ტელეფონისთვის მიყენებულ ზიანსა და მონაცემების დაკარგვაზე."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"თქვენი ტელეფონი და პირადი მონაცემები უცნობი აპების შემოტევების წინაშე მეტად დაუცველია. ამ აპის ინსტალაციის შემთხვევაში, თქვენ თანახმა ხართ, პასუხისმგებელი იყოთ მისი გამოყენების შედეგად ტაბლეტისთვის მიყენებულ ზიანსა და მონაცემების დაკარგვაზე."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"თქვენი ტელევიზორი და პირადი მონაცემები უცნობი აპების შემოტევების წინაშე მეტად დაუცველია. ამ აპის ინსტალაციის შემთხვევაში, თქვენ თანახმა ხართ, პასუხისმგებელი იყოთ მისი გამოყენების შედეგად ტელევიზორისთვის მიყენებულ ზიანსა და მონაცემების დაკარგვაზე."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"გაგრძელება"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"პარამეტრები"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Wear აპების ინსტალაცია/დეინსტალაცია"</string>

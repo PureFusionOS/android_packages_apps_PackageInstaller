@@ -45,12 +45,10 @@ import java.util.List;
  * Finish an uninstallation and show Toast on success or failure notification.
  */
 public class UninstallFinish extends BroadcastReceiver {
-    private static final String LOG_TAG = UninstallFinish.class.getSimpleName();
-
-    private static final String UNINSTALL_FAILURE_CHANNEL = "uninstall failure";
-
     static final String EXTRA_UNINSTALL_ID = "com.android.packageinstaller.extra.UNINSTALL_ID";
     static final String EXTRA_APP_LABEL = "com.android.packageinstaller.extra.APP_LABEL";
+    private static final String LOG_TAG = UninstallFinish.class.getSimpleName();
+    private static final String UNINSTALL_FAILURE_CHANNEL = "uninstall failure";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -179,7 +177,8 @@ public class UninstallFinish extends BroadcastReceiver {
                     default:
                         Log.d(LOG_TAG, "Uninstall blocked for " + appInfo.packageName
                                 + " with legacy code " + legacyStatus);
-                } break;
+                }
+                break;
             }
             default:
                 Log.d(LOG_TAG, "Uninstall failed for " + appInfo.packageName + " with code "
@@ -198,9 +197,8 @@ public class UninstallFinish extends BroadcastReceiver {
      * Is a profile part of a user?
      *
      * @param userManager The user manager
-     * @param userId The id of the user
-     * @param profileId The id of the profile
-     *
+     * @param userId      The id of the user
+     * @param profileId   The id of the profile
      * @return If the profile is part of the user or the profile parent of the user
      */
     private boolean isProfileOfOrSame(@NonNull UserManager userManager, int userId, int profileId) {
@@ -216,10 +214,10 @@ public class UninstallFinish extends BroadcastReceiver {
      * Set big text for the notification.
      *
      * @param builder The builder of the notification
-     * @param text The text to set.
+     * @param text    The text to set.
      */
     private void setBigText(@NonNull Notification.Builder builder,
-            @NonNull CharSequence text) {
+                            @NonNull CharSequence text) {
         builder.setStyle(new Notification.BigTextStyle().bigText(text));
     }
 
@@ -230,7 +228,7 @@ public class UninstallFinish extends BroadcastReceiver {
      * @param builder The builder of the notification
      */
     private void addManageUsersButton(@NonNull Context context,
-            @NonNull Notification.Builder builder) {
+                                      @NonNull Notification.Builder builder) {
         Intent intent = new Intent(Settings.ACTION_USER_SETTINGS);
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -248,7 +246,7 @@ public class UninstallFinish extends BroadcastReceiver {
      * @param builder The builder of the notification
      */
     private void addDeviceManagerButton(@NonNull Context context,
-            @NonNull Notification.Builder builder) {
+                                        @NonNull Notification.Builder builder) {
         Intent intent = new Intent();
         intent.setClassName("com.android.settings",
                 "com.android.settings.Settings$DeviceAdminSettingsActivity");

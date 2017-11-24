@@ -30,7 +30,7 @@ public final class Permission {
     private boolean mIsRuntimeOnly;
 
     public Permission(String name, boolean granted,
-            String appOp, boolean appOpAllowed, int flags, int protectionLevel) {
+                      String appOp, boolean appOpAllowed, int flags, int protectionLevel) {
         mName = name;
         mGranted = granted;
         mAppOp = appOp;
@@ -60,6 +60,10 @@ public final class Permission {
         return mGranted;
     }
 
+    public void setGranted(boolean mGranted) {
+        this.mGranted = mGranted;
+    }
+
     public boolean isReviewRequired() {
         return (mFlags & PackageManager.FLAG_PERMISSION_REVIEW_REQUIRED) != 0;
     }
@@ -68,12 +72,12 @@ public final class Permission {
         mFlags &= ~PackageManager.FLAG_PERMISSION_REVIEW_REQUIRED;
     }
 
-    public void setGranted(boolean mGranted) {
-        this.mGranted = mGranted;
-    }
-
     public boolean isAppOpAllowed() {
         return mAppOpAllowed;
+    }
+
+    public void setAppOpAllowed(boolean mAppOpAllowed) {
+        this.mAppOpAllowed = mAppOpAllowed;
     }
 
     public boolean isUserFixed() {
@@ -96,12 +100,16 @@ public final class Permission {
         return (mFlags & PackageManager.FLAG_PERMISSION_POLICY_FIXED) != 0;
     }
 
-    public boolean isUserSet() {
-        return (mFlags & PackageManager.FLAG_PERMISSION_USER_SET) != 0;
+    public void setPolicyFixed(boolean policyFixed) {
+        if (policyFixed) {
+            mFlags |= PackageManager.FLAG_PERMISSION_POLICY_FIXED;
+        } else {
+            mFlags &= ~PackageManager.FLAG_PERMISSION_POLICY_FIXED;
+        }
     }
 
-    public boolean isGrantedByDefault() {
-        return (mFlags & PackageManager.FLAG_PERMISSION_GRANTED_BY_DEFAULT) != 0;
+    public boolean isUserSet() {
+        return (mFlags & PackageManager.FLAG_PERMISSION_USER_SET) != 0;
     }
 
     public void setUserSet(boolean userSet) {
@@ -112,12 +120,8 @@ public final class Permission {
         }
     }
 
-    public void setPolicyFixed(boolean policyFixed) {
-        if (policyFixed) {
-            mFlags |= PackageManager.FLAG_PERMISSION_POLICY_FIXED;
-        } else {
-            mFlags &= ~PackageManager.FLAG_PERMISSION_POLICY_FIXED;
-        }
+    public boolean isGrantedByDefault() {
+        return (mFlags & PackageManager.FLAG_PERMISSION_GRANTED_BY_DEFAULT) != 0;
     }
 
     public boolean shouldRevokeOnUpgrade() {
@@ -130,10 +134,6 @@ public final class Permission {
         } else {
             mFlags &= ~PackageManager.FLAG_PERMISSION_REVOKE_ON_UPGRADE;
         }
-    }
-
-    public void setAppOpAllowed(boolean mAppOpAllowed) {
-        this.mAppOpAllowed = mAppOpAllowed;
     }
 
     public boolean isEphemeral() {

@@ -41,7 +41,8 @@ public abstract class PermissionsFrameFragment extends PreferenceFragment {
     private ViewGroup mPreferencesContainer;
 
     // TV-specific instance variable
-    @Nullable private RecyclerView mGridView;
+    @Nullable
+    private RecyclerView mGridView;
 
     private View mLoadingView;
     private ViewGroup mPrefsView;
@@ -57,9 +58,9 @@ public abstract class PermissionsFrameFragment extends PreferenceFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.permissions_frame, container,
-                        false);
+                false);
         mPrefsView = (ViewGroup) rootView.findViewById(R.id.prefs_container);
         if (mPrefsView == null) {
             mPrefsView = rootView;

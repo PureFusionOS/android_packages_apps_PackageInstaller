@@ -39,14 +39,18 @@ import java.util.List;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class WearPackageIconProvider extends ContentProvider {
-    private static final String TAG = "WearPackageIconProvider";
     public static final String AUTHORITY = "com.google.android.packageinstaller.wear.provider";
-
+    /**
+     * MIME types.
+     */
+    public static final String ICON_TYPE = "vnd.android.cursor.item/cw_package_icon";
+    private static final String TAG = "WearPackageIconProvider";
     private static final String REQUIRED_PERMISSION =
             "com.google.android.permission.INSTALL_WEARABLE_PACKAGES";
 
-    /** MIME types. */
-    public static final String ICON_TYPE = "vnd.android.cursor.item/cw_package_icon";
+    public static Uri getUriForPackage(final String packageName) {
+        return Uri.parse("content://" + AUTHORITY + "/icons/" + packageName + ".icon");
+    }
 
     @Override
     public boolean onCreate() {
@@ -55,7 +59,7 @@ public class WearPackageIconProvider extends ContentProvider {
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
-            String sortOrder) {
+                        String sortOrder) {
         throw new UnsupportedOperationException("Query is not supported.");
     }
 
@@ -119,10 +123,6 @@ public class WearPackageIconProvider extends ContentProvider {
         return null;
     }
 
-    public static Uri getUriForPackage(final String packageName) {
-        return Uri.parse("content://" + AUTHORITY + "/icons/" + packageName + ".icon");
-    }
-
     private String getPackageNameFromUri(Uri uri) {
         if (uri == null) {
             return null;
@@ -138,6 +138,7 @@ public class WearPackageIconProvider extends ContentProvider {
 
     /**
      * Make sure the calling app is either a system app or the same app or has the right permission.
+     *
      * @throws SecurityException if the caller has insufficient permissions.
      */
     @TargetApi(Build.VERSION_CODES.BASE_1_1)

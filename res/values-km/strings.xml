@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"មិន​បាន​ដំឡើង​កម្មវិធី។"</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"កញ្ចប់នេះត្រូវបានរារាំងមិនឲ្យដំឡើង"</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"កម្មវិធីមិនបានដំឡើងទេ ដោយសារកញ្ចប់កម្មវិធីមិនត្រូវគ្នាជាមួយកញ្ចប់ដែលមានស្រាប់។"</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"កម្មវិធីមិនបានដំឡើងទេ ដោយសារកម្មវិធីមិនត្រូវគ្នាជាមួយថេប្លេតរបស់អ្នក។"</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"កម្មវិធីនេះមិនត្រូវគ្នាជាមួយទូរទស្សន៍របស់អ្នកទេ"</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"កម្មវិធីមិនបានដំឡើងទេ ដោយសារកម្មវិធីមិនត្រូវគ្នាជាមួយទូរសព្ទរបស់អ្នក។"</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"កម្មវិធីមិនបានដំឡើងទេ ដោយសារកម្មវិធីមិនត្រូវគ្នាជាមួយថេប្លេតរបស់អ្នក។"</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"កម្មវិធីនេះមិនត្រូវគ្នាជាមួយទូរទស្សន៍របស់អ្នកទេ"</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"កម្មវិធីមិនបានដំឡើងទេ ដោយសារកម្មវិធីមិនត្រូវគ្នាជាមួយទូរសព្ទរបស់អ្នក។"</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"កម្មវិធីមិនបានដំឡើងទេ ដោយសារកញ្ចប់គ្មានសុពលភាព។"</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"មិន​អាច​ដំឡើង <xliff:g id="APP_NAME">%1$s</xliff:g> ក្នុង​កុំព្យូទ័រ​បន្ទះ​របស់​អ្នក។"</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"<xliff:g id="APP_NAME">%1$s</xliff:g> មិនអាចដំឡើងនៅលើទូរទស្សន៍របស់អ្នកទេ។"</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"មិន​អាច​ដំឡើង <xliff:g id="APP_NAME">%1$s</xliff:g> ក្នុង​ទូរស័ព្ទ​របស់​អ្នក។"</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"មិន​អាច​ដំឡើង <xliff:g id="APP_NAME">%1$s</xliff:g> ក្នុង​កុំព្យូទ័រ​បន្ទះ​របស់​អ្នក។"</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"<xliff:g id="APP_NAME">%1$s</xliff:g> មិនអាចដំឡើងនៅលើទូរទស្សន៍របស់អ្នកទេ។"</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"មិន​អាច​ដំឡើង <xliff:g id="APP_NAME">%1$s</xliff:g> ក្នុង​ទូរស័ព្ទ​របស់​អ្នក។"</string>
     <string name="launch" msgid="4826921505917605463">"បើក"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"អ្នក​គ្រប់គ្រង​របស់​អ្នក​មិន​អនុញ្ញាត​ឲ្យ​ដំឡើង​កម្មវិធី​ដែល​បាន​មក​ពី​ប្រភព​ដែលមិន​ស្គាល់ទេ"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"កម្មវិធី​ដែល​មិនស្គាល់​មិនអាច​ដំឡើង​ដោយ​អ្នកប្រើប្រាស់​នេះ​បាន​ទេ"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"គ្មានសិទ្ធិអនុញ្ញាត"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"សិទ្ធិអនុញ្ញាតបន្ថែម"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> ទៀត</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> ទៀត</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> ទៀត</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> ទៀត</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"កម្មវិធីនេះត្រូវបានរចនាឡើងសម្រាប់កំណែចាស់របស់ Android។ ការបដិសេធសិទ្ធិអនុញ្ញាតអាចបណ្តាលឲ្យវាបំពេញមុខងារមិនដូចអ្វីដែលគេរំពឹងទុកតទៅទៀតទេ។"</string>
     <string name="default_permission_description" msgid="4992892207044156668">"ប្រតិបត្តិការសកម្មភាពមិនស្គាល់"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"សិទ្ធិអនុញ្ញាតបច្ចុប្បន្ន"</string>
     <string name="message_staging" msgid="6151794817691100003">"កំពុងសាកល្បងកម្មវិធី…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"មិនស្គាល់"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"ដើម្បីការពារសុវតិ្ថភាពរបស់អ្នក ថេប្លេតរបស់អ្នកមិនត្រូវបានអនុញ្ញាតឲ្យដំឡើងកម្មវិធីដែលមិនស្គាល់ពីប្រភពនេះទេ។"</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"ដើម្បីការពារសុវតិ្ថភាពរបស់អ្នក ទូរទស្សន៍របស់អ្នកមិនត្រូវបានអនុញ្ញាតឲ្យដំឡើងកម្មវិធីដែលមិនស្គាល់ពីប្រភពនេះទេ។"</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"ដើម្បីការពារសុវតិ្ថភាពរបស់អ្នក ទូរសព្ទរបស់អ្នកមិនត្រូវបានអនុញ្ញាតឲ្យដំឡើងកម្មវិធីដែលមិនស្គាល់ពីប្រភពនេះទេ។"</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"ទូរសព្ទ និងទិន្នន័យផ្ទាល់ខ្លួនរបស់អ្នកងាយនឹងរងគ្រោះពីការវាយប្រហារពីកម្មវិធីដែលមិនស្គាល់។ ប្រសិនបើដំឡើងកម្មវិធីនេះ មានន័យថាអ្នកទទួលខុសត្រូវលើការខូចខាតណាមួយចំពោះទូរសព្ទ ឬការបាត់បង់ទិន្នន័យរបស់អ្នក ដែលអាចបណ្តាលមកពីការប្រើប្រាស់កម្មវិធីនោះ។"</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"ថេប្លេត និងទិន្នន័យផ្ទាល់ខ្លួនរបស់អ្នកងាយនឹងរងគ្រោះពីការវាយប្រហារពីកម្មវិធីដែលមិនស្គាល់។ ប្រសិនបើដំឡើងកម្មវិធីនេះ មានន័យថាអ្នកទទួលខុសត្រូវលើការខូចខាតណាមួយចំពោះថេប្លេត ឬការបាត់បង់ទិន្នន័យរបស់អ្នក ដែលអាចបណ្តាលមកពីការប្រើប្រាស់កម្មវិធីនោះ។"</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"ទូរទស្សន៍ និងទិន្នន័យផ្ទាល់ខ្លួនរបស់អ្នកងាយនឹងរងគ្រោះពីការវាយប្រហារពីកម្មវិធីដែលមិនស្គាល់។ ប្រសិនបើដំឡើងកម្មវិធីនេះ មានន័យថាអ្នកទទួលខុសត្រូវលើការខូចខាតណាមួយចំពោះទូរទស្សន៍ ឬការបាត់បង់ទិន្នន័យរបស់អ្នក ដែលអាចបណ្តាលមកពីការប្រើប្រាស់កម្មវិធីនោះ។"</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"ដើម្បីការពារសុវតិ្ថភាពរបស់អ្នក ថេប្លេតរបស់អ្នកមិនត្រូវបានអនុញ្ញាតឲ្យដំឡើងកម្មវិធីដែលមិនស្គាល់ពីប្រភពនេះទេ។"</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"ដើម្បីការពារសុវតិ្ថភាពរបស់អ្នក ទូរទស្សន៍របស់អ្នកមិនត្រូវបានអនុញ្ញាតឲ្យដំឡើងកម្មវិធីដែលមិនស្គាល់ពីប្រភពនេះទេ។"</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"ដើម្បីការពារសុវតិ្ថភាពរបស់អ្នក ទូរសព្ទរបស់អ្នកមិនត្រូវបានអនុញ្ញាតឲ្យដំឡើងកម្មវិធីដែលមិនស្គាល់ពីប្រភពនេះទេ។"</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"ទូរសព្ទ និងទិន្នន័យផ្ទាល់ខ្លួនរបស់អ្នកងាយនឹងរងគ្រោះពីការវាយប្រហារពីកម្មវិធីដែលមិនស្គាល់។ ប្រសិនបើដំឡើងកម្មវិធីនេះ មានន័យថាអ្នកទទួលខុសត្រូវលើការខូចខាតណាមួយចំពោះទូរសព្ទ ឬការបាត់បង់ទិន្នន័យរបស់អ្នក ដែលអាចបណ្តាលមកពីការប្រើប្រាស់កម្មវិធីនោះ។"</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"ថេប្លេត និងទិន្នន័យផ្ទាល់ខ្លួនរបស់អ្នកងាយនឹងរងគ្រោះពីការវាយប្រហារពីកម្មវិធីដែលមិនស្គាល់។ ប្រសិនបើដំឡើងកម្មវិធីនេះ មានន័យថាអ្នកទទួលខុសត្រូវលើការខូចខាតណាមួយចំពោះថេប្លេត ឬការបាត់បង់ទិន្នន័យរបស់អ្នក ដែលអាចបណ្តាលមកពីការប្រើប្រាស់កម្មវិធីនោះ។"</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"ទូរទស្សន៍ និងទិន្នន័យផ្ទាល់ខ្លួនរបស់អ្នកងាយនឹងរងគ្រោះពីការវាយប្រហារពីកម្មវិធីដែលមិនស្គាល់។ ប្រសិនបើដំឡើងកម្មវិធីនេះ មានន័យថាអ្នកទទួលខុសត្រូវលើការខូចខាតណាមួយចំពោះទូរទស្សន៍ ឬការបាត់បង់ទិន្នន័យរបស់អ្នក ដែលអាចបណ្តាលមកពីការប្រើប្រាស់កម្មវិធីនោះ។"</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"បន្ត"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"ការ​កំណត់"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"ការដំឡើង/ការលុបកម្មវិធីឧបករណ៍​ពាក់​"</string>

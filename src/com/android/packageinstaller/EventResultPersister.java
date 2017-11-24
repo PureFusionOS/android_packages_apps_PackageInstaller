@@ -41,94 +41,47 @@ import java.nio.charset.StandardCharsets;
  * Persists results of events and calls back observers when a matching result arrives.
  */
 class EventResultPersister {
-    private static final String LOG_TAG = EventResultPersister.class.getSimpleName();
-
-    /** Id passed to {@link #addObserver(int, EventResultObserver)} to generate new id */
+    /**
+     * Id passed to {@link #addObserver(int, EventResultObserver)} to generate new id
+     */
     static final int GENERATE_NEW_ID = Integer.MIN_VALUE;
-
     /**
      * The extra with the id to set in the intent delivered to
      * {@link #onEventReceived(Context, Intent)}
      */
     static final String EXTRA_ID = "EventResultPersister.EXTRA_ID";
-
-    /** Persisted state of this object */
+    private static final String LOG_TAG = EventResultPersister.class.getSimpleName();
+    /**
+     * Persisted state of this object
+     */
     private final AtomicFile mResultsFile;
 
     private final Object mLock = new Object();
 
-    /** Currently stored but not yet called back results (install id -> status, status message) */
+    /**
+     * Currently stored but not yet called back results (install id -> status, status message)
+     */
     private final SparseArray<EventResult> mResults = new SparseArray<>();
 
-    /** Currently registered, not called back observers (install id -> observer) */
+    /**
+     * Currently registered, not called back observers (install id -> observer)
+     */
     private final SparseArray<EventResultObserver> mObservers = new SparseArray<>();
 
-    /** Always increasing counter for install event ids */
+    /**
+     * Always increasing counter for install event ids
+     */
     private int mCounter;
 
-    /** If a write that will persist the state is scheduled */
+    /**
+     * If a write that will persist the state is scheduled
+     */
     private boolean mIsPersistScheduled;
 
-    /** If the state was changed while the data was being persisted */
+    /**
+     * If the state was changed while the data was being persisted
+     */
     private boolean mIsPersistingStateValid;
-
-    /**
-     * @return a new event id.
-     */
-    public int getNewId() throws OutOfIdsException {
-        synchronized (mLock) {
-            if (mCounter == Integer.MAX_VALUE) {
-                throw new OutOfIdsException();
-            }
-
-            mCounter++;
-            writeState();
-
-            return mCounter - 1;
-        }
-    }
-
-    /** Call back when a result is received. Observer is removed when onResult it called. */
-    interface EventResultObserver {
-        void onResult(int status, int legacyStatus, @Nullable String message);
-    }
-
-    /**
-     * Progress parser to the next element.
-     *
-     * @param parser The parser to progress
-     */
-    private static void nextElement(@NonNull XmlPullParser parser)
-            throws XmlPullParserException, IOException {
-        int type;
-        do {
-            type = parser.next();
-        } while (type != XmlPullParser.START_TAG && type != XmlPullParser.END_DOCUMENT);
-    }
-
-    /**
-     * Read an int attribute from the current element
-     *
-     * @param parser The parser to read from
-     * @param name The attribute name to read
-     *
-     * @return The value of the attribute
-     */
-    private static int readIntAttribute(@NonNull XmlPullParser parser, @NonNull String name) {
-        return Integer.parseInt(parser.getAttributeValue(null, name));
-    }
-
-    /**
-     * Read an String attribute from the current element
-     *
-     * @param parser The parser to read from
-     * @param name The attribute name to read
-     *
-     * @return The value of the attribute or null if the attribute is not set
-     */
-    private static String readStringAttribute(@NonNull XmlPullParser parser, @NonNull String name) {
-        return parser.getAttributeValue(null, name);
-    }
 
     /**
      * Read persisted state.
@@ -172,11 +125,62 @@ class EventResultPersister {
     }
 
     /**
+     * Progress parser to the next element.
+     *
+     * @param parser The parser to progress
+     */
+    private static void nextElement(@NonNull XmlPullParser parser)
+            throws XmlPullParserException, IOException {
+        int type;
+        do {
+            type = parser.next();
+        } while (type != XmlPullParser.START_TAG && type != XmlPullParser.END_DOCUMENT);
+    }
+
+    /**
+     * Read an int attribute from the current element
+     *
+     * @param parser The parser to read from
+     * @param name   The attribute name to read
+     * @return The value of the attribute
+     */
+    private static int readIntAttribute(@NonNull XmlPullParser parser, @NonNull String name) {
+        return Integer.parseInt(parser.getAttributeValue(null, name));
+    }
+
+    /**
+     * Read an String attribute from the current element
+     *
+     * @param parser The parser to read from
+     * @param name   The attribute name to read
+     * @return The value of the attribute or null if the attribute is not set
+     */
+    private static String readStringAttribute(@NonNull XmlPullParser parser, @NonNull String name) {
+        return parser.getAttributeValue(null, name);
+    }
+
+    /**
+     * @return a new event id.
+     */
+    public int getNewId() throws OutOfIdsException {
+        synchronized (mLock) {
+            if (mCounter == Integer.MAX_VALUE) {
+                throw new OutOfIdsException();
+            }
+
+            mCounter++;
+            writeState();
+
+            return mCounter - 1;
+        }
+    }
+
+    /**
      * Add a result. If the result is an pending user action, execute the pending user action
      * directly and do not queue a result.
      *
      * @param context The context the event was received in
-     * @param intent The intent the activity received
+     * @param intent  The intent the activity received
      */
     void onEventReceived(@NonNull Context context, @NonNull Intent intent) {
         int status = intent.getIntExtra(PackageInstaller.EXTRA_STATUS, 0);
@@ -293,7 +297,6 @@ class EventResultPersister {
      *
      * @param id       The id the observer is for or {@code GENERATE_NEW_ID} to generate a new one.
      * @param observer The observer to call back.
-     *
      * @return The id for this event
      */
     int addObserver(int id, @NonNull EventResultObserver observer)
@@ -335,12 +338,20 @@ class EventResultPersister {
     }
 
     /**
+     * Call back when a result is received. Observer is removed when onResult it called.
+     */
+    interface EventResultObserver {
+        void onResult(int status, int legacyStatus, @Nullable String message);
+    }
+
+    /**
      * The status from an event.
      */
     private class EventResult {
         public final int status;
         public final int legacyStatus;
-        @Nullable public final String message;
+        @Nullable
+        public final String message;
 
         private EventResult(int status, int legacyStatus, @Nullable String message) {
             this.status = status;
@@ -349,5 +360,6 @@ class EventResultPersister {
         }
     }
 
-    class OutOfIdsException extends Exception {}
+    class OutOfIdsException extends Exception {
+    }
 }

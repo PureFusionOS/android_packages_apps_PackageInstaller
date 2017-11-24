@@ -22,7 +22,9 @@ import android.util.SparseArray;
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 
-/** Robolectric shadow for testing {@link PackageInstaller} objects. */
+/**
+ * Robolectric shadow for testing {@link PackageInstaller} objects.
+ */
 @Implements(PackageInstaller.class)
 public class ShadowPackageInstaller {
     private static SparseArray<PackageInstaller.SessionInfo> sSessions = new SparseArray<>();

@@ -58,10 +58,8 @@ import java.util.List;
 public final class AppPermissionsFragment extends SettingsWithHeader
         implements OnPreferenceChangeListener {
 
-    private static final String LOG_TAG = "ManagePermsFragment";
-
     static final String EXTRA_HIDE_INFO_BUTTON = "hideInfoButton";
-
+    private static final String LOG_TAG = "ManagePermsFragment";
     private static final int MENU_ALL_PERMS = 0;
 
     private List<AppPermissionGroup> mToggledGroups;
@@ -79,6 +77,32 @@ public final class AppPermissionsFragment extends SettingsWithHeader
         arguments.putString(Intent.EXTRA_PACKAGE_NAME, packageName);
         fragment.setArguments(arguments);
         return fragment;
+    }
+
+    private static void bindUi(SettingsWithHeader fragment, PackageInfo packageInfo) {
+        Activity activity = fragment.getActivity();
+        PackageManager pm = activity.getPackageManager();
+        ApplicationInfo appInfo = packageInfo.applicationInfo;
+        Intent infoIntent = null;
+        if (!activity.getIntent().getBooleanExtra(EXTRA_HIDE_INFO_BUTTON, false)) {
+            infoIntent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                    .setData(Uri.fromParts("package", packageInfo.packageName, null));
+        }
+
+        Drawable icon = appInfo.loadIcon(pm);
+        CharSequence label = appInfo.loadLabel(pm);
+        fragment.setHeader(icon, label, infoIntent, fragment.getString(
+                R.string.app_permissions_decor_title));
+    }
+
+    private static PackageInfo getPackageInfo(Activity activity, String packageName) {
+        try {
+            return activity.getPackageManager().getPackageInfo(
+                    packageName, PackageManager.GET_PERMISSIONS);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.i(LOG_TAG, "No package:" + activity.getCallingPackage(), e);
+            return null;
+        }
     }
 
     @Override
@@ -162,22 +186,6 @@ public final class AppPermissionsFragment extends SettingsWithHeader
         menu.add(Menu.NONE, MENU_ALL_PERMS, Menu.NONE, R.string.all_permissions);
     }
 
-    private static void bindUi(SettingsWithHeader fragment, PackageInfo packageInfo) {
-        Activity activity = fragment.getActivity();
-        PackageManager pm = activity.getPackageManager();
-        ApplicationInfo appInfo = packageInfo.applicationInfo;
-        Intent infoIntent = null;
-        if (!activity.getIntent().getBooleanExtra(EXTRA_HIDE_INFO_BUTTON, false)) {
-            infoIntent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                    .setData(Uri.fromParts("package", packageInfo.packageName, null));
-        }
-
-        Drawable icon = appInfo.loadIcon(pm);
-        CharSequence label = appInfo.loadLabel(pm);
-        fragment.setHeader(icon, label, infoIntent, fragment.getString(
-                R.string.app_permissions_decor_title));
-    }
-
     private void loadPreferences() {
         Context context = getPreferenceManager().getContext();
         if (context == null) {
@@ -258,6 +266,7 @@ public final class AppPermissionsFragment extends SettingsWithHeader
      * displays the app name and banner icon. It's used in both system and additional permissions
      * fragments for each app. The styling used is the same as a leanback preference with a
      * customized background color
+     *
      * @param context The context the preferences created on
      * @return The preference header to be inserted as the first preference in the list.
      */
@@ -304,15 +313,15 @@ public final class AppPermissionsFragment extends SettingsWithHeader
                         .setNegativeButton(R.string.cancel, null)
                         .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
                                 new OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                ((SwitchPreference) preference).setChecked(false);
-                                group.revokeRuntimePermissions(false);
-                                if (!grantedByDefault) {
-                                    mHasConfirmedRevoke = true;
-                                }
-                            }
-                        })
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ((SwitchPreference) preference).setChecked(false);
+                                        group.revokeRuntimePermissions(false);
+                                        if (!grantedByDefault) {
+                                            mHasConfirmedRevoke = true;
+                                        }
+                                    }
+                                })
                         .show();
                 return false;
             } else {
@@ -370,18 +379,24 @@ public final class AppPermissionsFragment extends SettingsWithHeader
         }
     }
 
-    private static PackageInfo getPackageInfo(Activity activity, String packageName) {
-        try {
-            return activity.getPackageManager().getPackageInfo(
-                    packageName, PackageManager.GET_PERMISSIONS);
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.i(LOG_TAG, "No package:" + activity.getCallingPackage(), e);
-            return null;
-        }
-    }
-
     public static class AdditionalPermissionsFragment extends SettingsWithHeader {
         AppPermissionsFragment mOuterFragment;
+
+        private static void bindUi(SettingsWithHeader fragment, PackageInfo packageInfo) {
+            Activity activity = fragment.getActivity();
+            PackageManager pm = activity.getPackageManager();
+            ApplicationInfo appInfo = packageInfo.applicationInfo;
+            Intent infoIntent = null;
+            if (!activity.getIntent().getBooleanExtra(EXTRA_HIDE_INFO_BUTTON, false)) {
+                infoIntent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                        .setData(Uri.fromParts("package", packageInfo.packageName, null));
+            }
+
+            Drawable icon = appInfo.loadIcon(pm);
+            CharSequence label = appInfo.loadLabel(pm);
+            fragment.setHeader(icon, label, infoIntent, fragment.getString(
+                    R.string.additional_permissions_decor_title));
+        }
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -402,28 +417,12 @@ public final class AppPermissionsFragment extends SettingsWithHeader
             bindUi(this, getPackageInfo(getActivity(), packageName));
         }
 
-        private static void bindUi(SettingsWithHeader fragment, PackageInfo packageInfo) {
-            Activity activity = fragment.getActivity();
-            PackageManager pm = activity.getPackageManager();
-            ApplicationInfo appInfo = packageInfo.applicationInfo;
-            Intent infoIntent = null;
-            if (!activity.getIntent().getBooleanExtra(EXTRA_HIDE_INFO_BUTTON, false)) {
-                infoIntent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                        .setData(Uri.fromParts("package", packageInfo.packageName, null));
-            }
-
-            Drawable icon = appInfo.loadIcon(pm);
-            CharSequence label = appInfo.loadLabel(pm);
-            fragment.setHeader(icon, label, infoIntent, fragment.getString(
-                    R.string.additional_permissions_decor_title));
-        }
-
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             switch (item.getItemId()) {
-            case android.R.id.home:
-                getFragmentManager().popBackStack();
-                return true;
+                case android.R.id.home:
+                    getFragmentManager().popBackStack();
+                    return true;
             }
             return super.onOptionsItemSelected(item);
         }

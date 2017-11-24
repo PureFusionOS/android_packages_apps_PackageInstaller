@@ -233,7 +233,7 @@ public final class ReviewPermissionsActivity extends Activity
 
         private void confirmPermissionsReview() {
             PreferenceGroup preferenceGroup = mNewPermissionsCategory != null
-                ? mNewPermissionsCategory : getPreferenceScreen();
+                    ? mNewPermissionsCategory : getPreferenceScreen();
 
             final int preferenceCount = preferenceGroup.getPreferenceCount();
             for (int i = 0; i < preferenceCount; i++) {
@@ -266,8 +266,8 @@ public final class ReviewPermissionsActivity extends Activity
 
             // Set message
             final int labelTemplateResId = isPackageUpdated()
-                    ?  R.string.permission_review_title_template_update
-                    :  R.string.permission_review_title_template_install;
+                    ? R.string.permission_review_title_template_update
+                    : R.string.permission_review_title_template_install;
             Spanned message = Html.fromHtml(getString(labelTemplateResId,
                     mAppPermissions.getAppLabel()), 0);
 
@@ -285,7 +285,7 @@ public final class ReviewPermissionsActivity extends Activity
             mCancelButton = (Button) getActivity().findViewById(R.id.cancel_button);
             mCancelButton.setOnClickListener(this);
 
-            mMoreInfoButton = (Button)  getActivity().findViewById(
+            mMoreInfoButton = (Button) getActivity().findViewById(
                     R.id.permission_more_info_button);
             mMoreInfoButton.setOnClickListener(this);
         }

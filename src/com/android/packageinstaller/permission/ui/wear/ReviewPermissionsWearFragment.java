@@ -55,7 +55,10 @@ public class ReviewPermissionsWearFragment extends PreferenceFragment
     private static final int ORDER_PERM_OFFSET_START = 100;
 
     private static final String EXTRA_PACKAGE_INFO =
-        "com.android.packageinstaller.permission.ui.extra.PACKAGE_INFO";
+            "com.android.packageinstaller.permission.ui.extra.PACKAGE_INFO";
+    private AppPermissions mAppPermissions;
+    private PreferenceCategory mNewPermissionsCategory;
+    private boolean mHasConfirmedRevoke;
 
     public static ReviewPermissionsWearFragment newInstance(PackageInfo packageInfo) {
         Bundle arguments = new Bundle();
@@ -65,12 +68,6 @@ public class ReviewPermissionsWearFragment extends PreferenceFragment
         instance.setRetainInstance(true);
         return instance;
     }
-
-    private AppPermissions mAppPermissions;
-
-    private PreferenceCategory mNewPermissionsCategory;
-
-    private boolean mHasConfirmedRevoke;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -214,7 +211,7 @@ public class ReviewPermissionsWearFragment extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-      Log.d(TAG, "onPreferenceChange " + preference.getTitle());
+        Log.d(TAG, "onPreferenceChange " + preference.getTitle());
         if (mHasConfirmedRevoke) {
             return true;
         }
@@ -272,14 +269,14 @@ public class ReviewPermissionsWearFragment extends PreferenceFragment
 
         // Set icon
         Drawable icon = mAppPermissions.getPackageInfo().applicationInfo.loadIcon(
-              activity.getPackageManager());
+                activity.getPackageManager());
         titlePref.setIcon(icon);
 
         // Set message
         String appLabel = mAppPermissions.getAppLabel().toString();
         final int labelTemplateResId = isPackageUpdated()
-                ?  R.string.permission_review_title_template_update
-                :  R.string.permission_review_title_template_install;
+                ? R.string.permission_review_title_template_update
+                : R.string.permission_review_title_template_install;
         SpannableString message = new SpannableString(getString(labelTemplateResId, appLabel));
 
         // Color the app name.

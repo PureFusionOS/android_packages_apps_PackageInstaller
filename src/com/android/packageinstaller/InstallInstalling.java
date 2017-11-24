@@ -56,22 +56,34 @@ public class InstallInstalling extends Activity {
     private static final String BROADCAST_ACTION =
             "com.android.packageinstaller.ACTION_INSTALL_COMMIT";
 
-    /** Listens to changed to the session and updates progress bar */
+    /**
+     * Listens to changed to the session and updates progress bar
+     */
     private PackageInstaller.SessionCallback mSessionCallback;
 
-    /** Task that sends the package to the package installer */
+    /**
+     * Task that sends the package to the package installer
+     */
     private InstallingAsyncTask mInstallingTask;
 
-    /** Id of the session to install the package */
+    /**
+     * Id of the session to install the package
+     */
     private int mSessionId;
 
-    /** Id of the install event we wait for */
+    /**
+     * Id of the install event we wait for
+     */
     private int mInstallId;
 
-    /** URI of package to install */
+    /**
+     * URI of package to install
+     */
     private Uri mPackageURI;
 
-    /** The button that can cancel this dialog */
+    /**
+     * The button that can cancel this dialog
+     */
     private Button mCancelButton;
 
     @Override
@@ -304,7 +316,7 @@ public class InstallInstalling extends Activity {
         @Override
         public void onProgressChanged(int sessionId, float progress) {
             if (sessionId == mSessionId) {
-                ProgressBar progressBar = (ProgressBar)findViewById(R.id.progress_bar);
+                ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_bar);
                 progressBar.setMax(Integer.MAX_VALUE);
                 progressBar.setProgress((int) (Integer.MAX_VALUE * progress));
             }

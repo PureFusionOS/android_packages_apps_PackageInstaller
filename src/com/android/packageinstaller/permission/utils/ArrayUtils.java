@@ -25,6 +25,7 @@ public final class ArrayUtils {
 
     /**
      * Checks that value is present as at least one of the elements of the array.
+     *
      * @param array the array to check in
      * @param value the value to check for
      * @return true if the value is present in the array
@@ -47,7 +48,7 @@ public final class ArrayUtils {
 
     public static String[] appendString(String[] cur, String val) {
         if (cur == null) {
-            return new String[] { val };
+            return new String[]{val};
         }
         final int N = cur.length;
         for (int i = 0; i < N; i++) {

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,13 +33,13 @@
     <string name="install_failed" msgid="6579998651498970899">"Hindi na-install ang app."</string>
     <string name="install_failed_blocked" msgid="1606870930588770025">"Na-block ang pag-install sa package."</string>
     <string name="install_failed_conflict" msgid="5336045235168070954">"Hindi na-install ang app dahil nagkakaproblema ang package sa isang dati nang package."</string>
-    <string name="install_failed_incompatible" product="tablet" msgid="6682387386242708974">"Hindi na-install ang app dahil hindi tugma ang app sa iyong tablet."</string>
-    <string name="install_failed_incompatible" product="tv" msgid="3553367270510072729">"Hindi compatible ang app na ito sa iyong TV."</string>
-    <string name="install_failed_incompatible" product="default" msgid="7917996365659426872">"Hindi na-install ang app dahil hindi tugma ang app sa iyong telepono."</string>
+    <string name="install_failed_incompatible" msgid="6682387386242708974" product="tablet">"Hindi na-install ang app dahil hindi tugma ang app sa iyong tablet."</string>
+    <string name="install_failed_incompatible" msgid="3553367270510072729" product="tv">"Hindi compatible ang app na ito sa iyong TV."</string>
+    <string name="install_failed_incompatible" msgid="7917996365659426872" product="default">"Hindi na-install ang app dahil hindi tugma ang app sa iyong telepono."</string>
     <string name="install_failed_invalid_apk" msgid="269885385245534742">"Hindi na-install ang app dahil lumalabas na di-wasto ang package."</string>
-    <string name="install_failed_msg" product="tablet" msgid="8368835262605608787">"Hindi ma-install ang <xliff:g id="APP_NAME">%1$s</xliff:g> sa iyong tablet."</string>
-    <string name="install_failed_msg" product="tv" msgid="3990457938384021566">"Ang <xliff:g id="APP_NAME">%1$s</xliff:g> ay hindi ma-install sa iyong TV."</string>
-    <string name="install_failed_msg" product="default" msgid="8554909560982962052">"Hindi ma-install ang <xliff:g id="APP_NAME">%1$s</xliff:g> sa iyong telepono."</string>
+    <string name="install_failed_msg" msgid="8368835262605608787" product="tablet">"Hindi ma-install ang <xliff:g id="APP_NAME">%1$s</xliff:g> sa iyong tablet."</string>
+    <string name="install_failed_msg" msgid="3990457938384021566" product="tv">"Ang <xliff:g id="APP_NAME">%1$s</xliff:g> ay hindi ma-install sa iyong TV."</string>
+    <string name="install_failed_msg" msgid="8554909560982962052" product="default">"Hindi ma-install ang <xliff:g id="APP_NAME">%1$s</xliff:g> sa iyong telepono."</string>
     <string name="launch" msgid="4826921505917605463">"Buksan"</string>
     <string name="unknown_apps_admin_dlg_text" msgid="7488386758312008790">"Hindi pinapayagan ng iyong admin ang pag-install ng mga app na nakuha mula sa mga hindi kilalang pinagmulan"</string>
     <string name="unknown_apps_user_restriction_dlg_text" msgid="5785226253054083336">"Hindi maaaring mag-install ang user na ito ng mga hindi kilalang app"</string>
@@ -105,8 +104,8 @@
     <string name="no_permissions" msgid="3210542466245591574">"Walang mga pahintulot"</string>
     <string name="additional_permissions" msgid="6667573114240111763">"Mga karagdagang pahintulot"</string>
     <plurals name="additional_permissions_more" formatted="false" msgid="945127158155064388">
-      <item quantity="one"><xliff:g id="COUNT_1">%1$d</xliff:g> pa</item>
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> pa</item>
+        <item quantity="one"><xliff:g id="COUNT_1">%1$d</xliff:g> pa</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> pa</item>
     </plurals>
     <string name="old_sdk_deny_warning" msgid="3872277112584842615">"Ang app na ito ay idinisenyo para sa mas lumang bersyon ng Android. Kapag tinanggihan ang pahintulot, maaaring hindi na ito gumana ayon sa inaasahan."</string>
     <string name="default_permission_description" msgid="4992892207044156668">"gumawa ng hindi kilalang pagkilos"</string>
@@ -137,12 +136,12 @@
     <string name="current_permissions_category" msgid="998210994450606094">"Mga kasalukuyang pahintulot"</string>
     <string name="message_staging" msgid="6151794817691100003">"Inihahanda ang app…"</string>
     <string name="app_name_unknown" msgid="8931522764510159105">"Hindi Alam"</string>
-    <string name="untrusted_external_source_warning" product="tablet" msgid="1483151219938173935">"Para sa iyong seguridad, hindi pinapayagan ang tablet mo na mag-install ng mga hindi alam na app mula sa pinagmulang ito."</string>
-    <string name="untrusted_external_source_warning" product="tv" msgid="5373768281884328560">"Para sa iyong seguridad, hindi pinapayagan ang TV mo na mag-install ng mga hindi alam na app mula sa pinagmulang ito."</string>
-    <string name="untrusted_external_source_warning" product="default" msgid="2223486836232706553">"Para sa iyong seguridad, hindi pinapayagan ang telepono mo na mag-install ng mga hindi alam na app mula sa pinagmulang ito."</string>
-    <string name="anonymous_source_warning" product="default" msgid="7700263729981815614">"Mas nanganganib ang iyong telepono at personal na data sa mga pag-atake mula sa mga hindi kilalang app. Sa pamamagitan ng pag-install ng app na ito, sumasang-ayon ka na ikaw ang responsable sa anumang pinsala sa telepono mo o pagkawala ng data na maaaring magresulta mula sa paggamit nito."</string>
-    <string name="anonymous_source_warning" product="tablet" msgid="8854462805499848630">"Mas nanganganib ang iyong tablet at personal na data sa mga pag-atake mula sa mga hindi kilalang app. Sa pamamagitan ng pag-install ng app na ito, sumasang-ayon ka na ikaw ang responsable sa anumang pinsala sa tablet mo o pagkawala ng data na maaaring magresulta mula sa paggamit nito."</string>
-    <string name="anonymous_source_warning" product="tv" msgid="1291472686734385872">"Mas nanganganib ang iyong TV at personal na data sa mga pag-atake mula sa mga hindi kilalang app. Sa pamamagitan ng pag-install ng app na ito, sumasang-ayon ka na ikaw ang responsable sa anumang pinsala sa TV mo o pagkawala ng data na maaaring magresulta mula sa paggamit nito."</string>
+    <string name="untrusted_external_source_warning" msgid="1483151219938173935" product="tablet">"Para sa iyong seguridad, hindi pinapayagan ang tablet mo na mag-install ng mga hindi alam na app mula sa pinagmulang ito."</string>
+    <string name="untrusted_external_source_warning" msgid="5373768281884328560" product="tv">"Para sa iyong seguridad, hindi pinapayagan ang TV mo na mag-install ng mga hindi alam na app mula sa pinagmulang ito."</string>
+    <string name="untrusted_external_source_warning" msgid="2223486836232706553" product="default">"Para sa iyong seguridad, hindi pinapayagan ang telepono mo na mag-install ng mga hindi alam na app mula sa pinagmulang ito."</string>
+    <string name="anonymous_source_warning" msgid="7700263729981815614" product="default">"Mas nanganganib ang iyong telepono at personal na data sa mga pag-atake mula sa mga hindi kilalang app. Sa pamamagitan ng pag-install ng app na ito, sumasang-ayon ka na ikaw ang responsable sa anumang pinsala sa telepono mo o pagkawala ng data na maaaring magresulta mula sa paggamit nito."</string>
+    <string name="anonymous_source_warning" msgid="8854462805499848630" product="tablet">"Mas nanganganib ang iyong tablet at personal na data sa mga pag-atake mula sa mga hindi kilalang app. Sa pamamagitan ng pag-install ng app na ito, sumasang-ayon ka na ikaw ang responsable sa anumang pinsala sa tablet mo o pagkawala ng data na maaaring magresulta mula sa paggamit nito."</string>
+    <string name="anonymous_source_warning" msgid="1291472686734385872" product="tv">"Mas nanganganib ang iyong TV at personal na data sa mga pag-atake mula sa mga hindi kilalang app. Sa pamamagitan ng pag-install ng app na ito, sumasang-ayon ka na ikaw ang responsable sa anumang pinsala sa TV mo o pagkawala ng data na maaaring magresulta mula sa paggamit nito."</string>
     <string name="anonymous_source_continue" msgid="2094381167954332292">"Magpatuloy"</string>
     <string name="external_sources_settings" msgid="8601453744517291632">"Mga Setting"</string>
     <string name="wear_app_channel" msgid="6200840123672949356">"Ini-install/ina-uninstall ang wear apps"</string>

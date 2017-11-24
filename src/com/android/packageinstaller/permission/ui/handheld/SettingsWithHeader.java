@@ -32,14 +32,14 @@ import com.android.packageinstaller.R;
 public abstract class SettingsWithHeader extends PermissionsFrameFragment
         implements OnClickListener {
 
-    private View mHeader;
     protected Intent mInfoIntent;
     protected Drawable mIcon;
     protected CharSequence mLabel;
+    private View mHeader;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) super.onCreateView(inflater, container, savedInstanceState);
 
         if (!DeviceUtils.isTelevision(getContext())) {

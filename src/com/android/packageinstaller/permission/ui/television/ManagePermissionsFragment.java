@@ -56,6 +56,14 @@ public final class ManagePermissionsFragment extends SettingsWithHeader
         return new ManagePermissionsFragment();
     }
 
+    private static void bindPermissionUi(SettingsWithHeader fragment, @Nullable View rootView) {
+        if (fragment == null || rootView == null) {
+            return;
+        }
+        fragment.setHeader(null, null, null, fragment.getString(
+                R.string.manage_permissions_decor_title));
+    }
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -107,14 +115,6 @@ public final class ManagePermissionsFragment extends SettingsWithHeader
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bindPermissionUi(this, getView());
-    }
-
-    private static void bindPermissionUi(SettingsWithHeader fragment, @Nullable View rootView) {
-        if (fragment == null || rootView == null) {
-            return;
-        }
-        fragment.setHeader(null, null, null, fragment.getString(
-                R.string.manage_permissions_decor_title));
     }
 
     private void updatePermissionsUi() {
@@ -191,6 +191,14 @@ public final class ManagePermissionsFragment extends SettingsWithHeader
     }
 
     public static class AdditionalPermissionsFragment extends SettingsWithHeader {
+        private static void bindPermissionUi(SettingsWithHeader fragment, @Nullable View rootView) {
+            if (fragment == null || rootView == null) {
+                return;
+            }
+            fragment.setHeader(null, null, null,
+                    fragment.getString(R.string.additional_permissions_decor_title));
+        }
+
         @Override
         public void onCreate(Bundle icicle) {
             setLoading(true /* loading */, false /* animate */);
@@ -219,14 +227,6 @@ public final class ManagePermissionsFragment extends SettingsWithHeader
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
             bindPermissionUi(this, getView());
-        }
-
-        private static void bindPermissionUi(SettingsWithHeader fragment, @Nullable View rootView) {
-            if (fragment == null || rootView == null) {
-                return;
-            }
-            fragment.setHeader(null, null, null,
-                    fragment.getString(R.string.additional_permissions_decor_title));
         }
 
         @Override

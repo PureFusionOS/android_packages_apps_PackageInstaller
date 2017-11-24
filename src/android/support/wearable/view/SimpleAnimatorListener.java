@@ -58,6 +58,7 @@ public class SimpleAnimatorListener implements Animator.AnimatorListener {
 
     /**
      * Provides information if the animation was cancelled.
+     *
      * @return True if animation was cancelled.
      */
     public boolean wasCanceled() {

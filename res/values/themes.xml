@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2015 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,24 +16,20 @@
 
 <resources>
 
-    <style name="Settings"
-           parent="@android:style/Theme.DeviceDefault.Settings">
-    </style>
+    <style name="Settings" parent="@android:style/Theme.DeviceDefault.Settings"></style>
 
     <style name="Settings.NoActionBar" parent="@style/Settings">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="GrantPermissions"
-           parent="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
+    <style name="GrantPermissions" parent="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
         <item name="*android:windowFixedHeightMajor">100%</item>
         <item name="*android:windowFixedHeightMinor">100%</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
-    <style name="DialogWhenLarge"
-            parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+    <style name="DialogWhenLarge" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
         <item name="android:textAppearanceMedium">@style/MediumText</item>
         <item name="android:textAppearanceSmall">@style/SmallText</item>
         <item name="android:titleTextStyle">@style/TitleText</item>
@@ -44,14 +39,11 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
-    <style name="AlertDialogActivity"
-            parent="@android:style/Theme.DeviceDefault.Light.Panel">
+    <style name="AlertDialogActivity" parent="@android:style/Theme.DeviceDefault.Light.Panel">
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
-    <style name="Header.Settings"
-            parent="@android:style/Theme.DeviceDefault.Settings">
-    </style>
+    <style name="Header.Settings" parent="@android:style/Theme.DeviceDefault.Settings"></style>
 
 
 </resources>

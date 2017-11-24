@@ -41,14 +41,13 @@ import java.io.File;
  * used in the package installer application.
  */
 public class PackageUtil {
-    private static final String LOG_TAG = PackageUtil.class.getSimpleName();
-
-    public static final String PREFIX="com.android.packageinstaller.";
-    public static final String INTENT_ATTR_INSTALL_STATUS = PREFIX+"installStatus";
-    public static final String INTENT_ATTR_APPLICATION_INFO=PREFIX+"applicationInfo";
-    public static final String INTENT_ATTR_PERMISSIONS_LIST=PREFIX+"PermissionsList";
+    public static final String PREFIX = "com.android.packageinstaller.";
+    public static final String INTENT_ATTR_INSTALL_STATUS = PREFIX + "installStatus";
+    public static final String INTENT_ATTR_APPLICATION_INFO = PREFIX + "applicationInfo";
+    public static final String INTENT_ATTR_PERMISSIONS_LIST = PREFIX + "PermissionsList";
     //intent attribute strings related to uninstall
-    public static final String INTENT_ATTR_PACKAGE_NAME=PREFIX+"PackageName";
+    public static final String INTENT_ATTR_PACKAGE_NAME = PREFIX + "PackageName";
+    private static final String LOG_TAG = PackageUtil.class.getSimpleName();
 
     /**
      * Utility method to get package information for a given {@link File}
@@ -64,8 +63,8 @@ public class PackageUtil {
     }
 
     public static View initSnippet(View snippetView, CharSequence label, Drawable icon) {
-        ((ImageView)snippetView.findViewById(R.id.app_icon)).setImageDrawable(icon);
-        ((TextView)snippetView.findViewById(R.id.app_name)).setText(label);
+        ((ImageView) snippetView.findViewById(R.id.app_icon)).setImageDrawable(icon);
+        ((TextView) snippetView.findViewById(R.id.app_name)).setText(label);
         return snippetView;
     }
 
@@ -75,12 +74,12 @@ public class PackageUtil {
      * appSnippet view should include R.id.app_icon and R.id.app_name
      * defined on it.
      *
-     * @param pContext context of package that can load the resources
+     * @param pContext      context of package that can load the resources
      * @param componentInfo ComponentInfo object whose resources are to be loaded
-     * @param snippetView the snippet view
+     * @param snippetView   the snippet view
      */
     public static View initSnippetForInstalledApp(Context pContext,
-            ApplicationInfo appInfo, View snippetView) {
+                                                  ApplicationInfo appInfo, View snippetView) {
         return initSnippetForInstalledApp(pContext, appInfo, snippetView, null);
     }
 
@@ -90,13 +89,13 @@ public class PackageUtil {
      * appSnippet view should include R.id.app_icon and R.id.app_name
      * defined on it.
      *
-     * @param pContext context of package that can load the resources
+     * @param pContext      context of package that can load the resources
      * @param componentInfo ComponentInfo object whose resources are to be loaded
-     * @param snippetView the snippet view
-     * @param UserHandle user that the app si installed for.
+     * @param snippetView   the snippet view
+     * @param UserHandle    user that the app si installed for.
      */
     public static View initSnippetForInstalledApp(Context pContext,
-            ApplicationInfo appInfo, View snippetView, UserHandle user) {
+                                                  ApplicationInfo appInfo, View snippetView, UserHandle user) {
         final PackageManager pm = pContext.getPackageManager();
         Drawable icon = appInfo.loadIcon(pm);
         if (user != null) {
@@ -114,34 +113,26 @@ public class PackageUtil {
      * appSnippet view should include R.id.app_icon and R.id.app_name
      * defined on it.
      *
-     * @param pContext context of package that can load the resources
-     * @param as The resources to be loaded
+     * @param pContext  context of package that can load the resources
+     * @param as        The resources to be loaded
      * @param snippetId view id of app snippet view
      */
-    @NonNull public static View initSnippetForNewApp(@NonNull Activity pContext,
-            @NonNull AppSnippet as, int snippetId) {
+    @NonNull
+    public static View initSnippetForNewApp(@NonNull Activity pContext,
+                                            @NonNull AppSnippet as, int snippetId) {
         View appSnippet = pContext.findViewById(snippetId);
         if (as.icon != null) {
             ((ImageView) appSnippet.findViewById(R.id.app_icon)).setImageDrawable(as.icon);
         }
-        ((TextView)appSnippet.findViewById(R.id.app_name)).setText(as.label);
+        ((TextView) appSnippet.findViewById(R.id.app_name)).setText(as.label);
         return appSnippet;
-    }
-
-    static public class AppSnippet {
-        @NonNull public CharSequence label;
-        @Nullable public Drawable icon;
-        public AppSnippet(@NonNull CharSequence label, @Nullable Drawable icon) {
-            this.label = label;
-            this.icon = icon;
-        }
     }
 
     /**
      * Utility method to load application label
      *
-     * @param pContext context of package that can load the resources
-     * @param appInfo ApplicationInfo object of package whose resources are to be loaded
+     * @param pContext   context of package that can load the resources
+     * @param appInfo    ApplicationInfo object of package whose resources are to be loaded
      * @param sourceFile File the package is in
      */
     public static AppSnippet getAppSnippet(
@@ -181,5 +172,17 @@ public class PackageUtil {
             Log.i(LOG_TAG, "Could not load app icon", e);
         }
         return new PackageUtil.AppSnippet(label, icon);
+    }
+
+    static public class AppSnippet {
+        @NonNull
+        public CharSequence label;
+        @Nullable
+        public Drawable icon;
+
+        public AppSnippet(@NonNull CharSequence label, @Nullable Drawable icon) {
+            this.label = label;
+            this.icon = icon;
+        }
     }
 }

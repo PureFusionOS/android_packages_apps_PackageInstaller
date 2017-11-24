@@ -44,12 +44,8 @@ public final class PermissionGroups implements LoaderCallbacks<List<PermissionGr
     private final LoaderManager mLoaderManager;
     private final PermissionsGroupsChangeCallback mCallback;
 
-    public interface PermissionsGroupsChangeCallback {
-        public void onPermissionGroupsChanged();
-    }
-
     public PermissionGroups(Context context, LoaderManager loaderManager,
-            PermissionsGroupsChangeCallback callback) {
+                            PermissionsGroupsChangeCallback callback) {
         mContext = context;
         mLoaderManager = loaderManager;
         mCallback = callback;
@@ -63,7 +59,7 @@ public final class PermissionGroups implements LoaderCallbacks<List<PermissionGr
 
     @Override
     public void onLoadFinished(Loader<List<PermissionGroup>> loader,
-            List<PermissionGroup> groups) {
+                               List<PermissionGroup> groups) {
         if (mGroups.equals(groups)) {
             return;
         }
@@ -89,6 +85,10 @@ public final class PermissionGroups implements LoaderCallbacks<List<PermissionGr
             }
         }
         return null;
+    }
+
+    public interface PermissionsGroupsChangeCallback {
+        public void onPermissionGroupsChanged();
     }
 
     private static final class PermissionsLoader extends AsyncTaskLoader<List<PermissionGroup>>
